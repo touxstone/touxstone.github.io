@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Bitcoin &amp; Cryptocurrency Technologies, course note</title>
+<!-- 2018-01-07 Sun 21:32 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="txarly" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Tangerine" rel="stylesheet">
+<style type="text/css">.title{font-size:58px; text-shadow: 4px 4px 4px #233b4d; text-align:center;}body{max-width:85%; margin:auto; font-family:'Open Sans', serif; font-size:100%; text-shadow: 1px 1px 1px #aaa; background-color: #F7F7F7;} </style>
+<style type="text/css">#table-of-contents{ font-size: 10pt; position: fixed; right: 0em; top: 0em; background: #F3F9FE; -webkit-box-shadow: 0 0 1em #777777; -moz-box-shadow: 0 0 1em #777777; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomleft: 5px; text-align: right; /* ensure doesn't flow off the screen when expanded */ max-height: 80%; overflow: auto; } #table-of-contents h2 {font-size: 10pt; max-width: 8em; font-weight: normal; padding-left: 0.5em; padding-left: 0.5em; padding-top: 0.05em; padding-bottom: 0.05em; } #table-of-contents #text-table-of-contents {display: none; text-align: left; } #table-of-contents:hover #text-table-of-contents {display: block; padding: 0.5em; clear: left; margin-top: -1.5em; } pre.src{position: static; } code{font-size: 1.1rem; border: 1px solid #ddd; background: #EEEEEE; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em; -ms-border-radius: 0.4em; -o-border-radius: 0.4em; border-radius: 0.4em; font-weight: normal; padding: 0 0.2em;}pre.src {background-color: #E5E5E5;} </style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Bitcoin &amp; Cryptocurrency Technologies, course note</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Week 1</a>
+<ul>
+<li><a href="#sec-1-1">Cryptographic Hash Functions.</a></li>
+<li><a href="#sec-1-2">Hash Pointers and Data Structures 8 min</a></li>
+<li><a href="#sec-1-3">Digital Signatures 9 min</a></li>
+<li><a href="#sec-1-4">Public Keys as Identities 5 min</a></li>
+<li><a href="#sec-1-5">A Simple Cryptocurrency 14 min</a></li>
+<li><a href="#sec-1-6">Programming Assignment:</a></li>
+<li><a href="#sec-1-7">Scrooge Coin3h</a></li>
+<li><a href="#sec-1-8">Overdue</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Week 2</a></li>
+<li><a href="#sec-3">Week 3</a></li>
+<li><a href="#sec-4">Week 4</a></li>
+<li><a href="#sec-5">Week 5</a></li>
+<li><a href="#sec-6">Week 6</a></li>
+<li><a href="#sec-7">Week 7</a></li>
+<li><a href="#sec-8">Week 8</a></li>
+<li><a href="#sec-9">Week 9</a></li>
+<li><a href="#sec-10">Week 10</a></li>
+<li><a href="#sec-11">Week 11</a></li>
+</ul>
+</div>
+</div>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="my-bb-notepad.html"> UP </a>
+ |
+ <a accesskey="H" href="my-bb-notepad.html"> HOME </a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Week 1</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Introduction &amp; following <a href="img/bitcoin-w1.png">this</a> syllabus 
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Cryptographic Hash Functions.</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+OK, let's start in slow mode though also in short, rather. As quick explained <a href="https://youtu.be/MfhjkfocRR0">here</a> (specially some foundation concepts as <code>collision</code> (when at indexing (3:55)) &amp; <code>chaining</code> (key-data in slots (6:00))). So that given a data structure:
+</p>
+
+
+<div class="figure">
+<p><img src="img/data-structures-hash-tables-ytb.png" alt="data-structures-hash-tables-ytb.png" />
+</p>
+</div>
+
+<p>
+we can map it by implementing arrays which would associate key to values &amp; we'll call out a hash function to its look up mechanism. 
+</p>
+<ul class="org-ul">
+<li>A curios question arise about the idea of <code>collision-free</code> hash arrays implementation (it's said that if you pick 2 to the 130 randomly chosen inputs from a possible hash group, there's a 99.8% chance that at least 2 of them collide, however this procedure takes 2 to the 130 steps in order to get that high possibility. So that "if every computer ever made by humanity were computing since the beginning of the entire universe up to now, the odds that they would have found a collision is still infinitesimally small." (OK, no more question, majesty ~~)  
+</li>
+<li>The hash function bitcoin uses the <a href="http://www.quadibloc.com/crypto/mi060501.htm">SHA-256</a> algorithm. Check out <a href="http://www.righto.com/2014/09/mining-bitcoin-with-pencil-and-paper.html">here</a> for a kind of pen and paper explanation of the <a href="https://csrc.nist.gov/csrc/media/publications/fips/180/4/final/documents/fips180-4-draft-aug2014.pdf">standard</a>, &amp; so helpful visualised <a href="https://youtu.be/y3dqhixzGVo">here</a>. 
+</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Hash Pointers and Data Structures 8 min</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+A (hash) pointer (a kind of data structure) (it's a ref to where some info is stored (so that, attaching a Cryptographic hash of info it turns out that, more than a regular pointer, it) tells us where something is and what it's value is.. yh.
+</p>
+
+<ul class="org-ul">
+<li>A key idea here: think of any data structure as a tree in which every leaf is part (in a hash of pointers or chain) to the its child node so that the hash itself allow efficient &amp; secure verification (Merkle tree).  
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">Digital Signatures 9 min</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Well, I had to check some others tutorials to get the mechanism but only after re-reading the <a href="img/bitcoin-dig-signatures.jpg">gnu/pg-key</a> system I could get the point.
+</p>
+<ul class="org-ul">
+<li>Though getting narrow on how-come from I got the point (importance which I noticed later) <a href="img/DHM-key-exch-by-gary.png">this pic</a> grasps wide good the point (so, new subject point added to my list for learning more: <a href="https://en.wikipedia.org/wiki/Diffie-Hellman_key_exchange">Diffie-Hellman-Merkle</a> key exchange)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4">Public Keys as Identities 5 min</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Ok, let's track the trick:
+</p>
+<ul class="org-ul">
+<li>The idea is to take a public key <code>pk</code> and equate that to an identity (an identity of a person, or an act, or a system).
+</li>
+<li>If you know the <code>sk</code> <i>secret key</i> that correspond with that specific [identity| <code>pk</code> | act| or system, so (only) you can 'sign' messages on behalf of that <i>it</i> <code>pk</code>, those messages are essentially <i>statements</i>. Something that (only) one person can speak for or on behalf of, &amp; (important) that everybody can see.
+</li>
+<li>OK, what if you were able (&amp; you are) to make a new identity whenever you want (just by creating a new random key pair <code>sk</code> and <code>pk</code>. That <code>pk</code> (or its hash) would be, then, the public name of that identity, a face in the crowd that only you can control &amp; nobody needs to know about (which brings us to the idea of decentralised identity management. [This is the way Bitcoin in fact does identity, &amp; these identities are called addresses in Bitcoin jargon].
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5">A Simple Cryptocurrency 14 min</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>GoofyCoin, the simplest crypto currency we can imagine (a uniqueCoinID, a digital signature which anyone can verify).
+</li>
+<li>Issues: The <i>double-spending attack</i> 
+</li>
+<li>ScroogeCoin, let's say an improved currency, tackles the issue by including in the block chain the history of all the transactions that have happened.
+</li>
+<li>As extra reading &amp; good summary I enjoyed to watch this <a href="https://youtu.be/bBC-nXj3Ng4">ytb-clip</a> 
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6">Programming Assignment:</h3>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7">Scrooge Coin3h</h3>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8">Overdue</h3>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Week 2</h2>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Week 3</h2>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Week 4</h2>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Week 5</h2>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Week 6</h2>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">Week 7</h2>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">Week 8</h2>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">Week 9</h2>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">Week 10</h2>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">Week 11</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Grades
+</p>
+
+<p>
+Discussion Forums
+</p>
+
+<p>
+Resources
+</p>
+
+<p>
+Course Info
+Assignments Overdue: You can still pass! Remember, you need to pass these assignments before the course ends on February 18, 11:59 PM PST.
+This Week's Forum
+Week 1
+</p>
+
+<p>
+Discuss and ask questions about Week 1.
+Introduction to Crypto and Cryptocurrencies
+Profile image for Arvind Narayanan
+</p>
+
+<p>
+Arvind Narayanan
+</p>
+
+<p>
+Learn about cryptographic building blocks ("primitives") and reason about their security. Work through how these primitives can be used to construct simple cryptocurrencies.
+Introduction to Crypto and Cryptocurrencies
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 15 Oct. 2017</p>
+<p class="author">Author: txarly</p>
+<p class="date">Created: 2018-01-07 Sun 21:32</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
