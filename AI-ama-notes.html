@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>AI, an edX reading helper.</title>
-<!-- 2018-01-08 Mon 19:09 -->
+<!-- 2018-08-11 Sat 01:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="txarly" />
@@ -227,6 +227,7 @@ Basic probability theory
 Python programming The course offers an excellent opportunity for
 students to dive into Python while solving AI problems and learning
 its applications. Programming assignments will be in Python.
+<code>Edit</code> No offence, I'll try Python, with, anyway, yep; but <a href="src/The-Elements-of-Artificial-Intelligence-Using-Lisp-Steven-L-Tanimoto.pdf">here</a> I'd already have my programming language of preference.
 </p>
 </div>
 </div>
@@ -241,16 +242,112 @@ its applications. Programming assignments will be in Python.
 <p>
 Introduction to AI, history of AI, course logistics, and roadmap
 </p>
+
+
+<ul class="org-ul">
+<li><a href="https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/courseware/72ad68365307491198cfcadeeb17baad/adbd7b28184343a1ab8532fbdadd7de4/?child=first">Overview of AI</a> 
+</li>
+</ul>
+<p>
+J. McCarthy, (AI) the science and engineering of making intelligent machines.
+Russell &amp; Norvig by, the study and design of intelligence agents.
+-&gt; 4 schools of thought:
+</p>
+<ul class="org-ul">
+<li>Thinking humanly (how to make computers have a mind or think)
+</li>
+<li>Acting humanly (Rich, Knight, 1991)
+</li>
+<li>Thinking rationally (study the mental faculties through the use of computational models)
+</li>
+<li>Acting rationally (Poole et al, 1998) ✓ ;[adopted in this course | or how to divide intelligence systems that act rationally in order to achieve their goals]
+</li>
+
+<li>Applications of AI: namely:
+<ul class="org-ul">
+<li>natural language processing
+</li>
+<li>robotics
+</li>
+<li>vision  
+</li>
+</ul>
+</li>
+
+<li><a href="https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/courseware/72ad68365307491198cfcadeeb17baad/c9da1f2103584d93a4ef9d6275abd448/?child=first">AI Foundation &amp; History</a>
+<ul class="org-ul">
+<li>The first algorithm is believed to be the Euclides algorith to calculate the greatest common divisor (GCD).
+</li>
+</ul>
+</li>
+
+<li><a href="https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/courseware/72ad68365307491198cfcadeeb17baad/a5794b34514c43d39f0f870c3f35b02e/1?activate_block_id=block-v1%253AColumbiaX%252BCSMM.101x%252B2T2017_2%252Btype%2540vertical%252Bblock%25407ce0a1ab2ed44dc4a9a16dd4cf9841f9">Overview, furthering</a>
+<ul class="org-ul">
+<li>agents, action or series of actions =&gt; path (to goals) which comes in different costs and depths. 2 kinds of search:
+<ul class="org-ul">
+<li>Uninformed (not domain knowledge) techniques as breadth first search BFS, DFS (deep..) UFS (uniform cost search)
+</li>
+<li>Informed, using heuristics, information or rule. Using techniques as greedy search, A*, etc. "8 queens problem" (looking for the possible configuration so that no queen attacks another one), "route finding".
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">Road map of methods?</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>some supervised learning methods: classification, K-nearest neighbourgh perception, neural networks, linear regression, boosting.
+</li>
+<li>unsupervised learning methods: clustering with k, means association rules, etc.
+</li>
+<li>constrained satisfaction: we don't care about the path but the goal itself, here the problem is generally formulated using variables instead of states, example sudoku.. CSP.
+</li>
+<li>Logical agents. PL, FOL fixed syntax. Modus Ponens (which is an inference rule), horn clauses, etc
+</li>
+<li>Reinforcement learning (designing an agent that evolves in a stochastic or certain environment), agents learn from reinforcement or delayed reward. 
+</li>
+</ul>
 </div>
 </div>
+</div>
+
+
+
 <div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2">Week 2.</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
-Intelligent agents, uninformed search
+Intelligent agents, uninformed search.
+</p>
+<ul class="org-ul">
+<li>PEAS, performance, environment, actuators, sensors.
+</li>
+<li>Environment types.
+<ul class="org-ul">
+<li>Static (vs. dynamic) the environment is changing (or any kind of agent's performance score does) while deliberating
+</li>
+<li>Discrete (vs. continuous)  on defining precepts and actions.
+</li>
+</ul>
+</li>
+
+<li>Type of Agents.
+</li>
+</ul>
+<p>
+reflex, model-based, goal-based, utility-based,
+</p>
+<video width="640" height="360" controls> <source src="http://streamup.uni-potsdam.de/flash/69272517_hd.mp4"></video>
+<p>
+<a href="https://mediaup.uni-potsdam.de/Player/8633">https://mediaup.uni-potsdam.de/Player/8633</a>
+<a href="http://streamup.uni-potsdam.de/flash/69272517_hd.mp4">http://streamup.uni-potsdam.de/flash/69272517_hd.mp4</a>
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-2-3" class="outline-3">
 <h3 id="sec-2-3">Week 3.</h3>
 <div class="outline-text-3" id="text-2-3">
@@ -378,7 +475,7 @@ the last lecture.
 <div id="postamble" class="status">
 <p class="date">Date: 06 Dec. 2017</p>
 <p class="author">Author: txarly</p>
-<p class="date">Created: 2018-01-08 Mon 19:09</p>
+<p class="date">Created: 2018-08-11 Sat 01:14</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
