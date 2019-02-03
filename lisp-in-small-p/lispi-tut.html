@@ -1,0 +1,2228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>LISP in Small Parts</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="LISP in Small Parts"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-01-25T14:34+0000"/>
+<meta name="author" content="Heytxe"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<style type="text/css"> body {max-width:60%; margin:auto;}</style>
+<link rel="stylesheet" type="text/css" href="css/zenburn-code.css" />
+<link rel="stylesheet" type="text/css" href="css/txeblog-one.css" />
+<link rel="stylesheet" type="text/css" href="toc.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">LISP in Small Parts</h1>
+
+
+
+<div id="table-of-contents">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Para Empezar</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Procedimientos Ariméticos <code>-, +, *</code> y <code>/</code></a></li>
+<li><a href="#sec-1-2">1.2 Números al azar, Aleatoriedad.</a></li>
+<li><a href="#sec-1-3">1.3 Ejercicios</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 Listas</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Confeccionando listas: <code>list</code></a></li>
+<li><a href="#sec-2-2">2.2 Ejercicios</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Expresiones</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Previniendo evaluación: <code>quote</code></a></li>
+<li><a href="#sec-3-2">3.2 Evaluando Expresiones: <code>eval</code></a></li>
+<li><a href="#sec-3-3">3.3 Elementos que se evalúan contra sí mismos.</a></li>
+<li><a href="#sec-3-4">3.4 Ejercicios.</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Definiendo Procedimientos</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Definiendo Un Procedimiento: <code>defun</code></a></li>
+<li><a href="#sec-4-2">4.2 Procedimientos Sin Parámetros.</a></li>
+<li><a href="#sec-4-3">4.3 Ejercicios.</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Variables</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Definiendo Variables: <code>defparameter</code></a></li>
+<li><a href="#sec-5-2">5.2 Cambiar el Valor de una Variable: <code>setf</code></a></li>
+<li><a href="#sec-5-3">5.3 Creando Variables Locales: <code>let*</code></a></li>
+<li><a href="#sec-5-4">5.4 Ejercicios</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Trabajando con Listas</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Obtener El Primer Elemento de una Lista: <code>first</code></a></li>
+<li><a href="#sec-6-2">6.2 Obteniendo Todos Menos el Primer Elemento de Una Lista: <code>rest</code></a></li>
+<li><a href="#sec-6-3">6.3 Obteniendo el Eneavo Elemento de una Lista: <code>nth</code></a></li>
+<li><a href="#sec-6-4">6.4 Obteniendo el Largo de Una Lista: <code>length</code></a></li>
+<li><a href="#sec-6-5">6.5 Construyendo listas: <code>cons</code></a></li>
+<li><a href="#sec-6-6">6.6 Unificando Listas: <code>append</code></a></li>
+<li><a href="#sec-6-7">6.7 Combinando Procedimientos con Listas</a></li>
+<li><a href="#sec-6-8">6.8 Ejercicios</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Cadena de Caracteres</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Cadenas de Caracteres</a></li>
+<li><a href="#sec-7-2">7.2 Reverso de String: <code>reverse</code></a></li>
+<li><a href="#sec-7-3">7.3 Unir Dos (o más) Cadenas de Caracteres: <code>concatenate</code></a></li>
+<li><a href="#sec-7-4">7.4 Extraer Una Secuencia De Una Cadena: <code>subseq</code></a></li>
+<li><a href="#sec-7-5">7.5 Escribiendo Procedimientos Usando Cadenas.</a></li>
+<li><a href="#sec-7-6">7.6 Ejercicios.</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Imprimir.</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Imprimiendo un Resultado: <code>print</code></a></li>
+<li><a href="#sec-8-2">8.2 Imprimiendo Valores de Acuerdo a Formato: <code>format</code></a></li>
+<li><a href="#sec-8-3">8.3 Ejercicios.</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Comprobando Resultados.</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Comprobando Objetos LISP: <code>eq</code></a></li>
+<li><a href="#sec-9-2">9.2 Comprobando Números: =, <code>&gt;</code>, y <code>&lt;</code></a></li>
+<li><a href="#sec-9-3">9.3 Hay Números Pares o Impares allí?: <code>evenp</code>, <code>oddp</code></a></li>
+<li><a href="#sec-9-4">9.4 Comprobando Igualdad Entre Cadenas de Caracteres: <code>string=</code></a></li>
+<li><a href="#sec-9-5">9.5 Es algo un número?: <code>numberp</code></a></li>
+<li><a href="#sec-9-6">9.6 Es Algo Una Lista?: <code>listp</code></a></li>
+<li><a href="#sec-9-7">9.7 Comprobando si <code>nil</code>: <code>null</code></a></li>
+<li><a href="#sec-9-8">9.8 Comprobando Condiciones: <code>if</code></a></li>
+<li><a href="#sec-9-9">9.9 Combinando Pruebas: <code>and</code>, <code>or</code>, <code>not</code></a></li>
+<li><a href="#sec-9-10">9.10 Agrupando Procedimientos: <code>progn</code></a></li>
+<li><a href="#sec-9-11">9.11 Ejercicios.</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 Creando Cuadros de Diálogo.</a>
+<ul>
+<li><a href="#sec-10-1">10.1 Mostrar un Mensaje: <code>capi:display-message</code></a></li>
+<li><a href="#sec-10-2">10.2 Ingresar Cadena de Caracteres En Un Cuadro de Diálogo: <code>capi:prompt-for-string</code></a></li>
+<li><a href="#sec-10-3">10.3 Preguntando <code>si</code> o <code>no</code>: <code>capi:prompt-for-confirmation</code></a></li>
+<li><a href="#sec-10-4">10.4 Dar al usuario la posibilidad de elegir: <code>capi:prompt-with-list</code> y <code>capi:prompt-for-items-from-list</code></a></li>
+<li><a href="#sec-10-5">10.5 Un programa Que Escribe Historias.</a></li>
+<li><a href="#sec-10-6">10.6 Ejercicios.</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 Escribiendo Programas.</a>
+<ul>
+<li><a href="#sec-11-1">11.1 Procesando Items En Una Lista.</a>
+<ul>
+<li><a href="#sec-11-1-1">11.1.1 Buscando La Suma De Una Lista De Números.</a></li>
+<li><a href="#sec-11-1-2">11.1.2 Recursión</a></li>
+<li><a href="#sec-11-1-3">11.1.3 Doblar cada número en una lista.</a></li>
+<li><a href="#sec-11-1-4">11.1.4 Hacer "algo" con cada elemento en una lista: <code>dolist</code></a></li>
+<li><a href="#sec-11-1-5">11.1.5 Ejercicios.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Para Empezar</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>A diferencia de otros lenguajes de programación LISP es interactivo. Incluye una ventana llamada Listener que podemos usar como usamos la pantalla de una calculadora. Podemos tipear una expresión LISP ante el prompt "&gt;", presionar enter y el sistema evaluará la expresión y mostrará la respuesta.
+</p>
+<p>
+Por ejemplo, para sumar dos números podemos escribimos: <br/>
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (+ 2 3)</code> <br/>
+<code>5</code>
+</p>
+</div>
+
+<p>
+Como probablemente hayas notado <code>(+ 2 3)</code> es la manera LISP de sumar dos números. En matemáticas habituales escribimos <code>2 + 3</code> pero en LISP escribimos el nombre del procedimiento primero, seguido por los argumentos y toda la expresión encerrada entre paréntesis. A esto llamaremos la notación LISP. Y aunque parezca extraño constituye uno de los grandes aportes de LISP. <br/>
+</p>
+<p>
+Una ventaja de la notación LISP lo veréis en el siguiente ejemplo. <br/>
+</p>
+<p>
+En matemáticas habituales, para sumar tres números tendríamos que escribir: <code>2 + 3 + 4</code>
+</p>
+<p>
+En LISP, en cambio escribimos:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (+ 2 3 4)</code> <br/>
+<code>9</code>
+</p>
+</div>
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Procedimientos Ariméticos <code>-, +, *</code> y <code>/</code></h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>Aquí algunos otros ejemplos de procedimientos básicos en LISP para trabajar con números
+</p>
+<div style="text-align: center">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Función</th><th scope="col" class="left">Descripción</th><th scope="col" class="left">Ejemplo</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">+</td><td class="left">Suma</td><td class="left"><code>(+ 2 3 4)</code></td></tr>
+<tr><td class="left">-</td><td class="left">Resta</td><td class="left"><code>(- 7 3)</code></td></tr>
+<tr><td class="left">*</td><td class="left">Multiplicación</td><td class="left"><code>(* 2 3)</code></td></tr>
+<tr><td class="left">/</td><td class="left">División</td><td class="left"><code>(/ 144 12)</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+<p>
+Expresiones pueden ser encestadas. O, en otras palabras, expresiones pueden ser, a la vez, argumentos:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (/ (- 7 1) (- 4 2))</code><br/>
+<code>3</code>
+</p>
+</div>
+
+<p>
+Otra belleza de aporte de la notación LISP es que nos permite expresar casi todo, desde simples cálculos hasta complicados programas.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Números al azar, Aleatoriedad.</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+Un procedimiento aleatorio devuelve un integral al azar entre <code>0</code> y un número menos que el integral del argumento, por ejemplo:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (random 10)</code> <br/>
+<code>3</code>
+</p>
+</div>
+
+
+<div style="text-align: center">
+<p><code>CL-USER &gt; (random 10)</code> <br/>
+<code>7</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Ejercicios</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<ol>
+<li>Escribir las LISP expresiones para las siguientes operaciones matemáticas y evaluarlas.
+<ul>
+<li><code>2 * 3 + 7 * 8</code>
+</li>
+<li><code>3 * 4 * 5</code>
+</li>
+<li><code>-1 * 2 + 3</code>
+
+</li>
+</ul>
+
+</li>
+<li>Escribir una expresión que retorne el número que resulte de lanzar un dado.
+</li>
+</ol>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Listas</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Así como resulta fácil trabajar con números como <code>2 y 3</code>, con LISP resulta también fácil trabajar con grupos diferentes de items que, llamaremos listas. Para especificar una lista de items la convención es agruparlos entre paréntesis. Por ejemplo, la lista de números cuadrados perfectos de dos dígitos es:
+</p>
+<p>
+<code>(16 25 36 49 64 81)</code>
+</p>
+<p>
+Una lista que no contiene items, que llamaremos lista vacía, la escribimos como sigue:
+<code>()</code>
+Es también llamada <code>nil</code>.
+</p>
+<p>
+De hecho, usamos listas cuando pedimos a LISP evalúe :
+<code>(+ 2 3 4)</code>
+</p>
+<p>
+Esta es una lista de cuatro items: el símbolo + y los números <code>2, 3 y 4</code>. Cuando LISP evalúa una lista, trata el primer item como el nombre del procedimiento, y el resto de items como los argumentos de la expresión.
+Esto ilustra uno de los más remarcables atributos de LISP &mdash;LISP programas y LISP datos son ambos expresados de la misma forma, tal que listas.
+</p>
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Confeccionando listas: <code>list</code></h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+<p>
+El procedimiento llamado <code>list</code> nos permite confeccionar listas según requiramos. Intentar por ej.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (list 1 2 3)</code> <br/>
+<code>(1 2 3)</code>
+</p>
+</div>
+
+<p>
+El procedimiento llamado <code>list</code> convierte los argumentos de una expresión en una lista y los agrupa entre paréntesis. Como en todos los procedimientos, los argumentos son evaluados primero, de forma que:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (list (* 1 2) (* 3 4))</code> <br/>
+<code>(2 12)</code>
+</p>
+</div>
+
+<p>
+Los items en una lista pueden ellos mismo ser a su vez listas. Probad por ejemplo con:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (list (list 1 2) (list 3 4))</code> <br/>
+<code>((1 2) (3 4))</code>
+</p>
+</div>
+
+<p>
+Esta es una lista de dos items, cada una de las cuales es, a su vez, una lista de dos items.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Ejercicios</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul>
+<li>Escribir la expresión LISP de la cual resulte la siguiente lista: 
+   <code>(1 (2 (3 4)))</code>
+
+<p>
+   Luego ejecutar a fin de comprobar evaluar tu respuesta.
+</p>
+</li>
+<li>Escribir una expresión que dé por resultado una lista de dos números al azar, cada uno de entre <code>0 y 9</code>.
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Expresiones</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Veamos más de cerca las expresiones en LISP.
+En LISP, "+" es un procedimiento y una expresión como <code>(+ 2 3)</code> es una llamada a procedimiento. cuando LISP evalúa un procedimiento lleva a cabo los siguientes dos pasos:
+</p><ul>
+<li>Evalúa los argumentos, izquierda a derecha. En este caso los argumentos son justamente los números <code>2 y 3</code> y éstos se evalúan contra sí mismos.
+</li>
+<li>Los valores de los argumentos son pasados al procedimiento, en este caso "<code>+</code>", lo que devuelve <code>5</code>.
+</li>
+</ul>
+
+<p>Veamos un ejemplo algo más complicado: <code>(/ (-7 1) (-4 2))</code> En este caso la secuencia es:
+</p><ul>
+<li>Evalúa <code>(- 7 1)</code> que da <code>6</code>
+</li>
+<li>Evalúa <code>(- 4 2)</code> que da <code>2</code>
+</li>
+<li>Evalúa <code>(/ 6 2)</code> que da <code>3</code>
+</li>
+<li>Devuelve <code>3</code>
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Previniendo evaluación: <code>quote</code></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>Casi todos los operadores se comportan de la manera descrita pero existen ciertos operadores especiales que se comportan de diferente manera, uno de ellos es la comilla (quote). Probar por ej.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (quote (+ 2 3))</code> <br/>
+<code>(+ 2 3)</code>
+</p>
+</div>
+
+<p>
+El operador quote no evalúa argumentos, simplemente los devuelve tal cual. Y te permite decirle a LISP trate una expresión como datos en vez de algo para ser evaluado.
+Por convención podemos también abreviar (quote) usando directamente la comilla. Probar por ej.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; '(+ 2 3)</code> <br/>
+<code>(+ 2 3)</code>
+</p>
+</div>
+
+<p>
+El operador " ' " permite proteger una expresión de ser evaluada. Ahora intentemos uno de los argumentos tal que en:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (list '(* 1 2) (* 3 4))</code> <br/>
+<code>((* 1 2) 12))</code>
+</p>
+</div>
+
+<p>
+La comilla detiene a LISP de evaluar el primer argumento.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Evaluando Expresiones: <code>eval</code></h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>Lo contrario de quote es <code>eval</code>; Que evalúa la expresión puesta como argumento, de modo que:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (eval '(+ 2 3))</code> <br/>
+<code>5</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Elementos que se evalúan contra sí mismos.</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<p>Un número se evalúa contra sí mismo, por tanto no es necesario aplicarle quote
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; 12</code> <br/>
+<code>12</code>
+</p>
+</div>
+
+<p>
+Del mismo modo <code>nil</code>, o la lista vacía, ambos evalún tal que <code>nil</code>.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; ()</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Ejercicios.</h3>
+<div class="outline-text-3" id="text-3-4">
+
+
+<ul>
+<li>Desarrollar manualmente las siguientes expresiones LISP luego comprobar las respuestas evaluándolas con el LispStick!
+<ul>
+<li><code>(list (list 2 3) (list 4 5))</code>
+</li>
+<li><code>(list '(list 2 3) '(list 4 5))</code>
+</li>
+<li><code>`(list (list 2 3) (list 4 5))</code>
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Definiendo Procedimientos</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Hasta ahora hemos usado listener como calculadora para evaluar expresiones. En esta lección vamos a dar un gran salto adelante y mostrar cómo definir tus propios procedimientos. Una vez definido un procedimiento, éste tiene el mismo status que los aquellos incorporados por diseño como <code>list</code> o <code>+</code> vistos antes. 
+</p>
+<p>
+Definamos un procedimiento que nos devuelva (return) la media de dos números.
+En palabras, el procedimiento para hallar la media de dos números es:
+</p><ul>
+<li>sumar el primer número al segundo.
+</li>
+<li>dividir la suma entre 2
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Definiendo Un Procedimiento: <code>defun</code></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<p>Para definir un procedimiento usamos el operador especial <code>defun</code>. Cuyo nombre resulta de abreviar "definir función", recordar aquí que procedimientos en LISP no son estrictamente funciones en el sentido q tiene ése capítulo de las matemáticas llamado funciones.
+</p>
+<p>
+Podemos escribir el procedimiento para obtener la media de la siguiente manera:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">media-de-dos-num</span> (1st-num 2nd-num)
+(/(+ 1st-num 2nd-num) 2))
+</pre>
+
+
+</div>
+
+<p>
+El primer argumento de la función da el nombre a la función, en este caso hemos elegido <code>media-de-dos-num</code>.
+El segundo argumento <code>(1st-num 2nd-num)</code> es una lista que llamamos parámetros de la función. Podemos usar también símbolos para representar esta particular lista pero nos referiremos a ello más adelante.
+El segundo argumento <code>(/(+ 1st-num 2nd-num))</code> constituye el cuerpo del procedimiento y le dice a LISP cómo calcular el valor que se busca, en este caso sumar los números dados y dividirlos entre 2.
+</p>
+<p>
+Las palabras usadas en los parámetros son arbitrarias siempre cuando una vez usadas en la definición no sean luego alteradas. De modo que nuestro ejemplo podría bien haber sido escrito de la siguiente manera:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">media</span> (a b)
+(/(+ a b) 2))
+</pre>
+
+
+</div>
+
+<p>
+A fin de crear la función, entonces, tipeamos en la línea de comandos de LISP:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">CL-USER &gt; (<span style="color: #859900;">defun</span> <span style="color: #268bd2;">media-de-dos-num</span> (1st-num 2nd-num) (/(+ 1st-num 2nd-num)))
+MEDIA
+</pre>
+
+
+</div>
+
+<p>
+A fin de comprobar el procedimiento que acabamos de crear, tipeamos:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (media-de-dos-num 7 9)</code> <br/>
+<code>8</code>
+</p>
+</div>
+
+<p>
+o
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (media-de-dos-num (+ 2 3) (+ 4 5))</code> <br/>
+<code>7</code>
+</p>
+</div>
+
+<p>
+Recordar que los argumentos son evaluados antes en la ejecución del procedimiento.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Procedimientos Sin Parámetros.</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<p>Un procedimiento no tiene necesariamente que incluir parámetros. Veamos aquí un procedimiento que llamaremos <code>dado</code> y que nos devuelve el resultado de lanzamientos al azar entre <code>1</code> y <code>6</code>.
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">dados</span> ()
+(+ 1 (random 6)))
+</pre>
+
+
+</div>
+
+<p>
+Para llamar al procedimiento simplemente tipeamos:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (dados)</code> <br/>
+<code>5</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Ejercicios.</h3>
+<div class="outline-text-3" id="text-4-3">
+
+<ul>
+<li>Define un procedimiento llamado cuadrado que devuelva el cuadrado de un número. comprueba debe resultar tal que: <br/>
+   <code>(cuadrado 7)</code> <br/>
+   resulte <code>49</code>
+
+</li>
+<li>Define un procedimiento llamado triangular que devuelva el n triangular de un número, definiendo esto según la siguiente expresión <code>n(n+1)/2</code> y comprueba resulta tal que en el siguiente ejemplo: <br/>
+   <code>(triangular 10)</code> <br/>
+   resulta <code>55</code>
+
+</li>
+<li>Define un procedimiento llamado dos-dados que devuelva el resultado total de lanzar al azar dos dados.
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Variables</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>Consideremos cómo escribiríamos una función para convertir dólares a libras esterlinas. El procedimiento podría ser como sigue:
+</p><ul>
+<li>Multiplicar la cantidad de dólares por el tipo de cambio. 
+   El tipo de cambio es el valor en libras de cada dólar; digamos que el valor vigente hoy sea 0.61. La definición de nuestro procedimiento es, por tanto, simple.
+</li>
+</ul>
+
+
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">convierte</span> (dolares) (* dolares 0.61))
+</pre>
+
+
+</div>
+
+<p>
+Y, llamamos a la función de la siguiente manera:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (convierte 100)</code> <br/>
+<code>61.0</code>
+</p>
+</div>
+
+<p>
+En la definición que llamamos <code>convierte</code>, el símbolo dólar es una variable. Es tal que una caja en la que colocamos cualquier valor que quisiéramos convertir a libras.
+</p>
+<p>
+Algo más, la llamamos variable local porque el valor está sólo disponible dentro del cuerpo de ésta función. 
+</p>
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Definiendo Variables: <code>defparameter</code></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<p>Un problema que surge con <code>convierte</code> es que tenemos que redefinirla cada vez que el tipo de cambio cambia. Lo que necesitamos es una variable que podamos vincular a un tipo de cambio, digamos, vigente y se actualice automáticamente. Podemos hacer eso con <code>defparameter</code>.
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defparameter</span> <span style="color: #b58900;">tipo-de-cambio</span> 0.61)
+</pre>
+
+
+</div>
+
+<p>
+Variables definidas con <code>defparameter</code> son llamadas <code>*variables globales*</code> porque podemos hacer uso de ellas desde cualquier parte.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; tipo-de-cambio</code> <br/>
+<code>0.61</code>
+</p>
+</div>
+
+<p>
+Hecho esto podemos redefinir <code>convertir</code> a fin de usar la variable <code>tipo-de-cambio</code>
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">convertir</span> (dolares) (* dolares tipo-de-cambio)
+</pre>
+
+
+</div>
+
+<p>
+Una convención bastante extendida es poner el nombre de las variables globales entre asteriscos, tal que <code>*tipo-de-cambio*</code> a modo de recordatorio y sepamos rápidamente que se trata de una variable global.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Cambiar el Valor de una Variable: <code>setf</code></h3>
+<div class="outline-text-3" id="text-5-2">
+
+<p>Para cambiar el valor de una variable podemos usar <code>setf</code>. Por ejemplo, si el tipo de cambio cambia a 0.7:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(setf tipo-de-cambio 0.7)
+</pre>
+
+
+</div>
+
+<p>
+De modo que si llamamos al procedimiento <code>convierte</code>, el resultado reflejará automáticamente el nuevo tipo de cambio.
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">CL-USER&gt; (convertir 100)
+70.0
+</pre>
+
+
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Creando Variables Locales: <code>let*</code></h3>
+<div class="outline-text-3" id="text-5-3">
+
+<p>La construcción <code>let*</code> nos permite definir una o más variables, con valores iniciales que podemos determinar según requerimiento del programa, y, locales al procedimiento que las crea. Se escribe de la siguiente manera:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">let*</span> ((var1 value1)
+(var2 value2)
+...)
+cuerpo de procedimiento)
+</pre>
+
+
+</div>
+
+<p>
+Donde:
+</p><ul>
+<li>var1 es la primera variable local y value1 su valor inicial
+</li>
+<li>var2 es la segunda variable local y value2 su valor inicial y así sucesivamente.
+</li>
+<li>cuerpo es uno o más procedimientos que componen el programa y que harán requerimiento de var1 y var2 en algún punto del proceso.
+</li>
+</ul>
+
+
+<p>
+A manera de ejemplo, recordemos la definición de media de números.
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">media-de-dos-num</span> (1st-num 2nd-num)
+(/ (+ 1st-num 2nd-num) 2))
+</pre>
+
+
+</div>
+
+<p>
+Los parámetros <code>1st-num</code> y <code>2nd-num</code> son variables locales, locales al cuerpo del procedimiento <code>media-de-dos-num</code>.
+Pero supongamos que queremos separar el cálculo en secciones. Podemos hacerlo usando una variable local que llamamos por ejemplo <code>suma</code> que almacene el valor de la suma de los dos números y otra <code>resultado</code> que guardará el de dividir esto entre dos. Y lo hacemos con <code>let*</code>:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">media-de-dos-num</span> (1st-num 2nd-num)
+(<span style="color: #859900;">let*</span> ((suma (+ 1st-num 2nd-num))
+(resultado (/ suma 2)))
+resultado))
+</pre>
+
+
+</div>
+
+<p>
+Note que el asterisco en <code>let*</code> es parte del nombre &mdash; <code>let*</code> es una versión más general de un operador llamado <code>let</code>, pero no nos preocuparemos acerca de esto en este punto.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Ejercicios</h3>
+<div class="outline-text-3" id="text-5-4">
+
+<ul>
+<li>Definir una variable usando defparameter para representar que
+   <code>1 kilómetro = 0.621371192</code> millas
+   Use esta variable para definir dos procedimientos, <code>convertir-km</code> y <code>convertir-millas</code>, que conviertan millas a kilómetros y kilómetros a millas. Y compruebe que <code>80</code> km resultan en aproximadamente <code>50</code> millas.
+</li>
+<li>Definir un procedimiento <code>media-de-tres-num</code> y compruebe que la <code>(media de 21 7 8)</code> nos devuelve <code>12</code>
+</li>
+<li>Aquí un procedimiento llamado <code>sumacubos</code> que calcula <code>(a+b)x(a+b)x(a+b)</code>:
+</li>
+</ul>
+
+
+<div style="text-align: center">
+<p><code>(defun sumacubos (a b) (* (+ a b) (+ a b) (+ a b)))</code> 
+</p>
+</div>
+
+<p>
+     Use <code>let*</code> para escribir un procedimiento en el que <code>(a+b)</code> solo se calcule una vez. Luego compruebe si: <br/>
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (sumacubos 3 4)</code> <br/>
+resulta <code>343</code>
+</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Trabajando con Listas</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>Ya hemos visto el procedimiento llamado <code>list</code> que construye listas a partir de diferentes items. En este capítulo veremos algunos otros procedimientos para trabajar con listas.
+</p>
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Obtener El Primer Elemento de una Lista: <code>first</code></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<p>Aquí como funciona <code>first</code> 
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (first '(23 34 45))</code> <br/>
+<code>23</code>
+</p>
+</div>
+
+<p>
+ Existen similares procedimientos <code>second</code>, <code>third</code> y así sucesivamente hasta <code>tenth</code> a fin de obtener los posteriores items en una lista.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Obteniendo Todos Menos el Primer Elemento de Una Lista: <code>rest</code></h3>
+<div class="outline-text-3" id="text-6-2">
+
+<p>EL procedimiento <code>rest</code> toma una lista y la devuelve exceptuando el primer elemento.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (rest '(23 34 45))</code> <br/>
+<code>(34 45)</code>
+</p>
+</div>
+
+<p>
+Note que <code>first</code> y <code>rest</code> fueron tradicionalmente llamados <code>car</code> y <code>cdr</code>; puede encontrar referencias a este capítulo alternativamente con estos nombres en LISP.
+</p></div>
+
+</div>
+
+<div id="outline-container-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Obteniendo el Eneavo Elemento de una Lista: <code>nth</code></h3>
+<div class="outline-text-3" id="text-6-3">
+
+<p>EL procedimiento <code>nth</code> toma un número y una list y devuelve el eneavo elemento de la lista, contando el primero como cero:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (nth 1 '(23 34 45))</code> <br/>
+<code>34</code>
+</p>
+</div>
+
+<p>
+Note que LISP usualmente cuenta las lista de items empezando de cero; aunque los procedimientos <code>first</code> y <code>second</code> son excepciones.
+<code>(nth 0 lst)</code> es equivalente a <code>(first lst)</code>
+y <code>(nth 1 lst)</code> es equivalente a <code>(second lst)</code>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Obteniendo el Largo de Una Lista: <code>length</code></h3>
+<div class="outline-text-3" id="text-6-4">
+
+<p>El procedimiento <code>length</code> devuelve el largo de una lista; por ejemplo:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (length '(1 2 3))</code> <br/>
+<code>3</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> Construyendo listas: <code>cons</code></h3>
+<div class="outline-text-3" id="text-6-5">
+
+
+<p>
+El procedimiento <code>cons</code> toma dos parámetros -un objeto, el que aportas, y una lista- y retorna una nueva lista con el objeto aportado añadido delante en la lista. Por ejemplo.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (cons 1 '(2 3 4 5 6))</code> <br/>
+<code>(1 2 3 4 5 6)</code>
+</p>
+</div>
+
+<p>
+Note que el primer objeto puede, él mismo ser también una lista:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (cons '(0 1) '(2 3 4 5 6))</code> <br/>
+<code>((0 1) 2 3 4 5 6)</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-6" class="outline-3">
+<h3 id="sec-6-6"><span class="section-number-3">6.6</span> Unificando Listas: <code>append</code></h3>
+<div class="outline-text-3" id="text-6-6">
+
+<p>El procedimiento <code>append</code> coge un número cualquiera de listas y compone juntándolas una nueva lista. Por ejemplo:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (append '(1 3 5 7) '(2 4 6 8))</code> <br/>
+<code>(1 3 5 7 2 4 6 8)</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-7" class="outline-3">
+<h3 id="sec-6-7"><span class="section-number-3">6.7</span> Combinando Procedimientos con Listas</h3>
+<div class="outline-text-3" id="text-6-7">
+
+<p>Usando estos procedimientos podemos a su vez definir nuevos procedimientos que combinen casi cualquier operación con listas según requiramos. Por ejemplo, definamos un procedimiento que inserte un item entre el primero y segundo item en una lista, de forma que:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (instert 2 '(1 3 4 5 6))</code> <br/>
+debe dar: <br/>
+<code>(1 2 3 4 5 6)</code>
+</p>
+</div>
+
+<p>
+Podemos hacerlo de la siguiente forma:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">insert</span> (item lst)
+(cons (first lst) (cons item (rest lst))))
+</pre>
+
+
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-8" class="outline-3">
+<h3 id="sec-6-8"><span class="section-number-3">6.8</span> Ejercicios</h3>
+<div class="outline-text-3" id="text-6-8">
+
+<ul>
+<li>Escriba un procedimiento <code>swap</code> para intercambiar los primeros dos elementos de una lista y se cumpla que: <br/>
+   <code>(swap '(9 8 7 6))</code> 
+   devuelva:
+   <code>(8 9 7 6)</code>
+</li>
+<li>Escriba un procedimiento <code>dup</code> para duplicar el primer elemento en una lista, de forma que: <br/>
+   <code>(dup '(0 1 2 3))</code> devuelva <code>(0 0 1 2 3)</code>
+</li>
+<li>Escriba un procedimiento <code>random-elt</code> que devuelva un elemento al azar de una lista dada. Por ejemplo: <br/>
+    <code>(random-elt '(11 22 33 44))</code> debería devolver uno de los números de la lista. (!) Use <code>nth</code> y <code>random</code>.
+</li>
+<li>Escriba un procedimiento <code>last-elt</code> que devuelva el último item de una lista dada. De forma que, por ejemplo: <br/>
+   <code>(last-elt '(1 2 3 4))</code> devuelva <code>4</code>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Cadena de Caracteres</h2>
+<div class="outline-text-2" id="text-7">
+
+<p>Hasta ahora hemos tratado los siguientes tipos de objetos LISP:
+</p><ul>
+<li>Números, tal que <code>2</code>, <code>4</code>, o <code>17</code>
+</li>
+<li>Nombre de Procedimientos, tal que <code>+</code> o <code>list</code>
+</li>
+<li>Listas, tal que <code>(1 2 3 4)</code> o <code>(+ 3 6)</code>
+</li>
+</ul>
+
+
+<p>
+También hemos aprendido que LISP usa listas tanto como datos o programas. La lista <code>(1 2 3 4)</code> son datos, porque <code>1</code> no es el nombre de ningún procedimiento. La segunda lista <code>(+ 3 6)</code>, llama a un procedimiento que suma <code>3</code> y <code>6</code> (puede ser también datos que resulta que ejecuta un procedimiento) 
+</p>
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Cadenas de Caracteres</h3>
+<div class="outline-text-3" id="text-7-1">
+
+<p>El nuevo tipo de objeto es una <code>string</code>: una secuencia de caracteres de cualquier tipo encerradas entre doble comillas. Aquí, por ejemplo mostramos cuatro <code>strings</code>
+</p><ul>
+<li>"gato"
+</li>
+<li>"perro"
+</li>
+<li>"En un tiempo remoto, hubo una vez un príncipe"
+</li>
+<li>""
+</li>
+</ul>
+
+<p>El último de ellos es una cadena vacía, no contiene caracteres. Aún así es válida y de hecho, útil. Puedes también incluir la propia doble comilla dentro de la cadena pero avisándole a LISP mediante una contra-barra inmediatamente antes de la tipear la comilla.
+</p><ul>
+<li>"El tipo gritó \"Ayuda!\" y desapareció corriendo."
+</li>
+</ul>
+
+<p>Ahora veamos algunos procedimientos que trabajan con <code>strings</code> (note que muchos de ellos trabajan también con listas <code>list</code>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Reverso de String: <code>reverse</code></h3>
+<div class="outline-text-3" id="text-7-2">
+
+
+<div style="text-align: center">
+<p>CL-USER&gt; (reverse "dog") <br/>
+"god"
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Unir Dos (o más) Cadenas de Caracteres: <code>concatenate</code></h3>
+<div class="outline-text-3" id="text-7-3">
+
+<p>Inmediatamente después del nombre función '<code>string</code> el siguiente argumento debe ser una cadena y le dice a LISP que clase de cosa se quiere concatenar.
+</p>
+<div style="text-align: center">
+<p>CL-USER &gt;(concatenate 'string "band" "era") <br/>
+"bandera"
+</p>
+</div>
+
+<p>
+El procedimiento <code>concatenate</code> puede tomar un arbitrario número de cadenas, todas las cuales pasarán a formar una sola cadena.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Extraer Una Secuencia De Una Cadena: <code>subseq</code></h3>
+<div class="outline-text-3" id="text-7-4">
+
+<p>Hacer esto toma tres parámetros: la cadena, el primer caracter (empezando por <code>0</code>) y el caracter posterior.
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">CL-USER &gt; (subseq <span style="color: #2aa198;">"unapalabrasupercalifragi"</span> 10 15)
+<span style="color: #2aa198;">"super"</span>
+</pre>
+
+
+</div>
+
+<p>
+Si no se aportara el tercer parámetro LISP devuelve el resto de la cadena empezando en la posición del parámetro aportado.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7-5" class="outline-3">
+<h3 id="sec-7-5"><span class="section-number-3">7.5</span> Escribiendo Procedimientos Usando Cadenas.</h3>
+<div class="outline-text-3" id="text-7-5">
+
+<p>Ahora estamos listos para escribir procedimientos usando cadenas. Escribiremos un simple programa que genere piglatin un juego con el idioma similar a las <a href="http://es.wikipedia.org/wiki/Jerigonza">jerigonzas de pe</a>. Consiste en quitar la primera letra de una palabra, moverla al final y agregar "ay".
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">piglatin</span> (palabra) 
+(concatenate 'string (subseq palabra 1) (subseq palabra 0 1) <span style="color: #2aa198;">"ay"</span>))
+</pre>
+
+
+</div>
+
+<p>
+Probando, tenemos:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">CL-USER&gt; (piglatin <span style="color: #2aa198;">"cerdo"</span>)
+<span style="color: #2aa198;">"erdocay"</span>
+</pre>
+
+
+</div>
+
+<p>
+Si conoce el sistema, <a href="http://en.wikipedia.org/wiki/Pig_Latin">piglatin</a> es una forma de jerigonza del idioma Inglés, notará que el programa no funciona del todo perfectamente. Pruebe sino el procedimiento en este caso:
+<code>(piglatin "ant")</code>
+</p>
+<p>
+Más adelante cuando estudiemos el procedimiento llamado <code>if</code> seremos capaces de escribir una función <code>piglatin</code> que funcione perfectamente.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7-6" class="outline-3">
+<h3 id="sec-7-6"><span class="section-number-3">7.6</span> Ejercicios.</h3>
+<div class="outline-text-3" id="text-7-6">
+
+<ul>
+<li>Escribir un procedimiento que llamaremos <code>midverse</code> a fin de poner al revés todo excepto la primera y la última letra en una palabra. Por ejemplo <code>(midverse "madagascar") cambie a "macsagadar".</code> Compruebe, además que <code>(midverse (midverse "palabra"))</code> deja la palabra intacta.
+</li>
+</ul>
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Imprimir.</h2>
+<div class="outline-text-2" id="text-8">
+
+<p>Cuando se evalúa un procedimiento LISP en el "listener" este retorna un valor. Pero cuando un programa se está ejecutando es fácil requerir se impriman o se aporten al procedimiento ciertos valores necesarios antes que el programa retorne un resultado final. LISP provee varias funciones específicamente para este fin.
+</p>
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Imprimiendo un Resultado: <code>print</code></h3>
+<div class="outline-text-3" id="text-8-1">
+
+<p>La más simple de estas funciones es <code>print</code>. Simplemente imprime en pantalla el argumento y el valor del argumento. Si se por. ej. se evalúa:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (print 123)</code> <br/>
+<code>123</code> <br/>
+<code>123</code>
+</p>
+</div>
+
+<p>
+El primer <code>123</code> es el efecto de imprimir el procedimiento. El segundo <code>123</code> es el valor que retorna el procedimiento, que en este caso resulta ser también <code>123</code>. El siguiente ejemplo aclarará este asunto algo más claro.
+</p>
+
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">print-and-double</span> (n) (print n) (* n 2))
+</pre>
+
+
+</div>
+
+<p>
+Si lo evaluamos tenemos:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (print-and-double (12))</code> <br/>
+<code>12</code> <br/>
+<code>24</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Imprimiendo Valores de Acuerdo a Formato: <code>format</code></h3>
+<div class="outline-text-3" id="text-8-2">
+
+<p>La navaja suiza de imprimir es <code>format</code>. Incluye opciones para imprimir cualquier clase de valores y acaso en todas las maneras concebibles, y, me atrevería a decir que la mayoría de los programadores en LISP usan sólo un pequeño grupo de sus funcionalidades. Solo mencionaré aquí sus prestaciones más útiles.
+</p>
+<p>
+El procedimiento <code>format</code> toma dos o más parámetros.
+</p>
+<p>
+El primer parámetro puede ser o <code>t</code>, que activa, digamos, la función y le dice a <code>format</code> que el resultado se imprimirá de acuerdo a formato, o <code>nil</code>, que devuelve el resultado tal cual, como una <code>string</code>, o cadena de caracteres.
+</p>
+<p>
+El segundo parámetro es una <i>cadena de formato</i> y le dice a <code>format</code> como imprimir el resultado. Es una cadena de texto que a su vez puede incluir secuencias especiales, todas ellas marcadas con el prefijo "~" "tilde".
+</p>
+<p>
+El resto de parámetros son evaluados a fin de obtener los valores que irán a ser insertados en el formato de la respuesta. La forma más general es como sigue: "~a" que inserta el valor tal cual sería impreso por <code>print</code>, por ejemplo: <br/>
+</p>
+<div style="text-align: center">
+<p><code>(format t "La respuesta es ~a. " (* 2 3))</code> <br/>
+</p>
+</div>
+
+<p>
+inserta el valor de <code>(* 2 3)</code> a continuación de la secuencia marcada con <code>~a</code> de modo que imprime: <br/>
+</p>
+<div style="text-align: center">
+<p><code>La respuesta es 6</code>. <br/>
+</p>
+</div>
+
+<p>
+Puede incluirse también <code>~%</code> en el formato a fin de obtener un salto de línea.
+</p>
+<p>
+Alternativamente, como ya mencionado, marcando el parámetro con la opción <code>nil</code> podemos usar <code>format</code> para generar una <code>string</code> de forma que: <br/>
+</p>
+<div style="text-align: center">
+<p><code>(format nil "La respuesta es ~a. " (* 2 3))</code> <br/>
+</p>
+</div>
+
+<p>
+devolverá:
+</p>
+<div style="text-align: center">
+<p>"<code>La respuesta es 6</code>"
+</p>
+</div>
+
+<p>
+Veremos más ejemplos usando <code>format</code> cuando lleguemos al Proyecto "Animales"
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> Ejercicios.</h3>
+<div class="outline-text-3" id="text-8-3">
+
+<ul>
+<li>Use <code>format</code> para escribir un programa que escriba una historia. El procedimiento que llamaremos "<code>story</code>" deberá incluir un nombre, un nombre de comida y un color. Por ejemplo: <br/>
+
+<p>
+   <code>(story "Lisa" "queso" "verde")</code> <br/>
+</p>
+<p>
+   Y produzca una historia como la que sigue: <br/>
+</p>
+<p>
+   Hubo una vez una princesa llamada Lisa a la que le gustaba el queso.   Un día Lisa, encontró queso tipo verde y comió tanto que murió. FIN.
+</p></li>
+</ul>
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Comprobando Resultados.</h2>
+<div class="outline-text-2" id="text-9">
+
+<p>Una herramienta importante cuando se trata de escribir programas es poder ejecutar diferentes acciones dependiendo del resultado del cálculo.
+</p>
+<p>
+Primero necesitamos presentar algunas funciones que tienen por objeto comprobar el valor de una expresión. LISP incluye cierto número de funciones que retornan respuestas del tipo verdadero falso -Son las llamadas <code>predicados</code>, y, frecuentemente (aunque no siempre) tienen nombres que acaban en <code>p</code>.
+</p>
+<p>
+En LISP la convención es que <code>nil</code>, o la lista vacía, significa <code>falso</code>, y todo lo demás <code>verdadero</code>. Si se quiere representar <code>true</code> / <code>verdadero</code> se usa el operador especial LISP, <code>t</code>.
+</p>
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Comprobando Objetos LISP: <code>eq</code></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<p>El más importante LISP test es "<code>eq</code>"; y comprueba si dos objetos LISP son idénticos. Por ejemplo:
+</p>
+
+<div style="text-align: center">
+<p><code>CL-USER &gt; (eq 'fred 'fred)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+
+<div style="text-align: center">
+<p><code>CL-USER &gt; (eq 'fred 'jim)</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> Comprobando Números: =, <code>&gt;</code>, y <code>&lt;</code></h3>
+<div class="outline-text-3" id="text-9-2">
+
+<p>Existen varias funciones para comprobar valores numéricos. Por ejemplo <b>=</b> comprueba si dos o más números son iguales.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (=</code> <code>2 2)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+<p>
+Del mismo modo, "<code>&gt;</code>" comprueba si el primer número es mayor que el segundo:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (&gt; 4 3)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+<p>
+Recordad que en notación LISP la función se indica primero. En matemáticas habituales la notación correcta sería <code>4 &gt; 3</code>.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (&gt; 3 3)</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+<p>
+El test "<code>eq</code>" puede también ser usado con números pero es más intuitivo usar "=".
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Hay Números Pares o Impares allí?: <code>evenp</code>, <code>oddp</code></h3>
+<div class="outline-text-3" id="text-9-3">
+
+<p>Se puede comprobar si un número es par o impar con <code>evenp</code> y <code>oddp</code>. Por ejemplo:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (evenp 17)</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (oddp 17)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-4" class="outline-3">
+<h3 id="sec-9-4"><span class="section-number-3">9.4</span> Comprobando Igualdad Entre Cadenas de Caracteres: <code>string=</code></h3>
+<div class="outline-text-3" id="text-9-4">
+
+<p>No requiere demasiada explicación.
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (string=</code>
+"<code>gato</code>" "<code>gato</code>"<code>)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (string=</code> "<code>gato" "perro")</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-5" class="outline-3">
+<h3 id="sec-9-5"><span class="section-number-3">9.5</span> Es algo un número?: <code>numberp</code></h3>
+<div class="outline-text-3" id="text-9-5">
+
+<p>Se puede comprobar si un elemento es un número con <code>numberp</code> de la siguiente manera:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER&gt; (numberp 2)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (numberp '(1 2 3)</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-6" class="outline-3">
+<h3 id="sec-9-6"><span class="section-number-3">9.6</span> Es Algo Una Lista?: <code>listp</code></h3>
+<div class="outline-text-3" id="text-9-6">
+
+<p>Se puede comprobar si algo es una lista con <code>listp</code>. Por ejemplo:
+</p>
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (listp '(1 2 3)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (listp 1)</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+<p>
+Note que dado que <code>nil</code> es equivalente a una lista vacía, una lista vacía es estrictamente una lista:
+</p>
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (listp nil)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+<p>
+Pero note que:
+</p>
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (listp (+ 1 2)</code> <br/>
+<code>NIL</code>
+</p>
+</div>
+
+<p>
+Porque <code>(+ 1 2)</code> es <code>3</code>, un número no una lista. Por tanto:
+</p>
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (numberp (+ 1 2)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-7" class="outline-3">
+<h3 id="sec-9-7"><span class="section-number-3">9.7</span> Comprobando si <code>nil</code>: <code>null</code></h3>
+<div class="outline-text-3" id="text-9-7">
+
+<p>La función predicado <code>null</code> retorna <code>t</code> si el parámetro es <code>nil</code>, sino, retorna <code>nil</code>. Recordad que <code>nil</code> se evalúa a sí mismo, de modo que:
+</p>
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (null nil)</code> <br/>
+<code>T</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-8" class="outline-3">
+<h3 id="sec-9-8"><span class="section-number-3">9.8</span> Comprobando Condiciones: <code>if</code></h3>
+<div class="outline-text-3" id="text-9-8">
+
+<p>Ahora estamos listos para ejecutar acciones alternativas dependiendo del valor que nos provea una expresión. LISP incluye diferentes formas de hacer esto pero la más simple es <code>if</code>.
+</p>
+<p>
+La forma <code>if</code> toma tres parámetros. Evalúa el primero de ellos, si la evaluación retorna un valor <code>non-nil</code>, evalúa y retorna el segundo parámetro; sino evalúa y retorna el tercer parámetro. Aquí un ejemplo:
+</p>
+
+<div style="text-align: center">
+<p><code>(if (evenp a)</code> <br/>
+<code>(print "La respuesta es par")</code> <br/>
+<code>(print "La respuesta es impar"))</code>
+</p>
+</div>
+
+<p>
+Esto imprimirá una de las dos cadenas de caracteres dependiendo de si a es par o impar.
+</p>
+<p>
+Aquí una aplicación de <code>if</code> que usaremos para encontrar el máximo de dos números.
+</p>
+
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">maximun</span> (a b)
+(<span style="color: #859900;">if</span> (&gt; a b)
+a
+b))
+</pre>
+
+
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-9" class="outline-3">
+<h3 id="sec-9-9"><span class="section-number-3">9.9</span> Combinando Pruebas: <code>and</code>, <code>or</code>, <code>not</code></h3>
+<div class="outline-text-3" id="text-9-9">
+
+<p>Podemos también combinar diferentes test usando los procedimientos <code>and, or</code>, y <code>not</code>, cuyo significado es obvio como veremos en el ejemplo. Un procedimiento que compruebe si alguien es un adolescente podría ser el siguiente:
+</p>
+<div style="text-align: center">
+<p><code>(defun adolescente (edad)</code> <br/>
+<code>(if (and (&gt; edad 12) (&lt; edad 20))</code> <br/>
+"<code>adolescente</code>" <br/>
+"<code>no adolescente"))</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-10" class="outline-3">
+<h3 id="sec-9-10"><span class="section-number-3">9.10</span> Agrupando Procedimientos: <code>progn</code></h3>
+<div class="outline-text-3" id="text-9-10">
+
+<p>La forma <code>if</code> solo permite incluir un parámetro a ser ejecutado si el resultado es verdadero y uno si el resultado es falso. Qué pasa si uno quisiere ejecutar dos según resulte una situación o ambas?
+</p>
+<p>
+La forma <code>progn</code> es útil en este caso. Permite agrupar varios procedimientos dentro de una lista entre paréntesis. 
+</p>
+<div style="text-align: center">
+<p><code>(if (evenp a)</code> <br/>
+ <code>(progn (print "La respuesta es par") 0)</code> <br/>
+ <code>(progn (print "La respuesta es impar") 1))</code>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-11" class="outline-3">
+<h3 id="sec-9-11"><span class="section-number-3">9.11</span> Ejercicios.</h3>
+<div class="outline-text-3" id="text-9-11">
+
+<ul>
+<li>Escriba un procedimiento que llamaremos <code>palindrome?</code> a fin de comprobar si una cadena de caracteres es palindrome. (!) Use <code>reverse</code>. Y compruebe si:
+</li>
+</ul>
+
+
+<div style="text-align: center">
+<p><code>(palindrome? "madam")</code> <br/>
+retorna <code>T</code>
+</p>
+</div>
+
+<ul>
+<li>Calcule mentalmente cuál será el resultado de las siguientes expresiones LISP y compruebe sus respuestas evaluándolas. 
+</li>
+</ul>
+
+
+<div style="text-align: center">
+<p><code>(if (listp '(1 2 3)) 3 4)</code> <br/>
+<code>(if (numberp '(1 2 3)) '(1 2 3) '(4 5 6))</code> <br/>
+<code>(if (&gt; 0 -1) (+ -1 3) (+ -1 4))</code> 
+</p>
+</div>
+
+<ul>
+<li>Mejore el programa <code>piglatin</code> de la sección <code>Cadena de Caracteres/strings</code> a fin de que funcione con palabras que empiecen con vocal. Por ejemplo:
+</li>
+</ul>
+
+
+<div style="text-align: center">
+<p>"<code>cerdo" resulta "erdocay</code>" <br/>
+pero "<code>araña</code>" debe resultar "<code>arañaway</code>"
+</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Creando Cuadros de Diálogo.</h2>
+<div class="outline-text-2" id="text-10">
+
+<p>En esta lección vamos a aprender cómo usar LISP para crear interfaces Macintosh como ventanas y cuadros de diálogo.
+</p>
+<p>
+El procedimiento para hacer esto está incluído en la LISPWORKS librería llamada CAPI y sus nombres empiezan con <code>capi:</code>.
+</p>
+
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Mostrar un Mensaje: <code>capi:display-message</code></h3>
+<div class="outline-text-3" id="text-10-1">
+
+<p>Para presentar mensajes en pantalla usamos el procedimiento <code>capi:display-message</code>. Seguido por una cadena de caracteres formateada tal como queremos que sea presentada en pantalla y la lista de argumentos que requiere para ejecutarse, tal como indicamos en <code>format</code>. Por ejemplo:
+</p>
+
+<div style="text-align: center">
+<p><code>(capi:display-message "La suma de ~a y ~a resulta ~a." 3 4 (+ 3 4))</code>
+</p>
+</div>
+
+<p>
+mostrará en pantalla:
+</p>
+<p>
+<img src="http://lisp.plasticki.com/pictures/36/sum.png"  alt="http://lisp.plasticki.com/pictures/36/sum.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> Ingresar Cadena de Caracteres En Un Cuadro de Diálogo: <code>capi:prompt-for-string</code></h3>
+<div class="outline-text-3" id="text-10-2">
+
+
+<p>
+Este comando pide presenta un cuadro de diálogo que ingresa información. Por ejemplo:
+</p>
+
+<div style="text-align: center">
+<p><code>(capi:prompt-for-string "Think of an animal:")</code>
+</p>
+</div>
+
+<p>
+Mostrará:
+</p>
+<p>
+<img src="http://lisp.plasticki.com/pictures/36/animal.png"  alt="http://lisp.plasticki.com/pictures/36/animal.png" />
+</p>
+<p>
+Y retornará la cadena de caracteres que hayas escrito.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10-3" class="outline-3">
+<h3 id="sec-10-3"><span class="section-number-3">10.3</span> Preguntando <code>si</code> o <code>no</code>: <code>capi:prompt-for-confirmation</code></h3>
+<div class="outline-text-3" id="text-10-3">
+
+<p>El procedimiento <code>capi:prompt-for-confirmation</code> permite trabajar con programas que dependen de respuesta del tipo si o no para ejecutar una rutina.
+</p>
+<div style="text-align: center">
+<p><code>(capi:capi:prompt-for-confirmation "Are you hungry?")</code>
+</p>
+</div>
+
+<p>
+Tienes hambre? y muestra en pantalla:
+</p>
+<p>
+<img src="http://lisp.plasticki.com/pictures/36/hungry.png"  alt="http://lisp.plasticki.com/pictures/36/hungry.png" />
+</p>
+<p>
+Si el usuario responde <code>si</code> el procedimiento retorna <code>T</code> (t/verdadero). Si el usuario responde No, retorna <code>nil</code> (false) 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> Dar al usuario la posibilidad de elegir: <code>capi:prompt-with-list</code> y <code>capi:prompt-for-items-from-list</code></h3>
+<div class="outline-text-3" id="text-10-4">
+
+
+<p>
+Finalmente, la función <code>capi:prompt-with-list</code> toma una lista y un mensaje y permite al usuario seleccionar uno de los items, por ejemplo.
+</p>
+<div style="text-align: center">
+<p><code>(capi:prompt-with-list '("red" "blue" "green" "pink") "What's your favourite colour?")</code>
+</p>
+</div>
+
+<p>
+Lo que mostrará en pantalla:
+</p>
+<p>
+<img src="http://lisp.plasticki.com/pictures/36/colour.png"  alt="http://lisp.plasticki.com/pictures/36/colour.png" />
+</p>
+<p>
+Y retornará el valor del item seleccionado. <br/>
+</p>
+<p>
+El procedimiento <code>capi:prompt-for-items-from-list</code> es idéntico, con la diferencia que le permite al usuario seleccionar cualquier número de items, y retorna una lista con los items seleccionados.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10-5" class="outline-3">
+<h3 id="sec-10-5"><span class="section-number-3">10.5</span> Un programa Que Escribe Historias.</h3>
+<div class="outline-text-3" id="text-10-5">
+
+
+<p>
+Finalmente, tenemos que mezclando convenientemente procedimientos descritos podemos crear un programa capaz de escribir historias:
+</p>
+
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">story</span> ()
+(<span style="color: #859900;">let</span> ((name (capi:prompt-for-string <span style="color: #2aa198;">"What is your name:"</span>))
+(food (capi:prompt-for-string <span style="color: #2aa198;">"What's your favourite food:"</span>))
+(colour (capi:prompt-with-list
+'(<span style="color: #2aa198;">"red"</span> <span style="color: #2aa198;">"blue"</span> <span style="color: #2aa198;">"green"</span> <span style="color: #2aa198;">"pink"</span>)
+<span style="color: #2aa198;">"What's your favourite colour?"</span>)))
+(capi:display-message
+<span style="color: #2aa198;">"There once was a witch called ~a who liked ~a. </span>
+<span style="color: #2aa198;">One day ~a found some ~a ~a and ate so much that she died. The end."</span>
+name food name colour food)))
+</pre>
+
+
+</div>
+
+<p>
+A fin de ejecutar el programa evaluamos:
+</p>
+<div style="text-align: center">
+<p><code>(story)</code>
+</p>
+</div>
+
+<p>
+Porque el programa no incluye parámetros.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10-6" class="outline-3">
+<h3 id="sec-10-6"><span class="section-number-3">10.6</span> Ejercicios.</h3>
+<div class="outline-text-3" id="text-10-6">
+
+<ul>
+<li>Intentar mejorar el programa a fin de escribir una historia más larga y use <code>capi:prompt-for-confirmation</code> e <code>if</code> a fin de ampliar la historia, por ejemplo:
+</li>
+</ul>
+
+
+<div style="text-align: center">
+<p><code>(capi:prompt-for-confirmation "Should the witch die at the end?)</code>
+</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Escribiendo Programas.</h2>
+<div class="outline-text-2" id="text-11">
+
+<p>Hasta aquí hemos aprendido cómo escribir procedimientos para resolver pequeños problemas, tales como buscar la media de dos números y demás. <br/>
+</p>
+<p>
+Cuál es la diferencia entre un procedimiento y un programa?. Una diferencia es que un procedimiento puede parecerse a una calculadora. Y ejecuta una operación individual y de una medida fija, como la del ejemplo anterior. Un programa, en cambio, resuelve un problema de medida arbitraria, o debidamente ajustado al monto de datos objeto del programa que queremos resolver.
+</p>
+<p>
+En LISP el mejor enfoque para escribir un programa es dividir el problema en pequeños procedimientos, cada uno de los cuales ejecute una subtarea necesaria para el programa principal. Esto hace más fácil el trabajo de comprobar cada componente del programa por separado.
+</p>
+<p>
+En una segunda parte de estos tutoriales mostraremos algunas técnicas para ejecutar operaciones de arbitrario monto de datos, como paso previo para escribir programas completos. 
+</p>
+
+</div>
+
+<div id="outline-container-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Procesando Items En Una Lista.</h3>
+<div class="outline-text-3" id="text-11-1">
+
+
+<p>
+En esta lección vamos mostraremos cómo ejecutar el mismo grupo de operaciones con cada item de una lista.
+</p>
+
+</div>
+
+<div id="outline-container-11-1-1" class="outline-4">
+<h4 id="sec-11-1-1"><span class="section-number-4">11.1.1</span> Buscando La Suma De Una Lista De Números.</h4>
+<div class="outline-text-4" id="text-11-1-1">
+
+<p>Echemos un vistazo al problema de escribir un programa <code>sum-list</code> que encuentre la suma de una lista de números. Por ejemplo, de la forma que mostramos en el siguiente ejemplo:
+</p>
+
+<div style="text-align: center">
+<p><code>CL-USER&gt; (sum-list '(2 3 5 7 11 13 17 19))</code> <br/>
+<code>77</code>
+</p>
+</div>
+
+<p>
+Habíamos dicho que el truco para resolver un problema en LISP es subdividir el principal en componentes o problemas más simples. Según esto, podríamos escribir la solución de la siguiente manera:
+</p>
+<p>
+Para encontrar la suma de una lista de números:
+</p><ul>
+<li>Si la lista está vacía, la respuesta es <code>0</code>
+</li>
+<li>Si no, la respuesta es el primer número sumado a la suma de los siguientes números.
+</li>
+</ul>
+
+
+<p>
+A primera vista no hemos resuelto el problema, todavía tenemos que encontrar la forma de sumar los números restantes. Pero esta es una sublista sólo más corta que la primera, y así sucesivamente, hasta que acabamos con la lista. De modo que la forma que escribimos esto en LISP, es muy parecido a cómo planteamos esta secuencia. Reducimos el problema a una secuencia mínima y la repetimos recursivamente hasta completar el proceso, agotar los items de la lista, en este caso. La manera que escribimos esto en LISP es:
+</p>
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">sum-list</span> (nums) 
+(<span style="color: #859900;">if</span> (null nums) 0 
+(+ (first nums) (sum-list (rest nums)))))
+</pre>
+
+
+</div>
+
+<p>
+De esta forma, hemos escrito un programa que encuentra la suma de un número ilimitado de números. Podríamos aplicarlo a una lista de un millón de números y según esa secuencia siempre funcionaría. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11-1-2" class="outline-4">
+<h4 id="sec-11-1-2"><span class="section-number-4">11.1.2</span> Recursión</h4>
+<div class="outline-text-4" id="text-11-1-2">
+
+<p>Pero atención a los detalles del procedimiento <code>sum-list</code> que acabamos de escribir. Instruye a LISP una operación sobre una lista de items y la enlaza a una llamada a la propia función que estamos instruyéndole. A esto llamamos <code>recursion</code>. No resulta en una secuencia infinita como a primera vista pudiera parecer, porque en cuanto evalúe <code>(if (null nums)...</code> en la primera parte del programa y encuentre que ha agotado la lista, acabará la recursión.
+</p>
+<p>
+En la mayoría de los otros lenguajes la forma natural de implementar un procedimiento como el <code>sum-list</code> del ejemplo sería usar una construcción iterativa, tal que <code>for</code>, <code>next</code> o <code>until</code>. En LISP, recursión provee una manera más limpia e intuitiva de resolver problemas de este tipo.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11-1-3" class="outline-4">
+<h4 id="sec-11-1-3"><span class="section-number-4">11.1.3</span> Doblar cada número en una lista.</h4>
+<div class="outline-text-4" id="text-11-1-3">
+
+
+<p>
+Pero qué pasa si lo que queremos es crear una nueva lista, idéntica a la original excepto que cada número aparezca multiplicado por <code>2</code>. De la forma siguiente:
+</p>
+<div style="text-align: center">
+<p><code>CL-USER &gt; (doblar-lista '(2 3 5 7 11 13 17 19))</code> <br/>
+<code>(4 6 10 14 22 26 34 38)</code>
+</p>
+</div>
+
+<p>
+La solución podría ser:
+</p><ul>
+<li>Si la lista está vacía, la respuesta es <code>nil</code>
+</li>
+<li>Si no, la respuesta es la lista hecha de dos veces el primer número, seguido de el doble de la lista de los números restantes.
+</li>
+</ul>
+
+
+<p>
+Y el procedimiento en LISP, sería tal que:
+</p>
+
+<div style="text-align: center">
+
+
+
+<pre class="src src-lisp">(<span style="color: #859900;">defun</span> <span style="color: #268bd2;">doblar-lista</span> (nums)
+ (<span style="color: #859900;">if</span> (null nums) nil 
+  (cons (* 2 (first nums)) (doblar-list (rest nums)))))
+</pre>
+
+
+</div>
+
+<p>
+Muy parecido a la forma anterior, excepto que aquí usamos <code>cons</code> para construir una nueva lista y retornar la respuesta.
+</p>
+<p>
+El procedimiento <code>sum-list</code> y <code>doblar-lista</code> son útiles prototipos para resolver un amplio rango de problemas que involucra trabajar con listas, como ya lo veremos en la práctica.
+</p>
+<ul>
+<li>El procedimiento <code>sum-list</code> opera con cada elemento de la lista y retorna otro elemento como resultado.
+</li>
+<li><code>doblar-lista</code> opera con cada elemento de la lista y retorna una nueva lista, esta vez transformada. 
+</li>
+</ul>
+
+
+<p>
+En una última lección veremos cómo generalizar estos dos procedimientos a manera de herramientas genéricas que podamos usar en amplio número de casos. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11-1-4" class="outline-4">
+<h4 id="sec-11-1-4"><span class="section-number-4">11.1.4</span> Hacer "algo" con cada elemento en una lista: <code>dolist</code></h4>
+<div class="outline-text-4" id="text-11-1-4">
+
+
+<p>
+Finalmente, debo mencionar un procedimiento por defecto en LISP, llamado <code>dolist</code> que normalmente provee una conveniente manera de ejecutar serie de operaciones con elementos en una lista.
+</p>
+<p>
+Está escrita de la siguiente manera:
+</p>
+<div style="text-align: center">
+<p><code>(dolist (item list)</code>  <br/>
+<code>cuerpo</code> <br/>
+<code>del procedimiento)</code>
+</p>
+</div>
+
+<p>
+Donde: <br/>
+</p><ul>
+<li><code>list</code> es la lista de elementos
+</li>
+<li><code>item</code> representa cada elemento de la lista.
+</li>
+<li><code>cuerpo ...</code> es uno o más procedimientos que se ejecutarán por cada valor de item.
+</li>
+</ul>
+
+
+<p>
+Por ejemplo: <br/>
+</p>
+
+<div style="text-align: center">
+<p><code>(dolist (i '(2 3 5 7 11))</code> <br/>
+ <code>(print (* i 2)))</code> <br/>
+</p>
+<p>
+Imprimirá: <br/>
+<code>4</code> <br/>
+<code>6</code> <br/>
+<code>10</code> <br/>
+<code>14</code> <br/>
+<code>22</code> <br/>
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-1-5" class="outline-4">
+<h4 id="sec-11-1-5"><span class="section-number-4">11.1.5</span> Ejercicios.</h4>
+<div class="outline-text-4" id="text-11-1-5">
+
+<p>En los siguientes ejercicios, adaptar o <code>sum-list</code> o <code>doblar-lista</code> como sea apropiado a fin de resolver los siguientes problemas:
+</p><ul>
+<li>Escribir un procedimiento <code>contar-lista</code> que contabilice los elementos de una lista y por ejemplo: <br/>
+   <code>(contar-lista '(2 3 5 7 11 13 17 19)</code>
+   retorne: <br/>
+   <code>8</code>.
+
+</li>
+<li>Escribir un procedimiento <code>reverse-lista</code> que devuelva cada palabra de la lista escrita al revés, de la siguiente manera: <br/>
+   <code>(reverse-lista '("le" "ojepse" "ed" "sol" "soesed"))</code> <br/>
+   devuelva: <br/>
+   <code>("el" "espejo" "de" "los" "deseos")</code>
+
+</li>
+<li>Escriba un procedimiento <code>evenp-list</code> que procese una lista de números, reemplazándolos por <code>t</code> si es par y por <code>nil</code> si resulta ser impar. De forma que:
+   <code>(evenp-list '(1 2 3 4 5 6 7 8))</code> <br/>
+   debe retornar: <br/>
+   <code>(nil t nil t nil t nil t)</code>
+
+</li>
+<li>Escriba un procedimiento <code>max-list</code> que retorne el máximo elemento de una lista. De forma que: <br/>
+   <code>(max-list '(11 13 17 19 2 3 5 7))</code> <br/>
+   retorne: <br/>
+   <code>19</code>. 
+</li>
+</ul>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2014-01-25T14:34+0000</p>
+<p class="author">Autor: Heytxe</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
