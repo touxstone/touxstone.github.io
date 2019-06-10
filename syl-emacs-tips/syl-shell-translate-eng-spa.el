@@ -18,6 +18,10 @@
 
 ;; $sudo dnf install translate-shell
 
+;; Afterwards, download this file and place it in your load path and adding the following line to your emacs.d init file.
+
+;; (require 'wordreference)
+
 ;;; Code:
 
 (defun translate-to-any (x y)
