@@ -18,9 +18,9 @@
 
 ;; $sudo dnf install translate-shell
 
-;; Afterwards, download this file and place it in your load path and adding the following line to your emacs.d init file.
+;; Afterwards, download this file and place it in your load path, then add the following line to your emacs.d init file.
 
-;; (require 'wordreference)
+;; (require 'syl-shell-translate-eng-spa)
 
 ;;; Code:
 
