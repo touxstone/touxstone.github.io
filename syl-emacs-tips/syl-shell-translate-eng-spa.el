@@ -1,9 +1,23 @@
-;;; syl-shell-translate-eng-spa.el --- Just a workpatch to google-translate using shell-translate.
+;;; syl-shell-translate-eng-spa.el --- Just a workpatch to google-translate using translate-shell.
 ;; Author: Syl. Montalvo
 ;; Created: Fri 15 Mar 19:22:12 GMT 2019 
 ;; Version: 2019.00.01
 
 ;; This file is NOT part of GNU Emacs.
+
+;; 
+;; As stated this tool makes use of translate-shell
+;; Summary      : A command-line online translator
+;; URL          : https://github.com/soimort/translate-shell
+;; License      : Public Domain
+;; Description  : Translate Shell (formerly Google Translate CLI) is a command-line
+;; : translator powered by Google Translate (default), Bing
+;; : Translator, Yandex.Translate and Apertium.
+
+;; e.g. under Fedora-29:
+
+;; $sudo dnf install translate-shell
+
 ;;; Code:
 
 (defun translate-to-any (x y)
