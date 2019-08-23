@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-23 Fri 14:20 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ta(mara) al Piano, ~~`</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="txarly" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Tangerine" rel="stylesheet">
+<style type="text/css">.title{font-size:58px; text-shadow: 4px 4px 4px #233b4d; text-align:center;}body{max-width:85%; margin:auto; font-family:'Open Sans', serif; font-size:100%; text-shadow: 1px 1px 1px #aaa; background-color: #ffffcc;} </style>
+<style type="text/css">#table-of-contents{ font-size: 10pt; position: fixed; right: 0em; top: 0em; background: #FF9999; -webkit-box-shadow: 0 0 1em #777777; -moz-box-shadow: 0 0 1em #777777; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomleft: 5px; text-align: right; /* ensure doesn't flow off the screen when expanded */ max-height: 80%; overflow: auto; } #table-of-contents h2 {font-size: 10pt; max-width: 8em; font-weight: normal; padding-left: 0.5em; padding-left: 0.5em; padding-top: 0.05em; padding-bottom: 0.05em; } #table-of-contents #text-table-of-contents {display: none; text-align: left; } #table-of-contents:hover #text-table-of-contents {display: block; padding: 0.5em; clear: left; margin-top: -1.5em; } pre.src{position: static; } code{font-size: 1.1rem; border: 1px solid #ddd; background: #EEEEEE; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em; -ms-border-radius: 0.4em; -o-border-radius: 0.4em; border-radius: 0.4em; font-weight: normal; padding: 0 0.2em;}pre.src {background-color: #E5E5E5;} </style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Ta(mara) al Piano, ~~`</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga0be65b">Acordes para piano | aprendiendo los acordes mayores y menores</a>
+<ul>
+<li><a href="#orgf489a74"><b><b>Construyendo los acordes mayores y menores</b></b></a></li>
+<li><a href="#orgf5b7b17"><b>Cómo aprender los acordes para piano en orden de utilidad</b></a></li>
+<li><a href="#orgde0fe95"><b>Inversiones en acordes para piano</b></a></li>
+<li><a href="#org61f7cd0"><b>Progresión de acordes</b></a></li>
+<li><a href="#org072efa7"><b>Plan de entrenamiento en clave de Do</b></a></li>
+<li><a href="#orged840e2">El Ejercicio Matrix ~~</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga0be65b" class="outline-2">
+<h2 id="orga0be65b">Acordes para piano | aprendiendo los acordes mayores y menores</h2>
+<div class="outline-text-2" id="text-orga0be65b">
+<p>
+Estos son solo apuntes, notas, pilladas de aquí y allá y un solo ejercicio matrix con la finalidad de hincarle el diente, un día de estos, a cualquier canción pop de la manera más fácil. So, please excuse simplificaciones. 
+</p>
+
+<p>
+Hay muchos tipos de acordes diferentes, siendo los más comunes: los
+mayores, menores, séptima, séptima mayor, cuarta aumentada y cuarta
+disminuida, y sexta.
+</p>
+
+<p>
+<b>Los acordes mayores y menores</b> son los más sencillos y que <b>te
+permitirán tocar el 90% de canciones comerciales</b>. Así
+que sin lugar a dudas, son los primeros que debes aprender.
+</p>
+
+<p>
+<b>Existen 12 acordes mayores y 12 acordes menores</b>. Las siete notas
+naturales con sus alteraciones (los bemoles y sostenidos)
+</p>
+
+<p>
+Do Mayor, Do# Mayor, Re Mayor, Re# Mayor, Mi Mayor, Fa Mayor&#x2026; hasta Si
+Mayor
+</p>
+
+<p>
+Do menor, Do# menor, Re menor, Re# menor&#x2026; hasta Si menor.
+</p>
+
+<p>
+Y así hasta completar los 24.
+</p>
+
+
+<p>
+<b>Aprendérselos de memoria</b> es posible, pero <b>te resultará un
+aburrimiento</b> terrible (no sé por qué pero digamos eso y ver si resulta que te anima a intentarlo, espero sí)
+tener que estar consultando tablas hasta que te
+los sepas. <b>La mejor manera es que aprendas cómo construirlos</b> sentado
+frente al piano, ya que todos se basan en las mismas normas.
+</p>
+
+<p>
+Si leer teoría no te apetece en este momento, puedes empezar con el
+plan de entrenamiento de acordes y volver a la teoría después.
+Seguro que después de un par de días de práctica, te apetece llegar al
+fondo del asunto.
+</p>
+
+<p>
+Y eso está perfectamente bien. <b>Se aprende mucho mejor cuando uno tiene
+interés genuino</b> que cuando otros se empeñan en que lo hagas.
+</p>
+</div>
+
+<div id="outline-container-orgf489a74" class="outline-3">
+<h3 id="orgf489a74"><b><b>Construyendo los acordes mayores y menores</b></b></h3>
+<div class="outline-text-3" id="text-orgf489a74">
+<p>
+La diferencia entre un acorde mayor y menor es una nota. Sin embargo
+esta nota cambia por completo el sentimiento que nos produce el acorde.
+</p>
+
+<p>
+Un acorde mayor sonará alegre, un acorde menor sonará melancólico.
+</p>
+
+<p>
+Vamos a ver cómo formar un acorde mayor, uno menor, y la diferencia
+entre ellos.
+</p>
+
+<p>
+Un acorde mayor y un acorde menor comparten la nota raíz y la quinta.
+</p>
+</div>
+
+<div id="outline-container-org55dfd1a" class="outline-4">
+<h4 id="org55dfd1a"><b>Nota raíz e intervalo de quinta</b></h4>
+<div class="outline-text-4" id="text-org55dfd1a">
+<p>
+Un acorde tiene una <b>NOTA RAÍZ</b>, que es la que <b>da nombre al acorde</b>
+</p>
+
+<p>
+<i>En los acordes Do Mayor y Do menor, la nota raíz es el Do.</i>
+</p>
+
+<p>
+Un acorde tiene una <b>NOTA QUINTA</b>. Una quinta es 7 semitonos más aguda
+que su nota raíz. Así que para encontrar la quinta en un teclado de
+piano, debes contar 7 teclas adyacentes (tanto blancas como negras)
+hacia la derecha.
+</p>
+
+<p>
+<i>En los acordes Do Mayor y Do menor, la nota quinta es el Sol.</i>
+</p>
+
+
+<div class="figure">
+<p><img src="media/Do-quinta.jpg" alt="Do-quinta.jpg" />
+</p>
+</div>
+
+<p>
+Encontrar la quinta de cualquier tecla blanca te resultará muy
+intuitivo, ya que es la postura natural de la mano apoyada en las
+teclas. El pulgar en la raíz, y el meñique en la quinta (o al revés en
+la otra mano)
+</p>
+
+<p>
+<i>Veamos otro ejemplo: Fa natural y su quinta.</i>
+</p>
+
+
+<div class="figure">
+<p><img src="media/fa-quinta.jpg" alt="fa-quinta.jpg" />
+</p>
+</div>
+
+<p>
+El único caso en el que la raíz y su quinta no son ambas teclas blancas
+es en el caso del Si y su quinta.
+</p>
+
+
+<div class="figure">
+<p><img src="media/si-quinta.jpg" alt="si-quinta.jpg" />
+</p>
+</div>
+
+<p>
+Recordemos entonces que para una nota cualquiera, por ejemplo, Do: su
+acorde Do Mayor y su acorde Do menor tienen la misma raíz (DO) y su
+misma quinta (SOL)
+</p>
+
+<p>
+<b>Los acordes mayores y menores se diferencian en su nota tercera</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga50d1a6" class="outline-4">
+<h4 id="orga50d1a6"><b>Tercera mayor y tercera menor en acordes de piano</b></h4>
+<div class="outline-text-4" id="text-orga50d1a6">
+<p>
+Un acorde mayor se construye con una tercera mayor.
+</p>
+
+<p>
+Un acorde menor se construye con una tercera menor. Fácil de recordar,
+¿no?
+</p>
+
+<p>
+<b>Una tercera mayor son 4 semitonos</b>, es decir, 4 teclas adyacentes hacia
+la derecha
+</p>
+
+<p>
+<i>Sabiendo esto, vamos a terminar de construir el acorde de Do Mayor,
+contando 4 teclas hacia la derecha.</i>
+</p>
+
+
+<div class="figure">
+<p><img src="media/acorde-Do-Mayor-.jpg" alt="acorde-Do-Mayor-.jpg" />
+</p>
+</div>
+
+<p>
+Para el acorde menor, <b>una tercera menor son 3 semitonos</b>, es decir, 4
+notas adyacentes hacia la izquierda.
+</p>
+
+
+<div class="figure">
+<p><img src="media/acorde-Do-menor.jpg" alt="acorde-Do-menor.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5b7b17" class="outline-3">
+<h3 id="orgf5b7b17"><b>Cómo aprender los acordes para piano en orden de utilidad</b></h3>
+<div class="outline-text-3" id="text-orgf5b7b17">
+<p>
+Para que no se te haga una tarea sobrehumana, hay dos sencillas claves
+que debes tener en cuenta.
+</p>
+
+<ul class="org-ul">
+<li>Clave nº 1:</li>
+</ul>
+
+<p>
+No intentes aprenderte los 24 acordes de golpe. Empieza con los acordes
+que forman la clave de Do Mayor.
+</p>
+
+<p>
+Resulta que en esta clave (y en cualquier clave mayor y menor) solo nos
+encontramos siete acordes, y el séptimo casi  no se utiliza en música
+popular. Así que con seis acordes podrás interpretar el 90% de las
+canciones comerciales. Aquí te explico cómo transponer cualquier canción
+a clave de Do.
+</p>
+
+<ul class="org-ul">
+<li>Clave nº 2:</li>
+</ul>
+
+<p>
+El truco está en recordar la forma de la mano en el piano, en lugar de
+las notas que lo componen. Me refiero a qué dedos están en tecla blanca,
+y qué dedos en tecla negra.
+</p>
+
+<p>
+Y resulta que dentro de estos 6 acordes en Clave de Do solo tenemos una
+forma:
+</p>
+
+<p>
+<b>Blanca &#x2013; blanca &#x2013; blanca</b>
+</p>
+
+
+<p>
+<b>¿No te parece que está chupadísimo?</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgde0fe95" class="outline-3">
+<h3 id="orgde0fe95"><b>Inversiones en acordes para piano</b></h3>
+<div class="outline-text-3" id="text-orgde0fe95">
+<p>
+Un acorde tiene su posición raíz, que ya has aprendido.
+</p>
+
+<p>
+En el caso de Do Mayor, su posición raíz es Do &#x2013; Mi &#x2013; Sol
+</p>
+
+<p>
+A colocar las notas de un acorde en otro orden diferente se le llama
+inversión.
+</p>
+
+<p>
+Para el Do Mayor (do &#x2013; mi &#x2013; sol) tenemos:
+</p>
+
+<p>
+Primera inversión: Mi &#x2013; Sol &#x2013; Do
+</p>
+
+<p>
+Segunda inversión: Sol &#x2013; Do &#x2013; Mi
+</p>
+
+<p>
+<b>Las tres son Do Mayor.</b>
+</p>
+
+
+<div class="figure">
+<p><img src="media/acorde-do-mayor-e-inversiones.jpg" alt="acorde-do-mayor-e-inversiones.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org61f7cd0" class="outline-3">
+<h3 id="org61f7cd0"><b>Progresión de acordes</b></h3>
+<div class="outline-text-3" id="text-org61f7cd0">
+<p>
+Haciendo una metáfora: en el lenguaje musical las notas son las letras,
+los acordes son las palabras, y las frases serían una progresión de
+acordes.
+</p>
+
+<p>
+Una progresión de acordes no es más que una sucesión de acordes: Do &#x2013;
+La menor &#x2013; Fa
+</p>
+
+<p>
+Y resulta que hay algunas progresiones mucho más utilizadas que otras,
+que una progresión transmite un sentimiento diferente a otra, hay
+progresiones más usuales en un estilo que en otro&#x2026;
+</p>
+
+<p>
+Como todo el artículo está enfocado a dominar la música pop, que la
+recomiendo para para principiantes por ser la más sencilla, vamos a
+centrarnos en ella.
+</p>
+
+<p>
+La ganadora indiscutible:        *I - IV - V - vi*
+</p>
+
+<p>
+Con esos acordes, y cualquier combinación que se te ocurra entre ellos,
+tienes para una vida de música.
+</p>
+
+<p>
+Todas las combinaciones posibles de esos cuatro grados.
+</p>
+
+<p>
+I - vi - IV - V
+</p>
+
+<p>
+I - IV - vi - V
+</p>
+
+<p>
+vi - IV - I - V
+</p>
+
+<p>
+IV - I - V - iv
+</p>
+
+<p>
+Omitiendo uno de esos grados.
+</p>
+
+<p>
+I - V - IV -V
+</p>
+
+<p>
+vi - V - IV - V
+</p>
+
+<p>
+Si aumentamos la cantidad de acordes menores en la progresión, el tono
+se vuelve más melancólico o triste.
+</p>
+
+<p>
+Añadiendo grado ii
+</p>
+
+<p>
+I - ii - vi - IV
+</p>
+
+<p>
+vi - ii - V - I
+</p>
+
+<p>
+I - vi - ii - V
+</p>
+
+<p>
+I - IV - ii - V
+</p>
+
+<p>
+Añadiendo grado iii
+</p>
+
+<p>
+vi - V - IV - iii
+</p>
+
+<p>
+I - iii - vi - IV
+</p>
+
+
+
+
+
+<p>
+Son 13 progresiones, pero ya ves que al final es todo dar vueltas sobre
+lo mismo.  No tienes excusa para no darle caña y aprenderte estos seis
+acordes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org072efa7" class="outline-3">
+<h3 id="org072efa7"><b>Plan de entrenamiento en clave de Do</b></h3>
+<div class="outline-text-3" id="text-org072efa7">
+<p>
+Lo difícil no es comprender la teoría. Sino interiorizarla de tal forma
+que sea tan natural para ti como hablar. En ese momento es cuando la
+teoría se vuelve útil y te permite tocar música sin esfuerzo.
+</p>
+
+<p>
+Eso no ocurre de la noche a la mañana, y por eso es importante saber
+cuál es la manera más eficiente de recorrerlo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orged840e2" class="outline-3">
+<h3 id="orged840e2">El Ejercicio Matrix ~~</h3>
+<div class="outline-text-3" id="text-orged840e2">
+<p>
+En fin el nombre se me acaba ocurrir, no hacerle mucho caso. El asunto es que tengamos de donde empezar a tejer y detejer y para ello, he pensado que vendría bien visualizar, intentar y practicar el siguiente ejercicio. Y, en tres fases: Observar, estudiar acorde por acorde, y luego repetir y repetir hasta que las manos fluyan como hacia un manantial ~~
+</p>
+</div>
+
+<div id="outline-container-orgbec341b" class="outline-4">
+<h4 id="orgbec341b">Observar</h4>
+<div class="outline-text-4" id="text-orgbec341b">
+<iframe width="640" height="360" src="file:media/the-broken-chord-lesson.mkv" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+
+<div id="outline-container-org383d985" class="outline-4">
+<h4 id="org383d985">Los Acordes del Ejercicio Matrix.</h4>
+<div class="outline-text-4" id="text-org383d985">
+<p>
+Ahora la tares es estudiar acorde por acorde del ejercicio matrix, arriba&#x2026;
+</p>
+
+<p>
+<b>C F Bdim Em Am Dm G C</b>
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org64463bd"></a>El lugar de la batalla en el centro del Universo.<br />
+<div class="outline-text-5" id="text-org64463bd">
+<p>
+Okay, antes conviene ubicarse. El teclado sobre el que harás el ejercicio, lo sabrás, es de 61 teclas. Y sus nombres y posiciones son a la vista, como más o menos se muestra en la siguiente foto:
+</p>
+
+
+<div class="figure">
+<p><img src="media/61-piano-keyboard-names.png" alt="61-piano-keyboard-names.png" />
+</p>
+</div>
+
+
+
+<p>
+Como ves, 61 teclas que repiten la (siguiente)  escala varias veces, en concreto 5:
+</p>
+
+
+
+<div class="figure">
+<p><img src="media/piano-keyboard-in-short.png" alt="piano-keyboard-in-short.png" />
+</p>
+</div>
+</div>
+</li>
+
+
+<li><a id="org81d8f3c"></a>Uno por uno y en fila.. ~~<br />
+<div class="outline-text-5" id="text-org81d8f3c">
+<p>
+Okay, ahora vemoslo every each por entero, first!. 
+<img src="media/c.png" alt="c.png" />
+<img src="media/f.png" alt="f.png" />
+<img src="media/Bdim.png" alt="Bdim.png" />
+<img src="media/Em.png" alt="Em.png" />
+<img src="media/Am.png" alt="Am.png" />
+<img src="media/Dm.png" alt="Dm.png" />
+<img src="media/g.png" alt="g.png" />
+</p>
+
+
+<p>
+Y, otra vez, C:
+<img src="media/c.png" alt="c.png" />
+</p>
+
+
+
+<p>
+<b><b>Y ahora, qué?</b></b>
+</p>
+
+<p>
+Pues eso, practicar, practicar y practicar y ver qué sale!! ~~`
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: txarly</p>
+<p class="date">Created: 2019-08-23 Fri 14:20</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
