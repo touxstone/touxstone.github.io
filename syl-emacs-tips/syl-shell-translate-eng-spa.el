@@ -14,13 +14,19 @@
 ;; : translator powered by Google Translate (default), Bing
 ;; : Translator, Yandex.Translate and Apertium.
 
-;; e.g. under Fedora-29 ((Sun 10 May 09:58:57 BST 2020) Edit: also tested under fedora30 but probably also onwards)
-;; Additional specifications: This workoaround provides service between the two languages I more frequently use (eng to spa andd reverse) but it has been done so that easy customising it to any language-pair by just changing the variable set as source in the two last 2 functions ("eng" or "spa" in this case) for any from the list of options provided here => https://github.com/soimort/translate-shell#code-list
+;; e.g. under Fedora-29 ((Sun 10 May 09:58:57 BST 2020) Edit: also tested under fedora30 but
+;; probably also onward).
+;; Additional specifications: This workaround provides service between the two languages I
+;; more frequently use but it has been done so that easy customising it to any
+;; language-pair by just changing the variable set as source in the two last functions
+;; ("eng" or "spa" in this case) to any from the list of options provided
+;; here => https://github.com/soimort/translate-shell#code-list
 
 ;; INSTALLATION in your system, the case of mine, FEDORA 30:
 ;; $ sudo dnf install translate-shell
 
-;; Afterwards, download this file and place it in your load path, then add the following line to your emacs.d init file.
+;; Afterwards, download this file and place it in your load path, then add
+;; the following line to your emacs.d init file:
 
 ;; (require 'syl-shell-translate-eng-spa)
 
