@@ -6,7 +6,7 @@
 ;; This file is NOT part of GNU Emacs.
 
 ;; 
-;; As stated this tool makes use of translate-shell
+;; As stated, this tool makes use of translate-shell
 ;; Summary      : A command-line online translator
 ;; URL          : https://github.com/soimort/translate-shell
 ;; License      : Public Domain
@@ -14,9 +14,11 @@
 ;; : translator powered by Google Translate (default), Bing
 ;; : Translator, Yandex.Translate and Apertium.
 
-;; e.g. under Fedora-29:
+;; e.g. under Fedora-29 ((Sun 10 May 09:58:57 BST 2020) Edit: also tested under fedora30 but probably also onwards)
+;; Additional specifications: This workoaround provides service between the two languages I more frequently use (eng to spa andd reverse) but it has been done so that easy customising it to any language-pair by just changing the variable set as source in the two last 2 functions ("eng" or "spa" in this case) for any from the list of options provided here => https://github.com/soimort/translate-shell#code-list
 
-;; $sudo dnf install translate-shell
+;; INSTALLATION in your system, the case of mine, FEDORA 30:
+;; $ sudo dnf install translate-shell
 
 ;; Afterwards, download this file and place it in your load path, then add the following line to your emacs.d init file.
 
@@ -38,6 +40,8 @@
         (insert tr) 
         (goto-char (point-min))
         (read-only-mode)
+        (local-set-key [backspace] 'scroll-down)
+        (local-set-key "" 'scroll-up)
         (local-set-key (kbd "q") 'delete-window)))))
 
 ;; (defun translate-to-eng0 ()
