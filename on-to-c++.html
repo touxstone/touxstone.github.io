@@ -1,0 +1,2116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>On to C++</title>
+    <!-- 2016-05-08 Sun 15:08 -->
+    <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta  name="generator" content="Org-mode" />
+    <meta  name="author" content="Txe LLenne" />
+    <style type="text/css">
+     <!--/*--><![CDATA[/*><!--*/
+     .title  { text-align: center; }
+     .todo   { font-family: monospace; color: red; }
+     .done   { color: green; }
+     .tag    { background-color: #eee; font-family: monospace;
+       padding: 2px; font-size: 80%; font-weight: normal; }
+     .timestamp { color: #bebebe; }
+     .timestamp-kwd { color: #5f9ea0; }
+     .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+     .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+     .center { margin-left: auto; margin-right: auto; text-align: center; }
+     .underline { text-decoration: underline; }
+     #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+     p.verse { margin-left: 3%; }
+     pre {
+       border: 1px solid #ccc;
+       box-shadow: 3px 3px 3px #eee;
+       padding: 8pt;
+       font-family: monospace;
+       overflow: auto;
+       margin: 1.2em;
+     }
+     pre.src {
+       position: relative;
+       overflow: visible;
+       padding-top: 1.2em;
+     }
+     pre.src:before {
+       display: none;
+       position: absolute;
+       background-color: white;
+       top: -10px;
+       right: 10px;
+       padding: 3px;
+       border: 1px solid black;
+     }
+     pre.src:hover:before { display: inline;}
+     pre.src-sh:before    { content: 'sh'; }
+     pre.src-bash:before  { content: 'sh'; }
+     pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+     pre.src-R:before     { content: 'R'; }
+     pre.src-perl:before  { content: 'Perl'; }
+     pre.src-java:before  { content: 'Java'; }
+     pre.src-sql:before   { content: 'SQL'; }
+
+     table { border-collapse:collapse; }
+     caption.t-above { caption-side: top; }
+     caption.t-bottom { caption-side: bottom; }
+     td, th { vertical-align:top;  }
+     th.right  { text-align: center;  }
+     th.left   { text-align: center;   }
+     th.center { text-align: center; }
+     td.right  { text-align: right;  }
+     td.left   { text-align: left;   }
+     td.center { text-align: center; }
+     dt { font-weight: bold; }
+     .footpara:nth-child(2) { display: inline; }
+     .footpara { display: block; }
+     .footdef  { margin-bottom: 1em; }
+     .figure { padding: 1em; }
+     .figure p { text-align: center; }
+     .inlinetask {
+       padding: 10px;
+       border: 2px solid gray;
+       margin: 10px;
+       background: #ffffcc;
+     }
+     #org-div-home-and-up
+     { text-align: right; font-size: 70%; white-space: nowrap; }
+     textarea { overflow-x: auto; }
+     .linenr { font-size: smaller }
+     .code-highlighted { background-color: #ffff00; }
+     .org-info-js_info-navigation { border-style: none; }
+     #org-info-js_console-label
+     { font-size: 10px; font-weight: bold; white-space: nowrap; }
+     .org-info-js_search-highlight
+     { background-color: #ffff00; color: #000000; font-weight: bold; }
+     /*]]>*/-->
+    </style>
+    <link rel="stylesheet" href="froom-debian-ad-org.css" type="text/css" />
+    <style type="text/css">#table-of-contents{ font-size: 10pt; position: fixed; right: 0em; top: 0em; background: #F3F9FE; -webkit-box-shadow: 0 0 1em #777777; -moz-box-shadow: 0 0 1em #777777; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomleft: 5px; text-align: right; /* ensure doesn't flow off the screen when expanded */ max-height: 80%; overflow: auto; } #table-of-contents h2 {font-size: 10pt; max-width: 8em; font-weight: normal; padding-left: 0.5em; padding-left: 0.5em; padding-top: 0.05em; padding-bottom: 0.05em; } #table-of-contents #text-table-of-contents {display: none; text-align: left; } #table-of-contents:hover #text-table-of-contents {display: block; padding: 0.5em; clear: left; margin-top: -1.5em; } pre.src{position: static; } code{font-size: 1.1rem; border: 1px solid #ddd; background: #EEEEEE; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em; -ms-border-radius: 0.4em; -o-border-radius: 0.4em; border-radius: 0.4em; font-weight: normal; padding: 0 0.2em;}pre.src {background-color: #E5E5E5;} </style>
+    <style type="text/css">body{max-width:70%; margin:auto; background-color: #F9F8EE;} </style>
+    <script type="text/javascript">
+     /*
+        @licstart  The following is the entire license notice for the
+        JavaScript code in this tag.
+
+        Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+        The JavaScript code in this tag is free software: you can
+        redistribute it and/or modify it under the terms of the GNU
+        General Public License (GNU GPL) as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option)
+        any later version.  The code is distributed WITHOUT ANY WARRANTY;
+        without even the implied warranty of MERCHANTABILITY or FITNESS
+        FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+        As additional permission under GNU GPL version 3 section 7, you
+        may distribute non-source (e.g., minimized or compacted) forms of
+        that code without the copy of the GNU GPL normally required by
+        section 4, provided you include this license notice and a URL
+        through which recipients can access the Corresponding Source.
+
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this tag.
+      */
+     <!--/*--><![CDATA[/*><!--*/
+      function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+     /*]]>*///-->
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <h1 class="title">On to C++</h1>
+      <div id="table-of-contents">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents">
+          <ul>
+            <li><a href="#sec-1">1. How This Book Teaches You The Language.</a></li>
+            <li><a href="#sec-2">2. How To Compile And Run A Simple Program.</a>
+              <ul>
+                <li><a href="#sec-2-1">2.1. Edit.</a></li>
+              </ul>
+            </li>
+            <li><a href="#sec-3">3. How To Declare Variable</a></li>
+            <li><a href="#sec-4">4. How To Write Arithmetic Expressions.</a></li>
+            <li><a href="#sec-5">5. How To Write Statements that Read Information From Your Keyboard.</a></li>
+            <li><a href="#sec-6">6. How-to Define Simple Functions.</a></li>
+            <li><a href="#sec-7">7. How-to Benefit From Procedure Abstraction.</a></li>
+            <li><a href="#sec-8">8. How-to Work with Local and Global Variables.</a></li>
+            <li><a href="#sec-9">9. How-to Create Classes and Objects.</a></li>
+            <li><a href="#sec-10">10. How-to Define Member Functions.</a></li>
+            <li><a href="#sec-11">11. How-to Define Constructor Member Functions.</a></li>
+            <li><a href="#sec-12">12. How-to Define Reader and Writer Member Functions.</a></li>
+            <li><a href="#sec-13">13. How-to Benefit From Data Abstraction.</a></li>
+            <li><a href="#sec-14">14. How-to Protect Member Variables From Harmful Reference.</a></li>
+            <li><a href="#sec-15">15. How-to Define Classes That Inherit Variables And Functions.</a></li>
+            <li><a href="#sec-16">16. How-to Design Classes And Class Hierarchies.</a></li>
+            <li><a href="#sec-17">17. How-to Perform Tests Using Numerical Predicates.</a></li>
+            <li><a href="#sec-18">18. How-to Write One-Way And Two-Way Conditional Statements.</a></li>
+            <li><a href="#sec-19">19. How-to Combine Boolean Expressions.</a></li>
+            <li><a href="#sec-20">20. How-to Write Iteration Statements.</a></li>
+            <li><a href="#sec-21">21. How-to Process Data In Files.</a></li>
+            <li><a href="#sec-22">22. How-to Write Recursive Functions.</a></li>
+            <li><a href="#sec-23">23. How-to Solve Definition Ordering Problems With Function Prototypes.</a></li>
+            <li><a href="#sec-24">24. How-to Work With Arrays Of Numbers.</a>
+              <ul>
+                <li><a href="#sec-24-1">24.1. PS.</a></li>
+              </ul>
+            </li>
+            <li><a href="#sec-25">25. How-to Work With Arrays Of Class Objects.</a></li>
+            <li><a href="#sec-26">26. How-to Create File Streams For Input And Output.</a></li>
+            <li><a href="#sec-27">27. How-to create New Class Objects At Run Time.</a></li>
+            <li><a href="#sec-28">28. How-to Store Pointers To Class Objects.</a></li>
+            <li><a href="#sec-29">29. How-to Write Programs That Find Member Functions At Run Time.</a></li>
+            <li><a href="#sec-30">30. How-to Write Multiway Conditional Statements.</a></li>
+            <li><a href="#sec-31">31. How-to Use Enumerations To Improve Readability.</a></li>
+            <li><a href="#sec-32">32. How-to Write Constructors That Call Other Constructors.</a></li>
+            <li><a href="#sec-33">33. How-to Write Member Functions That Call Other Members Functions.</a></li>
+            <li><a href="#sec-34">34. How-to Use Protected And Private Variables And Functions.</a></li>
+            <li><a href="#sec-35">35. How-to Use Protected And Private Class Derivations.</a></li>
+            <li><a href="#sec-36">36. How-To Write Functions That Return Character Strings.</a></li>
+            <li><a href="#sec-37">37. How-To Use Call-By-Reference Parameters.</a></li>
+            <li><a href="#sec-38">38. How-To Overload The Output Operator.</a></li>
+            <li><a href="#sec-39">39. How-To Produce Tabular Displays</a></li>
+            <li><a href="#sec-40">40. How-To Write Statements That Read Character Strings.</a></li>
+            <li><a href="#sec-41">41. How-To Test String Characters.</a></li>
+            <li><a href="#sec-42">42. How-To Deposit Character Strings Into Class Objects.</a></li>
+            <li><a href="#sec-43">43. How-To Reclaim Memory With Delete And Destructors.</a></li>
+            <li><a href="#sec-44">44. How-To Prevent Object Copying.</a></li>
+            <li><a href="#sec-45">45. How-To Organize A Multiple-File Program.</a></li>
+            <li><a href="#sec-46">46. How-To Compile A Multiple-File Program.</a></li>
+            <li><a href="#sec-47">47. How-To Implement Lists.</a></li>
+            <li><a href="#sec-48">48. How-To Make One Class A Friend Of Another Class.</a></li>
+            <li><a href="#sec-49">49. How-To Reuse Class Definitions Using Templates.</a>
+              <ul>
+                <li><a href="#sec-49-1">49.1. Template, simple syntax&#x2026;</a></li>
+              </ul>
+            </li>
+            <li><a href="#sec-50">50. How-To Iterate Over Lists Using Iteration Class Object.</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+        <a accesskey="h" href="index.html"> UP </a>
+        |
+        <a accesskey="H" href="index.html"> HOME </a>
+      </div>
+
+      <div id="outline-container-sec-1" class="outline-2">
+        <h2 id="sec-1"><span class="section-number-2">1</span> How This Book Teaches You The Language.</h2>
+        <div class="outline-text-2" id="text-1">
+          <p>
+            Why you should learn C++. Object-Oriented programming languages. Procedure-oriented programming languages. Programming cliches.
+          </p>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-2" class="outline-2">
+        <h2 id="sec-2"><span class="section-number-2">2</span> How To Compile And Run A Simple Program.</h2>
+        <div class="outline-text-2" id="text-2">
+          <p>
+            <code>29</code> Conventions on file extensions for <code>C++</code> source code vary: some programmers prefer -and some compilers require- <code>C</code>, <code>cc</code>, or <code>cpp</code>.  
+          </p>
+
+
+          <p>
+            <code>30</code>&#x2026;e.g., the name of the program that compiles and links may be <code>CC</code>, <code>g++</code>, or <code>cxx</code>, just to mention a three popular examples. So, for a <code>~/fooDir/foo.cpp</code> we compile:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">$ g++ foo.cpp -o foo
+$ ./foo
+            </pre>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-2-1" class="outline-3">
+          <h3 id="sec-2-1"><span class="section-number-3">2.1</span> Edit.</h3>
+          <div class="outline-text-3" id="text-2-1">
+            <p>
+              I run into issues when compiling the script which appears on the handbook (pg. 23 section 84). 
+            </p>
+            <div class="org-src-container">
+
+              <pre class="src src-bash">[txarly@ntxarly c++lab]$ g++ -o volume volume.cpp  
+volume.cpp:1:22: fatal error: iostream.h: No such file or directory
+              </pre>
+            </div>
+            <p>
+              Some goggling by and reading this <a href="http://stackoverflow.com/questions/13049978/fatal-error-iostream-h-no-such-file-or-directory">post</a> I found out I had to correct the script as shown below, note '<code>&lt;iostream&gt;</code>' and '<code>using namespace std;</code>'
+            </p>
+            <div class="org-src-container">
+
+              <pre class="src src-bash">#include &lt;iostream&gt;
+using namespace std;
+main() {
+int height, width, length;
+cout &lt;&lt; "Please, type three integers. " &lt;&lt;endl;
+cin &gt;&gt; height;
+cin &gt;&gt; width;
+cin &gt;&gt; length;
+cout &lt;&lt; "The volume of a "
+&lt;&lt; height &lt;&lt; " by " &lt;&lt; width &lt;&lt; " by " &lt;&lt; length
+&lt;&lt; " box car is " &lt;&lt; height * width * length &lt;&lt; endl;
+}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-3" class="outline-2">
+        <h2 id="sec-3"><span class="section-number-2">3</span> How To Declare Variable</h2>
+      </div>
+      <div id="outline-container-sec-4" class="outline-2">
+        <h2 id="sec-4"><span class="section-number-2">4</span> How To Write Arithmetic Expressions.</h2>
+      </div>
+      <div id="outline-container-sec-5" class="outline-2">
+        <h2 id="sec-5"><span class="section-number-2">5</span> How To Write Statements that Read Information From Your Keyboard.</h2>
+        <div class="outline-text-2" id="text-5">
+          <p>
+            The <code>&gt;&gt;</code> when used with the <code>cin</code> 'input-place' specification, the input operator picks up a value for a variable by watching what you type on your keyboard. 
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream.h&gt;
+main() {
+int height, width, length;
+cout &lt;&lt; "Please, type three integers. " &lt;&lt;endl;
+cin &gt;&gt; height;
+cin &gt;&gt; width;
+cin &gt;&gt; length;
+cout &lt;&lt; "The volume of a "
+&lt;&lt; height &lt;&lt; " by " &lt;&lt; width &lt;&lt; " by " &lt;&lt; length
+&lt;&lt; " box car is " &lt;&lt; height * width * length &lt;&lt; endl;
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-6" class="outline-2">
+        <h2 id="sec-6"><span class="section-number-2">6</span> How-to Define Simple Functions.</h2>
+      </div>
+      <div id="outline-container-sec-7" class="outline-2">
+        <h2 id="sec-7"><span class="section-number-2">7</span> How-to Benefit From Procedure Abstraction.</h2>
+      </div>
+      <div id="outline-container-sec-8" class="outline-2">
+        <h2 id="sec-8"><span class="section-number-2">8</span> How-to Work with Local and Global Variables.</h2>
+      </div>
+      <div id="outline-container-sec-9" class="outline-2">
+        <h2 id="sec-9"><span class="section-number-2">9</span> How-to Create Classes and Objects.</h2>
+      </div>
+      <div id="outline-container-sec-10" class="outline-2">
+        <h2 id="sec-10"><span class="section-number-2">10</span> How-to Define Member Functions.</h2>
+      </div>
+      <div id="outline-container-sec-11" class="outline-2">
+        <h2 id="sec-11"><span class="section-number-2">11</span> How-to Define Constructor Member Functions.</h2>
+      </div>
+      <div id="outline-container-sec-12" class="outline-2">
+        <h2 id="sec-12"><span class="section-number-2">12</span> How-to Define Reader and Writer Member Functions.</h2>
+      </div>
+      <div id="outline-container-sec-13" class="outline-2">
+        <h2 id="sec-13"><span class="section-number-2">13</span> How-to Benefit From Data Abstraction.</h2>
+      </div>
+      <div id="outline-container-sec-14" class="outline-2">
+        <h2 id="sec-14"><span class="section-number-2">14</span> How-to Protect Member Variables From Harmful Reference.</h2>
+      </div>
+      <div id="outline-container-sec-15" class="outline-2">
+        <h2 id="sec-15"><span class="section-number-2">15</span> How-to Define Classes That Inherit Variables And Functions.</h2>
+      </div>
+      <div id="outline-container-sec-16" class="outline-2">
+        <h2 id="sec-16"><span class="section-number-2">16</span> How-to Design Classes And Class Hierarchies.</h2>
+      </div>
+      <div id="outline-container-sec-17" class="outline-2">
+        <h2 id="sec-17"><span class="section-number-2">17</span> How-to Perform Tests Using Numerical Predicates.</h2>
+      </div>
+      <div id="outline-container-sec-18" class="outline-2">
+        <h2 id="sec-18"><span class="section-number-2">18</span> How-to Write One-Way And Two-Way Conditional Statements.</h2>
+      </div>
+      <div id="outline-container-sec-19" class="outline-2">
+        <h2 id="sec-19"><span class="section-number-2">19</span> How-to Combine Boolean Expressions.</h2>
+      </div>
+      <div id="outline-container-sec-20" class="outline-2">
+        <h2 id="sec-20"><span class="section-number-2">20</span> How-to Write Iteration Statements.</h2>
+      </div>
+      <div id="outline-container-sec-21" class="outline-2">
+        <h2 id="sec-21"><span class="section-number-2">21</span> How-to Process Data In Files.</h2>
+        <div class="outline-text-2" id="text-21">
+          <p>
+            The following program computes box-car volumes as long as you type numbers; it stops when you type the control-d key-chord.
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream.h&gt;
+double box_volume(double h, double w, double l){return h * w * l;}
+main(){
+double height, width, depth;
+while (cin &gt;&gt; height &gt;&gt; width &gt;&gt; depth)
+cout &lt;&lt; "The volume of a "
+&lt;&lt; height &lt;&lt; " by " &lt;&lt; width &lt;&lt; " by " &lt;&lt; depth
+&lt;&lt; " box car is " &lt;&lt; box_volume (height, width, depth)
+&lt;&lt; endl;
+cout &lt;&lt; "You appear to have finished." &lt;&lt; endl;
+}
+            </pre>
+          </div>
+          <p>
+            Also, you can redirect input from your keyboard to a file. 
+            e.g. a file named test-data:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-txt">10.5 9.5 40.0
+12.6 8.6 50.0
+            </pre>
+          </div>
+
+          <p>
+            So, to call the function you need only to type, assuming you have called you program <code>box_car</code> and you have prepared a test file named <code>test-data</code>:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">$ box_car &lt; test-data
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-22" class="outline-2">
+        <h2 id="sec-22"><span class="section-number-2">22</span> How-to Write Recursive Functions.</h2>
+        <div class="outline-text-2" id="text-22">
+          <p>
+            An example better than words..
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream&gt;
+using namespace std;
+
+// Define recursive..
+
+int recursive_power_of_2 (int n) {
+  if (n == 0)
+    return 1;
+  else
+    return 2 * recursive_power_of_2 (n - 1);
+  }
+
+//test
+
+main () {
+  cout &lt;&lt; "2 to the 0th power is " &lt;&lt; recursive_power_of_2 (0) &lt;&lt; endl
+    &lt;&lt; "2 to the 1st power is " &lt;&lt; recursive_power_of_2 (1) &lt;&lt; endl
+    &lt;&lt; "2 to the 2nd power is " &lt;&lt; recursive_power_of_2 (2) &lt;&lt; endl
+    &lt;&lt; "2 to the 3rd power is " &lt;&lt; recursive_power_of_2 (3) &lt;&lt; endl;
+  }
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-23" class="outline-2">
+        <h2 id="sec-23"><span class="section-number-2">23</span> How-to Solve Definition Ordering Problems With Function Prototypes.</h2>
+        <div class="outline-text-2" id="text-23">
+          <p>
+            As learned in <code>seg 349</code> the number of rabbits after more than 1 month is the sum of the number at the end of the previous month and the month before that, as shown next:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">int rabbits (int n) {
+if (n == 0 || n == 1)
+return 1;
+else return previous_month (n) + penultimate_month (n);
+}
+            </pre>
+          </div>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream&gt;
+using namespace std;
+//Function prototype for rabbits function
+int rabbits (int);
+//Function definitions requiring rabbits function prototype:
+int previous_month (int n) {return rabbits (n - 1);}
+int penultimate_month (int n) {return rabbits (n -2);}
+//Function definition for rabbits function:
+int rabbits (int n) {
+if (n == 0 || n == 1)
+return 1;
+ else return previous_month (n) + penultimate_month (n);
+}
+//Test rabbits function
+main () {
+cout &lt;&lt; "At the end of the month 1, there is " &lt;&lt; rabbits (1) &lt;&lt; endl
+&lt;&lt; "At the end of the month 2, there are " &lt;&lt; rabbits (2) &lt;&lt; endl
+&lt;&lt; "At the end of the month 3, there are " &lt;&lt; rabbits (3) &lt;&lt; endl
+&lt;&lt; "At the end of the month 4, there are " &lt;&lt; rabbits (4) &lt;&lt; endl
+&lt;&lt; "At the end of the month 5, there are " &lt;&lt; rabbits (5) &lt;&lt; endl;
+}
+            </pre>
+          </div>
+
+          <p>
+            Each of the three cooperating functions can initiate a chain of calls that ends in a call to itself. Thus, the cooperating functions exhibit indirect, rather than direct, recursion.
+          </p>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-24" class="outline-2">
+        <h2 id="sec-24"><span class="section-number-2">24</span> How-to Work With Arrays Of Numbers.</h2>
+        <div class="outline-text-2" id="text-24">
+          <p>
+            To define a <code>global array</code>
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">int distances[5];
+            </pre>
+          </div>
+
+          <p>
+            Then the following expressions, for example, inserts an integer into the place indexed by the value of <code>counter</code>.
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">distances[counter] = 57;
+            </pre>
+          </div>
+
+          <p>
+            The following is a program in which an array of five integers is defined, data are wired in via five assignments, and the data are accessed in an output statement:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream&gt;
+using namespace std;
+// Define global integer array:
+int distances[5];
+main () {
+// Wire in sample data
+distances[0] = 57; distances[1] = 72;
+distances[2] = 94; distances[3] = 22;
+distances[4] = 35;
+//Display
+cout &lt;&lt; "The total distance traveled is "
+&lt;&lt; distances[0]
++ distances[1]
++ distances[2]
++ distances[3]
++ distances[4]
+&lt;&lt; endl;
+}
+            </pre>
+          </div>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">//Result
+The total distance traveled is 280
+            </pre>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-24-1" class="outline-3">
+          <h3 id="sec-24-1"><span class="section-number-3">24.1</span> PS.</h3>
+          <div class="outline-text-3" id="text-24-1">
+            <p>
+              Here I had to take an interesting break reading up on certain Rich Hickey's <a href="https://github.com/tallesl/Rich-Hickey-fanclub">tracked</a> performing curve which I do look against as the learning route me myself am trough (which this very notepad is proof of). Actually afterwards some LISP literacy (followed a quite hard EMACS learning curve) I picked up some of Python, R, HTML, CSS, &amp; am into a rebuilt coming back to C++ though so better understood now as it's under a LISP-building-view approach.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-25" class="outline-2">
+        <h2 id="sec-25"><span class="section-number-2">25</span> How-to Work With Arrays Of Class Objects.</h2>
+        <div class="outline-text-2" id="text-25">
+          <p>
+            As in the following example:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream&gt;
+use namespace std;
+const double pi = 3.14159;
+//Define the cylinder class
+class cylinder {
+public: double radious, length;
+        double volume () {return pi * radious * radious * length;}
+};
+//Define cylinder array:
+cylinder oil_tanks[100];
+main() {
+//Declare various variables:
+int limit, counter;
+double sum = 0.0;
+//Read numbers and write them into array:
+ for (limit = 0;
+      cin &gt;&gt; oil_tanks[limit].radious
+          &gt;&gt; oil_tanks[limit].length;
+       ++limit)
+;
+//Compute volume:
+for (counter = 0; counter &lt; limit; ++counter)
+  sum = sum + oil_tanks[counter].volume ();
+//Display sum:
+cout &lt;&lt; "The total volume in the "
+     &lt;&lt; limit &lt;&lt; " storage tanks is "
+     &lt;&lt; sum &lt;&lt; endl;
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-26" class="outline-2">
+        <h2 id="sec-26"><span class="section-number-2">26</span> How-to Create File Streams For Input And Output.</h2>
+        <div class="outline-text-2" id="text-26">
+          <p>
+            In this section we learn how to access information in files directly, so that we don't have to depend on input-output redirection to get information in and out of files.
+          </p>
+
+          <p>
+            A stream is a sequence of data objects. In the context of file input and output, <code>cout</code> is the name of a stream that flows from your program to your screen, and <code>cin</code> is the name of a stream that flows from your keyboard to your program.
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;fstream&gt;
+ifstream cilinder_stream ("test.data");
+
+//of course, the file specification may include a file directory path:
+ifstream cilinder_stream ("/usr/phw/cpp/test.data");
+
+//the following fileopening statement write down on to a file, rather:
+ofstream volume_stream ("test.result")
+            </pre>
+          </div>
+
+          <p>
+            The following program, fills an array with cylinder radio and lengths from a file named test.data, and then writes the sum of the cylinders' volumes into a file named test.result.
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+cons double pi = 3.14159;
+
+//Define the cylinder class:
+class cylinder {
+public: double radius, length;
+  double volume () {return pi * radius * radius * length;}
+};
+
+//Define cylinder array:
+cylinder oil_tanks[100];
+main () {
+
+//Declare variables:
+double sum = 0.0;
+
+//Connect an input stream to the file named test.data:
+ifstream cylinder_stream ("test.data");
+
+//Connect an output stream to the file named test.result:
+ofstream volume_stream ("test.result");
+
+//Read numbers from the test.data file:
+for (limit = 0;
+     cylinder_stream &gt;&gt; oil_tanks[limit].radius
+                     &gt;&gt; oil_tanks[limit].length;
+      ++limit);
+
+//Compute volume:
+for (counter = 0; counter &lt; limit; ++counter)
+   sum = sum + oil_tanks[counter].volume ();
+
+//Write sum into the test result file:
+volume_stream &lt;&lt; "The total volume in the "
+              &lt;&lt; limit &lt;&lt; " storage tanks is "
+              &lt;&lt; sum &lt;&lt; endl;
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-27" class="outline-2">
+        <h2 id="sec-27"><span class="section-number-2">27</span> How-to create New Class Objects At Run Time.</h2>
+      </div>
+      <div id="outline-container-sec-28" class="outline-2">
+        <h2 id="sec-28"><span class="section-number-2">28</span> How-to Store Pointers To Class Objects.</h2>
+        <div class="outline-text-2" id="text-28">
+          <p>
+            You may find yourself creating ridiculously large global arrays just to be sure that you don't run out of space. Such arrays can waste a lot of memory, particularly if they hold large class of objects. Fortunately, you now know that you can arrange for the <code>C++</code> compiler to allocate only pointers at compile time, deferring the allocation of memory for objects until run time.
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">// recall you define an array of cylinder objects with a definition
+// that looks like a var definition with a bracketed number added:
+
+cylinder oil_tanks[100];
+
+// And you can define an array of pointers to cylinders objects by
+// adding an asterisk before the array name:
+
+cylinder *oil_tank_pointers[100];
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-29" class="outline-2">
+        <h2 id="sec-29"><span class="section-number-2">29</span> How-to Write Programs That Find Member Functions At Run Time.</h2>
+        <div class="outline-text-2" id="text-29">
+          <p>
+            <code>456</code> .. you must somehow arrange for your compiled program to determine which [..] function to use, rather than having the <code>C++</code> compiler decide in advance, at compile time.
+          </p>
+
+          <p>
+            [&#x2026;] to mark a member function for selection at run time, rather than at compile time, you preface its definition with <code>virtual</code>. Such function is said to be a <code>virtual member function</code> (it won be available, hence, only virtual, at compile time)
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class railroad_car {
+  public: //Constructor:
+         railroad_car () {}
+         // Virtual display function:
+        virtual void display_short_name () {}; }
+            </pre>
+          </div>
+
+          <p>
+            <code>458</code> Until you are completely comfortable with virtual functions, you may find the phrase <i>multiversion function for which the version to be called is determined by object class at run time</i> whenever you see the phrase 'virtual function'
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-sec-30" class="outline-2">
+        <h2 id="sec-30"><span class="section-number-2">30</span> How-to Write Multiway Conditional Statements.</h2>
+        <div class="outline-text-2" id="text-30">
+          <p>
+            You know how to use <code>if</code> statements when you want a program to decide which of two alternative statements to execute. In this section, you learn how to use <code>switch</code> statements when you want your program to decide which of many alternative statements to execute. 
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">switch (integer-producing expression) {
+  case integer constant 1: statement for integer 1 break;
+  case integer constant 2: statement for integer 2 break;
+  ...
+  default: default statements
+}
+            </pre>
+          </div>
+          <p>
+            The version of the <code>analyze_train</code> shown in <code>segment 460</code> contains a sequence of <code>if-else</code> statements that determines what to do for any given value of the <code>type_code</code> variable:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">if (type_code == 0)        train[n] = new engine; 
+else if (type_code == 1)   train[n] = new box_car; 
+else if (type_code == 2)   train[n] = new tank_car; 
+else if (type_code == 3)   train[n] = new caboose; 
+
+// Most C++ programmers use a switch statement instead:
+
+switch (type_code) { 
+  case 0: train[n] = new engine;   break; 
+  case 1: train[n] = new box_car;  break; 
+  case 2: train[n] = new tank_car; break; 
+  case 3: train[n] = new caboose;  break; 
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-31" class="outline-2">
+        <h2 id="sec-31"><span class="section-number-2">31</span> How-to Use Enumerations To Improve Readability.</h2>
+        <div class="outline-text-2" id="text-31">
+          <p>
+            ..making programs easier to understand by replacing integer codes by mnemonic symbols.
+          </p>
+
+          <p>
+            For example, you could define integer constants as follows near the beginning of your program:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">const int eng_code = 0; 
+const int box_code = 1; 
+const int tnk_code = 2; 
+const int cab_code = 3;
+
+// Although more experienced c++ programmers would be more likely to use
+// an enumeration statement:
+
+enum {eng_code, box_code, tnk_code, cab_code}; 
+
+// so the switch statement could gain clarity by being writen this way:
+
+switch (type_code) { 
+  case eng_code: train[n] = new engine;   break; 
+  case box_code: train[n] = new box_car;  break; 
+  case tnk_code: train[n] = new tank_car; break; 
+  case cab_code: train[n] = new caboose;  break; 
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-32" class="outline-2">
+        <h2 id="sec-32"><span class="section-number-2">32</span> How-to Write Constructors That Call Other Constructors.</h2>
+        <div class="outline-text-2" id="text-32">
+          <p>
+            We should back to <code>secc 11</code> where we learned that constructors are <i>member functions</i> that you use to construct <i>class objects</i>.
+            At this point 
+            So that we could build construct the function as in the following
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">box_car() : box (10.5, 9.5, 40.0){}
+            </pre>
+          </div>
+
+
+          <div class="figure">
+            <p><img src="https://www.dropbox.com/s/uoflf73mu10r6zj/492-cons-that-call-cons.png?dl=1" alt="492-cons-that-call-cons.png" />
+            </p>
+          </div>
+
+          <p>
+            Now let's compare this with the previous <i>member-variable-assigning</i> version
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">box_car () {
+     height =  10.5; width = 9.5; length = 40.0;
+     }
+            </pre>
+          </div>
+          <p>
+            Also, if wish, we could arrange for explicit calls to more than one constructor. We simply separate the calls by commas, as in the following example:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">box_car () : box (10.5, 9.5, 40.0),
+             railroad_car (arguments)
+             {}
+            </pre>
+          </div>
+          <p>
+            And, the way of doing this is (e.g) as follows:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class box : public container {
+  public: double height, width, length;
+
+          // Default constructor:
+          box () {}
+
+          // Argument-bearing constructor:
+          box (double h, double w, double l) {
+             height = h; width = w; length = l;
+          }
+          // Other member function:
+          double volume () {return height * width * length;}
+};
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-33" class="outline-2">
+        <h2 id="sec-33"><span class="section-number-2">33</span> How-to Write Member Functions That Call Other Members Functions.</h2>
+        <div class="outline-text-2" id="text-33">
+          <p>
+            As said in the previous case, this issue is faced by recurring to a kind of 'template', a built-in one abstraction..
+          </p>
+
+          <p>
+            ..to understand this (I think) better starting by the end.. (<code>segment 509</code>) (Though it doesn't work for me (I've had to give it up for now))
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-c++"></pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-34" class="outline-2">
+        <h2 id="sec-34"><span class="section-number-2">34</span> How-to Use Protected And Private Variables And Functions.</h2>
+        <div class="outline-text-2" id="text-34">
+          <p>
+            To improve your understanding of the public, protected, and private parts of a class definition, contemplate the following diagram.
+          </p>
+
+
+          <div class="figure">
+            <p><img src="https://www.dropbox.com/s/2oe8m5j8p5ksncn/519-seg.png?dl=1" alt="519-seg.png" />
+            </p>
+          </div>
+
+          <p>
+            I have no included syntax details because it's quite close the case and would become a some tricky chapter. I find this will come out easily when on the writing task. 
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-sec-35" class="outline-2">
+        <h2 id="sec-35"><span class="section-number-2">35</span> How-to Use Protected And Private Class Derivations.</h2>
+      </div>
+
+      <div id="outline-container-sec-36" class="outline-2">
+        <h2 id="sec-36"><span class="section-number-2">36</span> How-To Write Functions That Return Character Strings.</h2>
+        <div class="outline-text-2" id="text-36">
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream&gt;
+using namespace std;
+
+const double pi = 3.14159; 
+
+class box { 
+  public: double height, width, length; 
+    // Default constructor: 
+    box ( ) { } 
+    // Argument-bearing constructor: 
+    box (double h, double w, double l) { 
+      height = h; width = w; length = l; 
+    } 
+    // Volume member function: 
+    double volume ( ) {return height * width * length;} 
+}; 
+
+// ...Cylinder definition goes here 
+class cylinder {
+  public: double radius, length;
+  // Default constructor:
+  cylinder ( ) { }
+  // Other member functions
+  // Argument-bearing constructor:
+  double volume ( ) {return pi * radius * radius * length;}
+  };
+
+class railroad_car { 
+  public: railroad_car ( ) { } 
+          virtual char* short_name ( ) {return "rrc";} 
+          virtual double capacity ( ) {return 0.0;} 
+}; 
+
+class box_car : public railroad_car, public box { 
+  public: box_car ( ) : box (10.5, 9.5, 40.0) { } 
+          virtual char* short_name ( ) {return "box";} 
+          virtual double capacity ( ) {return volume ( );} 
+}; 
+
+// Tank car definition goes here 
+class tank_car : public railroad_car, public cylinder {
+  public: tank_car ( ) : cylinder (3.5, 40.0) { }
+  virtual char* short_name ( ) {return "tnk";}
+  virtual double capacity ( ) {return volume ( );}
+  };
+
+//..Engine &amp;
+class engine : public railroad_car { 
+  public: engine ( ) { } 
+  virtual char* short_name ( ) {return "eng";} 
+}; 
+
+// ..Caboose definition goes here
+class caboose : public railroad_car {
+  public: caboose ( ) { }
+  virtual char* short_name ( ) {return "cab";}
+  };
+
+// Define railroad car pointer array: 
+railroad_car *train[100]; 
+
+// Declare enumeration constants, needed in switch statement: 
+enum {eng_code, box_code, tnk_code, cab_code}; 
+
+main ( ) { 
+  int n, car_count, type_code; 
+  for (car_count = 0; cin &gt;&gt; type_code; ++car_count) 
+    switch (type_code) { 
+      case eng_code: train[car_count] = new engine;   break; 
+      case box_code: train[car_count] = new box_car;  break; 
+      case tnk_code: train[car_count] = new tank_car; break; 
+      case cab_code: train[car_count] = new caboose;  break; 
+    } 
+
+//Display report.
+  for (n = 0; n &lt; car_count; ++n)  
+
+// Display shortname &amp; capacity &amp; terminate the line:
+cout &lt;&lt; train[n] -&gt; short_name ( ) 
+     &lt;&lt; "     "
+     &lt;&lt; train[n] -&gt; capacity ( )
+     &lt;&lt; endl; 
+
+}
+
+// Sample Data
+0 1 1 2 3
+
+// Result
+                          eng 0
+                          box 3990
+                          box 3990
+                          tnk 1539.38
+                          cab 0
+            </pre>
+          </div>
+
+          <p>
+            I cannot see where it's wrong.. so, I decided post for help on the <a href="https://plus.google.com/u/0/106389041910460818011/posts/eDQJNwaRDa2?cfem=1">c++ g+ community</a> and include the entire <a href="http://pastebin.com/Q362CVpy">script</a> as following:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">well, unfolding out some context (as I think I got it) as whenever a string appears in an
+expression the value of that string is a pointer to the first element in the correspondent
+character array (and a final null character, which the array is filled with, 
+as end-of-string marker) the idea is playing out with the potential of writing functions
+that return character strings. Or, as we could e.g. declare a variable whose value is a
+string by: 
+              'char *variable name = character string;'
+&amp; using
+              'char* function name' 
+if we wanted a function to return a string. Lets say e.g. we wanted control to in an
+only (main) place a calling for returns which would be provided by local methods
+(although there would be a lot uses for this functionality (apparently)).
+
+e.g. make of this 2 following:
+virtual void display_capacity ( ) { }
+virtual void display_capacity ( ) {cout &lt;&lt; volume ( );}
+
+more versatile by writing them this way:
+
+virtual double capacity( ){return 0.0;}
+virtual double capacity( ){return volume( );}
+
+The whole exercise as I could manage to complete summarizing with this chap some other
+previous can be seen here:
+
+[1] http://pastebin.com/Q362CVpy
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-37" class="outline-2">
+        <h2 id="sec-37"><span class="section-number-2">37</span> How-To Use Call-By-Reference Parameters.</h2>
+        <div class="outline-text-2" id="text-37">
+          <p>
+            There are occasions when you have to hand a class object to a member function as an ordinary argument, rather than via the class-pointer operator or the class-member operator. 
+          </p>
+
+          <p>
+            e.g. you might think that this function would work properly in the <code>analyze_train</code> program if called as follows:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">// DEFECTIVE attempt to define ordinary_capacity_function! 
+double ordinary_capacity_function (railroad_car r) { 
+  return r.capacity ( ); 
+} 
+
+for (n = 0; n &lt; car_count; ++n) { 
+ // Display short name and capacity and terminate the line:  
+ cout &lt;&lt; train[n] -&gt; short_name ( ) 
+      &lt;&lt; "     " 
+      &lt;&lt; ordinary_capacity_function (*train[n]) 
+      &lt;&lt; endl;                       --------- 
+}                                        ^ 
+                                         | 
+Dereferenced array pointer identifies  --* 
+a chunk of memory that holds a box car, 
+tank car, engine, or caboose
+            </pre>
+          </div>
+
+          <p>
+            Perhaps unexpectedly, incorporating this version of <code>ordinary_capacity_function</code> into the <code>analyze_train</code> program leads to the following result:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">eng     0 
+box     0 
+box     0 
+tnk     0 
+cab     0
+            </pre>
+          </div>
+
+          <p>
+            To tell C++ that the parameter is to be a <code>call-by-reference</code> parameter, we add an ampersand <code>&amp;</code> to the parameter's type indicator:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">                                               | 
+                                               v 
+double ordinary_capacity_function (railroad_car&amp; r) { 
+  return r.capacity ( ); 
+}
+            </pre>
+          </div>
+
+          <p>
+            With this one-character amendment, the <code>ordinary_capacity_function</code> works fine. The <code>analyze_train</code> program displays the following report, as it should:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">eng     0 
+box     2880 
+box     2880 
+tnk     1130.97 
+cab     0
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-38" class="outline-2">
+        <h2 id="sec-38"><span class="section-number-2">38</span> How-To Overload The Output Operator.</h2>
+        <div class="outline-text-2" id="text-38">
+          <p>
+            So figure out by target this chap is about the following statement:
+          </p>
+
+          <p>
+            Supose that you decide that you want to decorate the capacity report &#x2014;the one displayed by the <code>analyze_train</code> program&#x2014; with a simple iconic train, such as the following:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">[eng]-[box]-[box]-[tnk]-[cab]
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-39" class="outline-2">
+        <h2 id="sec-39"><span class="section-number-2">39</span> How-To Produce Tabular Displays</h2>
+        <div class="outline-text-2" id="text-39">
+          <p>
+            Basically is about using the <code>printf</code> function rather than the output operator.
+          </p>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-40" class="outline-2">
+        <h2 id="sec-40"><span class="section-number-2">40</span> How-To Write Statements That Read Character Strings.</h2>
+        <div class="outline-text-2" id="text-40">
+          <p>
+            As learned in <code>seg. 36</code> now is about obtaining character strings from a file.
+          </p>
+          <ul class="org-ul">
+            <li><code>char input_buffer[100];</code>
+            </li>
+            <li><code>getline(name of character array, maximum characters to be read)</code>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-sec-41" class="outline-2">
+        <h2 id="sec-41"><span class="section-number-2">41</span> How-To Test String Characters.</h2>
+        <div class="outline-text-2" id="text-41">
+          <p>
+            It's about hoe to extract characters from strings, and how to use such characters to determine what to do next.
+          </p>
+
+          <p>
+            Obtaining e.g. the type-indicating character from the <code>input_buffer</code> character array is easy:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">input_buffer[4]
+
+//If data were stored in file e.g. as 'TPW-E-783' with the above statement we'd obtain 'E'
+            </pre>
+          </div>
+          <p>
+            So:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">char extract_car_code(char *input_buffer){...}
+            </pre>
+          </div>
+          <p>
+            Could evolve to:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">char extract_car_code(char *input_buffer){
+                      return input_buffer[4];
+                      }
+            </pre>
+          </div>
+
+          <p>
+            So I could alter the <code>switch</code> function to read from file by:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">switch (extract_car_code (input_buffer)) {
+  case 'E': train[n] = new engine; break;
+  ...
+  }
+//and still obtain de code and reporting e.g. for 'TPW-E-783' 'E' and so on..
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-42" class="outline-2">
+        <h2 id="sec-42"><span class="section-number-2">42</span> How-To Deposit Character Strings Into Class Objects.</h2>
+        <div class="outline-text-2" id="text-42">
+          <p>
+            In the previous two sections, we learned how to obtain character strings from a file, how to extract characters from character strings, and how to test characters. In this section, we learn how to move a character string from a temporary buffer to a permanent location inside a class object using functions provided by <code>c++</code> string handling library.
+          </p>
+
+          <ul class="org-ul">
+            <li>As content of <code>input_buffer</code> is being continuously used, first we should e.g. create a character array to store the value (the char string) we want to work with, as in e.g <code>new char[10]</code>
+            </li>
+
+            <li>Then, by using <code>#include &lt;string&gt;</code> &amp; call e.g. for <code>strlen(input_buffer)</code> function, we could:
+
+              <ul class="org-ul">
+                <li>create a new array making sure to add <code>1</code>, to account for the <code>null</code> character as in: 
+
+                  <p>
+                    <code>new char[strlen(input_buffer) + 1]</code>
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>Next, using <code>strcpy</code> <i>(for string copy)</i> from <i>string library</i> function we must arrange to copy that content into the new character just been created: <code>strcpy (e-g-serial_number, input_buffer);</code>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-43" class="outline-2">
+        <h2 id="sec-43"><span class="section-number-2">43</span> How-To Reclaim Memory With Delete And Destructors.</h2>
+        <div class="outline-text-2" id="text-43">
+          <p>
+            After reading the chapter I indeed wondered why <code>C++</code> does not reclaim memory automatically whenever a pointer is reassigned to a new object created by the new operator. The rationale is that chunks of memory accessed trough a pointer are often accessible through more than one pointer. Accordingly, <code>C++</code> cannot assume that reassignment of a single pointer makes a chunk of memory inaccessible.
+          </p>
+
+          <p>
+            So, as this seems to have features of being a routine:
+          </p>
+          <ul class="org-ul">
+            <li>We can use a <code>while</code> loop, e.g.:
+              <code>while (1) {...}</code>
+            </li>
+            <li>As seen below we make the <code>railroad_car</code> destructor virtual, by which we tell <code>C++</code> to treat all the lower-level destructors as virtual. Thus, a virtual destructor exposes destructors in derived classes (<i>see segment 649</i>).
+            </li>
+          </ul>
+
+          <p>
+            Another way to prevent leaks is to keep track of the number of objects that you have created by having constructors and destructors increment and decrement an object counter. You could arrange for a global variable to be the object counter, better using what is called a <i>static member variable</i>.
+          </p>
+
+          <p>
+            Normal member variables are duplicated once for each class object. Static member variables are not &#x2014;there is just one static member variable for the entire class in which the static member variable is defined.
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+const double pi = 3.14159;
+// Box and cylinder class definitions go here
+class railroad_car {
+  public: char *serial_number;
+          // Constructors:
+          railroad_car ( ) {++counter;}
+          railroad_car (char *input_buffer) {
+            ++counter;
+            serial_number = new char[strlen(input_buffer) + 1]; 
+            strcpy (serial_number, input_buffer);
+          }
+          // Destructor:
+          virtual ~railroad_car ( ) {
+             cout &lt;&lt; "Destroying a railroad car; "
+                  &lt;&lt; --counter &lt;&lt; " remain." &lt;&lt; endl;
+             delete [ ] serial_number;                          
+          }
+          // Other:
+          virtual char* short_name ( ) {return "rrc";}
+          virtual double capacity ( ) {return 0.0;}
+  private: static int counter;
+};
+int railroad_car::counter = 0;
+// Other railroad-car class definitions go here
+railroad_car *train[100];
+char input_buffer[100];
+enum {eng_code = 'E', box_code = 'B', tnk_code = 'T', cab_code = 'C'};
+char extract_car_code (char *input_buffer) {return input_buffer[4];}
+void do_analysis (ifstream&amp; car_stream) {
+  int n, car_count;
+  for (car_count = 0; car_stream &gt;&gt; input_buffer; ++car_count) {
+    delete train[car_count];                                    
+    switch (extract_car_code (input_buffer)) {
+      case eng_code:
+        train[car_count] = new engine (input_buffer); break;    
+      case box_code:
+        train[car_count] = new box_car (input_buffer); break;   
+      // Entries for tank cars and cabooses 
+    } 
+  } 
+  car_stream.close ( ); 
+  for (n = 0; n &lt; car_count; ++n)  
+    cout &lt;&lt; train[n] -&gt; serial_number &lt;&lt; "     " 
+         &lt;&lt; train[n] -&gt; short_name ( ) &lt;&lt; "     " 
+         &lt;&lt; train[n] -&gt; capacity ( ) &lt;&lt; endl; 
+} 
+main ( ) { 
+  // Read file name and call analysis function repeatedly: 
+  while (1) { 
+    cout &lt;&lt; "Please type the name of a train file." &lt;&lt; endl &lt;&lt; ": "; 
+    cin &gt;&gt; input_buffer; 
+    // Open the input file: 
+    ifstream car_stream (input_buffer); 
+    // Give up if the input file does not exist: 
+    if (!car_stream) {cout &lt;&lt; "No such file." &lt;&lt; endl; return 0;} 
+    // Analyze: 
+    do_analysis (car_stream); 
+    // Close: 
+    car_stream.close ( ); 
+  } 
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-44" class="outline-2">
+        <h2 id="sec-44"><span class="section-number-2">44</span> How-To Prevent Object Copying.</h2>
+        <div class="outline-text-2" id="text-44">
+          <p>
+            Here more about memory management in general, and about copy constructors in particular.
+          </p>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-45" class="outline-2">
+        <h2 id="sec-45"><span class="section-number-2">45</span> How-To Organize A Multiple-File Program.</h2>
+        <div class="outline-text-2" id="text-45">
+          <p>
+            In section <code>16</code> you learned about the organisation of class hierarchies. In this section, you learn about the organisation of files.
+          </p>
+
+          <p>
+            Suppose, for the sake of illustration, that you decide to divide <code>the analize_train</code> program into three files:
+            <code>trains.cxx</code>, <code>containers</code> &amp; <code>cars</code>; then, we can use <code>#include</code> declarations to incorporate the text in the <code>containers</code> file and the <code>cars</code> file back into the <code>trains.cxx</code> file:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include "containers"
+#include "cars"
+            </pre>
+          </div>
+          <p>
+            Note that, when a file specification is surrounded by double-quotation marks, the <code>C++</code> compiler attempts to find the file in the current directory &#x2014;which is presumably the same one that contains the source code.  
+          </p>
+
+
+          <p>
+            With the header files properly included, we can use the <code>C++</code> compiler to compile each source-code file separately, producing object code. The object code files, by convention, have <code>o</code> extensions: <code>trains.o</code>, <code>containers.o</code>, <code>cars.o</code>. &#x2026;When you make changes in a big, multiple-file program, you need to recompile only the altered files; &amp; leave unaltered files alone.
+          </p>
+
+          <p>
+            PS. I should skip going further into this section (though I got the idea) because of the info I have about the <code>*.h</code> files (or libraries) (I still don't know what updated is this standard..)
+          </p>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-46" class="outline-2">
+        <h2 id="sec-46"><span class="section-number-2">46</span> How-To Compile A Multiple-File Program.</h2>
+        <div class="outline-text-2" id="text-46">
+          <p>
+            When you build big programs, with many header and source-code files, you eventually lose track of what depends on what. Accordingly, most operating systems that support <code>C++</code> provide what is called the <code>make</code> utility. 
+          </p>
+
+          <p>
+            When you compile a multiple-file program using the <code>make</code> utility, the file describing dependencies is called a <code>makefile</code>. Following <code>section 45</code> dependency would be reflected e.g. as:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">analyze_train: trains.o containers.o cars.o
+
+trains.o: trains.cxx cointainers.h cars.h
+
+containers.o: containers.cxx containers.h
+cars.o: cars.cxx cars.h containers.h
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-47" class="outline-2">
+        <h2 id="sec-47"><span class="section-number-2">47</span> How-To Implement Lists.</h2>
+        <div class="outline-text-2" id="text-47">
+          <p>
+            In this section, we learn about storing objects in lists. Why?
+          </p>
+          <ul class="org-ul">
+            <li>The implementation of lists demonstrates that we can use <code>C++</code> classes to implement programming-language features, as well as to represent domain-specific concepts.
+            </li>
+            <li>List manipulation is a useful tool: When we use list, instead of an ordinary array, we do not need to anticipate how many objects we will need to store, so we can conserve the space that would be wasted by safe worst-case estimates.
+            </li>
+            <li>Lists manipulation also provides a compelling context for the introduction of other <code>C++</code> concepts as <i>class friends</i> and <i>template functions</i>.
+            </li>
+          </ul>
+
+          <p>
+            To do it we basically could include in the class definition itself a pointer to the next class object, excepting for the final one which always will carry a pointer to <code>0</code> (known as the <code>NULL</code> pointer). This is what we can call a list but, made of <i>internal</i> pointers. However this design has at least two issues:
+          </p>
+          <ul class="org-ul">
+            <li>We must add a new <i>member variable</i> to the class definition that should define the objects we want to tie together &amp; which accessing to may have not get included or implementation could be so buggy. 
+            </li>
+
+            <li>We may want to include particular class objects in more than one list, which would make so complicated when adding internal pointers for each such list.
+            </li>
+          </ul>
+
+          <p>
+            So, we also can try a completely new approach. We can create a new class, the <i><code>link class</code></i>. So that objects in this new class have two pointers; one pointing to the next <i>link</i> object, and the other pointing to a class member object. Advantages?.
+          </p>
+
+          <ul class="org-ul">
+            <li>We don't have to alter the class definition of the objects we want to tie together.
+            </li>
+            <li>We can include class member objects in as many lists as we like without further class definition.
+            </li>
+            <li>We can include objects that belong to the class member we are on sub-classes.
+            </li>
+          </ul>
+
+          <p>
+            Now, so that designing to the header &amp; link classes, we need to answer the following questions:
+          </p>
+
+          <ul class="org-ul">
+            <li>What member variables we do need for the pointers involved?
+            </li>
+            <li>What member functions we do need to create lists, to add new lists elements, and to accessing elements?
+            </li>
+            <li>Which member variables &amp; member functions should be protected, and which public (though for now we will defer this question and make member variables &amp; member functions all public) 
+            </li>
+          </ul>
+
+          <p>
+            Next, we need a way to create an empty list-one that has not link objects. Or a header constructor that explicitly assigns <code>first_link_pointer</code> to the <code>NULL</code> pointer, e.g.:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class header {
+   public: link *first_link_pointer;
+           header () {
+             first_link_pointer = 0;
+           }
+           ...
+ };
+
+// or 
+
+class header {
+   public: link *first_link_pointer;
+           header () {
+             first_link_pointer = NULL;
+           }
+           ...
+ };
+            </pre>
+          </div>
+
+          <p>
+            We also need a function for adding an element to a list (which in its basic mode makes all additions to the front of the list &amp; using the <code>add</code> member function) as in:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">A header variable
+    |
+    |  Name of the element-adding function
+    |    |
+  train.add (pointer to a class member object);
+            </pre>
+          </div>
+
+          <p>
+            being <code>add</code> a member function of the <code>header</code> class it does add a pointer to a new class member object provided as an ordinary argument, &amp; must have a parameter that is declared to be a pointer to that given class member object.
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class header {
+   public: link *first_link_pointer;
+           header () {
+             first_link_pointer = NULL;
+           }
+
+ // e.g. with railroad_car class seen this book troughout
+          void add (railroad_car *new_element) {
+           ...
+           }
+           ...
+ };
+            </pre>
+          </div>
+
+          <p>
+            Note, then, that part of the work done by <code>add</code> is actually done by the two-argument constructor for the <code>link</code> class.
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class link {
+  public:
+    link *next_link_pointer;
+
+    // e.g. railroad_car class
+
+    railroad_car *element_pointer;
+    link (railroad_car *e, link *l) {
+      element_pointer = e;
+      next_link_pointer = l;
+    }
+};
+            </pre>
+          </div>
+
+          <p>
+            So, the <code>link</code> constructor is called when a new <i>link object</i> is created inside of the <code>add</code> member function.
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class header {
+   public: link *first_link_pointer;
+           header () {
+             first_link_pointer = NULL;
+          }
+
+ // e.g. with railroad_car class seen this book troughout
+          void add (railroad_car *new_element) {
+            first_link_pointer = new link (new_element, first_link_pointer);
+            ...
+          }
+           ...
+ };
+            </pre>
+          </div>
+          <p>
+            Note that <code>add</code> reroutes the pointer in the header object to point to the new link.
+          </p>
+
+
+          <p>
+            At this point we can construct an empty list and add elements to an existing list, but we cannot get at a list's elements. We would need the following:
+          </p>
+          <ul class="org-ul">
+            <li>A pointer, <code>current_link_pointer</code>
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class header { 
+  public: 
+    link *first_link_pointer; 
+    link *current_link_pointer; 
+    header ( ) { 
+      first_link_pointer = NULL; 
+      current_link_pointer = first_link_pointer; 
+    }
+            </pre>
+          </div>
+          <ul class="org-ul">
+            <li>A function, <code>advance</code>, that advances <code>current_link_pointer</code> from one link to the next.
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">void advance ( ) { 
+    current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+  }
+            </pre>
+          </div>
+          <ul class="org-ul">
+            <li>A function <code>access</code>, that obtains a pointer to a, e.g., <code>railroad_car</code> object from the link pointed at by <code>current_link_pointer</code>
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">railroad_car* access ( ) { 
+  return current_link_pointer -&gt; element_pointer; 
+}
+            </pre>
+          </div>
+          <ul class="org-ul">
+            <li>A function <code>endp</code>, for <i>end predicate</i>, that determines whether the <code>current_link_pointer</code>'s value is <code>NULL</code>
+            </li>
+          </ul>
+          <p>
+            This <code>endp</code> predicate is easy to define, because, when we work on a pointer with the negation operation, the result is <code>0</code> of type <code>int</code>, if the pointer is the <code>NULL</code> pointer; otherwise, the result is <code>1</code>, of type <code>int</code>, so:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">int endp ( ) { 
+  return ! current_link_pointer; 
+}
+            </pre>
+          </div>
+          <ul class="org-ul">
+            <li>A function, <code>reset</code>, that assigns the value of <code>current_link_pointer</code> to the value of <code>first_link_pointer</code>
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">void reset ( ) {                               
+  current_link_pointer = first_link_pointer;   
+}
+            </pre>
+          </div>
+          <p>
+            An overview to which is done so far:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class header { 
+  public: 
+    link *first_link_pointer; 
+    link *current_link_pointer; 
+    header ( ) { 
+      first_link_pointer = NULL; 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void add (railroad_car *new_element) { 
+      first_link_pointer = new link (new_element, first_link_pointer); 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void advance ( ) { 
+      current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+    } 
+    railroad_car* access ( ) { 
+      return current_link_pointer -&gt; element_pointer; 
+    } 
+    int endp ( ) { 
+      return ! current_link_pointer; 
+    } 
+    void reset ( ) {                               
+      current_link_pointer = first_link_pointer;   
+    }                                              
+};
+            </pre>
+          </div>
+
+          <p>
+            And the whole exercise to:
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-BASh">#include   
+#include   
+const double pi = 3.14159; 
+// Box, cylinder, and railroad-car class definitions go here 
+// Define list classes: 
+class link { 
+  public: 
+    link *next_link_pointer; 
+    railroad_car *element_pointer; 
+    link (railroad_car *e, link *l) { 
+      element_pointer = e; 
+      next_link_pointer = l; 
+    } 
+}; 
+class header { 
+  public: 
+    link *first_link_pointer; 
+    link *current_link_pointer; 
+    header ( ) { 
+      first_link_pointer = NULL; 
+      current_link_pointer = first_link_pointer; 
+      } 
+    void add (railroad_car *new_element) { 
+      first_link_pointer = new link (new_element, first_link_pointer); 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void advance ( ) { 
+      current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+    } 
+    railroad_car* access ( ) { 
+      return current_link_pointer -&gt; element_pointer; 
+    } 
+    int endp ( ) { 
+      return ! current_link_pointer; 
+    } 
+    void reset ( ) { 
+      current_link_pointer = first_link_pointer; 
+    } 
+}; 
+// Define list header: 
+header train; 
+char input_buffer[100]; 
+enum {eng_code = 'E', box_code = 'B', tnk_code = 'T', cab_code = 'C'}; 
+char extract_car_code (char *input_buffer) {return input_buffer[4];} 
+main ( ) { 
+  // No initialization or increment expressions: 
+  for (; cin &gt;&gt; input_buffer;) 
+    switch (extract_car_code (input_buffer)) { 
+      case eng_code: train.add (new engine (input_buffer));   break; 
+      case box_code: train.add (new box_car (input_buffer));  break; 
+      case tnk_code: train.add (new tank_car (input_buffer)); break; 
+      case cab_code: train.add (new caboose (input_buffer));  break; 
+    } 
+  train.reset ( ); 
+  // No initialization; increment expression advances list: 
+  for (; !train.endp ( ) ; train.advance ( ))  
+    // Display number, short name, and capacity and terminate the line:  
+    cout &lt;&lt; train.access ( ) -&gt; serial_number 
+         &lt;&lt; "     " 
+         &lt;&lt; train.access ( ) -&gt; short_name ( ) 
+         &lt;&lt; "     " 
+         &lt;&lt; train.access ( ) -&gt; capacity ( ) 
+         &lt;&lt; endl; 
+} 
+--- Data ---
+TPW-E-783 
+PPU-B-422 
+NYC-B-988 
+NYC-T-988 
+TPW-C-271 
+--- Result --- 
+TPW-C-271     cab     0 
+NYC-T-988     tnk     1539.38 
+NYC-B-988     box     3990 
+PPU-B-422     box     3990 
+TPW-E-783     eng     0
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-sec-48" class="outline-2">
+        <h2 id="sec-48"><span class="section-number-2">48</span> How-To Make One Class A Friend Of Another Class.</h2>
+        <div class="outline-text-2" id="text-48">
+          <p>
+            In section 47 we learned about the definition of two classes, <code>header</code> and <code>link</code> &amp; that all member variables and member functions in those two classes were in the public portion of the class definition, where they are too freely accessible. 
+          </p>
+
+          <p>
+            Of course, <code>add</code>, <code>advance</code>, <code>access</code>, <code>endp</code>, <code>reset</code> and the <code>header</code> constructor are used in the train program and therefore should be in the public portion of the header class. In this section, we learn how to make all other member variables and member functions inaccessible, except through those six functions, which constitute the public interface. Along the way we learn about friends and why they are needed.
+          </p>
+
+          <p>
+            Well, happen that moving member variables &amp; the link class constructor to the private would make them inaccessible &amp; (or put them in the protected portion of the class definition) make it the <code>header</code> class <i>a subclass</i> of the <code>link</code> class would create more problems than help. This later e.g. would make <code>header</code> objects to carry around <code>element_pointer</code> &amp; <code>next_link_pointer</code> member variables as excess baggage.
+          </p>
+
+          <p>
+            So, there being a <code>C++</code> mechanism whereby the <code>link</code> class can grant complete access privileges to the member functions of the <code>header</code> class. We just grab it &amp; We do this by adding a <code>friend declaration</code> to the definition of the <code>link</code> class.
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class link {
+  friend class header;
+ private:
+   link *next_link_pointer;
+   railroad_car *element_pointer;
+   link (railroad_car *e, link *l) {
+     element_pointer = e;
+     next_link_pointer = l;
+    }
+};
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-49" class="outline-2">
+        <h2 id="sec-49"><span class="section-number-2">49</span> How-To Reuse Class Definitions Using Templates.</h2>
+        <div class="outline-text-2" id="text-49">
+          <p>
+            In the section <code>47</code>, we learned how to use the <code>header</code> and <code>link</code> classes to make e.g. a list of <i>railroad cars</i>. In this section we will use the <i>template mechanism</i>, a general feature of <code>c++</code> with wide applicability to package and reuse so, once we have had defined template classes for list, it's easy to create new lists. 
+          </p>
+
+          <p>
+            As a step forward understanding <code>c++</code> mechanism we have just extracted a template from the <code>header</code> and <code>link</code> classes shown in <code>segment 763</code> 
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">class link { 
+  friend class header; 
+  private: 
+    link *next_link_pointer; 
+    railroad_car *element_pointer; 
+    link (railroad_car *e, link *l) { 
+      element_pointer = e; 
+      next_link_pointer = l; 
+    } 
+}; 
+class header { 
+  public: 
+    header ( ) { 
+      first_link_pointer = NULL; 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void add (railroad_car *new_element) { 
+      first_link_pointer = new link (new_element, first_link_pointer); 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void advance ( ) { 
+      current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+    } 
+    railroad_car* access ( ) { 
+      return current_link_pointer -&gt; element_pointer; 
+    } 
+    int endp ( ) { 
+      return ! current_link_pointer; 
+    } 
+    void reset ( ) { 
+      current_link_pointer = first_link_pointer; 
+    } 
+  private: 
+    link *first_link_pointer; 
+    link *current_link_pointer; 
+}; 
+
+////////
+class link { 
+  friend class header; 
+  private:                     
+    link *next_link_pointer;   
+    / *element_pointer;    
+    link (/ *e, link *l) { 
+      element_pointer = e;     
+      next_link_pointer = l;   
+    }                          
+}; 
+class header { 
+  public: 
+    header ( ) { 
+      first_link_pointer = NULL; 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void add (/ *new_element) { 
+      first_link_pointer = new link (new_element, first_link_pointer); 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void advance ( ) { 
+      current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+    } 
+    /* access ( ) { 
+      return current_link_pointer -&gt; element_pointer; 
+    } 
+    int endp ( ) { 
+      return ! current_link_pointer; 
+    } 
+    void reset ( ) { 
+      current_link_pointer = first_link_pointer; 
+    } 
+  private:                       
+    link *first_link_pointer;    
+    link *current_link_pointer;  
+};
+            </pre>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-49-1" class="outline-3">
+          <h3 id="sec-49-1"><span class="section-number-3">49.1</span> Template, simple syntax&#x2026;</h3>
+          <div class="outline-text-3" id="text-49-1">
+            <div class="org-src-container">
+
+              <pre class="src src-bash">template &lt;class link_parameter&gt;
+class link {
+  ...
+};
+
+template &lt;class header_parameter&gt;
+class header {
+  ...
+};
+              </pre>
+            </div>
+
+            <p>
+              Here, then, is the <code>analyze_train</code> program, newly revised to make use of the generic template class:
+            </p>
+            <div class="org-src-container">
+
+              <pre class="src src-bash">#include   
+#include   
+const double pi = 3.14159; 
+// Box, cylinder, and railroad-car class definitions go here 
+// Define list classes: 
+template  
+class link { 
+  friend class header; 
+  private: 
+    link *next_link_pointer; 
+    link_parameter *element_pointer; 
+    link (link_parameter *e, link *l) { 
+      element_pointer = e; 
+      next_link_pointer = l; 
+    } 
+}; 
+template  
+class header { 
+  public: 
+    header ( ) { 
+      first_link_pointer = NULL; 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void add (header_parameter *new_element) { 
+      first_link_pointer = 
+        new link (new_element, first_link_pointer); 
+      current_link_pointer = first_link_pointer; 
+    } 
+    void advance ( ) { 
+      current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+    } 
+    header_parameter* access ( ) { 
+      return current_link_pointer -&gt; element_pointer; 
+    } 
+    int endp ( ) { 
+      return ! current_link_pointer; 
+    } 
+    void reset ( ) { 
+      current_link_pointer = first_link_pointer; 
+    } 
+  private: 
+    link *first_link_pointer; 
+    link *current_link_pointer; 
+}; 
+// Define list header: 
+header train; 
+char input_buffer[100]; 
+enum {eng_code = 'E', box_code = 'B', tnk_code = 'T', cab_code = 'C'}; 
+char extract_car_code (char *input_buffer) {return input_buffer[4];} 
+main ( ) { 
+  // Train list is constructed here 
+  train.reset ( ); 
+  // No initialization; increment expression advances list: 
+  for (; !train.endp ( ) ; train.advance ( ))  
+    // Display number, short name, and capacity and terminate the line:  
+    cout &lt;&lt; train.access ( ) -&gt; serial_number 
+         &lt;&lt; "     " 
+         &lt;&lt; train.access ( ) -&gt; short_name ( ) 
+         &lt;&lt; "     " 
+         &lt;&lt; train.access ( ) -&gt; capacity ( ) 
+         &lt;&lt; endl; 
+} 
+--- Data ---
+TPW-E-783 
+PPU-B-422 
+NYC-B-988 
+NYC-T-988 
+TPW-C-271 
+--- Result --- 
+TPW-C-271     cab     0 
+NYC-T-988     tnk     1539.38 
+NYC-B-988     box     3990 
+PPU-B-422     box     3990 
+TPW-E-783     eng     0
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-50" class="outline-2">
+        <h2 id="sec-50"><span class="section-number-2">50</span> How-To Iterate Over Lists Using Iteration Class Object.</h2>
+        <div class="outline-text-2" id="text-50">
+          <p>
+            Now, what if we ever need to have more than one traversal going <i>simultaneously</i> (the <code>reset</code> function and changes in lists (as defined traversing a list alters that list because of the changes made to the <code>current_link_pointer</code>) concurrency is not necessarily stated). 
+          </p>
+
+          <p>
+            So, in this section, we learn about <code>iteration</code> classes, which allow us to separate <i>list construction</i> from <i>list traversal</i>, thereby enabling multiple simultaneous traversals.
+          </p>
+
+          <p>
+            So we will need:
+          </p>
+
+          <ul class="org-ul">
+            <li>Firstly, define to the <code>iterator</code> class to be a <i>template class</i> 
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">template 
+class iterator {
+  ...
+  private: link* current__link_pointer;  
+           link* first_link_pointer;     
+};
+            </pre>
+          </div>
+
+          <ul class="org-ul">
+            <li>Next, we need member functions to <code>access</code> the elements, then an <code>advance</code> function so going from <code>current_link_pointer</code> to the next <i>link</i> object, then, test if <code>current_link_pointer</code> is the <code>NULL</code> pointer, and <code>reset</code> the <code>current_link_pointer</code>. So basically we could borrow all these member functions from the definition of the <i>header template class</i>.
+            </li>
+          </ul>
+
+          <div class="org-src-container">
+
+            <pre class="src src-bash">template  
+class iterator { 
+  public:  ... 
+    iterator_parameter* access ( ) { 
+      return current_link_pointer -&gt; element_pointer; 
+    } 
+    void advance ( ) { 
+      current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+    } 
+    int endp ( ) { 
+      return ! current_link_pointer; 
+    } 
+    void reset ( ) { 
+      current_link_pointer = first_link_pointer; 
+    } 
+  private: link* current_link_pointer; 
+           link* first_link_pointer; 
+};
+            </pre>
+          </div>
+
+          <ul class="org-ul">
+            <li>Then, on defining the <code>iterator</code> constructor:
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">iterator (header&lt;iterator_parameter&gt;&amp; header) {
+  first_link_pointer = header.first_link_pointer;
+  current_link_pointer = first_link_pointer;
+ }
+            </pre>
+          </div>
+
+          <ul class="org-ul">
+            <li>Next, we must ensure that the <code>iterator</code> member function have access to the <code>header</code> and <code>link</code> member variables by declaring the <code>iterator</code> class to be <i>a friend</i> of both the <code>header</code> class and the <code>link</code> class.
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">template &lt;class link_parameter&gt;
+class link {
+  friend class iterator&lt;link_parameter&gt;;
+  friend class header&lt;link_parameter&gt;;
+  ...
+};
+
+template &lt;class parameter&gt;
+class header {
+  friend class iterator&lt;parameter&gt;;
+  ....
+};
+            </pre>
+          </div>
+
+          <p>
+            Now, in the following program, 
+          </p>
+          <div class="org-src-container">
+
+            <pre class="src src-bash">#include   
+#include   
+const double pi = 3.14159; 
+// Container, railroad-car, and list definitions go here 
+template  
+class iterator { 
+  public: 
+    iterator (header&amp; header) { 
+      first_link_pointer = header.first_link_pointer; 
+      current_link_pointer = first_link_pointer; 
+    } 
+    iterator_parameter* access ( ) { 
+      return current_link_pointer -&gt; element_pointer; 
+    } 
+    void advance ( ) { 
+      current_link_pointer = current_link_pointer -&gt; next_link_pointer; 
+    } 
+    int endp ( ) { 
+      return ! current_link_pointer; 
+    } 
+    void reset ( ) { 
+      current_link_pointer = first_link_pointer; 
+    } 
+  private: link* current_link_pointer; 
+           link* first_link_pointer; 
+}; 
+// Define list header: 
+header train; 
+char input_buffer[100]; 
+enum {eng_code = 'E', box_code = 'B', tnk_code = 'T', cab_code = 'C'}; 
+char extract_car_code (char *input_buffer) {return input_buffer[4];} 
+main ( ) { 
+  // Collect train elements as usual 
+  // Define and initialize iterator class object:
+
+//Seg; 785: the expression 'railroad_car', provided as template argument in the expression
+// 'iterator&lt;railroad_car&gt; train_iterator(train)'
+//causes the iterator class to be instantiated as to deal with 
+//railroad_cars. The expression 'train' provides the new iterator with
+//access to a particular list of railroad cars.
+
+  iterator &lt;railroad_car&gt;  train_iterator (train); 
+  // Iterate: 
+  train_iterator.reset ( ); 
+  for (; !train_iterator.endp ( ) ; train_iterator.advance ( ))  
+    // Display number, short name, and capacity and terminate the line:  
+    cout &lt;&lt; train_iterator.access ( ) -&gt; serial_number &lt;&lt; "     " 
+         &lt;&lt; train_iterator.access ( ) -&gt; short_name ( ) &lt;&lt; "     " 
+         &lt;&lt; train_iterator.access ( ) -&gt; capacity ( ) &lt;&lt; endl; 
+} 
+--- Data ---
+TPW-E-783 
+PPU-B-422 
+NYC-B-988 
+NYC-T-988 
+TPW-C-271 
+--- Result --- 
+TPW-C-271     cab     0 
+NYC-T-988     tnk     1539.38 
+NYC-B-988     box     3990 
+PPU-B-422     box     3990 
+TPW-E-783     eng     0
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Txe LLenne</p>
+      <p class="date">Created: 2016-05-08 Sun 15:08</p>
+      <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+      <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+    </div>
+  </body>
+</html>
