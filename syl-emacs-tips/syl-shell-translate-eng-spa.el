@@ -22,7 +22,7 @@
 ;; ("eng" or "spa" in this case) to any from the list of options provided
 ;; here => https://github.com/soimort/translate-shell#code-list
 
-;; INSTALLATION in your system, the case of mine, FEDORA 30:
+;; INSTALLATION in your system, the case of mine, FEDORA 30: ;; Thu 21 Jan 18:48:52 GMT 2021 EDIT: FEDORA 32
 ;; $ sudo dnf install translate-shell
 
 ;; Afterwards, download this file and place it in your load path, then add
