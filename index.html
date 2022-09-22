@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-03-06 Sat 18:52 -->
+<!-- 2022-09-22 Thu 20:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bigbrother Notepad, xe..</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="txarly" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,155 +192,112 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Tangerine" rel="stylesheet">
 <style type="text/css">.title{font-size:58px; text-shadow: 4px 4px 4px #233b4d; text-align:center;}body{max-width:85%; margin:auto; font-family:'Open Sans', serif; font-size:100%; text-shadow: 1px 1px 1px #aaa; background-color: #F0F0EA;} </style>
 <style type="text/css">#table-of-contents{ font-size: 10pt; position: fixed; right: 0em; top: 0em; background: #F3F9FE; -webkit-box-shadow: 0 0 1em #777777; -moz-box-shadow: 0 0 1em #777777; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomleft: 5px; text-align: right; /* ensure doesn't flow off the screen when expanded */ max-height: 80%; overflow: auto; } #table-of-contents h2 {font-size: 10pt; max-width: 8em; font-weight: normal; padding-left: 0.5em; padding-left: 0.5em; padding-top: 0.05em; padding-bottom: 0.05em; } #table-of-contents #text-table-of-contents {display: none; text-align: left; } #table-of-contents:hover #text-table-of-contents {display: block; padding: 0.5em; clear: left; margin-top: -1.5em; } pre.src{position: static; } code{font-size: 1.1rem; border: 1px solid #ddd; background: #EEEEEE; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em; -ms-border-radius: 0.4em; -o-border-radius: 0.4em; border-radius: 0.4em; font-weight: normal; padding: 0 0.2em;}pre.src {background-color: #E5E5E5;} </style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Bigbrother Notepad, xe..</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org92f0cc9">Bitcoin.</a></li>
-<li><a href="#org09ae1eb">Neuro Simulation</a></li>
-<li><a href="#org4ffab53">AngularJS, A Crash Intro to AngularJS`.</a></li>
-<li><a href="#orgf9ed7d4">Agile, w/Ruby.</a></li>
-<li><a href="#org692b10e">AI, My personal meeting ends.</a></li>
-<li><a href="#orgee33c38">ICD-10 Notes.</a></li>
-<li><a href="#org4334631">Corpus Linguistics, Method, Analysis, Interpretation.</a></li>
-<li><a href="#org9ada6d1">Little Schemer Scratch as you go</a></li>
-<li><a href="#org7579260">A LISP, box online&#x2026;</a></li>
-<li><a href="#org6cdece0">Hey!, A little bootstrap-like LISP tutorial (in Spanish with credits to lisp.plasticki)</a></li>
-<li><a href="#org6589e2f">My On-to-C++ Notepad</a></li>
-<li><a href="#orge99807c">A Py Scratch Sheet On The Fly</a></li>
-<li><a href="#org5e1dcac">Notes on Python</a></li>
-<li><a href="#orgdbdf41f">Csharp Lab, Resources, handbooks, manuales, video tutorials and beyond&#x2026;</a></li>
-<li><a href="#org05c0655">Chess Miscellaneous</a>
+<li><a href="#org58bfc85">1. Bitcoin.</a></li>
+<li><a href="#orgfb505d6">2. Neuro Simulation</a></li>
+<li><a href="#org5934c22">3. AngularJS, A Crash Intro to AngularJS`.</a></li>
+<li><a href="#org4683622">4. Agile, w/Ruby.</a></li>
+<li><a href="#orgc87c984">5. AI, My personal meeting ends.</a></li>
+<li><a href="#org788d89c">6. ICD-10 Notes.</a></li>
+<li><a href="#orgefe327d">7. Corpus Linguistics, Method, Analysis, Interpretation.</a></li>
+<li><a href="#orgeb51e4a">8. Little Schemer Scratch as you go</a></li>
+<li><a href="#org222d185">9. A LISP, box online&#x2026;</a></li>
+<li><a href="#org70cf8b9">10. Hey!, A little bootstrap-like LISP tutorial (in Spanish with credits to lisp.plasticki)</a></li>
+<li><a href="#org2898364">11. My On-to-C++ Notepad</a></li>
+<li><a href="#orgd5111cd">12. A Py Scratch Sheet On The Fly</a></li>
+<li><a href="#orge1ad6f0">13. Notes on Python</a></li>
+<li><a href="#orga082e99">14. Csharp Lab, Resources, handbooks, manuales, video tutorials and beyond&#x2026;</a></li>
+<li><a href="#orgd6f351b">15. My R Language Quick Reference</a></li>
+<li><a href="#org2a0da1b">16. Chess Miscellaneous</a>
 <ul>
-<li><a href="#org66d262f">Game 22F</a></li>
-<li><a href="#org3ee8541">Game 21M</a></li>
-<li><a href="#org0ae36f5">Game 22J</a></li>
+<li><a href="#org72f49fb">16.1. Game 22F</a></li>
+<li><a href="#org27a09f5">16.2. Game 21M</a></li>
+<li><a href="#org887d455">16.3. Game 22J</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org92f0cc9" class="outline-2">
-<h2 id="org92f0cc9"><a href="bitcoin-cou-notes.html">Bitcoin</a>.</h2>
+<div id="outline-container-org58bfc85" class="outline-2">
+<h2 id="org58bfc85"><span class="section-number-2">1.</span> <a href="bitcoin-cou-notes.html">Bitcoin</a>.</h2>
 </div>
-<div id="outline-container-org09ae1eb" class="outline-2">
-<h2 id="org09ae1eb"><a href="neuro-simulation-notes.html">Neuro Simulation</a></h2>
+<div id="outline-container-orgfb505d6" class="outline-2">
+<h2 id="orgfb505d6"><span class="section-number-2">2.</span> <a href="neuro-simulation-notes.html">Neuro Simulation</a></h2>
 </div>
-<div id="outline-container-org4ffab53" class="outline-2">
-<h2 id="org4ffab53"><a href="https://stonne.bitbucket.io/blog/2017/12/02/a-crash-intro-to-angularjs./">AngularJS, A Crash Intro to AngularJS`</a>.</h2>
-</div>
-
-<div id="outline-container-orgf9ed7d4" class="outline-2">
-<h2 id="orgf9ed7d4">Agile, w/Ruby.</h2>
-</div>
-<div id="outline-container-org692b10e" class="outline-2">
-<h2 id="org692b10e"><a href="AI-course-myNotepad.html">AI, My personal meeting ends.</a></h2>
-</div>
-<div id="outline-container-orgee33c38" class="outline-2">
-<h2 id="orgee33c38"><a href="icd-10-notes.html">ICD-10 Notes</a>.</h2>
-</div>
-<div id="outline-container-org4334631" class="outline-2">
-<h2 id="org4334631"><a href="https://stonne.bitbucket.io/blog/2018/07/25/corpus-linguistics-method,-analysis,-interpretation./#sec-1">Corpus Linguistics, Method, Analysis, Interpretation.</a></h2>
-</div>
-<div id="outline-container-org9ada6d1" class="outline-2">
-<h2 id="org9ada6d1"><a href="little-schemer-notes.html">Little Schemer Scratch as you go</a></h2>
-</div>
-<div id="outline-container-org7579260" class="outline-2">
-<h2 id="org7579260"><a href="testing-klispy-cl.html">A LISP, box online&#x2026;</a></h2>
-</div>
-<div id="outline-container-org6cdece0" class="outline-2">
-<h2 id="org6cdece0">Hey!, A little bootstrap-like <a href="lisp-in-small-p/lispi-tut.html">LISP tutorial</a> (in Spanish with credits to <a href="http://lisp.plasticki.com">lisp.plasticki</a>)</h2>
-</div>
-<div id="outline-container-org6589e2f" class="outline-2">
-<h2 id="org6589e2f"><a href="on-to-c++.html">My On-to-C++ Notepad</a></h2>
-</div>
-<div id="outline-container-orge99807c" class="outline-2">
-<h2 id="orge99807c"><a href="2021-02-17-1819 Py on the fly.html">A Py Scratch Sheet On The Fly</a></h2>
-</div>
-<div id="outline-container-org5e1dcac" class="outline-2">
-<h2 id="org5e1dcac"><a href="NotesOnPy/index.html">Notes on Python</a></h2>
-</div>
-<div id="outline-container-orgdbdf41f" class="outline-2">
-<h2 id="orgdbdf41f"><a href="z-preparando-curso-csharp.html">Csharp Lab, Resources, handbooks, manuales, video tutorials and beyond&#x2026;</a></h2>
-</div>
-<div id="outline-container-org05c0655" class="outline-2">
-<h2 id="org05c0655">Chess Miscellaneous</h2>
-<div class="outline-text-2" id="text-org05c0655">
-</div>
-<div id="outline-container-org66d262f" class="outline-3">
-<h3 id="org66d262f"><a href="game-24-e.html">Game 22F</a></h3>
+<div id="outline-container-org5934c22" class="outline-2">
+<h2 id="org5934c22"><span class="section-number-2">3.</span> <a href="https://stonne.bitbucket.io/blog/2017/12/02/a-crash-intro-to-angularjs./">AngularJS, A Crash Intro to AngularJS`</a>.</h2>
 </div>
 
-<div id="outline-container-org3ee8541" class="outline-3">
-<h3 id="org3ee8541"><a href="game-21m19.html">Game 21M</a></h3>
+<div id="outline-container-org4683622" class="outline-2">
+<h2 id="org4683622"><span class="section-number-2">4.</span> Agile, w/Ruby.</h2>
+</div>
+<div id="outline-container-orgc87c984" class="outline-2">
+<h2 id="orgc87c984"><span class="section-number-2">5.</span> <a href="AI-course-myNotepad.html">AI, My personal meeting ends.</a></h2>
+</div>
+<div id="outline-container-org788d89c" class="outline-2">
+<h2 id="org788d89c"><span class="section-number-2">6.</span> <a href="icd-10-notes.html">ICD-10 Notes</a>.</h2>
+</div>
+<div id="outline-container-orgefe327d" class="outline-2">
+<h2 id="orgefe327d"><span class="section-number-2">7.</span> <a href="https://stonne.bitbucket.io/blog/2018/07/25/corpus-linguistics-method,-analysis,-interpretation./#sec-1">Corpus Linguistics, Method, Analysis, Interpretation.</a></h2>
+</div>
+<div id="outline-container-orgeb51e4a" class="outline-2">
+<h2 id="orgeb51e4a"><span class="section-number-2">8.</span> <a href="little-schemer-notes.html">Little Schemer Scratch as you go</a></h2>
+</div>
+<div id="outline-container-org222d185" class="outline-2">
+<h2 id="org222d185"><span class="section-number-2">9.</span> <a href="testing-klispy-cl.html">A LISP, box online&#x2026;</a></h2>
+</div>
+<div id="outline-container-org70cf8b9" class="outline-2">
+<h2 id="org70cf8b9"><span class="section-number-2">10.</span> Hey!, A little bootstrap-like <a href="lisp-in-small-p/lispi-tut.html">LISP tutorial</a> (in Spanish with credits to <a href="http://lisp.plasticki.com">lisp.plasticki</a>)</h2>
+</div>
+<div id="outline-container-org2898364" class="outline-2">
+<h2 id="org2898364"><span class="section-number-2">11.</span> <a href="on-to-c++.html">My On-to-C++ Notepad</a></h2>
+</div>
+<div id="outline-container-orgd5111cd" class="outline-2">
+<h2 id="orgd5111cd"><span class="section-number-2">12.</span> <a href="2021-02-17-1819 Py on the fly.html">A Py Scratch Sheet On The Fly</a></h2>
+</div>
+<div id="outline-container-orge1ad6f0" class="outline-2">
+<h2 id="orge1ad6f0"><span class="section-number-2">13.</span> <a href="NotesOnPy/index.html">Notes on Python</a></h2>
+</div>
+<div id="outline-container-orga082e99" class="outline-2">
+<h2 id="orga082e99"><span class="section-number-2">14.</span> <a href="z-preparando-curso-csharp.html">Csharp Lab, Resources, handbooks, manuales, video tutorials and beyond&#x2026;</a></h2>
+</div>
+<div id="outline-container-orgd6f351b" class="outline-2">
+<h2 id="orgd6f351b"><span class="section-number-2">15.</span> <a href="R-commands-s-list.html">My R Language Quick Reference</a></h2>
+</div>
+<div id="outline-container-org2a0da1b" class="outline-2">
+<h2 id="org2a0da1b"><span class="section-number-2">16.</span> Chess Miscellaneous</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+<div id="outline-container-org72f49fb" class="outline-3">
+<h3 id="org72f49fb"><span class="section-number-3">16.1.</span> <a href="game-24-e.html">Game 22F</a></h3>
 </div>
 
-<div id="outline-container-org0ae36f5" class="outline-3">
-<h3 id="org0ae36f5"><a href="game-sat220619.html">Game 22J</a></h3>
+<div id="outline-container-org27a09f5" class="outline-3">
+<h3 id="org27a09f5"><span class="section-number-3">16.2.</span> <a href="game-21m19.html">Game 21M</a></h3>
+</div>
+
+<div id="outline-container-org887d455" class="outline-3">
+<h3 id="org887d455"><span class="section-number-3">16.3.</span> <a href="game-sat220619.html">Game 22J</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 06 Dec. 2017</p>
 <p class="author">Author: txarly</p>
-<p class="date">Created: 2021-03-06 Sat 18:52</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2022-09-22 Thu 20:31</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
