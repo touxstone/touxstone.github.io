@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-09-23 Fri 20:09 -->
+<!-- 2022-09-23 Fri 23:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A Coursera on R, my notepad.</title>
@@ -207,103 +207,103 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcb8bde6">Reading Data</a>
+<li><a href="#org51c9bcb">Reading Data</a>
 <ul>
-<li><a href="#org85b4e00">Reading Data</a></li>
-<li><a href="#org0c5f694">Writing Data</a></li>
-<li><a href="#orgf082c80">Reading Data Files with read.table</a>
+<li><a href="#org856ebd5">Reading Data</a></li>
+<li><a href="#org6f6332a">Writing Data</a></li>
+<li><a href="#org75b4589">Reading Data Files with read.table</a>
 <ul>
-<li><a href="#orgfbeaa5b">read.table</a></li>
-<li><a href="#orgec326f7">Calculating Memory Requirements.</a></li>
-<li><a href="#org79a20f5">Reading Lines of a Text File.</a></li>
+<li><a href="#org8e6c7f6">read.table</a></li>
+<li><a href="#orgab2b421">Calculating Memory Requirements.</a></li>
+<li><a href="#org7f4fdc5">Reading Lines of a Text File.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb016603">Control Structures</a>
+<li><a href="#org9ebae85">Control Structures</a>
 <ul>
-<li><a href="#org0397bc4">Control Structures: <code>if</code></a></li>
-<li><a href="#orgbf3e72b">Control Structures: <code>for</code></a>
+<li><a href="#orgaca607d">Control Structures: <code>if</code></a></li>
+<li><a href="#org3be7e1b">Control Structures: <code>for</code></a>
 <ul>
-<li><a href="#orgd654000">Nested <code>for</code> loops.</a></li>
+<li><a href="#orgb008c7f">Nested <code>for</code> loops.</a></li>
 </ul>
 </li>
-<li><a href="#orgc7d1e35">Control Structures: <code>while</code></a></li>
-<li><a href="#org2839d87">Control Structures: <code>repeat</code></a></li>
-<li><a href="#orgd14b6e7">Control Structures: <code>next, return</code> .</a></li>
+<li><a href="#org80c148e">Control Structures: <code>while</code></a></li>
+<li><a href="#orgb84e343">Control Structures: <code>repeat</code></a></li>
+<li><a href="#org341610a">Control Structures: <code>next, return</code> .</a></li>
 </ul>
 </li>
-<li><a href="#orgbca1747">Functions</a>
+<li><a href="#org85c36cd">Functions</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org15cbdf5">Defining a Function, Lazy Evaluation.</a></li>
+<li><a href="#orge02986a">Defining a Function, Lazy Evaluation.</a></li>
 </ul>
 </li>
-<li><a href="#orgdae3380">Creating Functions.</a></li>
-<li><a href="#org4412a87">Lexical Scoping</a></li>
-<li><a href="#org9d8d083">Exploring a Function Closure.</a></li>
-<li><a href="#orge3e6cb0">Lexical vs Dynamic.</a></li>
+<li><a href="#org689ba53">Creating Functions.</a></li>
+<li><a href="#orgc0a6f2d">Lexical Scoping</a></li>
+<li><a href="#org74aa0cf">Exploring a Function Closure.</a></li>
+<li><a href="#org4eae76c">Lexical vs Dynamic.</a></li>
 </ul>
 </li>
-<li><a href="#org041cc13">Vectorized Operations.</a></li>
-<li><a href="#org0f71454">Dates and Times in R.</a></li>
-<li><a href="#orgae6b23b">Loop Functions.</a>
+<li><a href="#org7811a3a">Vectorized Operations.</a></li>
+<li><a href="#org9d63dba">Dates and Times in R.</a></li>
+<li><a href="#org4704e9d">Loop Functions.</a>
 <ul>
-<li><a href="#org14638f6">Looping on the Command Line.</a>
+<li><a href="#org13eca9b">Looping on the Command Line.</a>
 <ul>
-<li><a href="#org4775afe"><code>lapply</code></a></li>
-<li><a href="#org8410a30"><code>split</code></a></li>
-<li><a href="#org51283b5">Splitting on More than One Level.</a></li>
-<li><a href="#org29f32a9"><code>mapply</code></a></li>
-<li><a href="#orgfabc2b0">Vectorizing a Function.</a></li>
+<li><a href="#org41cd410"><code>lapply</code></a></li>
+<li><a href="#org91dd97e"><code>split</code></a></li>
+<li><a href="#orgaf970a1">Splitting on More than One Level.</a></li>
+<li><a href="#org32b207d"><code>mapply</code></a></li>
+<li><a href="#orgcf49ddd">Vectorizing a Function.</a></li>
 </ul>
 </li>
-<li><a href="#org95d9a4e">The <code>str</code> Function.</a></li>
+<li><a href="#orgbbf97c8">The <code>str</code> Function.</a></li>
 </ul>
 </li>
-<li><a href="#org5bdd69f">Generating Random Numbers (Simulation)</a>
+<li><a href="#orgef110b9">Generating Random Numbers (Simulation)</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgae36628">The <code>set.seed</code> Function.</a></li>
+<li><a href="#orge4e7201">The <code>set.seed</code> Function.</a></li>
 </ul>
 </li>
-<li><a href="#orgb3e1adf">Generating Poisson Data.</a></li>
-<li><a href="#orgc3b284c">Generating Random Numbers From a Linear Model.</a></li>
+<li><a href="#org2de8f0d">Generating Poisson Data.</a></li>
+<li><a href="#org8dce4b2">Generating Random Numbers From a Linear Model.</a></li>
 </ul>
 </li>
-<li><a href="#orga3b2557">The R Profiler</a></li>
-<li><a href="#org082c75f">Appendix. A, Some key shot views.</a></li>
-<li><a href="#org37f7e34">Appendix. B Short List of the Most Useful Commands.</a>
+<li><a href="#org3122c1c">The R Profiler</a></li>
+<li><a href="#org7c3bffb">Appendix. A, Some key shot views.</a></li>
+<li><a href="#org7e0b902">Appendix. B Short List of the Most Useful Commands.</a>
 <ul>
-<li><a href="#org10a4036">Input and Display</a></li>
-<li><a href="#orgb0c4eb7">Moving around.</a></li>
-<li><a href="#org245fa40">Distributions</a></li>
-<li><a href="#orgde6abdc">Data Manipulation.</a></li>
-<li><a href="#orgb601152">Statistics and Transformations.</a></li>
-<li><a href="#org7b52b3f">More Statistics: Regression and Linear Model</a></li>
-<li><a href="#orgec7ecf7">Useful Additional Commands.</a></li>
-<li><a href="#orgdf43b31">Graphics.</a></li>
-<li><a href="#orgcbb5aa6">Distributions.</a></li>
-<li><a href="#org94943d0">Working with Dates.</a></li>
-<li><a href="#org555b6fe">And More&#x2026;</a></li>
+<li><a href="#org64fdcb4">Input and Display</a></li>
+<li><a href="#orgeb26637">Moving around.</a></li>
+<li><a href="#orgdab7252">Distributions</a></li>
+<li><a href="#orgaa35088">Data Manipulation.</a></li>
+<li><a href="#org35d2010">Statistics and Transformations.</a></li>
+<li><a href="#org35d683a">More Statistics: Regression and Linear Model</a></li>
+<li><a href="#org579302a">Useful Additional Commands.</a></li>
+<li><a href="#org94dc058">Graphics.</a></li>
+<li><a href="#orga29ee90">Distributions.</a></li>
+<li><a href="#org66991bd">Working with Dates.</a></li>
+<li><a href="#org17d45ac">And More&#x2026;</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgcb8bde6" class="outline-2">
-<h2 id="orgcb8bde6">Reading Data</h2>
-<div class="outline-text-2" id="text-orgcb8bde6">
+<div id="outline-container-org51c9bcb" class="outline-2">
+<h2 id="org51c9bcb">Reading Data</h2>
+<div class="outline-text-2" id="text-org51c9bcb">
 <ul class="org-ul">
 <li><a href="https://class.coursera.org/rprog-002/lecture/29">from Reading and Writing Data (part 1)</a></li>
 </ul>
 </div>
-<div id="outline-container-org85b4e00" class="outline-3">
-<h3 id="org85b4e00">Reading Data</h3>
-<div class="outline-text-3" id="text-org85b4e00">
+<div id="outline-container-org856ebd5" class="outline-3">
+<h3 id="org856ebd5">Reading Data</h3>
+<div class="outline-text-3" id="text-org856ebd5">
 <div class="org-src-container">
 <pre class="src src-R">read.table, read.csv           #for Reading tabular data
 readLines                      # for reading lines of a text file
@@ -316,9 +316,9 @@ unserialize                    # for reading single R objects in binary form
 </div>
 </div>
 
-<div id="outline-container-org0c5f694" class="outline-3">
-<h3 id="org0c5f694">Writing Data</h3>
-<div class="outline-text-3" id="text-org0c5f694">
+<div id="outline-container-org6f6332a" class="outline-3">
+<h3 id="org6f6332a">Writing Data</h3>
+<div class="outline-text-3" id="text-org6f6332a">
 <p>
 There are analogous functions for writing data to files.
 </p>
@@ -335,9 +335,9 @@ serialize
 </div>
 </div>
 
-<div id="outline-container-orgf082c80" class="outline-3">
-<h3 id="orgf082c80">Reading Data Files with read.table</h3>
-<div class="outline-text-3" id="text-orgf082c80">
+<div id="outline-container-org75b4589" class="outline-3">
+<h3 id="org75b4589">Reading Data Files with read.table</h3>
+<div class="outline-text-3" id="text-org75b4589">
 <p>
 The read.table function is one of the most common used functions for reading data. It has a few important arguments:
 </p>
@@ -354,9 +354,9 @@ stringsAsFactors # should character variables be coded as factors?
 </pre>
 </div>
 </div>
-<div id="outline-container-orgfbeaa5b" class="outline-4">
-<h4 id="orgfbeaa5b">read.table</h4>
-<div class="outline-text-4" id="text-orgfbeaa5b">
+<div id="outline-container-org8e6c7f6" class="outline-4">
+<h4 id="org8e6c7f6">read.table</h4>
+<div class="outline-text-4" id="text-org8e6c7f6">
 <p>
 For small to moderate sized datasets, you can usually call read.table without specifying any other arguments.
 </p>
@@ -377,9 +377,9 @@ R will automatically: <br />
 </div>
 </div>
 
-<div id="outline-container-orgec326f7" class="outline-4">
-<h4 id="orgec326f7">Calculating Memory Requirements.</h4>
-<div class="outline-text-4" id="text-orgec326f7">
+<div id="outline-container-orgab2b421" class="outline-4">
+<h4 id="orgab2b421">Calculating Memory Requirements.</h4>
+<div class="outline-text-4" id="text-orgab2b421">
 <p>
 I have a data frame with 1'500,000 and 120 columns, all of which are numeric data. Roughly, how much memory is required to store this data frame? <br />
 1'500,000 x 120 x 8 bytes/numeric <br />
@@ -392,9 +392,9 @@ I have a data frame with 1'500,000 and 120 columns, all of which are numeric dat
 </div>
 
 
-<div id="outline-container-org79a20f5" class="outline-4">
-<h4 id="org79a20f5">Reading Lines of a Text File.</h4>
-<div class="outline-text-4" id="text-org79a20f5">
+<div id="outline-container-org7f4fdc5" class="outline-4">
+<h4 id="org7f4fdc5">Reading Lines of a Text File.</h4>
+<div class="outline-text-4" id="text-org7f4fdc5">
 <p>
 <b>readLines</b> can be useful for reading in lines of webpages.
 </p>
@@ -416,9 +416,9 @@ x &lt;- readLines(con)
 </div>
 </div>
 
-<div id="outline-container-orgb016603" class="outline-2">
-<h2 id="orgb016603">Control Structures</h2>
-<div class="outline-text-2" id="text-orgb016603">
+<div id="outline-container-org9ebae85" class="outline-2">
+<h2 id="org9ebae85">Control Structures</h2>
+<div class="outline-text-2" id="text-org9ebae85">
 <p>
 Control structures in R allow you to control the flow of execution of the program, depending on run-time conditions. common structures are:
 </p>
@@ -439,9 +439,9 @@ Most control structures are not used in interactive sessions, but rather when wr
 </p>
 </div>
 
-<div id="outline-container-org0397bc4" class="outline-3">
-<h3 id="org0397bc4">Control Structures: <code>if</code></h3>
-<div class="outline-text-3" id="text-org0397bc4">
+<div id="outline-container-orgaca607d" class="outline-3">
+<h3 id="orgaca607d">Control Structures: <code>if</code></h3>
+<div class="outline-text-3" id="text-orgaca607d">
 <div class="org-src-container">
 <pre class="src src-R">if(&lt;condition&gt;) {
    ## do something
@@ -461,9 +461,9 @@ if(&lt;condition&gt;) {
 </div>
 </div>
 
-<div id="outline-container-orgbf3e72b" class="outline-3">
-<h3 id="orgbf3e72b">Control Structures: <code>for</code></h3>
-<div class="outline-text-3" id="text-orgbf3e72b">
+<div id="outline-container-org3be7e1b" class="outline-3">
+<h3 id="org3be7e1b">Control Structures: <code>for</code></h3>
+<div class="outline-text-3" id="text-org3be7e1b">
 <p>
 <b>for</b> loops take an interator variable and assign it succesive values from a sequence or vector. <b>For</b> loops are most commonly used for iterating over the elements of an object (list, vector, etc.)
 </p>
@@ -500,9 +500,9 @@ for(i in 1:4) print(x[i])
 </div>
 
 
-<div id="outline-container-orgd654000" class="outline-4">
-<h4 id="orgd654000">Nested <code>for</code> loops.</h4>
-<div class="outline-text-4" id="text-orgd654000">
+<div id="outline-container-orgb008c7f" class="outline-4">
+<h4 id="orgb008c7f">Nested <code>for</code> loops.</h4>
+<div class="outline-text-4" id="text-orgb008c7f">
 <p>
 <code>for</code> loops can be nested. 
 Though, be careful when nesting. Nesting beyond 2-3 levels is often very difficult to read/understand.
@@ -521,9 +521,9 @@ for(i in seq_len(nrow(x))) {
 </div>
 </div>
 
-<div id="outline-container-orgc7d1e35" class="outline-3">
-<h3 id="orgc7d1e35">Control Structures: <code>while</code></h3>
-<div class="outline-text-3" id="text-orgc7d1e35">
+<div id="outline-container-org80c148e" class="outline-3">
+<h3 id="org80c148e">Control Structures: <code>while</code></h3>
+<div class="outline-text-3" id="text-org80c148e">
 <p>
 While loops begin by testing a condition. If it is true, then they execute the loop body. Once the loop body is executed, the condition is tested again, and so forth.
 </p>
@@ -549,9 +549,9 @@ while(z &gt;= 3 &amp;&amp; z &lt;= 10) {
 </div>
 </div>
 
-<div id="outline-container-org2839d87" class="outline-3">
-<h3 id="org2839d87">Control Structures: <code>repeat</code></h3>
-<div class="outline-text-3" id="text-org2839d87">
+<div id="outline-container-orgb84e343" class="outline-3">
+<h3 id="orgb84e343">Control Structures: <code>repeat</code></h3>
+<div class="outline-text-3" id="text-orgb84e343">
 <p>
 Repeat initiates an infinite loop; these are not commonly used in statistical applications but they do have their uses. The only way to exit a <code>repeat</code> loop is to call a <code>break</code>.
 </p>
@@ -562,9 +562,9 @@ Repeat initiates an infinite loop; these are not commonly used in statistical ap
 </div>
 </div>
 
-<div id="outline-container-orgd14b6e7" class="outline-3">
-<h3 id="orgd14b6e7">Control Structures: <code>next, return</code> .</h3>
-<div class="outline-text-3" id="text-orgd14b6e7">
+<div id="outline-container-org341610a" class="outline-3">
+<h3 id="org341610a">Control Structures: <code>next, return</code> .</h3>
+<div class="outline-text-3" id="text-org341610a">
 <div class="org-src-container">
 <pre class="src src-R">for(i in 1:100) {
          if(i &lt;= 20) {
@@ -592,9 +592,9 @@ Repeat initiates an infinite loop; these are not commonly used in statistical ap
 </div>
 </div>
 
-<div id="outline-container-orgbca1747" class="outline-2">
-<h2 id="orgbca1747">Functions</h2>
-<div class="outline-text-2" id="text-orgbca1747">
+<div id="outline-container-org85c36cd" class="outline-2">
+<h2 id="org85c36cd">Functions</h2>
+<div class="outline-text-2" id="text-org85c36cd">
 <p>
 Functions represent some of the most powerful aspects of the <b>R</b> language. It's in some way the transition of the user of <b>R</b> into a kind of programmer of <b>R</b>.
 </p>
@@ -616,9 +616,9 @@ Functions represent some of the most powerful aspects of the <b>R</b> language. 
 </div>
 
 
-<div id="outline-container-org15cbdf5" class="outline-4">
-<h4 id="org15cbdf5">Defining a Function, Lazy Evaluation.</h4>
-<div class="outline-text-4" id="text-org15cbdf5">
+<div id="outline-container-orge02986a" class="outline-4">
+<h4 id="orge02986a">Defining a Function, Lazy Evaluation.</h4>
+<div class="outline-text-4" id="text-orge02986a">
 <p>
 Arguments to functions are evaluated lazily, so they are evaluated only as needed.
 </p>
@@ -637,9 +637,9 @@ This function never actually uses the argument b, so calling <b>f(2)</b> will no
 </div>
 </div>
 
-<div id="outline-container-orgdae3380" class="outline-3">
-<h3 id="orgdae3380">Creating Functions.</h3>
-<div class="outline-text-3" id="text-orgdae3380">
+<div id="outline-container-org689ba53" class="outline-3">
+<h3 id="org689ba53">Creating Functions.</h3>
+<div class="outline-text-3" id="text-org689ba53">
 <p>
 Here a simple example:
 </p>
@@ -677,8 +677,8 @@ Here a screen-shot with the above examples.
 </p>
 
 
-<div id="org2c90bd6" class="figure">
-<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/firstRfunct.png" alt="firstRfunct.png" />
+<div id="org6ab98f3" class="figure">
+<p><img src="img/firstRfunct.png" alt="firstRfunct.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Here what an emacs-R buffer with the above examples looks like.</p>
 </div>
@@ -693,9 +693,9 @@ Here a screen-shot with the above examples.
 </div>
 </div>
 
-<div id="outline-container-org4412a87" class="outline-3">
-<h3 id="org4412a87">Lexical Scoping</h3>
-<div class="outline-text-3" id="text-org4412a87">
+<div id="outline-container-orgc0a6f2d" class="outline-3">
+<h3 id="orgc0a6f2d">Lexical Scoping</h3>
+<div class="outline-text-3" id="text-orgc0a6f2d">
 <p>
 Searching for the value for a free variable
 </p>
@@ -733,9 +733,9 @@ This function returns another function as its value.
 </div>
 </div>
 
-<div id="outline-container-org9d8d083" class="outline-3">
-<h3 id="org9d8d083">Exploring a Function Closure.</h3>
-<div class="outline-text-3" id="text-org9d8d083">
+<div id="outline-container-org74aa0cf" class="outline-3">
+<h3 id="org74aa0cf">Exploring a Function Closure.</h3>
+<div class="outline-text-3" id="text-org74aa0cf">
 <p>
 So, how do you know what's in a function's environment?. 
 You can look at the environment the function was defined, by calling the LS function.
@@ -756,9 +756,9 @@ You can look at the environment the function was defined, by calling the LS func
 </div>
 </div>
 
-<div id="outline-container-orge3e6cb0" class="outline-3">
-<h3 id="orge3e6cb0">Lexical vs Dynamic.</h3>
-<div class="outline-text-3" id="text-orge3e6cb0">
+<div id="outline-container-org4eae76c" class="outline-3">
+<h3 id="org4eae76c">Lexical vs Dynamic.</h3>
+<div class="outline-text-3" id="text-org4eae76c">
 <div class="org-src-container">
 <pre class="src src-R">y &lt;- 10
 f &lt;- function(x) {
@@ -784,9 +784,9 @@ What's the value of:
 </div>
 </div>
 
-<div id="outline-container-org041cc13" class="outline-2">
-<h2 id="org041cc13">Vectorized Operations.</h2>
-<div class="outline-text-2" id="text-org041cc13">
+<div id="outline-container-org7811a3a" class="outline-2">
+<h2 id="org7811a3a">Vectorized Operations.</h2>
+<div class="outline-text-2" id="text-org7811a3a">
 <p>
 Many operations in <b>R</b> are <b>vectorized</b> making code more efficient.
 </p>
@@ -796,15 +796,15 @@ Here a couple of examples from my R box.
 </p>
 
 
-<div id="org20f244b" class="figure">
-<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/vectorized-oper.png" alt="vectorized-oper.png" />
+<div id="org7bb0b3d" class="figure">
+<p><img src="img/vectorized-oper.png" alt="vectorized-oper.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Vectorized Lineal Operations in <b>R</b></p>
 </div>
 
 
-<div id="orgb2fe856" class="figure">
-<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/vectorized-matr-oper.png" alt="vectorized-matr-oper.png" />
+<div id="orgc71f6c3" class="figure">
+<p><img src="img/vectorized-matr-oper.png" alt="vectorized-matr-oper.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Vectorized Matrix Operations in <b>R</b>.</p>
 </div>
@@ -815,9 +815,9 @@ As seen on the screen shoots operations are performed in parallel, literally ele
 </div>
 </div>
 
-<div id="outline-container-org0f71454" class="outline-2">
-<h2 id="org0f71454">Dates and Times in R.</h2>
-<div class="outline-text-2" id="text-org0f71454">
+<div id="outline-container-org9d63dba" class="outline-2">
+<h2 id="org9d63dba">Dates and Times in R.</h2>
+<div class="outline-text-2" id="text-org9d63dba">
 <p>
 <b>R</b> has developed a special representation of dates and times.
 </p>
@@ -830,16 +830,16 @@ As seen on the screen shoots operations are performed in parallel, literally ele
 </div>
 </div>
 
-<div id="outline-container-orgae6b23b" class="outline-2">
-<h2 id="orgae6b23b">Loop Functions.</h2>
-<div class="outline-text-2" id="text-orgae6b23b">
+<div id="outline-container-org4704e9d" class="outline-2">
+<h2 id="org4704e9d">Loop Functions.</h2>
+<div class="outline-text-2" id="text-org4704e9d">
 <p>
 <b>Loop</b> functions are some of the most powerful functions in the <b>R</b> language and they make it kind of very easy to use, specially in an interactive setting.
 </p>
 </div>
-<div id="outline-container-org14638f6" class="outline-3">
-<h3 id="org14638f6">Looping on the Command Line.</h3>
-<div class="outline-text-3" id="text-org14638f6">
+<div id="outline-container-org13eca9b" class="outline-3">
+<h3 id="org13eca9b">Looping on the Command Line.</h3>
+<div class="outline-text-3" id="text-org13eca9b">
 <p>
 Writing <b>for</b>, <b>while</b> loops is useful when programming but not particularly on the command line. There are some functions which implement looping to make it easier.
 </p>
@@ -856,9 +856,9 @@ An auxiliary function <code>split</code> is also useful, particularly in conjunc
 </p>
 </div>
 
-<div id="outline-container-org4775afe" class="outline-4">
-<h4 id="org4775afe"><code>lapply</code></h4>
-<div class="outline-text-4" id="text-org4775afe">
+<div id="outline-container-org41cd410" class="outline-4">
+<h4 id="org41cd410"><code>lapply</code></h4>
+<div class="outline-text-4" id="text-org41cd410">
 <p>
 <b>lapply</b> takes three arguments: (1) a list x; (2) a function (or the name of the function) FUN; (3) other argument via its &#x2026;argument. If x is not a list, it will be coerced to a list using as.list.
 </p>
@@ -878,9 +878,9 @@ An auxiliary function <code>split</code> is also useful, particularly in conjunc
 </div>
 </div>
 
-<div id="outline-container-org8410a30" class="outline-4">
-<h4 id="org8410a30"><code>split</code></h4>
-<div class="outline-text-4" id="text-org8410a30">
+<div id="outline-container-org91dd97e" class="outline-4">
+<h4 id="org91dd97e"><code>split</code></h4>
+<div class="outline-text-4" id="text-org91dd97e">
 <p>
 <b>split</b> takes a vector or other objects and splits it into groups determined by factor or list of factors.
 </p>
@@ -897,21 +897,21 @@ function (x, f, drop = FALSE, ...)
 </ul>
 </div>
 </div>
-<div id="outline-container-org51283b5" class="outline-4">
-<h4 id="org51283b5">Splitting on More than One Level.</h4>
-<div class="outline-text-4" id="text-org51283b5">
+<div id="outline-container-orgaf970a1" class="outline-4">
+<h4 id="orgaf970a1">Splitting on More than One Level.</h4>
+<div class="outline-text-4" id="text-orgaf970a1">
 
-<div id="orged7e378" class="figure">
-<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/splitting-on-more-levels.png" alt="splitting-on-more-levels.png" />
+<div id="org238d451" class="figure">
+<p><img src="img/splitting-on-more-levels.png" alt="splitting-on-more-levels.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Splitting on more than one level.</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org29f32a9" class="outline-4">
-<h4 id="org29f32a9"><code>mapply</code></h4>
-<div class="outline-text-4" id="text-org29f32a9">
+<div id="outline-container-org32b207d" class="outline-4">
+<h4 id="org32b207d"><code>mapply</code></h4>
+<div class="outline-text-4" id="text-org32b207d">
 <p>
 <b>mapply</b> is a multivariate apply of sorts which applies a function in parallel over a set of arguments.
 </p>
@@ -929,14 +929,14 @@ function (FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)
 </div>
 </div>
 
-<div id="outline-container-orgfabc2b0" class="outline-4">
-<h4 id="orgfabc2b0">Vectorizing a Function.</h4>
+<div id="outline-container-orgcf49ddd" class="outline-4">
+<h4 id="orgcf49ddd">Vectorizing a Function.</h4>
 </div>
 </div>
 
-<div id="outline-container-org95d9a4e" class="outline-3">
-<h3 id="org95d9a4e">The <code>str</code> Function.</h3>
-<div class="outline-text-3" id="text-org95d9a4e">
+<div id="outline-container-orgbbf97c8" class="outline-3">
+<h3 id="orgbbf97c8">The <code>str</code> Function.</h3>
+<div class="outline-text-3" id="text-orgbbf97c8">
 <p>
 This is the most important function in all <b>R</b>.
 <code>str</code>: Compactly display the internal structure of an <b>R</b> object.
@@ -953,9 +953,9 @@ The basic goal of <b>str</b> (of structure) is to answer the question, what's in
 </div>
 </div>
 
-<div id="outline-container-org5bdd69f" class="outline-2">
-<h2 id="org5bdd69f">Generating Random Numbers (Simulation)</h2>
-<div class="outline-text-2" id="text-org5bdd69f">
+<div id="outline-container-orgef110b9" class="outline-2">
+<h2 id="orgef110b9">Generating Random Numbers (Simulation)</h2>
+<div class="outline-text-2" id="text-orgef110b9">
 <p>
 Functions for probability distributions in <b>R</b>.
 </p>
@@ -1014,18 +1014,18 @@ In the following example, <b>x</b> will be a ten variables random normal distrib
 </div>
 </div>
 
-<div id="outline-container-orgae36628" class="outline-4">
-<h4 id="orgae36628">The <code>set.seed</code> Function.</h4>
-<div class="outline-text-4" id="text-orgae36628">
+<div id="outline-container-orge4e7201" class="outline-4">
+<h4 id="orge4e7201">The <code>set.seed</code> Function.</h4>
+<div class="outline-text-4" id="text-orge4e7201">
 <p>
 Any time you simulate random numbers, from any distribution, for any purpose, it's very important that you set the random number generator seed (notice numbers are not actually random but they appear random, that's the important thing) so the idea is that if you wanted to generate the same set of random numbers again, you could if wanted using the <b>set.seed</b> function, so anytime you set the seed it kind of sets the sequence of random variable that's going to occur and when you reset you set the sequence to go back to, allowing you debug, checking, or basically reproducing the problematic situation.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgb3e1adf" class="outline-3">
-<h3 id="orgb3e1adf">Generating Poisson Data.</h3>
-<div class="outline-text-3" id="text-orgb3e1adf">
+<div id="outline-container-org2de8f0d" class="outline-3">
+<h3 id="org2de8f0d">Generating Poisson Data.</h3>
+<div class="outline-text-3" id="text-org2de8f0d">
 <ul class="org-ul">
 <li>In <b>probability theory</b>, a <b>Poisson process</b> (named after the French mathematician <a href="http://en.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson">Siméon Denis Poisson</a>) is a <b>stochastic process</b> or <b>random process</b> (widely used) : a collection of random values, or the mathematical representation of, some random system or variable over time (indeterminacy). Those several (often infinitely many) directions in which the process may evolve.</li>
 </ul>
@@ -1057,12 +1057,12 @@ Generating Poisson data:
 </div>
 </div>
 
-<div id="outline-container-orgc3b284c" class="outline-3">
-<h3 id="orgc3b284c">Generating Random Numbers From a Linear Model.</h3>
-<div class="outline-text-3" id="text-orgc3b284c">
+<div id="outline-container-org8dce4b2" class="outline-3">
+<h3 id="org8dce4b2">Generating Random Numbers From a Linear Model.</h3>
+<div class="outline-text-3" id="text-org8dce4b2">
 <p>
 Now, suppose we want to simulate from the following linear model: <br />
-<img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/gen-rnumfromlm.png" alt="gen-rnumfromlm.png" />
+<img src="img/gen-rnumfromlm.png" alt="gen-rnumfromlm.png" />
 </p>
 
 <div class="org-src-container">
@@ -1082,9 +1082,9 @@ Now, suppose we want to simulate from the following linear model: <br />
 
 
 
-<div id="outline-container-orga3b2557" class="outline-2">
-<h2 id="orga3b2557">The R Profiler</h2>
-<div class="outline-text-2" id="text-orga3b2557">
+<div id="outline-container-org3122c1c" class="outline-2">
+<h2 id="org3122c1c">The R Profiler</h2>
+<div class="outline-text-2" id="text-org3122c1c">
 <p>
 Profiling is a systematic way to examine different parts of a program, useful when trying to optimise your code. Profiling is better than guessing. 
 But, "we should forget about small efficiency, say about 97% of the time: premature optimisation is the root of a evil" (by Donald Knuth).
@@ -1102,9 +1102,9 @@ But, "we should forget about small efficiency, say about 97% of the time: premat
 
 
 
-<div id="outline-container-org082c75f" class="outline-2">
-<h2 id="org082c75f">Appendix. A, Some key shot views.</h2>
-<div class="outline-text-2" id="text-org082c75f">
+<div id="outline-container-org7c3bffb" class="outline-2">
+<h2 id="org7c3bffb">Appendix. A, Some key shot views.</h2>
+<div class="outline-text-2" id="text-org7c3bffb">
 <p>
 Just as a reminder by <a href="http://www.slideshare.net/ajayohri/learning-r-and-teaching-r">Ajay Ohri</a> about where on checking out for <a href="http://image.slidesharecdn.com/learningr-140614015522-phpapp01/95/slide-20-1024.jpg?cb=1402728969">R views</a>. <br />
 </p>
@@ -1126,13 +1126,13 @@ The next 4 slides is for a shot view for my 25 R commands, my 25 next &amp; my 1
 </div>
 </div>
 
-<div id="outline-container-org37f7e34" class="outline-2">
-<h2 id="org37f7e34">Appendix. B Short List of the Most Useful Commands.</h2>
-<div class="outline-text-2" id="text-org37f7e34">
+<div id="outline-container-org7e0b902" class="outline-2">
+<h2 id="org7e0b902">Appendix. B Short List of the Most Useful Commands.</h2>
+<div class="outline-text-2" id="text-org7e0b902">
 </div>
-<div id="outline-container-org10a4036" class="outline-3">
-<h3 id="org10a4036">Input and Display</h3>
-<div class="outline-text-3" id="text-org10a4036">
+<div id="outline-container-org64fdcb4" class="outline-3">
+<h3 id="org64fdcb4">Input and Display</h3>
+<div class="outline-text-3" id="text-org64fdcb4">
 <div class="org-src-container">
 <pre class="src src-R">#read files with labels in first row
 read.table(filename,header=TRUE)           #read a tab or space delimited file
@@ -1162,9 +1162,9 @@ browse.workspace                           #a menu command that creates a window
 </div>
 </div>
 
-<div id="outline-container-orgb0c4eb7" class="outline-3">
-<h3 id="orgb0c4eb7">Moving around.</h3>
-<div class="outline-text-3" id="text-orgb0c4eb7">
+<div id="outline-container-orgeb26637" class="outline-3">
+<h3 id="orgeb26637">Moving around.</h3>
+<div class="outline-text-3" id="text-orgeb26637">
 <div class="org-src-container">
 <pre class="src src-R">ls()                                      #list the variables in the workspace
 rm(x)                                     #remove x from the workspace
@@ -1182,9 +1182,9 @@ new=old[n1:n2,n3:n4]                      #select the n1 through n2 rows of vari
 </div>
 </div>
 
-<div id="outline-container-org245fa40" class="outline-3">
-<h3 id="org245fa40">Distributions</h3>
-<div class="outline-text-3" id="text-org245fa40">
+<div id="outline-container-orgdab7252" class="outline-3">
+<h3 id="orgdab7252">Distributions</h3>
+<div class="outline-text-3" id="text-orgdab7252">
 <div class="org-src-container">
 <pre class="src src-R">beta(a, b)
 gamma(x)
@@ -1208,9 +1208,9 @@ runif(n, min=0, max=1)
 </div>
 </div>
 
-<div id="outline-container-orgde6abdc" class="outline-3">
-<h3 id="orgde6abdc">Data Manipulation.</h3>
-<div class="outline-text-3" id="text-orgde6abdc">
+<div id="outline-container-orgaa35088" class="outline-3">
+<h3 id="orgaa35088">Data Manipulation.</h3>
+<div class="outline-text-3" id="text-orgaa35088">
 <div class="org-src-container">
 <pre class="src src-R">replace(x, list, values)                 #remember to assign this to some object i.e., x &lt;- replace(x,x==-9,NA) 
                                          #similar to the operation x[x==-9] &lt;- NA
@@ -1244,9 +1244,9 @@ any(x)                     #for a vector of logical values, is at least one true
 </div>
 </div>
 
-<div id="outline-container-orgb601152" class="outline-3">
-<h3 id="orgb601152">Statistics and Transformations.</h3>
-<div class="outline-text-3" id="text-orgb601152">
+<div id="outline-container-org35d2010" class="outline-3">
+<h3 id="org35d2010">Statistics and Transformations.</h3>
+<div class="outline-text-3" id="text-org35d2010">
 <div class="org-src-container">
 <pre class="src src-R">max()
 min()
@@ -1287,9 +1287,9 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 </div>
 </div>
 
-<div id="outline-container-org7b52b3f" class="outline-3">
-<h3 id="org7b52b3f">More Statistics: Regression and Linear Model</h3>
-<div class="outline-text-3" id="text-org7b52b3f">
+<div id="outline-container-org35d683a" class="outline-3">
+<h3 id="org35d683a">More Statistics: Regression and Linear Model</h3>
+<div class="outline-text-3" id="text-org35d683a">
 <div class="org-src-container">
 <pre class="src src-R">matrices
 lm(Y~X1+X2)
@@ -1304,9 +1304,9 @@ princomp()
 </div>
 </div>
 
-<div id="outline-container-orgec7ecf7" class="outline-3">
-<h3 id="orgec7ecf7">Useful Additional Commands.</h3>
-<div class="outline-text-3" id="text-orgec7ecf7">
+<div id="outline-container-org579302a" class="outline-3">
+<h3 id="org579302a">Useful Additional Commands.</h3>
+<div class="outline-text-3" id="text-org579302a">
 <div class="org-src-container">
 <pre class="src src-R">colSums (x, na.rm = FALSE, dims = 1)
      rowSums (x, na.rm = FALSE, dims = 1)
@@ -1326,9 +1326,9 @@ princomp()
 </div>
 </div>
 
-<div id="outline-container-orgdf43b31" class="outline-3">
-<h3 id="orgdf43b31">Graphics.</h3>
-<div class="outline-text-3" id="text-orgdf43b31">
+<div id="outline-container-org94dc058" class="outline-3">
+<h3 id="org94dc058">Graphics.</h3>
+<div class="outline-text-3" id="text-org94dc058">
 <div class="org-src-container">
 <pre class="src src-R">par(mfrow=c(nrow,mcol))                   #number of rows and columns to graph
 par(ask=TRUE)                             #ask for user input before drawing a new graph
@@ -1392,9 +1392,9 @@ for (i in 1:5) {
 </div>
 </div>
 
-<div id="outline-container-orgcbb5aa6" class="outline-3">
-<h3 id="orgcbb5aa6">Distributions.</h3>
-<div class="outline-text-3" id="text-orgcbb5aa6">
+<div id="outline-container-orga29ee90" class="outline-3">
+<h3 id="orga29ee90">Distributions.</h3>
+<div class="outline-text-3" id="text-orga29ee90">
 <p>
 To generate random samples from a variety of distributions.
 </p>
@@ -1408,9 +1408,9 @@ sample(x, size, replace = FALSE, prob = NULL)      #samples with or without repl
 </div>
 </div>
 
-<div id="outline-container-org94943d0" class="outline-3">
-<h3 id="org94943d0">Working with Dates.</h3>
-<div class="outline-text-3" id="text-org94943d0">
+<div id="outline-container-org66991bd" class="outline-3">
+<h3 id="org66991bd">Working with Dates.</h3>
+<div class="outline-text-3" id="text-org66991bd">
 <div class="org-src-container">
 <pre class="src src-R">date &lt;-strptime(as.character(date), "%m/%d/%y")   #change the date field to a internal form for time  
                                                   #see ?formats and ?POSIXlt  
@@ -1422,9 +1422,9 @@ sample(x, size, replace = FALSE, prob = NULL)      #samples with or without repl
 </div>
 </div>
 
-<div id="outline-container-org555b6fe" class="outline-3">
-<h3 id="org555b6fe">And More&#x2026;</h3>
-<div class="outline-text-3" id="text-org555b6fe">
+<div id="outline-container-org17d45ac" class="outline-3">
+<h3 id="org17d45ac">And More&#x2026;</h3>
+<div class="outline-text-3" id="text-org17d45ac">
 <p>
 <a href="https://personality-project.org/r/r.useful.html">Additional functions</a> created by W. Revelle because, as stated, he needed some specific operation may be included in the workspace by issuing the source command:
 </p>
@@ -1464,7 +1464,7 @@ These functions include:
 <div id="postamble" class="status">
 <p class="author">Author: RS. Mo.</p>
 <p class="email">Email: <a href="mailto:psicotherapy@gmail.com">psicotherapy@gmail.com</a></p>
-<p class="date">Created: 2022-09-23 Fri 20:09</p>
+<p class="date">Created: 2022-09-23 Fri 23:02</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
