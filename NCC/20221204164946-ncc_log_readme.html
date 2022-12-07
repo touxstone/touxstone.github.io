@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-12-07 Wed 13:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ncc-log-readme</title>
+<meta name="author" content="txarly" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">ncc-log-readme</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1ad0e56">1. 1. Started Level 3 on 04/11/2022 [✓]</a></li>
+<li><a href="#orgf47ac1b">2. 2. ;; Fri 18 Nov 2022</a></li>
+<li><a href="#org2b6091f">3. 3. ;; Fri 25 Nov 2022</a></li>
+<li><a href="#orgd1077b0">4. 4. ;; Fri 02 Dec 2022</a>
+<ul>
+<li><a href="#orge775d48">4.1. <span class="done DONE">DONE</span> 3.1, 3.2</a></li>
+<li><a href="#org8b6ed23">4.2. 3.3, 3.4,</a>
+<ul>
+<li><a href="#org57aacad">4.2.1. <span class="done DONE">DONE</span> draft notes</a></li>
+</ul>
+</li>
+<li><a href="#org2e98d61">4.3. <span class="todo TODO">TODO</span> 3.5</a>
+<ul>
+<li><a href="#org90d2c0c">4.3.1. <span class="todo TODO">TODO</span> draft notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Still dunno whether writing out this report in Eng or in my Lang., so have a quick log report on wtf I'm doing. ;; Sun 4 Dec 14:29:54 GMT 2022 [✓] Let's have a lines about what done so far as I've experienced some gaps in my mental log on it.
+</p>
+<div id="outline-container-org1ad0e56" class="outline-2">
+<h2 id="org1ad0e56"><span class="section-number-2">1.</span> 1. Started Level 3 on 04/11/2022 [✓]</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Tasks <a href="presentations/learningOutcome1/Agile-Kanban.pdf">1.a, 1.b</a>, DL (deadline) by 11/11 done as second try [✓] I could not include the speaker notes [<a href="presentations/Kanban.SMontalvo.19161671.pptx">*</a>] As struggling with pp, pptx, I had a org-HTML version <a href="https://touxstone.github.io/kanbanTask04112022/speaker-notes-t0411.index.html">posted on</a> GitHub and sent by email but as far as I know, not read, received and probably banned as email is not a mean for submitting task anymore   
+</p>
+</div>
+</div>
+<div id="outline-container-orgf47ac1b" class="outline-2">
+<h2 id="orgf47ac1b"><span class="section-number-2">2.</span> 2. ;; Fri 18 Nov 2022</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I did a new version, including the speaker notes, and as an individual file per task (<a href="presentations/learningOutcome1/Agile-Kanban.pdf">1.a</a>, <a href="presentations/KSW_Similarities_an_Diffs.pdf">1b</a>) but submitted 1.a only, submission link for 1.b was closed, and not conceded new date as it was (unexpectedly) target achieved in the first review by teacher. <a href="presentations/KSW_vantages_drawbacks.pdf">1c</a>, <a href="presentations/KSW_when_best_suited.pdf">1d</a> deadline by 18/11 23:59 (I did not get it, so started working on them at home after coming from NCC), and tried submitting but failed.
+</p>
+</div>
+</div>
+<div id="outline-container-org2b6091f" class="outline-2">
+<h2 id="org2b6091f"><span class="section-number-2">3.</span> 3. ;; Fri 25 Nov 2022</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Submitted <a href="presentations/learningOutcome1/Project_Management_methodologies_taskC_taskD.pdf">1.c, 1.d</a> on 25/11 1c &amp; 1d after merged them and get conceded ad-hoc an extension submitting date from Mr Lawrence, new version of 1b declared redundant as the return evaluation declared it achieved [✓]. Working hmw slides projs entirely in class, submitted <a href="presentations/learningOutcome2/Capturing Requirements.pdf">2.1, 2.2, 2.3</a>, (I learn afterwards that 2.3 had DL for 02/12)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd1077b0" class="outline-2">
+<h2 id="orgd1077b0"><span class="section-number-2">4.</span> 4. ;; Fri 02 Dec 2022</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="presentations/learningOutcome2/Alternatives on documenting Projects.pdf">2.3 extended version</a>, as declared target not achieved (just before getting out from NCC, though) so I'd got time for submitting 02/12 23:59 [✓] done
+</p>
+</div>
+
+<div id="outline-container-orge775d48" class="outline-3">
+<h3 id="orge775d48"><span class="section-number-3">4.1.</span> <span class="done DONE">DONE</span> 3.1, <a href="20221204175725-anotations_on_task_3_2_listing_potential_risks.html#ID-eb0af2f8-ea61-4715-9def-2a1af6efe146">3.2</a></h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+DL better on 02/12 but by 05/12 3.5 DL 09/12 but better check online on NCC portal, <a href="presentations/learningOutcome3/Risk Management-task 1 &amp; 2.pdf">Risk-Management task 3.1 &amp; 3.2</a> submitted [✓] done
+</p>
+</div>
+</div>
+<div id="outline-container-org8b6ed23" class="outline-3">
+<h3 id="org8b6ed23"><span class="section-number-3">4.2.</span> 3.3, 3.4,</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Have also dl by 05/12 \\ <a href="presentations/learningOutcome3/Risk Management mitigation, task 3 and 4.pdf">submitted task 3.3, 3.4</a> [✓]
+</p>
+</div>
+<div id="outline-container-org57aacad" class="outline-4">
+<h4 id="org57aacad"><span class="section-number-4">4.2.1.</span> <span class="done DONE">DONE</span> draft notes</h4>
+<div class="outline-text-4" id="text-4-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgac10602"></a>3.3<br />
+<div class="outline-text-5" id="text-4-2-1-1">
+<p>
+Describe how to reduce the risk and follow mitigation, taking into consideration the following: 
+a) missing/unclear requirements [✓]
+b) skills shortage 
+c) time 
+d) budget 
+e) resource shortage 
+f) decision-making.
+</p>
+<ul class="org-ul">
+<li>Budget</li>
+</ul>
+<p>
+Regarding interdependence, is not hidden science to infer that budget issues have a direct correlation with the entire performance of the project, its schedule and the quality of deliveries. I have found specialists mention as the top-frequent-ranked two moments in the process of getting into cost overrun issues, at starting, which they call tight-fitting budget planning and in execution which is usually a consequence of inaccuracy in estimations but since the likelihood of getting into cost issues is around 70% in the software industry, this mishap should make it get removed from the list of unpredictable facts.
+relocate transfer overseen constraints restrictions
+Time is a pillar in the project management.
+Risks related to decision-making is an entire science. Some research report that propensity to take risks or avoid and spent time in gaining information and working in group are connected inversely. Or probably 
+</p>
+</div>
+</li>
+
+<li><a id="org8c48bf5"></a><span class="done DONE">DONE</span> 3.4<br />
+<div class="outline-text-5" id="text-4-2-1-2">
+<p>
+For each of the identified risk types, propose potential mitigations, taking into consideration key elements of the following: 
+    a) Scrum 
+    b) Kanban 
+    c) Waterfall 
+    d) Agile. 
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2e98d61" class="outline-3">
+<h3 id="org2e98d61"><span class="section-number-3">4.3.</span> <span class="todo TODO">TODO</span> 3.5</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+dl 09/12
+Explain what is meant by a project’s critical path
+</p>
+</div>
+<div id="outline-container-org90d2c0c" class="outline-4">
+<h4 id="org90d2c0c"><span class="section-number-4">4.3.1.</span> <span class="todo TODO">TODO</span> draft notes</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<p>
+In project management, the critical path is the longest sequence of tasks that have to be completed. This is to successfully complete a project.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: txarly</p>
+<p class="date">Created: 2022-12-07 Wed 13:45</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
