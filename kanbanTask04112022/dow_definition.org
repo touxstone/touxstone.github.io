@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1bf5e353-9057-4521-be91-d00e40cc4fd2
+:END:
+#+title: DoW-definition
+#+Author: S.Montalvo @19161671 | NCC London
+#+HTML_LINK_HOME: speaker-notes-t0411.index.html
+#+HTML_LINK_UP: speaker-notes-t0411.index.html
+The explicit shared understanding of flow among Kanban system members within their context is called a Definition of Workflow (DoW). DoW is a fundamental concept of Kanban. All other elements of this guide depend heavily on how workflow is defined. 

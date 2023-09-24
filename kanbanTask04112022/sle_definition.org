@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       0fa3a2cd-1a09-40e4-b27b-d4f48d93525f
+:END:
+#+title: SLE-definition
+#+HTML_LINK_HOME: speaker-notes-t0411.index.html
+#+HTML_LINK_UP: speaker-notes-t0411.index.html
+
+#+Author: S.Montalvo @19161671 | NCC London
+SLE, is a forecast of how long it should take a work item to flow from started to finished. The SLE itself has two parts: a period of elapsed time and a probability associated with that period (e.g., "85% of work items will be finished in eight days or less"). The SLE should be based on historical cycle time, and once calculated, should be visualised on the Kanban board. If historical cycle time data does not exist, a best guess will do until there is enough historical data for a proper SLE calculation.

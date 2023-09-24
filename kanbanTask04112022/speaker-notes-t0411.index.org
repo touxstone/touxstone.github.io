@@ -1,0 +1,93 @@
+#+title: Kanban, 
+#+subtitle: >>From workflow to optimise value to optimise value by optimising flow \\
+#+subtitle: Assignment dated 04 November 2022 \\
+#+Author: S.Montalvo @19161671 | NCC London
+#+options: num:nil toc:2
+#+HTML_HEAD: <style type="text/css">#table-of-contents{ font-size: 10pt; position: fixed; right: 0em; top: 0em; background: #F3F9FE; -webkit-box-shadow: 0 0 1em #777777; -moz-box-shadow: 0 0 1em #777777; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomleft: 5px; text-align: right; /* ensure doesn't flow off the screen when expanded */ max-height: 80%; overflow: auto; } #table-of-contents h2 {font-size: 10pt; max-width: 8em; font-weight: normal; padding-left: 0.5em; padding-left: 0.5em; padding-top: 0.05em; padding-bottom: 0.05em; } #table-of-contents #text-table-of-contents {display: none; text-align: left; } #table-of-contents:hover #text-table-of-contents {display: block; padding: 0.5em; clear: left; margin-top: -1.5em; } pre.src{position: static; } code{font-size: 1.1rem; border: 1px solid #ddd; background: #EEEEEE; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em; -ms-border-radius: 0.4em; -o-border-radius: 0.4em; border-radius: 0.4em; font-weight: normal; padding: 0 0.2em;}pre.src {background-color: #E5E5E5;} </style>
+#+HTML_HEAD_EXTRA: <style type="text/css">body{max-width:80%; margin:auto; }</style>
+
+#+CAPTION:Software Development Methodologies
+[[file:roles.jpg]]
+
+
+** 1
+Attending to the brief requirement for this task I am going to summarize the Kanban methodology though my choice is still a mystery I cannot explain entirely, yet. I should say that I got a bias on reading poetry, interest that swapped to coding when once learned a little about programming I used to find myself quite long whiles awestruck on the beautiful simplicity of some scripts.
+
+** 2
+the same appealing reaction I got after learning that the keystone of the Kanban methodology was not that visually centred workflow tracking system everybody uses to talk about to define Kanban, this was just a myth among others, but the insight you might get by focusing on the quest of the method "from workflow to optimise value" to "optimise value by optimising flow".
+** 3
+And here is the mysterious connection. You probably will got new insights by stopping and unblocking blocked tasks, because solving by coding has really of the same nature than crafting expressions with words, and as poetry, it depends so much on inspiration. Here creativity is a strategy.
+** 4
+Being this complexity crowded with so many concerns in action, namely customer requirements, team skills and conditions the first quest is get proper definitions, do it properly and measure it. The Kanban handbook call it the basic Tandem:
+- DoW
+- Actively Managing Workflow
+- Improving Workflow
+ 
+
+
+* Summarising Kanban
+
+|                          | Kanban                                                                                                                 |
+|--------------------------+------------------------------------------------------------------------------------------------------------------------|
+| Keystone                 | Definition of Work (DoW)                                                                                               |
+|                          |                                                                                                                        |
+| Practice:                | - Define When started & Finish                                                                                         |
+| - DoW                    | - WIP (Work in Progress) one or more states the work item flows                                                        |
+|                          | from start to finish.                                                                                                  |
+|                          | - Define how-to control WIP                                                                                            |
+|                          | - Explicit policies about how items can flow trough each state                                                         |
+|                          | - a SLE (Service level expectation) which is a forecast of how long it should take a WI to flow from started to finish |
+|                          |                                                                                                                        |
+| - Actively Managing      | - Controlling WIP  (Work-Items in a workflow or slots/tokens on a Kanban board).                                       |
+| workflow                 | - Avoiding W-Items piling up any part of the flow                                                                      |
+|                          | - Ensuring work not age, tool: SLE                                                                                     |
+|                          | - Unblocking blocked Work                                                                                              |
+|                          |                                                                                                                        |
+| - Improving the workflow | Checking WIP-limits (on board)                                                                                         |
+|                          | Gain information from board (visualisation and other Kanban measures)                                                  |
+|                          |                                                                                                                        |
+|                          |                                                                                                                        |
+|                          | Kanban Metrics (WIP, Through-Put: WItems finished per unit of time, WI age, Cycle Time)                                |
+|                          |                                                                                                                        |
+
+* Describing Similarities and Differences
+** Differences 
+|                  | Kanban                                         | Scrum                                        | [[file:waterfall-sequences.png][Waterfall]]                           |
+|------------------+------------------------------------------------+----------------------------------------------+-------------------------------------|
+| Roles & Duties   | Captain, Assistant (also found SRM and SDM)    | Product Owner, Scrum Master, Team member     | Developer,                          |
+|                  | Service Request Manager                        |                                              | Tester,                             |
+|                  | Service Delivery Manager                       |                                              | Business analyst,                   |
+|                  |                                                |                                              | Project Manager                     |
+|                  |                                                |                                              |                                     |
+| Delivery &       | Continuously, with due dates given by the      | by chunk of work completed in 'Sprints'      | (made at the requirement and design |
+| Timelines        | business as needed.                            | (work made in sets of time). It's a          | phase) timeline which is break-down |
+|                  |                                                | time-boxed system.                           | attending deadlines planed upfront. |
+|                  |                                                |                                              |                                     |
+|                  |                                                |                                              |                                     |
+| Delegation &     | Pull system, usually new tasks only, once      | Pull system though an entire batch is pulled | The development sequence itself     |
+| Priority-Setting | the previous task is completed. (SRM) Set the  | for each iteration.                          | settles priorities and dependencies |
+|                  | next work item from the product backlog.       | P.Owner break down complex backlog items     | in advance                          |
+|                  | - Checking indicators WIP, WIP-limit, [[file:dow_definition.html][DoW]], [[file:sle_definition.html][SLE]] | and make the team refine further into items  |                                     |
+|                  |                                                | suitable in one sprint.                      |                                     |
+|                  |                                                |                                              |                                     |
+| Productivity,    | by cycle time (time it takes to complete       | Capacity (team availability) &               | As entirely sequential each phase   |
+| measurement      | an project from beginning to end)              | & Velocity (how-many user stories            | must be completed fully before      |
+|                  |                                                | completed in previous sprints)               | move on with the next               |
+|                  |                                                | (checking KPI, Key Performance Indicators)   |                                     |
+|                  |                                                |                                              |                                     |
+| Best suited      | widely varying priorities                      |                                              |                                     |
+
+
+
+
+
+
+** Similarities
+
+|              | Kanban                       | Scrum                             | [[file:waterfall_concept.html][Waterfall]]                                          |
+|--------------+------------------------------+-----------------------------------+----------------------------------------------------|
+|              | Agile application focused on | structured Agile by breaking down | noticed to be risky and invite failure from        |
+|              | facilitate the workflow      | task into sprints                 | the beginning unless corrections involved feedback |
+|              |                              |                                   | between stages                                     |
+| Similarities |                              |                                   |                                                    |
+

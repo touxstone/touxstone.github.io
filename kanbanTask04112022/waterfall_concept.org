@@ -1,0 +1,11 @@
+ :PROPERTIES:
+:ID:       739d786b-60f9-42be-b047-a6f7cdab4245
+:END:
+#+title: waterfall-concept
+#+Author: S.Montalvo @19161671 | NCC London
+#+HTML_LINK_HOME: speaker-notes-t0411.index.html
+#+HTML_LINK_UP: speaker-notes-t0411.index.html
+
+According to chronicles the waterfall concept was first discussed in a [[http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf][paper]] dated 1970 by Winston W. Royce for an IEEE WESCON, though is also noticed that the model itself is mistakenly attributed to him. Actually, neither the term 'waterfall' was used in the article, nor did he advocated for it, he rather notices that figuring it like that "is risky and invites failure" unless certain corrections are introduced. Corrections that have to do with avoiding confining stages to their next step in the sequence and or keeping iterations incrementally between each step with the previous (which would violate its definitions or as it has also been [[https://youtu.be/ecIWPzGEbFc?t=2972][highlighted]] the waterfall approach would be just a default planning).
+(* notice the [[file:waterfall-corrections.png][corrections suggested]]:) steps program design, document the design, do it twice, plan, control and monitor testing, involve the customer.
+

@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-02-08 Wed 02:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NCC-Log-Readme</title>
+<meta name="author" content="txarly" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Tangerine" rel="stylesheet">
+<style type="text/css">.title{font-size:58px; text-shadow: 4px 4px 4px #233b4d; text-align:center;}body{max-width:85%; margin:auto; font-family:'Open Sans', serif; font-size:100%; text-shadow: 1px 1px 1px #aaa; background-color: #FBFBF8;} </style>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet">
+<style type="text/css">#table-of-contents{ font-size: 10pt; position: fixed; right: 0em; top: 0em; background: #F3F9FE; -webkit-box-shadow: 0 0 1em #777777; -moz-box-shadow: 0 0 1em #777777; -webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomleft: 5px; text-align: right; /* ensure doesn't flow off the screen when expanded */ max-height: 80%; overflow: auto; } #table-of-contents h2 {font-size: 10pt; max-width: 8em; font-weight: normal; padding-left: 0.5em; padding-left: 0.5em; padding-top: 0.05em; padding-bottom: 0.05em; } #table-of-contents #text-table-of-contents {display: none; text-align: left; } #table-of-contents:hover #text-table-of-contents {display: block; padding: 0.5em; clear: left; margin-top: -1.5em; } #overlay{ z-index:100;}  </style>
+<style> pre { background-color: #191919 } pre { color:#00FF00 } pre{z-index:-2;} </style>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="../index.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">NCC-Log-Readme</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6e0ba0b">Started Level 3 on 04/11/2022 [✓]</a></li>
+<li><a href="#org79413f8">Fri 18 Nov 2022</a></li>
+<li><a href="#org80c058e">Fri 25 Nov 2022</a></li>
+<li><a href="#orgabcb28f">Fri 02 Dec 2022</a>
+<ul>
+<li><a href="#org79a533c"><span class="done DONE">DONE</span> 3.1, 3.2</a></li>
+<li><a href="#org3ea9009">3.3, 3.4,</a></li>
+<li><a href="#org4bcbbf0"><span class="done DONE">DONE</span> 3.5</a></li>
+</ul>
+</li>
+<li><a href="#orgfbbc848">Fri 09 Dec 2022</a>
+<ul>
+<li><a href="#org945518e"><span class="done DONE">DONE</span> a. Explain the importance of developing working relationships with other teams</a></li>
+</ul>
+</li>
+<li><a href="#orgd2da323">Fri 06/01/2023</a>
+<ul>
+<li><a href="#org4551c74"><span class="done DONE">DONE</span> Editing 3.6 Task</a></li>
+</ul>
+</li>
+<li><a href="#orge7b243d">Fri 13/01/2023</a>
+<ul>
+<li><a href="#org0d68ace">Coding Standards</a></li>
+<li><a href="#orgae2b959">Here the latter one, the closest to standard requirement script</a></li>
+</ul>
+</li>
+<li><a href="#org3fe0a09">Fri 20/01/2023</a>
+<ul>
+<li><a href="#orga1ceedb">Here the Dictionary version of the previous branch of exercises</a></li>
+<li><a href="#org2a29162">Dictionaries</a></li>
+</ul>
+</li>
+<li><a href="#orge75e0ec">Fri 27/01/2023</a>
+<ul>
+<li><a href="#orgc692a62">Unit 3, Learning Outcome 2.1</a></li>
+<li><a href="#org218f506">Unit02, Learning Outcome 2</a></li>
+</ul>
+</li>
+<li><a href="#org009cc89">Friday 03/02/2023</a>
+<ul>
+<li><a href="#orga712535">Counting occurrences of an item in a list</a></li>
+<li><a href="#orgb3052bb">Finding the smallest number in a list</a></li>
+<li><a href="#orgcc58c2e">Assignment, Learning Outcome 3. [Submit 10/02/2023</a></li>
+<li><a href="#org2852b8c">Task 2c: Back-end database Interim deadline: [Submit 03/03/2023[??]]</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:ID:       feef258d-ff21-4c5a-963b-9d92d84213a9
+</p>
+
+<p>
+Still dunno whether writing out this report in Eng or in my Lang., so have a quick log report on wtf I'm doing. ;; Sun 4 Dec 14:29:54 GMT 2022 [✓] Let's have a lines about what done so far as I've experienced some gaps in my mental log on it.
+</p>
+<div id="outline-container-org6e0ba0b" class="outline-2">
+<h2 id="org6e0ba0b">Started Level 3 on 04/11/2022 [✓]</h2>
+<div class="outline-text-2" id="text-org6e0ba0b">
+<p>
+Tasks <a href="presentations/learningOutcome1/Agile-Kanban.pdf">1.a, 1.b</a>, DL (deadline) by 11/11 done as second try [✓] I could not include the speaker notes [<a href="presentations/Kanban.SMontalvo.19161671.pptx">*</a>] As struggling with pp, pptx, I had a org-HTML version <a href="https://touxstone.github.io/kanbanTask04112022/speaker-notes-t0411.index.html">posted on</a> GitHub and sent by email but as far as I know, not read, received and probably banned as email is not a mean for submitting task anymore   
+</p>
+</div>
+</div>
+<div id="outline-container-org79413f8" class="outline-2">
+<h2 id="org79413f8">Fri 18 Nov 2022</h2>
+<div class="outline-text-2" id="text-org79413f8">
+<p>
+I did a new version, including the speaker notes, and as an individual file per task (<a href="presentations/learningOutcome1/Agile-Kanban.pdf">1.a</a>, <a href="presentations/KSW_Similarities_an_Diffs.pdf">1b</a>) but submitted 1.a only, submission link for 1.b was closed, and not conceded new date as it was (unexpectedly) target achieved in the first review by teacher. <a href="presentations/KSW_vantages_drawbacks.pdf">1c</a>, <a href="presentations/KSW_when_best_suited.pdf">1d</a> deadline by 18/11 23:59 (I did not get it, so started working on them at home after coming from NCC), and tried submitting but failed.
+</p>
+</div>
+</div>
+<div id="outline-container-org80c058e" class="outline-2">
+<h2 id="org80c058e">Fri 25 Nov 2022</h2>
+<div class="outline-text-2" id="text-org80c058e">
+<p>
+Submitted <a href="presentations/learningOutcome1/Project_Management_methodologies_taskC_taskD.pdf">1.c, 1.d</a> on 25/11 1c &amp; 1d after merged them and get conceded ad-hoc an extension submitting date from Mr Lawrence, new version of 1b declared redundant as the return evaluation declared it achieved [✓]. Working hmw slides projs entirely in class, submitted <a href="presentations/learningOutcome2/Capturing Requirements.pdf">2.1, 2.2, 2.3</a>, (I learn afterwards that 2.3 had DL for 02/12)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgabcb28f" class="outline-2">
+<h2 id="orgabcb28f">Fri 02 Dec 2022</h2>
+<div class="outline-text-2" id="text-orgabcb28f">
+<p>
+<a href="presentations/learningOutcome2/Alternatives on documenting Projects.pdf">2.3 extended version</a>, as declared target not achieved (just before getting out from NCC, though) so I'd got time for submitting 02/12 23:59 [✓] done
+</p>
+</div>
+
+<div id="outline-container-org79a533c" class="outline-3">
+<h3 id="org79a533c"><span class="done DONE">DONE</span> 3.1, <a href="20221204175725-anotations_on_task_3_2_listing_potential_risks.html#ID-eb0af2f8-ea61-4715-9def-2a1af6efe146">3.2</a></h3>
+<div class="outline-text-3" id="text-org79a533c">
+<p>
+DL better on 02/12 but by 05/12 3.5 DL 09/12 but better check online on NCC portal, <a href="presentations/learningOutcome3/Risk Management-task 1 &amp; 2.pdf">Risk-Management task 3.1 &amp; 3.2</a> submitted [✓] done
+</p>
+</div>
+</div>
+<div id="outline-container-org3ea9009" class="outline-3">
+<h3 id="org3ea9009">3.3, 3.4,</h3>
+<div class="outline-text-3" id="text-org3ea9009">
+<p>
+Have also deadline by 05/12 <br />
+<a href="presentations/learningOutcome3/Risk Management mitigation, task 3 and 4.pdf">submitted task 3.3, 3.4</a> [✓]
+</p>
+</div>
+<div id="outline-container-org5d77675" class="outline-4">
+<h4 id="org5d77675"><span class="done DONE">DONE</span> draft notes</h4>
+<div class="outline-text-4" id="text-org5d77675">
+</div>
+<ul class="org-ul">
+<li><a id="org7a555c7"></a>3.3<br />
+<div class="outline-text-5" id="text-org7a555c7">
+<p>
+Describe how to reduce the risk and follow mitigation, taking into consideration the following: 
+a) missing/unclear requirements [✓]
+b) skills shortage 
+c) time 
+d) budget 
+e) resource shortage 
+f) decision-making.
+</p>
+<ul class="org-ul">
+<li>Budget</li>
+</ul>
+<p>
+Regarding interdependence, is not hidden science to infer that budget issues have a direct correlation with the entire performance of the project, its schedule and the quality of deliveries. I have found specialists mention as the top-frequent-ranked two moments in the process of getting into cost overrun issues, at starting, which they call tight-fitting budget planning and in execution which is usually a consequence of inaccuracy in estimations but since the likelihood of getting into cost issues is around 70% in the software industry, this mishap should make it get removed from the list of unpredictable facts.
+relocate | transfer <br />
+overseen constraints | restrictions <br />
+Time is a pillar in the project management. <br />
+Risks related to decision-making is an entire science. Some research report that propensity to take risks or avoid and spent time in gaining information and working in group are connected inversely.~
+</p>
+</div>
+</li>
+
+<li><a id="org0019fce"></a><span class="done DONE">DONE</span> 3.4<br />
+<div class="outline-text-5" id="text-org0019fce">
+<p>
+For each of the identified risk types, propose potential mitigations, taking into consideration key elements of the following: 
+    a) Scrum 
+    b) Kanban 
+    c) Waterfall 
+    d) Agile. 
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4bcbbf0" class="outline-3">
+<h3 id="org4bcbbf0"><span class="done DONE">DONE</span> 3.5</h3>
+<div class="outline-text-3" id="text-org4bcbbf0">
+<p>
+dl 09/12, <a href="presentations/learningOutcome3/Risk Management, The Critical Path.pdf">R.M.,The Critical Path, task 5</a> [✓] submitted
+Explain what is meant by a project’s critical path
+</p>
+</div>
+<div id="outline-container-orgc6772cc" class="outline-4">
+<h4 id="orgc6772cc"><span class="done DONE">DONE</span> draft notes</h4>
+<div class="outline-text-4" id="text-orgc6772cc">
+<p>
+form P.M. dict. In project management, the critical path is the longest sequence of tasks that have to be completed. This is to successfully complete a project.
+</p>
+<ul class="org-ul">
+<li>Behind the scenes, (RECAP: as said in previous comments, the time variable involves a mitigation plan for time-related issues that will start by default at the start of the project) I would call it a critical path chart, an easy-to-visualize abstraction to monitor contingencies related to control of work time, easy to share, to use in meetings (related to timeline assessment) to identify, detect delays, establish dependencies evaluation schedules (especially when there are more than one task running simultaneously or they are connected by mutual dependencies) <br /></li>
+</ul>
+</div>
+<ul class="org-ul">
+<li><a id="org2533a39"></a>Terminology<br />
+<div class="outline-text-5" id="text-org2533a39">
+<ul class="org-ul">
+<li><b><b><b>Slack</b></b></b> How long an ativity can be delayed without extend or increasing the completion time <br /></li>
+<li>facing more than one dependency the highest EF (Earliest-Finish) preceding an activity will be the ES (Earliest-Starting) activity time, (then add its own t so that have its own EF earliest-finish time). <br /></li>
+<li>the proj. completion time is the highest of the EF (Earliest-Finish) time <br /></li>
+<li>When doing the backwards pass we obtain the latest-start-times(LS) by subtracting the Actv. time from the LF, the latest-Finish-time of its successor. <br /></li>
+<li>facing two dependencies when doing the backwards pass, the latest-finish-time(LF) of an activ. must be the minimum of the LS (Latest-Start-time) of its successor. <br /></li>
+</ul>
+
+<div id="org484fa86" class="figure">
+<p><img src="img/anotation-onCP-exerc.png" alt="anotation-onCP-exerc.png" style="float:centre;" />
+</p>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfbbc848" class="outline-2">
+<h2 id="orgfbbc848">Fri 09 Dec 2022</h2>
+<div class="outline-text-2" id="text-orgfbbc848">
+<p>
+Task 6 Team management
+Positive working relationship and conflict management are essential to resolving technical issues that may arise between project members. 
+ (make it) In a Word document, [✓]
+</p>
+</div>
+<div id="outline-container-org945518e" class="outline-3">
+<h3 id="org945518e"><span class="done DONE">DONE</span> a. Explain the importance of developing working relationships with other teams</h3>
+<div class="outline-text-3" id="text-org945518e">
+<p>
+[my keywords]  Positive working relationships [✓] | team[✓] | other teams [✓] Technical issues [✓] <br />
+</p>
+
+<p>
+Positive working relationship and conflict management are essential to resolving technical issues that may arise between project members. 
+</p>
+
+<p>
+3.6 Explain the importance of developing working relationships with other teams.
+</p>
+
+<p>
+<b><b>Introduction</b></b> <br />
+Two remarkable keywords are mentioned in the description of this task, 'working relationships' and 'positive thinking. Let me sketch out them first to give some context to my view on this.
+</p>
+
+<p>
+Generally speaking, positive working relationships are mandatory in any work environment. 
+</p>
+
+<p>
+Here let's use the more broad meaning for 'positive' as anything we assess being in direct correlation to a given target. And, in this sense, positive thinking itself has become standard protocol for dealing with everyday problems of any kind as well, though the definitions it makes of things as it maps and marks its objects and the scope of conventions it assumes as proposal rules are not of unanimous adoption yet, and probably never will be. 
+However, a handful of principles arise by default, and we learn to adopt them as we integrate ourselves into the culture since the heart of this, as I see this, is the law itself.
+</p>
+
+<p>
+Law has different, or better said, global and local configurations and implementations, their how-to ‘s and why 's are out of scope here, but a keystone we have to generate order in this matter is that all those definitions and statutory prerogatives we call rights, privileges, and responsibilities we all live and work for and around are the true package of positive, and negative by contradiction, considerations and concerns that define or predefine any kind of human interaction, therefore, any possible conflict. 
+</p>
+
+<p>
+There are different approaches to this subject, I did not mean to lecture on this but to point out a pattern that works in any case, and the reason I felt I should start with the observation that follows:
+ ‘&#x2026;yet its suitability is defined by its friendship addressing with given scopes, or ambit, all of them shall end up law-abiding and in no manner prevailing over it’. 
+</p>
+
+<p>
+That is the pattern, now to breakdown particularities what we would have here is a context which should be defined by the scenarios the software industry involves by nature, as product, what its production involves and what labour involved demand. 
+</p>
+
+<p>
+<b><b>Now let's get started by the conclusion.</b></b>
+</p>
+
+<p>
+The first thing I wanted to highlight is that working in community fashion has a special meaning in the software industry, even if we work freelance. As potential members of a development team, this is more tangible, of course. We submit our production to a community that, in turn, has been here before us producing things that, in practice, are our input material. 
+</p>
+
+<p>
+Also is true that there is nothing in the history of technology that has not been the result of a network, a community that has previously been accumulating small contributions on which we built our craft, and no contribution or contributor, in particular, even the most innovative ones, breaks this rule. Let us think, for example, of two well-known cases: the contribution of Newton or Einstein. Newton already used to point out he could see further because of “standing on the shoulders of giants”. 
+</p>
+
+<p>
+Therefore anything we do in the software development industry is done under the conventions of a cut edge community and with the community itself with an eye on whatever we produce individually or as part of a team. 
+</p>
+
+<p>
+So that a explicit positive mode by default is the communication language that could build efficient working teams. 
+</p>
+
+<p>
+Once we notice that protocol matters in the work interaction, the next might be to brainstorm a list of recommendations that are or would be directly connected if we were to outline a minimal approach.  
+</p>
+
+<p>
+Here my top nine considerations: 
+</p>
+
+<ul class="org-ul">
+<li>Notice that in some legislations, computer code, coding languages and elaborations we were able to make with it are considered a way of expressing ideas and as such is protected as part of free speech.</li>
+<li>Communicate ideas or opinions with transparency criteria.</li>
+<li>Accepting critique is preliminary to submitting critique.</li>
+<li>Conflict is there out, always has been and always will be, get comfortable with confrontation but only constructive terms shall be supported.</li>
+<li>Look after both your interest and the others at once.</li>
+<li>In case of disruptions look after for terms acceptable for all involved.</li>
+<li>Invest in yourself.</li>
+<li>Get disciplined about collective agreements.</li>
+<li>Take your time before saying yes to work requests but if you say yes get disciplined about outcomes also on those that might proof otherwise a previous plan, concept or consideration.</li>
+</ul>
+
+
+
+<p>
+DL 09/12/2022 on a word doc.
+Ref <a href="presentations/603-5793-9-l3-certificate-in-coding-practices-qualification-specification-ncfe.pdf">NCFE/L3CCP 603/5793/9</a> pag. 14.
+I was starting to sketch my answer to this topic pointing out its relationship to conflict management, a very extended subject when is about project management, but it seems that the instructor had broken down the subject, and this, the 3.6-bit is going to be the very first stage when on identifying the arising of conflict in real work environments, so it would be probably not necessary to jump into a so deep connection but since this topic bit is also the first work field related to prevention in an eventual mitigation plan related to conflict management and effective delivery of software, as mitigation and prevention are two sides of the same plan separated by time, and the triggering eventualities are always present, we shall start straight to elaborate on the working relationships we would need to become facilitators of the work flow, as we call it in project management slang language, efficiently when the differences show up.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd2da323" class="outline-2">
+<h2 id="orgd2da323">Fri 06/01/2023</h2>
+<div class="outline-text-2" id="text-orgd2da323">
+</div>
+<div id="outline-container-org4551c74" class="outline-3">
+<h3 id="org4551c74"><span class="done DONE">DONE</span> Editing 3.6 Task</h3>
+<div class="outline-text-3" id="text-org4551c74">
+</div>
+<div id="outline-container-org4047bda" class="outline-4">
+<h4 id="org4047bda">Intro</h4>
+<div class="outline-text-4" id="text-org4047bda">
+<p>
+;;;;;;;;;;;;;;;draft to paste on the xdoc asgnmnt.
+Having been instructed to explain the context of the latter statement I should say that the idea behind mentioning the legal implications is methodological, as once identified what the max risk for every context, work field, or case is, the next draft is to have a pool of options to mitigate consequences, and in between, being proactive and take steps to prevent conflicts from escalating to the point where legal action is necessary. As we have to gain expertise in this area of practice, I would call this point of view 'defective', or perhaps, using here the suffix 'ual' so that, a 'defectual' approach to management.
+</p>
+
+<p>
+A defectual approach to something is a kind of reverse engineering to understand how to prevent the system from issues by understanding failures. It can be an important tool for understanding and solving problems, especially when the focus is on identifying and correcting specific issues or defects. By analyzing failures or problems and identifying patterns in their occurrence, it is possible to understand the root causes of the problems and develop strategies to prevent similar problems from happening in the future. Actually, designedly or not, developing techniques to deal with issues starts back by collecting failures first, then identifying patterns in their malfunction, understanding them, then taking proactive measurements, or making rules to prevent them. In fact, it is often the case that protocols, frameworks, and policies currently in use were developed in response to problems or failures that have ever occurred. Addressing potential problems before they occur can involve making rules or guidelines to specifically address the problems at least as they have been identified, as well as related problems that may be extensions of those initial problems.
+</p>
+
+<p>
+Now, apart from the obvious way of dealing with this risk as it is to have legal counsel or a human resources professional involved in the conflict resolution process. As they can provide guidance on the legal issues at hand and help to ensure that the resolution process is fair and compliant with applicable laws and regulations. The main purpose of this address to the question is to prevent by being proactive, having a plan, and having clear policies and procedures in place.
+</p>
+
+<p>
+Some strategies in this direction include:
+</p>
+
+<p>
+Effective communication: Encourage open and honest communication, and work to establish clear channels of communication to help prevent misunderstandings and resolve issues before they escalate.
+Conflict resolution training: Provide employees with training on conflict resolution and communication skills to help them handle conflicts more effectively.
+Fair policies and procedures: Develop and communicate clear policies and procedures for addressing and resolving conflicts in the workplace.
+Mediation: Use mediation or other alternative dispute resolution techniques to help resolve conflicts before they deepen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgab72619" class="outline-4">
+<h4 id="orgab72619">4.1 Working relationships with other teams,</h4>
+<div class="outline-text-4" id="text-orgab72619">
+<p>
+teams with different settings or interests, as this does happen nowadays?
+When working with other teams that probably have different working styles, interests, organisation, etc. is also essential to be proactive in managing conflicts that may arise, and extensions of the above-outlined mind setting are still valid. 
+Some strategies that can be effective in this situation include:
+    Clearly communicate expectations and roles: Make sure that all parties have a clear understanding of their responsibilities and how they fit into the overall project or goal.
+    Identify common goals: Look for areas of common ground and focus on shared goals to help build trust and cooperation.
+    Use a mediator: If conflicts cannot be resolved through direct communication, consider using a mediator or other neutral third party to facilitate the resolution process.
+    Establish clear lines of communication: Establish clear channels of communication and make sure that all parties have a way to voice their concerns and suggestions.
+    Be open to compromise: Be willing to compromise and find solutions that meet the needs and interests of all parties involved.
+By using these strategies, you can effectively manage conflicts and work effectively with external teams, even when there are differences in interests.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5b42285" class="outline-4">
+<h4 id="org5b42285">4.2 Positive Thinking as Proactive to Conflict Mindset.</h4>
+<div class="outline-text-4" id="text-org5b42285">
+<p>
+Here, in the improvement of productivity, is where positive thinking as a mentality fits. As in working environments, positive thinking can be a powerful tool for improving performance, building strong relationships, and creating a more positive and productive work culture. Some specific ways in which positive thinking can be beneficial in the workplace include:
+    Improved performance: A positive attitude can help individuals to stay motivated and focused, and can lead to better performance at work.
+    Stronger relationships: A positive attitude can help to build trust and strengthen relationships with colleagues, clients, and customers.
+    Enhanced problem-solving: A positive mindset can help individuals to approach problems in a more creative and constructive way, leading to better solutions.
+    Improved communication: A positive attitude can encourage open and honest communication, which is essential for building strong working relationships and resolving conflicts.
+    Greater resilience: A positive attitude can help individuals to be more resilient in the face of challenges and setbacks, and to bounce back more quickly from failures.
+</p>
+
+<p>
+In general terms this can involve re-framing negative thoughts or experiences in a more positive light, setting goals and working towards them, and cultivating gratitude and mindfulness. 
+However, positive thinking is not about ignoring or denying negative experiences or challenges, but rather about finding ways to cope with adversity and build resilience. And, whit this experience, contribute to a more positive and productive work culture, where individuals are more likely to collaborate and support one another.
+While it is not always easy to maintain a positive attitude, especially in challenging or stressful situations, it is an important skill that can have a powerful impact on work performance and relationships.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9571b19" class="outline-4">
+<h4 id="org9571b19">4.3 Conflict Management Techniques and Effective Team Collaboration</h4>
+<div class="outline-text-4" id="text-org9571b19">
+<p>
+First, we probably should highlight how collaboration can be affected in both positive and negative ways in the dearth of a system to deal with conflict. And in doing this I find it more elucidative to look over what a so potent tool collaboration is by describing how good is whenever is present and how risky a scenario becomes when is not promoted conveniently.
+</p>
+
+<p>
+On the positive side, collaboration can lead to a number of benefits, including:
+    Greater efficiency: When people work together, they can often accomplish more than they could on their own.
+    Improved problem-solving: Collaboration allows people to bring different perspectives and ideas to the table, which can lead to better solutions.
+    Greater creativity: Collaboration can foster creativity and innovation, as team members inspire and challenge one another to come up with new ideas.
+    Stronger support: Collaboration can provide a sense of support and encouragement, which can help people feel more confident and motivated.
+    More fun: Working together with others can be enjoyable and rewarding, and can help to create a positive and enjoyable work environment.
+</p>
+
+<p>
+On the negative side, collaboration can also be affected by a number of challenges, including:
+    Communication breakdowns: Miscommunications or misunderstandings can lead to conflicts or delays in collaborative projects.
+    Different working styles: Team members may have different approaches to work, which can lead to misunderstandings or conflicts.
+    Lack of trust: If team members do not trust one another, it can be difficult to establish effective collaboration.
+    Conflicts of interest: Collaboration can be difficult if team members have conflicting interests or goals.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgb6718cc"></a>4.3.a Collaboration with external teams[?]<br />
+<div class="outline-text-5" id="text-orgb6718cc">
+<p>
+When collaboration is related with external teams it usually understood as outsourcing. And Outsourcing is a common practice in the software industry, and it can be a useful tool for addressing a variety of issues and challenges. However, it is not always the best or only solution, and it is important for organizations to carefully consider the pros and cons of outsourcing before making a decision.
+</p>
+
+<p>
+Outsourcing can be a useful tool for addressing issues such as:
+    Access to expertise: Outsourcing can allow organizations to access specialized expertise or skills that they may not have in-house.
+    Cost savings: Outsourcing can be a cost-effective way for organizations to access certain services or capabilities.
+    Flexibility: Outsourcing can provide organizations with the flexibility to scale up or down their resources as needed.
+</p>
+
+<p>
+However, outsourcing can also have drawbacks, such as:
+    Loss of control: When organizations outsource certain functions or activities, they may lose some control over how those tasks are performed.
+    Communication challenges: Working with external partners can sometimes be more complex, and can involve additional communication challenges.
+    Cultural differences: Outsourcing can sometimes involve working with partners from different cultural backgrounds, which can present additional challenges.
+Overall, outsourcing can be a useful tool for addressing certain issues and challenges in the software industry, but it is important for organizations to carefully consider the pros and cons before making a decision.
+</p>
+</div>
+</li>
+
+<li><a id="org5b4a9ef"></a>4.3.b How-to Promote a effective team collaboration?<br />
+<div class="outline-text-5" id="text-org5b4a9ef">
+<p>
+In my opinion, collaboration arise not so difficult if the land is encouraging, it could seem recurrent but we are social by nature. Here are five top rules or techniques for effective team collaboration:
+    Establish clear goals and roles: Make sure that all team members have a clear understanding of the team's goals and objectives, as well as their own roles and responsibilities.
+    Effective communication: Establish clear channels of communication and encourage open and honest dialogue among team members.
+    Collaboration: Encourage teamwork and collaboration, and look for ways to pool knowledge and expertise to achieve shared goals.
+    Respect diversity: Recognize and value the diverse backgrounds, experiences, and perspectives of team members.
+    Problem-solving: Encourage a culture of continuous improvement and problem-solving, and work together to find creative solutions to challenges and roadblocks.
+</p>
+</div>
+</li>
+
+<li><a id="org17638f6"></a>4.3.c A mention of specific conflict management techniques for effective sessions of team collaboration.<br />
+<div class="outline-text-5" id="text-org17638f6">
+<p>
+There a few of techniques for sure but this is my favorite:
+</p>
+<ul class="org-ul">
+<li>Win-win solution | accommodation</li>
+</ul>
+<p>
+The idea of a win-win solution to conflicts in work environments is similar to the concept of accommodation, which involves finding ways to address the needs and interests of all parties involved in the conflict.
+In a win-win solution, both parties involved in the conflict are able to achieve their goals and have their needs and interests met. This can involve compromising and finding solutions that meet the needs of both parties, rather than one party winning at the expense of the other.
+Accommodation is a collaborative approach to conflict resolution that involves finding ways to meet the needs and interests of all parties involved. It involves being open to the perspectives and concerns of others, and finding ways to address these concerns in a mutually satisfactory way.
+Overall, the goal of both win-win solutions and accommodation is to find resolutions to conflicts that are fair and respectful, and that promote understanding and collaboration among the parties involved.
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org0c238cb" class="outline-4">
+<h4 id="org0c238cb">4.4. Impact of Innefective Working Relationships</h4>
+<div class="outline-text-4" id="text-org0c238cb">
+<p>
+—On the other hand, poor working relationships that do not care or guard against conflicts can have a significant impact on an organization and its ability to achieve its goals.
+Poor working relationships can lead to a number of problems, including:
+    Decreased efficiency, as an effect of communication issues, can lead to delays, mistakes, and other problems that can undermine the success of a project.
+    Decreased motivation and engagement. The dearth of a plan to deal with interpersonal conflict can lead to stress or a negative environment, which can have a negative impact on employee performance, motivation and commitment.
+    Increased conflict: Poor working relationships can increase the risk of conflicts arising, which can be disruptive and damaging to an organization.
+    Decreased innovation: When working relationships are poor, it can be difficult for team members to collaborate and come up with new ideas, which canlimit the organization's ability to innovate.
+Overall, it is important for organizations to focus on building strong working relationships, as this can have a positive impact on the organization's ability to achieve its goals and be successful.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09c087b" class="outline-4">
+<h4 id="org09c087b">4.5 How team members can reflect on progress and identify improvements.</h4>
+<div class="outline-text-4" id="text-org09c087b">
+<p>
+A team could be full of expert individuals individually but not always their working relationships are the best. This is the first observation that may serve as a blueprint for evaluation purposes, from a given starting point to another moment in the future whenever we want to perform an evaluation of progress. 
+</p>
+
+<p>
+Team working is something that is learnt working in team, and probably each team has its own specificities. As it is true that even teams full of highly skilled and expert individuals can struggle to perform effectively if their working relationships are poor. Strong working relationships are essential for effective teamwork and collaboration, and can be a key factor in the success or failure of a project.
+Poor working relationships can lead to a number of problems, including communication breakdowns, lack of trust and cooperation, and increased conflict. These problems can in turn lead to delays, mistakes, and other issues that can undermine the success of a project.
+On the other hand, strong working relationships can help teams to work more effectively and efficiently, and can foster a sense of trust, collaboration, and support that can be key to project success.
+Overall, it is important for teams to focus on building strong working relationships, as well as on the skills and expertise of individual team members, in order to perform effectively and achieve their goals.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge7b243d" class="outline-2">
+<h2 id="orge7b243d">Fri 13/01/2023</h2>
+<div class="outline-text-2" id="text-orge7b243d">
+</div>
+<div id="outline-container-org0d68ace" class="outline-3">
+<h3 id="org0d68ace">Coding Standards</h3>
+<div class="outline-text-3" id="text-org0d68ace">
+<p>
+Following the last week exercise about lists, indexing data sets, routines-functions distinction, I did for this week an example of three versions of the same script, a first one following more personal coding standards, a second one following standards partially, and a third one more friendly per instance for beginners when dealing with giving procedures, variables names etc. Find attached screenshots of them respectively
+</p>
+
+<div id="org141d70c" class="figure">
+<p><img src="img/coding_standards_ex0.png" alt="coding_standards_ex0.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>example following personal conventions</p>
+</div>
+
+
+<div id="org2fc1308" class="figure">
+<p><img src="img/coding_standards_ex1.png" alt="coding_standards_ex1.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>a version of the same script above following standards with exeption of argument names.</p>
+</div>
+
+
+<div id="org021bca5" class="figure">
+<p><img src="img/coding_standards_ex2.png" alt="coding_standards_ex2.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>a third one version of the same script beginners friendly with coding standards.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgae2b959" class="outline-3">
+<h3 id="orgae2b959">Here the latter one, the closest to standard requirement script</h3>
+<div class="outline-text-3" id="text-orgae2b959">
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #99d1ce;">fruits</span> = <span style="color: #99d1ce;">[</span><span style="color: #2aa889;">'orange'</span>, <span style="color: #2aa889;">'banana'</span>, <span style="color: #2aa889;">'apples'</span>, <span style="color: #2aa889;">'blackcurrants'</span>, <span style="color: #2aa889;">'tomatoes'</span><span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce;">prices</span> = <span style="color: #99d1ce;">[</span>0.70, 0.50, 1.15, 1.5, 2.5<span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce;">total</span>=0
+
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">item_index</span><span style="color: #99d1ce;">(</span>i<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #EEEE20;">return</span> fruits.index<span style="color: #99d1ce;">(</span>i<span style="color: #99d1ce;">)</span>
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">item_price</span><span style="color: #99d1ce;">(</span>i<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #EEEE20;">return</span> prices<span style="color: #99d1ce;">[</span>item_index<span style="color: #33859e;">(</span>i<span style="color: #33859e;">)</span><span style="color: #99d1ce;">]</span>
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">item</span><span style="color: #99d1ce;">(</span>i<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #EEEE20;">return</span> i
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">cost_item</span><span style="color: #99d1ce;">(</span>i, q<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #EEEE20;">return</span> item_price<span style="color: #99d1ce;">(</span>i<span style="color: #99d1ce;">)</span> * q
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">print_price</span><span style="color: #99d1ce;">(</span>i,q<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>cost_item<span style="color: #33859e;">(</span>i,q<span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">print_price_subTotal</span><span style="color: #99d1ce;">(</span>i,q<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>item<span style="color: #33859e;">(</span>i<span style="color: #33859e;">)</span>, item_price<span style="color: #33859e;">(</span>i<span style="color: #33859e;">)</span>, <span style="color: #2aa889;">'p/Kg'</span>, <span style="color: #2aa889;">'subTotal: &#163;'</span>, <span style="color: #d26937;">round</span><span style="color: #33859e;">(</span>cost_item<span style="color: #d26937;">(</span>i,q<span style="color: #d26937;">)</span>,2<span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>
+
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">print_price_single</span><span style="color: #99d1ce;">(</span>i<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>item<span style="color: #33859e;">(</span>i<span style="color: #33859e;">)</span>, item_price<span style="color: #33859e;">(</span>i<span style="color: #33859e;">)</span>, <span style="color: #2aa889;">'p/Kg.'</span><span style="color: #99d1ce;">)</span>
+
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span><span style="color: #2aa889;">'Welcome to MyMiniMarket'</span><span style="color: #99d1ce;">)</span>
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span><span style="color: #2aa889;">'Here the list of the items in stock today'</span><span style="color: #99d1ce;">)</span>
+<span style="color: #EEEE20;">for</span> i <span style="color: #EEEE20;">in</span> <span style="color: #99d1ce;">fruits</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   print_price_single<span style="color: #99d1ce;">(</span>i<span style="color: #99d1ce;">)</span>  
+
+<span style="color: #EEEE20;">while</span> <span style="color: #33859e; font-weight: bold;">True</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span> k = <span style="color: #d26937;">input</span><span style="color: #99d1ce;">(</span><span style="color: #2aa889;">'\nPlease type 1 to enter an item or 2 to close your shopping cart :'</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #EEEE20;">if</span> k == <span style="color: #2aa889;">'1'</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   i = <span style="color: #d26937;">input</span><span style="color: #99d1ce;">(</span><span style="color: #2aa889;">'Please enter your item :'</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   q = <span style="color: #d26937;">int</span><span style="color: #99d1ce;">(</span><span style="color: #d26937;">input</span><span style="color: #33859e;">(</span><span style="color: #2aa889;">'Ok, enter quantity in kg. :'</span><span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   print_price_subTotal<span style="color: #99d1ce;">(</span>i, q<span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   total = total + cost_item<span style="color: #99d1ce;">(</span>i, q<span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">continue</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span> <span style="color: #EEEE20;">elif</span> k == <span style="color: #2aa889;">'2'</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span><span style="color: #2aa889;">'Ok, your shopping cart amount &#163;: '</span>, <span style="color: #d26937;">round</span><span style="color: #33859e;">(</span>total, 2<span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span><span style="color: #2aa889;">'Thank you for shopping'</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">break</span>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3fe0a09" class="outline-2">
+<h2 id="org3fe0a09">Fri 20/01/2023</h2>
+<div class="outline-text-2" id="text-org3fe0a09">
+</div>
+<div id="outline-container-orga1ceedb" class="outline-3">
+<h3 id="orga1ceedb">Here the Dictionary version of the previous branch of exercises</h3>
+<div class="outline-text-3" id="text-orga1ceedb">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #99d1ce;">price_list</span> = <span style="color: #99d1ce;">{</span><span style="color: #2aa889;">'apple'</span>:0.5, <span style="color: #2aa889;">'orange'</span>:0.75, <span style="color: #2aa889;">'banana'</span>:0.35, <span style="color: #2aa889;">'tomatoes'</span>:0.33, <span style="color: #2aa889;">'grapefruit'</span>:1.5<span style="color: #99d1ce;">}</span>
+
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">price_item</span><span style="color: #99d1ce;">(</span>item<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> price_list<span style="color: #99d1ce;">[</span>item<span style="color: #99d1ce;">]</span>
+<span style="color: #EEEE20;">def</span> <span style="color: #edb443;">cost_item</span><span style="color: #99d1ce;">(</span>item,quantity<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> price_item<span style="color: #99d1ce;">(</span>item<span style="color: #99d1ce;">)</span> * quantity
+<span style="color: #57ecec;">#</span><span style="color: #57ecec;">testing</span>
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>price_item<span style="color: #33859e;">(</span><span style="color: #2aa889;">'orange'</span><span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>cost_item<span style="color: #33859e;">(</span><span style="color: #2aa889;">'banana'</span>,5<span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2a29162" class="outline-3">
+<h3 id="org2a29162">Dictionaries</h3>
+<div class="outline-text-3" id="text-org2a29162">
+<p>
+Using dictionaries in Python.
+</p>
+
+<div id="org94d7e4c" class="figure">
+<p><img src="img/dict-py-exer0.jpg" alt="dict-py-exer0.jpg" />
+</p>
+<p><span class="figure-number">Figure 4: </span>exercise dated 20/01</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge75e0ec" class="outline-2">
+<h2 id="orge75e0ec">Fri 27/01/2023</h2>
+<div class="outline-text-2" id="text-orge75e0ec">
+</div>
+<div id="outline-container-orgc692a62" class="outline-3">
+<h3 id="orgc692a62">Unit 3, Learning Outcome 2.1</h3>
+<div class="outline-text-3" id="text-orgc692a62">
+<p>
+Explain these common coding concepts
+iterations, sequences, selection, data, methods.
+</p>
+</div>
+<div id="outline-container-org3f5bd7a" class="outline-4">
+<h4 id="org3f5bd7a"><span class="done DONE">DONE</span> Iterations</h4>
+<div class="outline-text-4" id="text-org3f5bd7a">
+<p>
+I see this mechanism as a two parts procedure. The first part is simply the idea of doing something, a given same thing, again and again. Repeating a given task multiple times. Let's say counting elements in a set of them, or executing a little set of tasks on over a group of elements in a list, let's say for example adding a number to every number in a list, or applying a given plan, for example, filtering, which basically is making comparisons and according to results doing something else, per example copying the item we are eventually dealing with to another list, which at the end will be the output of that specific routine. So the first idea is the loop itself which probably is the foundation of the algorithm as it makes requirements for the entire computational scenario. Let's name for example the data type to start with. Whether is it a string character or a digit. Individually grouped in a list or associated with another item as a pair key-value and probably nested in a sub-list, given the idea of a dictionary. So the data type, individually o grouped, on a first-level grouping set or nested following some other conventions we make use of to represent our objects. Representing values or changing the label eventually associated with a given numerical representation and or switching into a specific branch of other executions potentially available in a pool on the count of a given condition.
+The second part of this concept is the procedure. The thing we do. The routine, the set of executions we apply each time. Sometimes is a quite basic general-purpose implementation and in some others, it is a component aggregated to any other execution so that giving a more convenient return. Tough the core idea here is that an iteration is like the single step we perform when walking. 
+</p>
+
+<p>
+Some procedures used in lessons which are typical iterations are the following:
+</p>
+<ul class="org-ul">
+<li>for loop</li>
+<li>while loop</li>
+<li>range function</li>
+</ul>
+<p>
+As an example of def a procedure to extend a basic iterative routine into other with functionalities more extended is the following:
+</p>
+
+<p>
+Using a for loop, I defined a <code>'enumerate'</code> version of mine which outputs the same result that <code>'enumerate'</code> does but avoiding to have to write a for loop: The body of the function, as seen in the image is quite obvious, every time the routine prompt visits an item in the list, it prints out its index digit, and applying it to the list name prints out the indexed item name.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org18a590f"></a>Example of reusing basic routines.<br />
+<div class="outline-text-5" id="text-org18a590f">
+<ul class="org-ul">
+<li>my version of <code>enumerate</code> using a <code>for</code> loop.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">def</span> <span style="color: #edb443;">myenumerate</span><span style="color: #99d1ce;">(</span>a_list<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">for</span> i <span style="color: #EEEE20;">in</span> <span style="color: #d26937;">range</span><span style="color: #99d1ce;">(</span><span style="color: #d26937;">len</span><span style="color: #33859e;">(</span>a_list<span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>i, a_list<span style="color: #33859e;">[</span>i<span style="color: #33859e;">]</span><span style="color: #99d1ce;">)</span>
+
+&gt;&gt;&gt; <span style="color: #99d1ce;">fruits</span> = <span style="color: #99d1ce;">[</span><span style="color: #2aa889;">'apple'</span>,<span style="color: #2aa889;">'banana'</span>,<span style="color: #2aa889;">'cherry'</span>,<span style="color: #2aa889;">'blackcurrants'</span>,<span style="color: #2aa889;">'date'</span><span style="color: #99d1ce;">]</span>       
+&gt;&gt;&gt; myEnumerate<span style="color: #99d1ce;">(</span>fruits<span style="color: #99d1ce;">)</span>
+&gt;&gt;&gt; 0 apple
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   1 banana
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   2 cherry
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   3 blackcurrants
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   4 date
+
+
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org7e82928" class="outline-4">
+<h4 id="org7e82928"><span class="done DONE">DONE</span> Sequences</h4>
+<div class="outline-text-4" id="text-org7e82928">
+<p>
+Sequence, as sequencing is another essential concept in computing as it is a foundational procedure of feeding the system, then, based on conventions about arrangements of signals, the system produces a net of frameworks which lays arrangements of data which in turn produce the stuff we build with everything. Let's think of the ASCII code, for example. Sequencing implies a given order for every single data, then the procedure, or package of instructions or conditions or requirements for another group of instructions to be executed. Every computational interaction we do with the system follows a step-by-step plan. Usually, this feature is hidden under the speed of the system but sequencing is the matrix. In our current state of interactivity with computers sequencing simple instructions is still mainstream for developing implementations.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org2f44fb9" class="outline-4">
+<h4 id="org2f44fb9"><span class="done DONE">DONE</span> Selection</h4>
+<div class="outline-text-4" id="text-org2f44fb9">
+<p>
+I understand the concept of selection as another essential component to build more complete algorithms, it is the idea on which decision-making is based or sustained, to continue with a particular set of branched instructions among a group of possible ones, at least two, if, while, unless, a condition is met. Select, filter, change, label-if, mark, identify, do a certain execution or another next.
+The stopping condition when implementing searches, comparisons, performing operations, are the work area here. It deals with the most suitable or convenient planning to make questions and proceed in accordance with the return given.
+Apart of the already mentioned selection components, there are also an important amount of computer-user interactivity which depends on certain by default-accepted given decisions, so in selections that have become a kind of language by default. Usually this executions look forward to being understood intuitively based on previous standardised conventions like moving around with the mouse on a screen, click, drag in out, scrolling up and down, etc. and performing certain given actions. This is a so particular application field of the selection concept though not only applicable to those traditional interfaces as the mouse or the keyboard but the touching screen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgad18c4d" class="outline-4">
+<h4 id="orgad18c4d"><span class="done DONE">DONE</span> Data</h4>
+<div class="outline-text-4" id="text-orgad18c4d">
+<p>
+Data is primarily digital signals that follow the binary standard to be encoded but become content or information as soon as it is organized or bundled. This first encoding is what gives it its classification as text, image, audio or video and when it acquires meaning for humans.
+When this second moment occurs, the data becomes the working material of the computation.
+Becoming material of the computation means that data get a given structure. If text, for example as strings and lists.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0df8b10" class="outline-4">
+<h4 id="org0df8b10"><span class="done DONE">DONE</span> Methods</h4>
+<div class="outline-text-4" id="text-org0df8b10">
+<p>
+A method in computer science is related to the way of doing something in computing terms. Doing something in the sense of solving a task, or returning the result of applying a routine that conveys providing a service. The scenery once here, with the basic tools to build adjusted-to-task algorithms, as that is the role for iterations, sequences and making decisions frameworks, is to build, now adjusted-to-context-of-data, procedures and functions to resolve particular or specific problems. And on doing this, I found that 'procedures', 'functions' and 'methods' are used interchangeably. Now in contact with the Python class template, I find that the function or procedure integrated into a class has an added value. Since, among all the functions possible for a given requirement the, let's say, awarded to get integrated into a class has to meet a some more strict specification. As it is being the shortest via, the better abstraction to help with modularity and the reuse of the code. So this is the feature that gives a raw procedure its distinct status as 'the method'.
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org218f506" class="outline-3">
+<h3 id="org218f506">Unit02, Learning Outcome 2</h3>
+<div class="outline-text-3" id="text-org218f506">
+<p>
+[<a href="https://www.perforce.com/blog/sca/how-enforce-coding-standards">https://www.perforce.com/blog/sca/how-enforce-coding-standards</a>]
+</p>
+<ul class="org-ul">
+<li>2.1 Identify good coding principles and practices used by soft developers</li>
+<li>2.2 Explain why it is important to follow good coding principles and practices
+<ul class="org-ul">
+<li>to write down code easy to reuse and extend</li>
+</ul></li>
+<li>2.3 Draw conclusions from the use of coding practices</li>
+</ul>
+</div>
+<div id="outline-container-org7a5a5f9" class="outline-4">
+<h4 id="org7a5a5f9"><span class="done DONE">DONE</span> 2.1</h4>
+<div class="outline-text-4" id="text-org7a5a5f9">
+<p>
+Learning about the SOLID principles has been an entirely great discovery. I am still in the point of labouring and essaying with the best suited composition in terms of the eventual requirement for a class, repeating and testing different approaches, and getting distance from already acquired habits. I did not have the concept of a piece of code that had that so elaborate structure, but I find it efficient, light and elegant.
+</p>
+
+<p>
+The first so challenging guideline I have found to meet is the trade-off involving the single responsibility for a class when is about adding a new method to a class or implementing it in a new class though within the main body still.
+</p>
+
+<p>
+Think of a bank account class which includes a method for opening a customer account and implementing methods for making deposits and withdrawals of money. Rather than creating a new class for each as it is said it should be, deposit and withdrawal procedures seem reasonably related enough to be added to the existing class rather than creating a new one. And keep the related functionality in a single place.
+</p>
+
+<p>
+Similar challenge I see in a class which includes the creation of a client dataset and should have to deal with adding new or updating info to existing customers or adding entirely new customers to the dataset. 
+</p>
+
+<p>
+This task as described includes at least three methods, the first one to initialize the dataset, a second method for adding clients to the dataset and third one to add new info or updating currently recorded info into the dataset or appending info if the customer is currently entirely unknown.
+</p>
+
+<p>
+On doing this exercise I learn about the open-close OCP, principle as well. As the decision of making of these methods a class on their own or hooking them into the main class was not a first thought but it was easier to append them as extensions once seen their close functionality as ends easy to get met. 
+</p>
+
+<p>
+The Liskov Substitution rather, requires more practice to master. Not because of the concept behind which is easy to see as the wire-frame behind all those inheritances how-to' s you probably have ever asked about but by the syntax it involves. I have seen a lot of examples on-line each of them written following never the same template. Still is interesting the contribution of this principle to the go-to kind of solutions sometimes we can see like quick fixes though leaving out consequences. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd4dcd1c" class="outline-4">
+<h4 id="orgd4dcd1c"><span class="done DONE">DONE</span> 2.2</h4>
+<div class="outline-text-4" id="text-orgd4dcd1c">
+<p>
+I consider following properly established standards a cornerstone and this is particularly crucial in the software industry. One of the main reasons is that software today's it is not a creation of a single person. 
+</p>
+
+<p>
+Keeping the structure of the applications they give rise, let's think of software for medical applications, public transport, communications or in general terms any crucial mission application so that for example easy to maintain and to fix in case of failure or in need of extending functionality that would not be possible otherwise, or if so it would be more expensive or tedious. 
+</p>
+
+<p>
+Following common principles and practices is also key for reusing and extending later on in the life of the software application. 
+</p>
+
+<p>
+Another consideration is that different than other recommendations, the SOLID group of principles provide which is close to a template, a framework to implement that targeted modularity and unfolded structure.
+</p>
+
+<p>
+Following these guidelines also make the assembling|making-up of the script easy from the beginning stage and helps to map the entire project in a way which is easier to see for extending functionalities purposes later and including the case when modularity is required as a branch at any partial point of the structure of the application.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9724674" class="outline-4">
+<h4 id="org9724674"><span class="done DONE">DONE</span> 2.3</h4>
+<div class="outline-text-4" id="text-org9724674">
+<p>
+One of the first differences I have been in the eventuality of testing against is the reduced number of operations it is required to perform similar targets. Every line of code is more straightforward and easier to read and spot for errors.
+</p>
+
+<p>
+It is also interesting the way how a method in the supper class which is reused in other sub-classes, can be inherited and also overridden given the subclass specialized or specific output for the same method and keeping at once the entire class as an entire piece.
+</p>
+
+<p>
+In case of conflicting decisions about inheritance which has effects in the implementation of methods in the sub-classes, the path would be to think of an upper abstract class where the conflicting classes could share common or global functionalities then inherit them at discretion and customize the output tailored to the dependent functionality without break the whole body of the main class as it is outlined by the Dependency Inversion Principle (DIP).
+I see this principle as an abstraction challenge. 
+</p>
+
+<p>
+Let’s have a look again to the dataset of Bank customers who are users of the basic bank account, they are a subclass of the customers dataset but at once, they are a subclass of the dataset of customers who have additionally also a current account. And the bank let’s say requires to have another dataset of potential customers, users that have not a traditionally type of bank account, probably a different type of commercial relationship but the bank requires to integrate them into a combined commercial campaign and requires to have integrated records. 
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgf474e2f" class="outline-4">
+<h4 id="orgf474e2f">Examples</h4>
+<div class="outline-text-4" id="text-orgf474e2f">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">class</span> <span style="color: #d26937;">ClientDataset</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">__init__</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.clients = <span style="color: #99d1ce;">[]</span>
+
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">add_clients</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>, clients_list<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.clients.extend<span style="color: #99d1ce;">(</span>clients_list<span style="color: #99d1ce;">)</span>
+
+<span style="color: #99d1ce;">client_dataset</span> = ClientDataset<span style="color: #99d1ce;">()</span>
+
+<span style="color: #99d1ce;">clients</span> = <span style="color: #99d1ce;">[</span><span style="color: #33859e;">{</span><span style="color: #2aa889;">"name"</span>: <span style="color: #2aa889;">"John Doe"</span>, <span style="color: #2aa889;">"age"</span>: 30<span style="color: #33859e;">}</span>, <span style="color: #33859e;">{</span><span style="color: #2aa889;">"name"</span>: <span style="color: #2aa889;">"Jane Doe"</span>, <span style="color: #2aa889;">"age"</span>: 28<span style="color: #33859e;">}</span><span style="color: #99d1ce;">]</span>
+
+client_dataset.add_clients<span style="color: #99d1ce;">(</span>clients<span style="color: #99d1ce;">)</span>
+
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>client_dataset.clients<span style="color: #99d1ce;">)</span>
+
+
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">class</span> <span style="color: #d26937;">ClientDataset</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">__init__</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.clients=<span style="color: #99d1ce;">[]</span>
+
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">add_clients</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>,clients<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">for</span> client <span style="color: #EEEE20;">in</span> clients:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.clients.append<span style="color: #99d1ce;">(</span>client<span style="color: #99d1ce;">)</span>
+
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">add_or_update_client_data</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>,client_name,key,value<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">for</span> client <span style="color: #EEEE20;">in</span> <span style="color: #EEEE20;">self</span>.clients:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">if</span> client<span style="color: #99d1ce;">[</span><span style="color: #2aa889;">'name'</span><span style="color: #99d1ce;">]</span>==client_name:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   client<span style="color: #99d1ce;">[</span><span style="color: #99d1ce;">key</span><span style="color: #99d1ce;">]</span>=value
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">break</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">else</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.clients.append<span style="color: #99d1ce;">(</span><span style="color: #33859e;">{</span><span style="color: #2aa889;">'name'</span>:client_name,key:value<span style="color: #33859e;">}</span><span style="color: #99d1ce;">)</span>
+
+client_dataset = ClientDataset<span style="color: #99d1ce;">()</span>
+clients = <span style="color: #99d1ce;">[</span><span style="color: #33859e;">{</span><span style="color: #2aa889;">"name"</span>: <span style="color: #2aa889;">"John Doe"</span>, <span style="color: #2aa889;">"age"</span>: 30<span style="color: #33859e;">}</span>, <span style="color: #33859e;">{</span><span style="color: #2aa889;">"name"</span>: <span style="color: #2aa889;">"Jane Doe"</span>, <span style="color: #2aa889;">"age"</span>: 28<span style="color: #33859e;">}</span><span style="color: #99d1ce;">]</span>
+client_dataset.add_clients<span style="color: #99d1ce;">(</span>clients<span style="color: #99d1ce;">)</span>
+client_dataset.add_or_update_client_data<span style="color: #99d1ce;">(</span><span style="color: #2aa889;">"John Doe"</span>, <span style="color: #2aa889;">"account_id"</span>, 123<span style="color: #99d1ce;">)</span>
+
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>client_dataset.clients<span style="color: #99d1ce;">)</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org93408bd" class="outline-4">
+<h4 id="org93408bd">Now to get this extended</h4>
+<div class="outline-text-4" id="text-org93408bd">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">class</span> <span style="color: #d26937;">ClientStatistics</span><span style="color: #99d1ce;">(</span>ClientDataset<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">get_average_age</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce;">total_age</span> = 0
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">for</span> client <span style="color: #EEEE20;">in</span> <span style="color: #EEEE20;">self</span>.<span style="color: #99d1ce;">clients</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   total_age += client<span style="color: #99d1ce;">[</span><span style="color: #2aa889;">"age"</span><span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> total_age / <span style="color: #d26937;">len</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>.clients<span style="color: #99d1ce;">)</span>
+
+
+<span style="color: #99d1ce;">client_stats</span> = ClientStatistics<span style="color: #99d1ce;">()</span>
+
+<span style="color: #99d1ce;">clients</span> = <span style="color: #99d1ce;">[</span><span style="color: #33859e;">{</span><span style="color: #2aa889;">"name"</span>: <span style="color: #2aa889;">"John Doe"</span>, <span style="color: #2aa889;">"age"</span>: 30<span style="color: #33859e;">}</span>, <span style="color: #33859e;">{</span><span style="color: #2aa889;">"name"</span>: <span style="color: #2aa889;">"Jane Doe"</span>, <span style="color: #2aa889;">"age"</span>: 28<span style="color: #33859e;">}</span><span style="color: #99d1ce;">]</span>
+
+client_stats.add_clients<span style="color: #99d1ce;">(</span>clients<span style="color: #99d1ce;">)</span>
+
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>client_stats.get_average_age<span style="color: #33859e;">()</span><span style="color: #99d1ce;">)</span>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org009cc89" class="outline-2">
+<h2 id="org009cc89">Friday 03/02/2023</h2>
+<div class="outline-text-2" id="text-org009cc89">
+</div>
+<div id="outline-container-orga712535" class="outline-3">
+<h3 id="orga712535">Counting occurrences of an item in a list</h3>
+<div class="outline-text-3" id="text-orga712535">
+</div>
+<ul class="org-ul">
+<li><a id="org5a694ee"></a>(as a)raw for loop<br />
+<div class="outline-text-5" id="text-org5a694ee">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #99d1ce;">a_list</span>=<span style="color: #99d1ce;">[</span>1,1,2,4<span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce;">a_dict</span>=<span style="color: #99d1ce;">{</span> <span style="color: #99d1ce;">}</span>
+<span style="color: #EEEE20;">for</span> i <span style="color: #EEEE20;">in</span> <span style="color: #99d1ce;">a_list</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">if</span> i <span style="color: #EEEE20;">not</span> <span style="color: #EEEE20;">in</span> a_dic:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   a_dict<span style="color: #99d1ce;">[</span><span style="color: #99d1ce;">i</span><span style="color: #99d1ce;">]</span>=1
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">else</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   a_dict<span style="color: #99d1ce;">[</span><span style="color: #99d1ce;">i</span><span style="color: #99d1ce;">]</span>=a_dict<span style="color: #99d1ce;">[</span>i<span style="color: #99d1ce;">]</span>+1
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgee90f87"></a>(as a) function<br />
+<div class="outline-text-5" id="text-orgee90f87">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">def</span> <span style="color: #edb443;">counting</span><span style="color: #99d1ce;">(</span>alist<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   result<span style="color: #99d1ce;">{}</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">for</span> i <span style="color: #EEEE20;">in</span> <span style="color: #99d1ce;">alist</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">if</span> i <span style="color: #EEEE20;">not</span> <span style="color: #EEEE20;">in</span> result:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   result<span style="color: #99d1ce;">[</span><span style="color: #99d1ce;">i</span><span style="color: #99d1ce;">]</span>=1
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">else</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   result<span style="color: #99d1ce;">[</span><span style="color: #99d1ce;">i</span><span style="color: #99d1ce;">]</span>=result<span style="color: #99d1ce;">[</span>i<span style="color: #99d1ce;">]</span>+1
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> result
+<span style="color: #99d1ce;">test_a</span>=<span style="color: #99d1ce;">[</span>1,1,2,4<span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce;">test_a_expected</span>=<span style="color: #99d1ce;">{</span>1:2,2:1,4:1<span style="color: #99d1ce;">}</span>
+counting<span style="color: #99d1ce;">(</span>test_a<span style="color: #99d1ce;">)</span>==test_a_expected
+counting<span style="color: #99d1ce;">(</span><span style="color: #33859e;">[</span>1,1,2,4<span style="color: #33859e;">]</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce;">test_c</span>=<span style="color: #99d1ce;">[</span>1,1,2,3,2,4,2,5,2<span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce;">test_c_expected</span>=<span style="color: #99d1ce;">{</span>1:2,2:4,3:1,4:1,5:1<span style="color: #99d1ce;">}</span>
+counting<span style="color: #99d1ce;">(</span>test_c<span style="color: #99d1ce;">)</span>==test_c_expected
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgbd1e0ee"></a>(as a) method in a class<br />
+<div class="outline-text-5" id="text-orgbd1e0ee">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #57ecec;">#</span><span style="color: #57ecec;">Now the method version</span>
+<span style="color: #EEEE20;">class</span> <span style="color: #d26937;">Counter</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">pass</span>
+
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">occurrences</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>, alist<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   result=<span style="color: #99d1ce;">{}</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">for</span> i <span style="color: #EEEE20;">in</span> <span style="color: #99d1ce;">alist</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">if</span> i <span style="color: #EEEE20;">not</span> <span style="color: #EEEE20;">in</span> result:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   result<span style="color: #99d1ce;">[</span><span style="color: #99d1ce;">i</span><span style="color: #99d1ce;">]</span>=1
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">else</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   result<span style="color: #99d1ce;">[</span><span style="color: #99d1ce;">i</span><span style="color: #99d1ce;">]</span>=result<span style="color: #99d1ce;">[</span>i<span style="color: #99d1ce;">]</span>+1
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> result
+
+
+<span style="color: #99d1ce;">counting</span>=Counter<span style="color: #99d1ce;">()</span>
+counting.occurrences<span style="color: #99d1ce;">(</span><span style="color: #33859e;">[</span>1,1,2,4<span style="color: #33859e;">]</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce;">test_a</span>=<span style="color: #99d1ce;">[</span>1,1,2,4<span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce;">test_b</span>=<span style="color: #99d1ce;">[</span>1,1,2,4,4<span style="color: #99d1ce;">]</span>
+counting.occurrences<span style="color: #99d1ce;">(</span>test_a<span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce;">test_c</span>=<span style="color: #99d1ce;">[</span>1,1,2,3,4,5,2,2,2<span style="color: #99d1ce;">]</span>
+counting.occurrences<span style="color: #99d1ce;">(</span>test_c<span style="color: #99d1ce;">)</span> <span style="color: #57ecec;">#</span><span style="color: #57ecec;">it works&#10003;</span>
+<span style="color: #99d1ce;">test_a_expected</span>=<span style="color: #99d1ce;">{</span>1:2,2:1,4:1<span style="color: #99d1ce;">}</span>
+<span style="color: #99d1ce;">test_b_expected</span>=<span style="color: #99d1ce;">{</span>1:2,2:1,4:2<span style="color: #99d1ce;">}</span>
+<span style="color: #99d1ce;">test_c_expected</span>=<span style="color: #99d1ce;">{</span>1:2,2:4,3:1,4:1,5:1<span style="color: #99d1ce;">}</span>
+counting.occurrences<span style="color: #99d1ce;">(</span>test_a<span style="color: #99d1ce;">)</span>==test_a_expected
+counting.occurrences<span style="color: #99d1ce;">(</span>test_b<span style="color: #99d1ce;">)</span>==test_b_expected
+counting.occurrences<span style="color: #99d1ce;">(</span>test_c<span style="color: #99d1ce;">)</span>==test_c_expected
+
+</pre>
+</div>
+</div>
+<ul class="org-ul">
+<li><a id="org9f732a2"></a>On initialising with or without args<br />
+<div class="outline-text-6" id="text-org9f732a2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">class</span> <span style="color: #d26937;">ExampleCounter</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">__init__</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>, digits<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.digits=digits
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">count_digits</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>, digit<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce;">count</span> = 0
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">for</span> number <span style="color: #EEEE20;">in</span> <span style="color: #EEEE20;">self</span>.<span style="color: #99d1ce;">digits</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   count += <span style="color: #d26937;">str</span><span style="color: #99d1ce;">(</span>number<span style="color: #99d1ce;">)</span>.count<span style="color: #99d1ce;">(</span><span style="color: #d26937;">str</span><span style="color: #33859e;">(</span>digit<span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> count
+<span style="color: #99d1ce; background-color: #11151c;"> </span>  <span style="color: #57ecec;">#</span><span style="color: #57ecec;">just an example of the idea, not useful unless you integrate the above script in a =for= loop to apply in to the entire given list.</span>
+
+</pre>
+</div>
+<pre class="example">
+class ExampleCounter:
+...     def __init__(self, digits):
+...         self.digits=digits
+...     def counter(self, digit):
+...         count=0
+...         for number in self.digits:
+...             count += str(number).count(str(digit))
+...         return count
+
+# test=[1,1,2,4]
+r={} 
+digit_counter=ExampleCounter(test)
+
+for i in digit_counter.digits:
+...     if i not in r:
+...         r[i]=1
+...     else:
+...         r[i]=r[i]+1
+
+#after testing the above line I got a r value as
+
+r={1:2,2:1,4:1}
+
+</pre>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orge7a83cf"></a>Annotations on the raw, as-function or method-in-class approach to a routine<br />
+<div class="outline-text-5" id="text-orge7a83cf">
+<p>
+Find here an example of inheritance when connecting two dependent classes. The subclass can add new properties and methods, or override existing ones, to specialise the behaviour inherited from the superclass. This allows for code reuse and makes it easier to manage the relationship between related classes. (Important to note that inheritance should be used judiciously, as an over-reliance on inheritance can lead to complex and difficult-to-maintain code.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">class</span> <span style="color: #d26937;">Animal</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">__init__</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>, name, species<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.name=name
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.<span style="color: #99d1ce;">species</span>=species
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">make_sound</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">pass</span>
+<span style="color: #EEEE20;">class</span> <span style="color: #d26937;">Dog</span><span style="color: #99d1ce;">(</span>Animal<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">make_sound</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> <span style="color: #2aa889;">'woof!'</span>
+<span style="color: #EEEE20;">class</span> <span style="color: #d26937;">Cat</span><span style="color: #99d1ce;">(</span>Animal<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">make_sound</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> <span style="color: #2aa889;">'meow'</span>    
+
+</pre>
+</div>
+<p>
+This demonstrates how inheritance allows for code reuse, as the common properties and methods of all animals can be defined in the 'Animal' class, and then specialised for each species in the subclass.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org2e50ebd"></a>Troubled about class with | without arguments and how-about them<br />
+<div class="outline-text-6" id="text-org2e50ebd">
+<p>
+A class without arguments is better in some cases where the class does not require any inputs or data to perform its functions. Such classes can be useful for representing concepts or objects that are purely abstracts or have well defined and fixed behaviour (mathematical concepts, singleton classes, etc). Or if they have default values for the arguments. For example, if the class has a constructor with a default argument value, it is possible to create an instance of the class without providing an argument.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">class</span> <span style="color: #d26937;">ExampleClass</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">__init__</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>, argument=<span style="color: #33859e; font-weight: bold;">None</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.argument=argument
+
+example_instance=ExampleClass<span style="color: #99d1ce;">()</span>
+
+</pre>
+</div>
+
+<p>
+But that is not the only case. For example, when a class contains only class level attributes and methods that operate on these attributes, then there may not be a need to pass any arguments while initialising the class.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">class</span> <span style="color: #d26937;">ExampleClass</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">__init__</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.data=<span style="color: #99d1ce;">[]</span>
+
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">add_data</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>, item<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">self</span>.data.append<span style="color: #99d1ce;">(</span>item<span style="color: #99d1ce;">)</span>
+
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">show</span>.data<span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span>.data<span style="color: #99d1ce;">)</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span><span style="color: #57ecec;">#</span><span style="color: #57ecec;">testing</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span><span style="color: #99d1ce;">example</span>=ExampleClass<span style="color: #99d1ce;">()</span>
+
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orgc60acf0"></a>What about the Interface Segregation Principle?<br />
+<div class="outline-text-5" id="text-orgc60acf0">
+<p>
+straightforward: a class should not be forced to implement interfaces it does not use. In the example of inheritance between two dependent classes, if the dependent class only requires a subset of the methods from the base class, it's better to create an interface that defines only the required methods and have the dependent class implement that interface instead of directly inheriting from the base class. For example, suppose we have a base class 'Vehicle' with methods 'start<sub>engine</sub>','accelerate', and 'stop'. Now, consider that we have a dependent class 'Bicycle' which only requires the 'accelerate' and 'stop' methods. Instead of inheriting directly from the 'Vehicle' class, we can create an interface 'Ridable' with only the 'accelerate' and 'stop' methods, and have the 'Bicycle' class implement that interface. This way, the 'Bicycle' class is only required to implement the methods it needs, and is not forced to implement the 'start<sub>engine</sub>' method, which it does not use.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #EEEE20;">from</span> abc <span style="color: #EEEE20;">import</span> ABC, abstractmethod <span style="color: #57ecec;">#</span><span style="color: #57ecec;">aha!</span>
+<span style="color: #EEEE20;">class</span> <span style="color: #d26937;">Animal</span><span style="color: #99d1ce;">(</span>ABC<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #d26937;">@abstractmethod</span>
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">make_sound</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">pass</span>
+<span style="color: #EEEE20;">class</span> <span style="color: #d26937;">Dog</span><span style="color: #99d1ce;">(</span>Animal<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">make_sound</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> <span style="color: #2aa889;">'bark!'</span>
+<span style="color: #EEEE20;">class</span> <span style="color: #d26937;">Cat</span><span style="color: #99d1ce;">(</span>Animal<span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">def</span> <span style="color: #edb443;">make_sound</span><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">self</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">return</span> <span style="color: #2aa889;">'meow!'</span>
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org5137666"></a>Extending this idea to DIP<br />
+<div class="outline-text-5" id="text-org5137666">
+<p>
+straightforward: high-levels modules should not depend on low-level modules, both should depend on abstractions. In the case of a potential client dataset and a smaller dataset of actual customers, you could apply DIP by defining an abstract class that defines the behaviour common to both datasets, such as the data storage methods. The concrete classes (Potentialclientdataset and CustomerDataset) depend on the abstractions defined in the abstract class, and not on each other, making the code more flexible, maintainable and testable.
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div id="outline-container-orgb3052bb" class="outline-3">
+<h3 id="orgb3052bb">Finding the smallest number in a list</h3>
+<div class="outline-text-3" id="text-orgb3052bb">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #99d1ce;">a_list</span>=<span style="color: #99d1ce;">[</span>23,11,7,6,33,4<span style="color: #99d1ce;">]</span>
+<span style="color: #99d1ce;">mini</span>=a_list<span style="color: #99d1ce;">[</span>0<span style="color: #99d1ce;">]</span>
+<span style="color: #EEEE20;">for</span> i <span style="color: #EEEE20;">in</span> <span style="color: #d26937;">range</span><span style="color: #99d1ce;">(</span><span style="color: #d26937;">len</span><span style="color: #33859e;">(</span>a_list<span style="color: #33859e;">)</span><span style="color: #99d1ce;">)</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #EEEE20;">if</span> a_list<span style="color: #99d1ce;">[</span>i<span style="color: #99d1ce;">]</span> &lt; <span style="color: #99d1ce;">mini</span>:
+<span style="color: #99d1ce; background-color: #11151c;"> </span>   <span style="color: #99d1ce; background-color: #11151c;"> </span>   mini=a_list<span style="color: #99d1ce;">[</span>i<span style="color: #99d1ce;">]</span>
+
+<span style="color: #d26937;">print</span><span style="color: #99d1ce;">(</span>mini<span style="color: #99d1ce;">)</span> <span style="color: #57ecec;">#</span><span style="color: #57ecec;">as min is a reserved word for min() function</span>
+
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc58c2e" class="outline-3">
+<h3 id="orgcc58c2e">Assignment, Learning Outcome 3. [Submit 10/02/2023</h3>
+<div class="outline-text-3" id="text-orgcc58c2e">
+<p>
+[keywords: Google Java Coding Standard on variable naming, column length, etc., ][<a href="https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design">https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design</a>][<a href="https://realpython.com/python-pep8/">https://realpython.com/python-pep8/</a>][<a href="https://www.perforce.com/blog/sca/how-enforce-coding-standards">https://www.perforce.com/blog/sca/how-enforce-coding-standards</a>]
+</p>
+</div>
+<div id="outline-container-orga12c5e4" class="outline-4">
+<h4 id="orga12c5e4"><span class="done DONE">DONE</span> 3.1 Identify different types of coding reviews</h4>
+<div class="outline-text-4" id="text-orga12c5e4">
+<p>
+Peer Review | Pair Programming | Over-the-shoulder review | Email pass-around | Tool-assisted review | Senior/expert review
+</p>
+
+<p>
+Peer Review. ✓ After some googling online on the different types of coding review, I have recognised barely one which I have become familiar with by taking some online lesson on coding, this is <code>=Peer Review=</code>. This is also, as it is read on most of the reports I have had the opportunity run into, one of the most common forms of code review, in which team members review each other's code, in my experience, students share homework, review and comment or propose alternatives to others though, in my experience not on real-time basis. Performing this practice during the development process seems to facilitate the team to detect issues that can be fixed early which is better practice than leaving it for the testing stage or other phases where the block of code should get inserted or being base of dependent functionalities.
+Pair Programming ✓ - Two developers work on the same codebase and discuss their approach and review each other's code in real-time and at a single workstation. This method involves a technique, where we can mention at least two elements, one developer writing code (the driver) and other reviewing (the navigator) and different than in other methods described here, the reviewing task is continuous. 
+Over-the-shoulder ✓ review - One developer reviews the code of another developer while looking over their shoulder (it is said) though, it is used to mean sharing a screen locally or remotely and performing interactions about the workload in real time or setting to-do task lists to work on later on afterwards the reviewing session. 
+Email pass-around. ✓ It is reported being used when is about minor issues and or small amount of lines of code. As the name help to describe it, an developer author sends an email attaching source code changes to reviewers. It seems easy to implement, convenient when the review is done remotely, and better under a minimal tracking system in order to follow conversations. Which is reported as a drawback together with difficulties to integrate these interactions into the metrics.
+Tool-assisted review - Automated tools like code analysis software, linters, and static analysis tools are used to review the code. <a href="https://www.reviewboard.org/">https://www.reviewboard.org/</a> <a href="https://github.com/features/code-review/">https://github.com/features/code-review/</a> 
+Senior/expert review - A more senior or experienced developer reviews the code to catch potential issues and provide guidance.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org605df2e" class="outline-4">
+<h4 id="org605df2e"><span class="done DONE">DONE</span> 3.2 Explain why code is reviewed</h4>
+<div class="outline-text-4" id="text-org605df2e">
+<p>
+I find that reviewing code delivery, partially, by workload or on release which has become a stage on its own in the software development industry is strongly due to the fact that the product is entirely teamwork. It seems obvious and yes it is though in this specific case, that fact involves a lot of costly and complex management casuistic that makes this stage distinct from other forms of quality control such as this is in other industries.
+In general terms concerns about quality of product in the software industry case it is said is connected to
+</p>
+<ul class="org-ul">
+<li>Improving reliability (catch and fix potential bugs, logical issues)</li>
+<li>Sharing knowledge and experience is a way of making investments in the workforce whereas the workforce is in action, so improving developers' skills, both the current team and providing opportunities for learning, which is also a reliable method for growing as an enterprise since this makes the learning process fully connected with real-world requirements and cutting edge know-how.</li>
+<li>Within the team itself reviewing code, it is justified as a method that helps to improve team communication and promote collaboration which ensures improved maintainability by, for example, identifying areas of the code that may be difficult to maintain or upgrade in the future or providing suggestions to improve its maintainability.</li>
+<li>Also ensuring security by helping to identify vulnerabilities and tracking as far as line-by-line of script potential bugs or issues.</li>
+<li>Bring different perspectives and ideas to the object of the eventual application or project as the concepts that compound it is getting breakdown, which enhances collaboration exponentially.</li>
+</ul>
+<p>
+And all these whys are true but the distinct feature here is that the entire production has a multiple-hands dependence feature, and coding review has become the framework for making the workflow flows successfully.
+</p>
+</div>
+</div>
+<div id="outline-container-org3bc61dc" class="outline-4">
+<h4 id="org3bc61dc"><span class="done DONE">DONE</span> 3.3 Explain why it is important to undertake a coding review</h4>
+<div class="outline-text-4" id="text-org3bc61dc">
+<p>
+ Conducting code reviews as part of the software development process is essential. Long-term analysis has shown that the development process is more important than whether the code appears to run fine. In the software development industry, having a well-defined process in place leads to better outcomes and sustainable growth, as opposed to relying on temporary solutions, even if they are initially successful. Replicability is critical for success in software development, and code reviews serve as a way to share knowledge and identify potential issues. This helps ensure the quality, security, and maintainability of the final product. <br />
+   decentralized across the team <br />
+is not just a senior team member reviewing a junior team member’s code <br />
+should happen across the team in every direction <br />
+  Estimation <br />
+  be the sole point of contact on a piece of code <br />
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8723b04" class="outline-4">
+<h4 id="org8723b04"><span class="todo NEXT">NEXT</span> 3.4 Explain the importance of effective feedback in a coding review</h4>
+<div class="outline-text-4" id="text-org8723b04">
+<p>
+It seems reasonable that if team work is key, and conducting code reviews is the path towards sustainable growth, quality of reviewing interactions are the sine qua non kind of bridge to met the ends 
+</p>
+</div>
+</div>
+<div id="outline-container-orge643720" class="outline-4">
+<h4 id="orge643720"><span class="todo TODO">TODO</span> 3.5 Distinguish the difference between submitting and performing a coding review</h4>
+</div>
+<div id="outline-container-org10ec0b6" class="outline-4">
+<h4 id="org10ec0b6"><span class="todo TODO">TODO</span> 3.6 Explain the advantages and disadvantages of <code>pair programming</code>  and <code>mob programming</code></h4>
+</div>
+</div>
+<div id="outline-container-org2852b8c" class="outline-3">
+<h3 id="org2852b8c">Task 2c: Back-end database Interim deadline: [Submit 03/03/2023[??]]</h3>
+<div class="outline-text-3" id="text-org2852b8c">
+<p>
+This provides evidence for assessment criteria unit 02 - 4.1,4.2,4.3,4.4,4.5,4.6
+You have been asked to evidence your understanding of relational databases and query language features. Create a PowerPoint Presentation, including speaker notes for additional explanations, which:
+</p>
+</div>
+<div id="outline-container-orgb5f4aba" class="outline-4">
+<h4 id="orgb5f4aba">a)</h4>
+<div class="outline-text-4" id="text-orgb5f4aba">
+<p>
+Explains 'structured data' and 'unstructured data including how structured data is organized and 'unstructured data' is stored.
+</p>
+</div>
+</div>
+<div id="outline-container-org048ad95" class="outline-4">
+<h4 id="org048ad95">b)</h4>
+<div class="outline-text-4" id="text-org048ad95">
+<p>
+Describes what a 'database' is, the different types of databases, the data they can store, the difference between NoSQL and relational databases, and the difference between storing data online (cloud-based) or on-premises.
+</p>
+</div>
+</div>
+<div id="outline-container-orga86f5cc" class="outline-4">
+<h4 id="orga86f5cc">c)</h4>
+<div class="outline-text-4" id="text-orga86f5cc">
+<p>
+Describes database terms: 'record', 'field' and 'key'.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4e61b3" class="outline-4">
+<h4 id="orgc4e61b3">d)</h4>
+<div class="outline-text-4" id="text-orgc4e61b3">
+<p>
+Explains database primary and foreign keys, the differences between them, their relationship to one another, the qualities they possess and their purpose. Include an explanation of database constraints and relational integrity, why primary keys must be unique and what the term 'auto-increment' means.
+</p>
+</div>
+</div>
+<div id="outline-container-org29deded" class="outline-4">
+<h4 id="org29deded">e)</h4>
+<div class="outline-text-4" id="text-org29deded">
+<p>
+Explain what query language is, the concept of querying a database, and describe the different ways (and places from) a query can be executed using CRUD (create, read, update, and delete) operations and stored procedures.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: txarly</p>
+<p class="date">Created: 2023-02-08 Wed 02:15</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
