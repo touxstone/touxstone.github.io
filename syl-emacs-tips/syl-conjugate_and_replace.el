@@ -56,7 +56,7 @@
 ;; (add-to-list 'load-path "/full/path/where/syl-conjugate_and_replace.el/in")
 ;;
 ;; and making a requiring line in your `emacs.init`
-;; (require '"syl-conjugate_and_replace")
+;; (require 'syl-conjugate_and_replace)
 ;; 
 ;; And, that's it. To call the function, locate your prompt next (or before) 
 ;; the verb target and hit 's-c' ("s" is the Windows key, just in case) though
