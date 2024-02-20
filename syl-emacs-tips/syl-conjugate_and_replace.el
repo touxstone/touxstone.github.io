@@ -1,4 +1,4 @@
-;;; syl-conjugate_and_replace.el --- Just a webscrapping tool for help with verbs.
+;;; syl-conjugate_and_replace.el --- Just a webscrapping tool to help with verbs.
 ;; Copyright: (C) Syl Montalvo <ml.19161671@gmail.com>
 ;; Author	: Syl. Montalvo
 ;; URL		: https://raw.githubusercontent.com/touxstone/touxstone.github.io/master/syl-emacs-tips/syl-conjugate_and_replace.el
@@ -129,11 +129,11 @@
       (insert res))))
 
 ;; You can change this shortcut at will. 
-(global-set-key (kbd "s-c") 'conjugating-and-replace)
+(global-set-key (kbd "s-c") 'syl-conjugate_and_replace)
 
 
 
 (provide 'syl-conjugate_and_replace)
-;;; library.el ends here
+;;; syl-conjugate_and_replace.el ends here
 
 
