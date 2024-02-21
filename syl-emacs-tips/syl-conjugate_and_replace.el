@@ -1,7 +1,7 @@
 ;;; syl-conjugate_and_replace.el --- Just a web-scrapping tool to help with verbs.
 ;; Copyright: (C) Syl Montalvo <ml.19161671@gmail.com>
 ;; Author	: Syl. Montalvo
-;; URL		: https://raw.githubusercontent.com/touxstone/touxstone.github.io/master/syl-emacs-tips/syl-conjugate_and_replace.el
+;; URL		: https://github.com/touxstone/touxstone.github.io/blob/master/syl-emacs-tips/syl-conjugate_and_replace.el
 ;; Created	: Wed 6 Feb 08:47:57 GMT 2019 
 ;; Version	: 2019.00.01
 ;; Keywords     : dictionary, verbs, conjugation
