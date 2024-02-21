@@ -1,5 +1,6 @@
 ;;; syl-shell-translate-eng-spa.el --- Just a workpatch to google-translate using translate-shell.
-;; Author: Syl. Montalvo
+;; Author : Syl. Montalvo
+;; URL    : https://github.com/touxstone/touxstone.github.io/blob/master/syl-emacs-tips/syl-shell-translate-eng-spa.el
 ;; Created: Fri 15 Mar 19:22:12 GMT 2019 
 ;; Version: 2019.00.01
 
