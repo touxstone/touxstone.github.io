@@ -1,4 +1,4 @@
-;;; syl-conjugate_and_replace.el --- Just a webscrapping tool to help with verbs.
+;;; syl-conjugate_and_replace.el --- Just a web-scrapping tool to help with verbs.
 ;; Copyright: (C) Syl Montalvo <ml.19161671@gmail.com>
 ;; Author	: Syl. Montalvo
 ;; URL		: https://raw.githubusercontent.com/touxstone/touxstone.github.io/master/syl-emacs-tips/syl-conjugate_and_replace.el
@@ -42,11 +42,11 @@
 ;; choose, replace, and continue typing. That is the purpose of this tool.
 ;; Something quite simple but intricate in equal proportion. And this is 
 ;; the introduction to the task I intended to solve with this tool.
-;; The second stage is to show you the source of information that happen to 
-;; be this beautiful place https://ultralingua.com/
-;; Go and check the section of verb conjugation -the developers section- 
-;; how it display your query and what is the interface used at there, 
-;; both the GUI interface and the JSON syntax which we are goint to make use of.
+;; The second stage is to show you the source of information which happens to be
+;; this beautiful place https://ultralingua.com/.
+;; Go and check out the verb conjugation section - the developer section -
+;; how it shows your query and what the interface is there, both the GUI interface
+;; and the JSON syntax that we're going to make use of.
 ;; 
 ;;
 ;;; Installation:
@@ -61,8 +61,8 @@
 ;; And, that's it. To call the function, locate your prompt next (or before) 
 ;; the verb target and hit 's-c' ("s" is the Windows key, just in case) though
 ;; you can customise this combination at will. 
-;; Afterwars, as said the options will appear at the modeline area, chose it with
-;; the arrow keys, and Intro. 
+;; Then, as mentioned above, the options will appear in the Emacs modeline area,
+;; choose accordinlgly with the arrow keys, then press Enter.
 
 ;;; Code:
 
