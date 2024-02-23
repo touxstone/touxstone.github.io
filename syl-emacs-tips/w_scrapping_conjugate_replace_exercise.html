@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-02-23 Fri 16:13 -->
+<!-- 2024-02-23 Fri 16:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A help tool for Web Scrapping conjugation</title>
@@ -204,47 +204,47 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1d99d9e">Introducing the trick</a></li>
-<li><a href="#orgabc23e5">Requirements</a></li>
-<li><a href="#org11bae6b">Get the stuff from the internet</a>
+<li><a href="#org7c65195">Introducing the trick</a></li>
+<li><a href="#org8954551">Requirements</a></li>
+<li><a href="#org2357c6b">Get the stuff from the internet</a>
 <ul>
-<li><a href="#org8dcdb50">set the URL to web-scraping from</a></li>
-<li><a href="#orgb54d7d2">Extract it</a></li>
-<li><a href="#org35614c5">But not repeat stuff</a></li>
-<li><a href="#org38608fb">The Main function</a></li>
+<li><a href="#org949b291">set the URL to web-scraping from</a></li>
+<li><a href="#org497b5d3">Extract it</a></li>
+<li><a href="#org6ba4863">But not repeat stuff</a></li>
+<li><a href="#org54adecb">The Main function</a></li>
 </ul>
 </li>
-<li><a href="#org4b3066e">The Choose-one function</a></li>
-<li><a href="#org9d623ec">The ensemble function</a>
+<li><a href="#orgd691ff1">The Choose-one function</a></li>
+<li><a href="#org5d99368">The ensemble function</a>
 <ul>
-<li><a href="#org971f393">Making a keyboard shortcut to call the function</a></li>
+<li><a href="#org14489da">Making a keyboard shortcut to call the function</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1d99d9e" class="outline-2">
-<h2 id="org1d99d9e">Introducing the trick</h2>
-<div class="outline-text-2" id="text-org1d99d9e">
+<div id="outline-container-org7c65195" class="outline-2">
+<h2 id="org7c65195">Introducing the trick</h2>
+<div class="outline-text-2" id="text-org7c65195">
 <p>
 Verbally Vexed? Vanquish Conjugation Calamity with This Handy Plug-in!
 </p>
 
 <p width="40%" alt="the_valiant_knight" title="Action!" style="float: left; margin: 0px 20px 0px 0px;">
-<img src="file:///home/txarly/Documents/my-orgth/bb-notepad/img/car_01.jpg" alt="the_valiant_knight" width="40%" title="Action!" style="float: left; margin: 0px 20px 0px 0px;" />
+<img src="../img/car_01.jpg" alt="the_valiant_knight" width="40%" title="Action!" style="float: left; margin: 0px 20px 0px 0px;" />
 Struggling with the English language like a valiant knight stuck in a conjugation coliseum? Do verbs vanquish your vocabulary, leaving you wandering dictionaries like a lost soul in a verbless wasteland?
 Fear not, brave writer, for I bring you a mighty weapon: a plug-in to slay your conjugation woes!
 Imagine, if you will, the endless dance you perform with online dictionaries. Every few steps, you consult the oracle, desperately seeking the correct tense. It's a ballet of clicks and searches, a symphony of frustration. But what if, dear writer, you could summon the verb gods with a mere keystroke? A magical list of options appearing on your screen, ready to do your bidding?
 This, my friends, is the power I offer! A simple tool with the complexity of a dragon's hoard (okay, maybe just a slightly complex script). It taps into the wisdom of <a href="https://ultralingua.com/">ultralingua</a>, ok the <a href="https://ultralingua.com/developers">developers area</a>, a website so beautiful it should be illegal (don't tell the authorities).
 </p>
 <p width="40%" alt="the_valiant_group" title="Action02" style="float: right; margin: 30px 20px 0px 0px;">
-<img src="file:///home/txarly/Documents/my-orgth/bb-notepad/img/car_00.jpg" alt="the_valiant_group" width="40%" title="Action02" style="float: right; margin: 30px 20px 0px 0px;" />
+<img src="../img/car_00.jpg" alt="the_valiant_group" width="40%" title="Action02" style="float: right; margin: 30px 20px 0px 0px;" />
 Now, for the tech-savvy among you, there's even a sprinkle of Emacs Lisp magic. With a dash of coding know-how, you can unleash the full potential of this verb-vanquishing hero. Summon verb options, choose your champion, and conquer your writing with newfound confidence!
 So, lay down your dictionaries, weary warriors! This plug-in is your Excalibur against the conjugation beast. Now go forth and write, free from the shackles of verb uncertainty!
 P.S. Screenshot of the plug-in in action coming soon (because apparently, even screenshots need time to conjugate themselves…).
 </p>
 <p width="30%" alt="the_valiant_and_0" title="Action03" style="float: left; margin: 40px 20px 0px 0px;">
-<img src="file:///home/txarly/Documents/my-orgth/bb-notepad/img/car_02.jpg" alt="the_valiant_and_0" width="30%" title="Action03" style="float: left; margin: 40px 20px 0px 0px;" />
+<img src="../img/car_02.jpg" alt="the_valiant_and_0" width="30%" title="Action03" style="float: left; margin: 40px 20px 0px 0px;" />
 <img src="ultralingua_gui_jason.png" alt="ultralingua_gui_jason.png" />
 </p>
 
@@ -253,7 +253,7 @@ I also could manage to enclose here a screen-cast of the process!
 </p>
 
 
-<div id="org8935592" class="figure">
+<div id="org4840a48" class="figure">
 <p><img src="conjugate_and_replace_ex01.gif" alt="conjugate_and_replace_ex01.gif" />
 </p>
 </div>
@@ -261,9 +261,9 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 
 
-<div id="outline-container-orgabc23e5" class="outline-2">
-<h2 id="orgabc23e5">Requirements</h2>
-<div class="outline-text-2" id="text-orgabc23e5">
+<div id="outline-container-org8954551" class="outline-2">
+<h2 id="org8954551">Requirements</h2>
+<div class="outline-text-2" id="text-org8954551">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 <span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">require</span> '<span style="color: #33859e; font-weight: bold;">cl-macs</span><span style="color: #99d1ce;">)</span>
@@ -273,13 +273,13 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 </div>
 
-<div id="outline-container-org11bae6b" class="outline-2">
-<h2 id="org11bae6b">Get the stuff from the internet</h2>
-<div class="outline-text-2" id="text-org11bae6b">
+<div id="outline-container-org2357c6b" class="outline-2">
+<h2 id="org2357c6b">Get the stuff from the internet</h2>
+<div class="outline-text-2" id="text-org2357c6b">
 </div>
-<div id="outline-container-org8dcdb50" class="outline-3">
-<h3 id="org8dcdb50">set the URL to web-scraping from</h3>
-<div class="outline-text-3" id="text-org8dcdb50">
+<div id="outline-container-org949b291" class="outline-3">
+<h3 id="org949b291">set the URL to web-scraping from</h3>
+<div class="outline-text-3" id="text-org949b291">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">defun</span> <span style="color: #edb443;">just-get-raw</span> <span style="color: #33859e;">(</span>url<span style="color: #33859e;">)</span>
   <span style="color: #33859e;">(</span><span style="color: #EEEE20;">interactive</span><span style="color: #33859e;">)</span>
@@ -293,9 +293,9 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 </div>
 </div>
-<div id="outline-container-orgb54d7d2" class="outline-3">
-<h3 id="orgb54d7d2">Extract it</h3>
-<div class="outline-text-3" id="text-orgb54d7d2">
+<div id="outline-container-org497b5d3" class="outline-3">
+<h3 id="org497b5d3">Extract it</h3>
+<div class="outline-text-3" id="text-org497b5d3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">defun</span> <span style="color: #edb443;">extract</span> <span style="color: #33859e;">(</span>i<span style="color: #33859e;">)</span>
   <span style="color: #33859e;">(</span><span style="color: #EEEE20;">do</span> <span style="color: #d26937;">(</span><span style="color: #888ca6;">(</span>i1 i <span style="color: #2aa889;">(</span>rest i1<span style="color: #2aa889;">)</span><span style="color: #888ca6;">)</span>
@@ -306,9 +306,9 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 </div>
 
-<div id="outline-container-org35614c5" class="outline-3">
-<h3 id="org35614c5">But not repeat stuff</h3>
-<div class="outline-text-3" id="text-org35614c5">
+<div id="outline-container-org6ba4863" class="outline-3">
+<h3 id="org6ba4863">But not repeat stuff</h3>
+<div class="outline-text-3" id="text-org6ba4863">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">defun</span> <span style="color: #edb443;">non-repeated-pool</span> <span style="color: #33859e;">(</span>x<span style="color: #33859e;">)</span>
   <span style="color: #33859e;">(</span><span style="color: #EEEE20;">do</span> <span style="color: #d26937;">(</span><span style="color: #888ca6;">(</span>x1 x <span style="color: #2aa889;">(</span>rest x1<span style="color: #2aa889;">)</span><span style="color: #888ca6;">)</span>
@@ -330,9 +330,9 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 
 
-<div id="outline-container-org38608fb" class="outline-3">
-<h3 id="org38608fb">The Main function</h3>
-<div class="outline-text-3" id="text-org38608fb">
+<div id="outline-container-org54adecb" class="outline-3">
+<h3 id="org54adecb">The Main function</h3>
+<div class="outline-text-3" id="text-org54adecb">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">defun</span> <span style="color: #edb443;">new-conjugator0</span> <span style="color: #33859e;">(</span>verb<span style="color: #33859e;">)</span>
   <span style="color: #33859e;">(</span><span style="color: #EEEE20;">let</span> <span style="color: #d26937;">(</span><span style="color: #888ca6;">(</span>xurl <span style="color: #2aa889;">(</span>format <span style="color: #2aa889;">"http://api.ultralingua.com/api/2.0/conjugations/eng/%s"</span> verb<span style="color: #2aa889;">)</span><span style="color: #888ca6;">)</span><span style="color: #d26937;">)</span>
@@ -351,9 +351,9 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 </div>
 </div>
-<div id="outline-container-org4b3066e" class="outline-2">
-<h2 id="org4b3066e">The Choose-one function</h2>
-<div class="outline-text-2" id="text-org4b3066e">
+<div id="outline-container-orgd691ff1" class="outline-2">
+<h2 id="orgd691ff1">The Choose-one function</h2>
+<div class="outline-text-2" id="text-orgd691ff1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">defun</span> <span style="color: #edb443;">choose-one</span> <span style="color: #33859e;">(</span>x<span style="color: #33859e;">)</span>
   <span style="color: #33859e;">(</span><span style="color: #EEEE20;">let</span> <span style="color: #d26937;">(</span><span style="color: #888ca6;">(</span>completion-prompt <span style="color: #2aa889;">"Replacement: "</span><span style="color: #888ca6;">)</span><span style="color: #d26937;">)</span>
@@ -362,9 +362,9 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 </div>
 </div>
-<div id="outline-container-org9d623ec" class="outline-2">
-<h2 id="org9d623ec">The ensemble function</h2>
-<div class="outline-text-2" id="text-org9d623ec">
+<div id="outline-container-org5d99368" class="outline-2">
+<h2 id="org5d99368">The ensemble function</h2>
+<div class="outline-text-2" id="text-org5d99368">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #99d1ce;">(</span><span style="color: #EEEE20;">defun</span> <span style="color: #edb443;">conjugating-and-replace</span> <span style="color: #33859e;">(</span>s<span style="color: #33859e;">)</span>
   <span style="color: #33859e;">(</span><span style="color: #EEEE20;">interactive</span>
@@ -385,9 +385,9 @@ I also could manage to enclose here a screen-cast of the process!
 </pre>
 </div>
 </div>
-<div id="outline-container-org971f393" class="outline-3">
-<h3 id="org971f393">Making a keyboard shortcut to call the function</h3>
-<div class="outline-text-3" id="text-org971f393">
+<div id="outline-container-org14489da" class="outline-3">
+<h3 id="org14489da">Making a keyboard shortcut to call the function</h3>
+<div class="outline-text-3" id="text-org14489da">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #99d1ce;">(</span>global-set-key <span style="color: #33859e;">(</span>kbd <span style="color: #2aa889;">"s-c"</span><span style="color: #33859e;">)</span> 'conjugating-and-replace<span style="color: #99d1ce;">)</span>
 </pre>
@@ -398,7 +398,7 @@ I also could manage to enclose here a screen-cast of the process!
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Syl. Montalvo | ml.19161671@gmail.com</p>
-<p class="date">Created: 2024-02-23 Fri 16:13</p>
+<p class="date">Created: 2024-02-23 Fri 16:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
