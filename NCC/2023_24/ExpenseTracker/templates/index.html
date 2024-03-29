@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expenses</title>
+  </head>
+  <body>
+    <h1>Expenses</h1>
+    <a href="{{ add_expense_url }}">Add Expense</a>
+    <table>
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for expense in expenses %}
+          <tr>
+            <td>{{ expense.amount }}</td>
+            <td>{{ expense.category }}</td>
+            <td>{{ expense.date.strftime('%Y-%m-%d') }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
