@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudanzas y Transportes Madrid - ¡Tu Presupuesto Rápido!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>TuEmpresa<span>Mudanzas</span></h1>
+        </div>
+        <div class="contact-box">
+            <p>Llámanos: <a href="tel:+34123456789"><strong>+34 123 456 789</strong></a></p>
+            <p>Escríbenos: <a href="mailto:info@tuempresa.es">info@tuempresa.es</a></p>
+            <p>Horario: L-V 9:00 - 18:00</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <h2>Transporte y Mudanzas en España desde Madrid</h2>
+            <p>Calcula el presupuesto para tu envío o mudanza de forma rápida y transparente.</p>
+        </section>
+
+        <section class="budget-form-section">
+            <h3>Calcula tu Presupuesto Orientativo</h3>
+            <form id="budgetForm" class="budget-form">
+                <div class="form-group">
+                    <label for="origin">Origen (Madrid):</label>
+                    <input type="text" id="origin" name="origin" value="Madrid" readonly required>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination">Destino (Cualquier punto de España):</label>
+                    <input type="text" id="destination" name="destination" placeholder="Ej: Barcelona, Sevilla, Valencia..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceDate">Fecha Estimada del Servicio:</label>
+                    <input type="date" id="serviceDate" name="serviceDate" required>
+                </div>
+
+                <hr>
+
+                <h4>¿Qué necesitas transportar?</h4>
+
+                <div class="option-block" id="bulkOption">
+                    <label class="option-title">
+                        <input type="checkbox" id="enableBulk" checked> Presupuesto por Bulto
+                    </label>
+                    <div id="bulkItemsContainer">
+                        <div class="bulk-item">
+                            <h5>Bulto #1</h5>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bulkType1">Tipo:</label>
+                                    <select id="bulkType1" name="bulkType[]">
+                                        <option value="caja_pequena">Caja Pequeña</option>
+                                        <option value="caja_mediana">Caja Mediana</option>
+                                        <option value="caja_grande">Caja Grande</option>
+                                        <option value="maleta">Maleta</option>
+                                        <option value="paquete_irregular">Paquete Irregular</option>
+                                    </select>
+                                </div>
+                                <div class="form-group dimensions">
+                                    <label>Medidas (cm):</label>
+                                    <input type="number" name="bulkLength[]" placeholder="Largo" min="1" required>
+                                    <input type="number" name="bulkWidth[]" placeholder="Ancho" min="1" required>
+                                    <input type="number" name="bulkHeight[]" placeholder="Alto" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Peso (kg):</label>
+                                    <input type="number" name="bulkWeight[]" placeholder="Peso" min="0.1" step="0.1" required>
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="bulkPacking1" name="bulkPacking[]">
+                                    <label for="bulkPacking1">Embalaje Empresa</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addBulkBtn" class="add-btn">Añadir Otro Bulto</button>
+                </div>
+
+                <hr>
+
+                <div class="option-block" id="itemOption">
+                    <label class="option-title">
+                        <input type="checkbox" id="enableItems"> Presupuesto por Ítems (Mobiliario/Enseres)
+                    </label>
+                    <div id="itemSelection" style="display: none;">
+                        <div class="item-category">
+                            <h4>Enseres de Oficina</h4>
+                            <div class="item-list">
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="office_desk" name="item[]" value="office_desk">
+                                    <label for="office_desk">Escritorio individual</label>
+                                    <input type="checkbox" id="office_desk_packing" name="item_packing[]" value="office_desk" class="packing-checkbox">
+                                    <label for="office_desk_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="office_chair" name="item[]" value="office_chair">
+                                    <label for="office_chair">Silla de oficina</label>
+                                    <input type="checkbox" id="office_chair_packing" name="item_packing[]" value="office_chair" class="packing-checkbox">
+                                    <label for="office_chair_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="filing_cabinet" name="item[]" value="filing_cabinet">
+                                    <label for="filing_cabinet">Archivador (2-3 cajones)</label>
+                                    <input type="checkbox" id="filing_cabinet_packing" name="item_packing[]" value="filing_cabinet" class="packing-checkbox">
+                                    <label for="filing_cabinet_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="office_shelf" name="item[]" value="office_shelf">
+                                    <label for="office_shelf">Estantería pequeña (hasta 1.5m)</label>
+                                    <input type="checkbox" id="office_shelf_packing" name="item_packing[]" value="office_shelf" class="packing-checkbox">
+                                    <label for="office_shelf_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="computer_screen" name="item[]" value="computer_screen">
+                                    <label for="computer_screen">Pantalla de ordenador</label>
+                                    <input type="checkbox" id="computer_screen_packing" name="item_packing[]" value="computer_screen" class="packing-checkbox">
+                                    <label for="computer_screen_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="printer" name="item[]" value="printer">
+                                    <label for="printer">Impresora multifunción</label>
+                                    <input type="checkbox" id="printer_packing" name="item_packing[]" value="printer" class="packing-checkbox">
+                                    <label for="printer_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="document_box" name="item[]" value="document_box">
+                                    <label for="document_box">Caja de documentos (estándar)</label>
+                                    <input type="checkbox" id="document_box_packing" name="item_packing[]" value="document_box" class="packing-checkbox">
+                                    <label for="document_box_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox other-item">
+                                    <input type="checkbox" id="office_other" name="item[]" value="office_other">
+                                    <label for="office_other">Otros (Especificar):</label>
+                                    <input type="text" name="office_other_desc" placeholder="Detalle otros ítems">
+                                    <input type="checkbox" id="office_other_packing" name="item_packing[]" value="office_other" class="packing-checkbox">
+                                    <label for="office_other_packing">Embalaje</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-category">
+                            <h4>Enseres de Casa</h4>
+                            <div class="item-list">
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="bed" name="item[]" value="bed">
+                                    <label for="bed">Cama (individual/matrimonial)</label>
+                                    <input type="checkbox" id="bed_packing" name="item_packing[]" value="bed" class="packing-checkbox">
+                                    <label for="bed_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="nightstand" name="item[]" value="nightstand">
+                                    <label for="nightstand">Mesita de noche</label>
+                                    <input type="checkbox" id="nightstand_packing" name="item_packing[]" value="nightstand" class="packing-checkbox">
+                                    <label for="nightstand_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="dresser" name="item[]" value="dresser">
+                                    <label for="dresser">Cómoda/Cajonera</label>
+                                    <input type="checkbox" id="dresser_packing" name="item_packing[]" value="dresser" class="packing-checkbox">
+                                    <label for="dresser_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="sofa" name="item[]" value="sofa">
+                                    <label for="sofa">Sofá (2/3 plazas)</label>
+                                    <input type="checkbox" id="sofa_packing" name="item_packing[]" value="sofa" class="packing-checkbox">
+                                    <label for="sofa_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="dining_table" name="item[]" value="dining_table">
+                                    <label for="dining_table">Mesa de comedor</label>
+                                    <input type="checkbox" id="dining_table_packing" name="item_packing[]" value="dining_table" class="packing-checkbox">
+                                    <label for="dining_table_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="dining_chair" name="item[]" value="dining_chair">
+                                    <label for="dining_chair">Silla de comedor</label>
+                                    <input type="checkbox" id="dining_chair_packing" name="item_packing[]" value="dining_chair" class="packing-checkbox">
+                                    <label for="dining_chair_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="fridge" name="item[]" value="fridge">
+                                    <label for="fridge">Nevera (pequeña/grande)</label>
+                                    <input type="checkbox" id="fridge_packing" name="item_packing[]" value="fridge" class="packing-checkbox">
+                                    <label for="fridge_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="washing_machine" name="item[]" value="washing_machine">
+                                    <label for="washing_machine">Lavadora/Secadora</label>
+                                    <input type="checkbox" id="washing_machine_packing" name="item_packing[]" value="washing_machine" class="packing-checkbox">
+                                    <label for="washing_machine_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="tv" name="item[]" value="tv">
+                                    <label for="tv">Televisor</label>
+                                    <input type="checkbox" id="tv_packing" name="item_packing[]" value="tv" class="packing-checkbox">
+                                    <label for="tv_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox">
+                                    <input type="checkbox" id="personal_box" name="item[]" value="personal_box">
+                                    <label for="personal_box">Caja de enseres personales (estándar)</label>
+                                    <input type="checkbox" id="personal_box_packing" name="item_packing[]" value="personal_box" class="packing-checkbox">
+                                    <label for="personal_box_packing">Embalaje</label>
+                                </div>
+                                <div class="item-checkbox other-item">
+                                    <input type="checkbox" id="home_other" name="item[]" value="home_other">
+                                    <label for="home_other">Otros (Especificar):</label>
+                                    <input type="text" name="home_other_desc" placeholder="Detalle otros ítems">
+                                    <input type="checkbox" id="home_other_packing" name="item_packing[]" value="home_other" class="packing-checkbox">
+                                    <label for="home_other_packing">Embalaje</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="estimated-price">
+                    <p><strong>Borrador de Presupuesto / Precio Orientativo:</strong> <span id="estimatedPrice">0.00 €</span></p>
+                    <small>Este es un precio estimado. El presupuesto final se confirmará tras una evaluación detallada.</small>
+                </div>
+
+                <button type="submit" class="submit-btn">Solicitar Presupuesto Final / Contactar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 TuEmpresa Mudanzas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
