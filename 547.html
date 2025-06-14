@@ -1,0 +1,301 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horarios Autobús Línea 547 - App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    /* Smooth accordion transition */
+    .content-enter {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .content-enter-active {
+      max-height: 500px;
+    }
+    .content-leave {
+      max-height: 500px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .content-leave-active {
+      max-height: 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center p-4 font-sans">
+  <main class="w-full max-w-3xl bg-white rounded-lg shadow-lg p-6">
+    <h1 class="text-3xl font-extrabold mb-6 text-center">Horarios Autobús - Línea 547</h1>
+
+    <p class="text-center mb-8 text-gray-700 font-semibold">Selecciona un día para ver horarios</p>
+
+    <div class="flex flex-col md:flex-row justify-center gap-6 mb-8">
+      <button data-route="madrid-almorox" class="route-btn bg-blue-600 text-white px-5 py-3 rounded-lg shadow hover:bg-blue-700 transition w-full md:w-auto font-semibold">
+        Madrid → Almorox
+      </button>
+      <button data-route="almorox-madrid" class="route-btn bg-green-600 text-white px-5 py-3 rounded-lg shadow hover:bg-green-700 transition w-full md:w-auto font-semibold">
+        Almorox → Madrid
+      </button>
+    </div>
+
+    <div id="day-selector" class="flex flex-wrap justify-center gap-3 mb-6">
+      <!-- Day buttons inserted by JS -->
+    </div>
+
+    <section id="schedule-display" class="bg-gray-100 rounded-lg p-4 min-h-[150px] text-center text-gray-800 font-medium">
+      <p class="text-gray-500">Selecciona una ruta y un día para ver los horarios</p>
+    </section>
+  </main>
+
+  <script>
+    // Data structure for schedules by route and day
+    const schedules = {
+      "madrid-almorox": {
+        "L": [
+          "08:00 (2)",
+          "13:00 (2)",
+          "15:20 (2)",
+          "17:00",
+          "18:00",
+          "19:00",
+          "21:00",
+          "22:00"
+        ],
+        "M": [
+          "08:00 (2)",
+          "13:00 (2)",
+          "15:20 (2)",
+          "17:00",
+          "18:00",
+          "19:00",
+          "21:00",
+          "22:00"
+        ],
+        "X": [
+          "08:00 (2)",
+          "13:00 (2)",
+          "15:20 (2)",
+          "17:00",
+          "18:00",
+          "19:00",
+          "21:00",
+          "22:00"
+        ],
+        "J": [
+          "08:00 (2)",
+          "13:00 (2)",
+          "15:20 (2)",
+          "17:00",
+          "18:00",
+          "19:00",
+          "21:00",
+          "22:00"
+        ],
+        "V": [
+          "08:00 (2)",
+          "13:00 (2)",
+          "15:20 (2)",
+          "17:00",
+          "18:00",
+          "19:00",
+          "21:00",
+          "22:00"
+        ],
+        "S": [
+          "09:00",
+          "11:00",
+          "13:30"
+        ],
+        "D": [
+          "09:00",
+          "11:00",
+          "13:30"
+        ]
+      },
+      "almorox-madrid": {
+        "L": [
+          "06:05",
+          "07:05",
+          "08:05",
+          "13:05 (2)",
+          "15:05",
+          "17:05 (2)",
+          "18:05 (2)",
+          "19:05 (2)",
+          "20:00 (2)"
+        ],
+        "M": [
+          "06:05",
+          "07:05",
+          "08:05",
+          "13:05 (2)",
+          "15:05",
+          "17:05 (2)",
+          "18:05 (2)",
+          "19:05 (2)",
+          "20:00 (2)"
+        ],
+        "X": [
+          "06:05",
+          "07:05",
+          "08:05",
+          "13:05 (2)",
+          "15:05",
+          "17:05 (2)",
+          "18:05 (2)",
+          "19:05 (2)",
+          "20:00 (2)"
+        ],
+        "J": [
+          "06:05",
+          "07:05",
+          "08:05",
+          "13:05 (2)",
+          "15:05",
+          "17:05 (2)",
+          "18:05 (2)",
+          "19:05 (2)",
+          "20:00 (2)"
+        ],
+        "V": [
+          "06:05",
+          "07:05",
+          "08:05",
+          "13:05 (2)",
+          "15:05",
+          "17:05 (2)",
+          "18:05 (2)",
+          "19:05 (2)",
+          "20:00 (2)"
+        ],
+        "S": [
+          "07:05",
+          "10:35",
+          "14:50",
+          "16:50",
+          "17:50"
+        ],
+        "D": [
+          "07:05",
+          "11:05",
+          "12:05",
+          "14:50",
+          "16:50"
+        ]
+      }
+    };
+
+    // Days full names for display
+    const dayNames = {
+      "L": "Lunes",
+      "M": "Martes",
+      "X": "Miércoles",
+      "J": "Jueves",
+      "V": "Viernes",
+      "S": "Sábado",
+      "D": "Domingo"
+    };
+
+    // Current selected route and day
+    let currentRoute = null;
+    let currentDay = null;
+
+    const daySelector = document.getElementById("day-selector");
+    const scheduleDisplay = document.getElementById("schedule-display");
+    const routeButtons = document.querySelectorAll(".route-btn");
+
+    // Render day buttons based on selected route
+    function renderDayButtons(route) {
+      daySelector.innerHTML = "";
+      if (!route) return;
+
+      // Get days available for route
+      const days = Object.keys(schedules[route]);
+
+      days.forEach(day => {
+        const btn = document.createElement("button");
+        btn.textContent = dayNames[day];
+        btn.className = "day-btn bg-white border border-gray-300 rounded-md px-4 py-2 shadow-sm hover:bg-gray-200 transition font-semibold";
+        btn.dataset.day = day;
+        if (day === currentDay) {
+          btn.classList.add("bg-blue-600", "text-white", "border-blue-600");
+        }
+        btn.addEventListener("click", () => {
+          currentDay = day;
+          updateSelectedDay();
+          showSchedule();
+        });
+        daySelector.appendChild(btn);
+      });
+    }
+
+    // Update day button styles on selection
+    function updateSelectedDay() {
+      const buttons = daySelector.querySelectorAll("button");
+      buttons.forEach(btn => {
+        if (btn.dataset.day === currentDay) {
+          btn.classList.add("bg-blue-600", "text-white", "border-blue-600");
+          btn.classList.remove("bg-white", "text-black");
+        } else {
+          btn.classList.remove("bg-blue-600", "text-white", "border-blue-600");
+          btn.classList.add("bg-white", "text-black");
+        }
+      });
+    }
+
+    // Show schedule for current route and day
+    function showSchedule() {
+      if (!currentRoute || !currentDay) {
+        scheduleDisplay.innerHTML = '<p class="text-gray-500">Selecciona una ruta y un día para ver los horarios</p>';
+        return;
+      }
+      const times = schedules[currentRoute][currentDay];
+      if (!times || times.length === 0) {
+        scheduleDisplay.innerHTML = `<p class="text-gray-500">No hay horarios disponibles para ${dayNames[currentDay]}</p>`;
+        return;
+      }
+
+      // Create a list of times with optional notes
+      const ul = document.createElement("ul");
+      ul.className = "list-disc list-inside space-y-1 text-left max-w-xs mx-auto";
+
+      times.forEach(time => {
+        const li = document.createElement("li");
+        // Highlight times with (2) in bold
+        if (time.includes("(2)")) {
+          const [hour, note] = time.split(" ");
+          li.innerHTML = `<span class="font-bold">${hour}</span> <span>${note}</span>`;
+        } else {
+          li.textContent = time;
+        }
+        ul.appendChild(li);
+      });
+
+      scheduleDisplay.innerHTML = "";
+      scheduleDisplay.appendChild(ul);
+    }
+
+    // Route button click handler
+    routeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentRoute = btn.dataset.route;
+        currentDay = null;
+        renderDayButtons(currentRoute);
+        scheduleDisplay.innerHTML = '<p class="text-gray-500">Selecciona un día para ver los horarios</p>';
+
+        // Highlight selected route button
+        routeButtons.forEach(b => {
+          if (b === btn) {
+            b.classList.add("ring-4", "ring-blue-400");
+          } else {
+            b.classList.remove("ring-4", "ring-blue-400");
+          }
+        });
+      });
+    });
+
+  </script>
+</body>
+</html>
