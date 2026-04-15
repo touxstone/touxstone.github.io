@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Launcher</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --panel: rgba(255, 250, 242, 0.86);
+      --panel-border: rgba(109, 72, 53, 0.14);
+      --text: #2f241d;
+      --muted: #6f5c50;
+      --accent: #b5512d;
+      --accent-dark: #7d381d;
+      --shadow: 0 24px 60px rgba(73, 43, 28, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(181, 81, 45, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(73, 127, 110, 0.18), transparent 28%),
+        linear-gradient(135deg, #f9f4ec 0%, #eee4d8 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .shell {
+      width: min(100%, 720px);
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 28px 28px 18px;
+      background:
+        linear-gradient(135deg, rgba(181, 81, 45, 0.92), rgba(125, 56, 29, 0.92)),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent);
+      color: #fff8f2;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 248, 242, 0.22);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+    }
+
+    .subhead {
+      margin: 10px 0 0;
+      max-width: 52ch;
+      color: rgba(255, 248, 242, 0.88);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .body {
+      padding: 24px 28px 28px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .meta-card {
+      border-radius: 18px;
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(109, 72, 53, 0.1);
+    }
+
+    .meta-label {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .meta-value {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .target {
+      margin-top: 14px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(47, 36, 29, 0.04);
+      border: 1px dashed rgba(109, 72, 53, 0.22);
+    }
+
+    .target-label {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .target-link {
+      color: var(--accent-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      overflow-wrap: anywhere;
+    }
+
+    .status {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font: inherit;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff8f2;
+      box-shadow: 0 14px 24px rgba(181, 81, 45, 0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      border: 1px solid rgba(109, 72, 53, 0.14);
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .error {
+      color: #8e2f21;
+    }
+
+    .code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.96em;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 24px 20px 18px;
+      }
+
+      .body {
+        padding: 20px;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Stable Launcher</p>
+      <h1 id="projectName">Launcher</h1>
+      <p class="subhead">
+        Esta URL estable apunta al deployment activo del proyecto. Si GAS obliga a cambiar el
+        <span class="code">*/exec</span>, solo hace falta actualizar el JSON.
+      </p>
+    </section>
+
+    <section class="body">
+      <div class="meta-grid">
+        <article class="meta-card">
+          <p class="meta-label">Proyecto</p>
+          <p class="meta-value" id="projectNameCard">-</p>
+        </article>
+        <article class="meta-card">
+          <p class="meta-label">Fecha / Hora</p>
+          <p class="meta-value" id="generatedAt">-</p>
+        </article>
+      </div>
+
+      <div class="target">
+        <p class="target-label">Launcher Link Activo</p>
+        <a id="launcherLink" class="target-link" href="#" rel="noopener noreferrer">-</a>
+        <p class="status" id="statusText">Cargando configuracion...</p>
+      </div>
+
+      <div class="actions">
+        <a id="openNow" class="btn btn-primary" href="#" rel="noopener noreferrer">Abrir Proyecto</a>
+        <button id="copyLink" class="btn btn-secondary" type="button">Copiar Link Activo</button>
+      </div>
+
+      <p class="footer">
+        Edita solo <span class="code">current.json</span>:
+        <span class="code">projectName</span>,
+        <span class="code">launcherLink</span> y, si quieres,
+        <span class="code">redirectDelaySeconds</span>.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function formatNow() {
+      return new Date().toLocaleString("es-ES", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+    }
+
+    function setText(id, value) {
+      var node = document.getElementById(id);
+      if (node) {
+        node.textContent = value;
+      }
+    }
+
+    function setLauncherLink(url) {
+      var linkNode = document.getElementById("launcherLink");
+      var openNode = document.getElementById("openNow");
+
+      if (linkNode) {
+        linkNode.href = url;
+        linkNode.textContent = url;
+      }
+
+      if (openNode) {
+        openNode.href = url;
+      }
+    }
+
+    function updateStatus(message, isError) {
+      var statusNode = document.getElementById("statusText");
+      if (!statusNode) {
+        return;
+      }
+
+      statusNode.textContent = message;
+      statusNode.classList.toggle("error", Boolean(isError));
+    }
+
+    function scheduleRedirect(url, delaySeconds) {
+      if (!(delaySeconds >= 0)) {
+        return;
+      }
+
+      if (delaySeconds === 0) {
+        window.location.replace(url);
+        return;
+      }
+
+      updateStatus("Redirigiendo en " + delaySeconds + " s...");
+      window.setTimeout(function() {
+        window.location.replace(url);
+      }, delaySeconds * 1000);
+    }
+
+    async function copyCurrentLink(url) {
+      await navigator.clipboard.writeText(url);
+      updateStatus("Launcher link copiado al portapapeles.");
+    }
+
+    async function loadConfig() {
+      setText("generatedAt", formatNow());
+
+      try {
+        var response = await fetch("./current.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error("No se pudo leer current.json");
+        }
+
+        var config = await response.json();
+        var projectName = config.projectName || "Launcher";
+        var launcherLink = config.launcherLink || "";
+        var redirectDelaySeconds = Number(config.redirectDelaySeconds);
+
+        if (!launcherLink) {
+          throw new Error("Falta launcherLink en current.json");
+        }
+
+        document.title = projectName + " Launcher";
+        setText("projectName", projectName);
+        setText("projectNameCard", projectName);
+        setLauncherLink(launcherLink);
+        updateStatus("Configuracion cargada. El puntero estable ya apunta al deployment activo.");
+
+        var copyButton = document.getElementById("copyLink");
+        if (copyButton) {
+          copyButton.addEventListener("click", function() {
+            copyCurrentLink(launcherLink).catch(function() {
+              updateStatus("No se pudo copiar automaticamente. Usa el link visible.", true);
+            });
+          });
+        }
+
+        scheduleRedirect(launcherLink, isNaN(redirectDelaySeconds) ? 1.2 : redirectDelaySeconds);
+      } catch (error) {
+        console.error(error);
+        updateStatus("No se pudo cargar la configuracion del launcher.", true);
+      }
+    }
+
+    loadConfig();
+  </script>
+</body>
+</html>
