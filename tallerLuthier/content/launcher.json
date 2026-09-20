@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": "about",
+      "label": "About the workshop",
+      "summary": "Cita previa, formación oficial y promoción temporal.",
+      "action": "panel",
+      "href": "content/about.html",
+      "enabled": true,
+      "content": [
+        "Tu instrumento merece estar a punto.",
+        "Mantenimiento, ajuste, calibración y reparación de instrumentos de música de viento madera, con atención personalizada y trabajo supervisado.",
+        "Durante la etapa de formación oficial, la promoción temporal contempla descuentos del 20 % al 40 %, según servicio y caso.",
+        "Atención exclusivamente con cita previa por email: txellenne.taller@gmail.com"
+      ]
+    },
+    {
+      "id": "services",
+      "label": "Instruments & services",
+      "summary": "Preparado para ampliar el contenido.",
+      "action": "panel",
+      "enabled": false,
+      "content": []
+    },
+    {
+      "id": "repairs",
+      "label": "Repairs & restoration",
+      "summary": "Preparado para futuras páginas de reparación.",
+      "action": "panel",
+      "enabled": false,
+      "content": []
+    },
+    {
+      "id": "campaign",
+      "label": "Current campaign",
+      "summary": "Puede redirigir a una página de campaña.",
+      "action": "redirect",
+      "href": "content/about.html",
+      "enabled": false,
+      "content": []
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "summary": "Cita previa por email.",
+      "action": "link",
+      "href": "mailto:txellenne.taller@gmail.com?subject=Cita%20previa%20-%20Taller%20de%20Luther%C3%ADa",
+      "enabled": true,
+      "content": []
+    }
+  ]
+}
