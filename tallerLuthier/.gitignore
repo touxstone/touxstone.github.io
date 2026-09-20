@@ -1,0 +1,17 @@
+# Local/editor noise
+SOUL.md
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local runtime and temporary files
+.sites-runtime/
+.env
+.env.*
+*.log
+
+# Dependencies/build output if the static site later grows a toolchain
+node_modules/
+dist/
+build/
