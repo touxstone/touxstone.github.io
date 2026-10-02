@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Entrenador de códigos Yamaha YFL</title>
+<style>
+:root{color-scheme:light dark;font:16px system-ui,sans-serif}body{max-width:900px;margin:2rem auto;padding:0 1rem;line-height:1.45}button,input{font:inherit;padding:.55rem .7rem;border-radius:.45rem;border:1px solid #888}button{cursor:pointer}.card{border:1px solid #888;border-radius:.7rem;padding:1rem;margin:1rem 0}.code{font:700 2rem ui-monospace,monospace;letter-spacing:.08em}.muted{opacity:.75}.ok{color:#16803c}.bad{color:#b42318}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.7rem}.grid div{padding:.6rem;border:1px solid #888;border-radius:.5rem}.hidden{display:none}kbd{border:1px solid #888;border-radius:3px;padding:2px 5px}.doc-footnote{margin:2rem 0 0;padding-top:1rem;border-top:1px solid color-mix(in srgb,currentColor 22%,transparent)}.footer-sticker{width:min(240px,52vw);max-width:100%;height:auto;display:block;margin-left:auto;opacity:.86}
+</style></head>
+<body>
+<h1>Entrenador Yamaha YFL</h1>
+<p>Memoriza el patrón: <code>YFL-[material][mecanismo][tipo]</code> + sufijos.</p>
+<div class="card">
+<label>Modo: <select id="mode"><option value="decode">Decodificar código</option><option value="feature">Identificar código por características</option><option value="suffix">Sufijos</option></select></label>
+<label style="margin-left:1rem">Nivel: <select id="level"><option value="all">Todos</option><option value="core">Núcleo 2/3xx</option><option value="advanced">Ampliado</option></select></label>
+<p class="code" id="prompt"></p><div id="question"></div>
+<p><input id="answer" autocomplete="off" placeholder="Escribe tu respuesta"><button id="check">Comprobar</button><button id="show">Mostrar respuesta</button><button id="next">Siguiente</button></p>
+<p id="feedback"></p><p class="muted">Aciertos: <span id="score">0</span> · Racha: <span id="streak">0</span> · Intentos: <span id="attempts">0</span></p>
+</div>
+<div class="card"><h2>Referencia rápida</h2><div class="grid">
+<div><b>Primer dígito</b><br>2: todo plateado<br>3: cabezal de plata<br>4: cabezal+cuerpo de plata<br>7: plata en cuerpo y llaves</div>
+<div><b>Segundo dígito</b><br>2: cerradas, Offset G<br>6: abiertas, Offset G<br>7: abiertas, Offset G + Split-E<br>8: abiertas, G en línea<br>9: abiertas, G en línea + Split-E</div>
+<div><b>Tercer dígito</b><br>2: estándar/intermedia<br>7: profesional<br>Otros finales pueden ser generaciones o familias específicas.</div>
+<div><b>Sufijos</b><br>H: pie de Si<br>U: cabezal curvado<br>CT: trino de Do♯<br>GL/LPGP: placa labial dorada<br>SL: placa labial de plata<br>HD: alta durabilidad</div>
+</div></div>
+<p class="muted">Atajos: <kbd>Enter</kbd> comprobar · <kbd>N</kbd> siguiente · <kbd>R</kbd> mostrar respuesta.</p>
+<footer class="doc-footnote">
+<img class="footer-sticker" src="img/taller_logo_footer_sticker-sm.png" alt="Lab material luthiers - txellenne@gmail.com" loading="lazy" decoding="async">
+</footer>
+<script>
+const cards=[
+ {c:'YFL-322',d:'Serie 300; cabezal de plata esterlina; llaves cerradas; Offset G; sin Split-E.'},
+ {c:'YFL-362',d:'Serie 300; cabezal de plata esterlina; llaves abiertas; Offset G; sin Split-E.'},
+ {c:'YFL-372',d:'Serie 300; cabezal de plata esterlina; llaves abiertas; Offset G; con Split-E.'},
+ {c:'YFL-382',d:'Serie 300; cabezal de plata esterlina; llaves abiertas; G en línea; sin Split-E.'},
+ {c:'YFL-372H',d:'YFL-372 con pie de Si grave.'},
+ {c:'YFL-362U',d:'YFL-362 con cabezal curvado.'},
+ {c:'YFL-362CT',d:'YFL-362 con trino de Do sostenido.'},
+ {c:'YFL-322HD',d:'YFL-322 de alta durabilidad.'},
+ {c:'YFL-472',d:'Serie 400; cabezal y cuerpo de plata esterlina; llaves plateadas; abiertas; Offset G; Split-E.'},
+ {c:'YFL-677',d:'Serie profesional; cuerpo y llaves de plata esterlina; abiertas; Offset G; Split-E.'}
+];
+const suffix=[['H','pie de Si grave'],['U','cabezal curvado'],['CT','trino de Do sostenido'],['GL','placa labial chapada en oro'],['LPGP','placa labial dorada'],['SL','placa labial de plata'],['HD','alta durabilidad']];
+let current, mode='decode', score=0,streak=0,attempts=0,answered=false;
+const $=id=>document.getElementById(id); const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+function pool(){let lev=$('level').value;return lev==='core'?cards.filter(x=>/^YFL-[23]/.test(x.c)):lev==='advanced'?cards.filter(x=>!/^YFL-3(22|62|72|82)$/.test(x.c)):cards}
+function next(){answered=false;$('feedback').textContent='';$('answer').value='';mode=$('mode').value;let p=pool();if(mode==='suffix'){let x=suffix[Math.floor(Math.random()*suffix.length)];current={c:x[0],d:x[1]};$('prompt').textContent=x[0];$('question').textContent='¿Qué opción añade este sufijo?'}else{current=p[Math.floor(Math.random()*p.length)];if(mode==='decode'){$('prompt').textContent=current.c;$('question').textContent='Escribe las especificaciones principales.'}else{$('prompt').textContent='¿Qué código corresponde?';$('question').textContent=current.d}}}
+function expected(){return mode==='decode'?current.d:current.c}
+function check(reveal=false){if(answered&&!reveal)return;let a=$('answer').value.trim(),e=expected();if(reveal){$('feedback').innerHTML='<span class="muted">Respuesta: </span><b>'+e+'</b>';return}attempts++;$('attempts').textContent=attempts;let good=norm(a)===norm(e)||norm(e).includes(norm(a))&&norm(a).length>5;if(good){score++;streak++;$('feedback').innerHTML='<span class="ok">Correcto.</span> '+e;answered=true}else{streak=0;$('feedback').innerHTML='<span class="bad">Aún no.</span> Revisa y prueba otra vez, o pulsa Mostrar respuesta.'}$('score').textContent=score;$('streak').textContent=streak}
+$('check').onclick=()=>check();$('show').onclick=()=>check(true);$('next').onclick=next;$('mode').onchange=next;$('level').onchange=next;$('answer').onkeydown=e=>{if(e.key==='Enter')check()};document.onkeydown=e=>{if(e.target.tagName==='INPUT')return;if(e.key.toLowerCase()==='n')next();if(e.key.toLowerCase()==='r')check(true)};next();
+</script></body></html>
