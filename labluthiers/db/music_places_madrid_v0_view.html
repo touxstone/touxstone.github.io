@@ -167,6 +167,7 @@ function init() {
   renderBars(DATA.places);
   $('search').addEventListener('input', render);
   $('contact').addEventListener('change', render);
+  setupCalloutDismissal();
   render();
 }
 
@@ -251,7 +252,37 @@ function renderMap(places) {
     return `<circle class="point" data-id="${p.place_id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${DATA.categoryColors[p.primaryCategory] || '#7f8c8d'}"><title>${escapeHtml(p.name)} · ${p.reviews || 0} reseñas</title></circle>`;
   }).join('');
   svg.innerHTML = grid + points;
-  svg.querySelectorAll('.point').forEach(el => el.addEventListener('click', () => showPlace(el.dataset.id)));
+  svg.onclick = event => {
+    if (!event.target.closest('.point')) {
+      closeCallout();
+    }
+  };
+  svg.querySelectorAll('.point').forEach(el => {
+    el.onclick = event => {
+      event.stopPropagation();
+      showPlace(el.dataset.id);
+    };
+  });
+}
+
+function setupCalloutDismissal() {
+  $('callout').addEventListener('click', event => event.stopPropagation());
+  document.addEventListener('click', event => {
+    const clickedPoint = event.target.closest && event.target.closest('.point');
+    const clickedCallout = event.target.closest && event.target.closest('#callout');
+    if (!clickedPoint && !clickedCallout) {
+      closeCallout();
+    }
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeCallout();
+    }
+  });
+}
+
+function closeCallout() {
+  $('callout').classList.remove('show');
 }
 
 function showPlace(id) {
@@ -261,7 +292,7 @@ function showPlace(id) {
     p.website ? `<a href="${escapeAttr(p.website)}" target="_blank" rel="noopener">Web</a>` : '',
     p.maps_url ? `<a href="${escapeAttr(p.maps_url)}" target="_blank" rel="noopener">Google Maps</a>` : ''
   ].filter(Boolean).join(' · ');
-  $('callout').innerHTML = `<button class="close" aria-label="Cerrar" onclick="document.getElementById('callout').classList.remove('show')">×</button>
+  $('callout').innerHTML = `<button class="close" aria-label="Cerrar" onclick="closeCallout()">×</button>
     <h3>${escapeHtml(p.name)}</h3>
     <p><span class="pill" style="background:${DATA.categoryColors[p.primaryCategory]}">${DATA.categoryLabels[p.primaryCategory]}</span></p>
     <p>${escapeHtml(p.type || p.subcategory || '')}</p>

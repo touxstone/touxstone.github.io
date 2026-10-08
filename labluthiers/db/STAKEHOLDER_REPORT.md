@@ -85,9 +85,9 @@ Esta base puede servir para:
 
 ## Metodología
 
-La captura se hizo mediante un actor de Apify para Google Maps, ejecutando
-búsquedas por término individual. Esta estrategia funcionó mejor que combinar
-muchos términos en una sola búsqueda.
+La captura se hizo mediante un actor para Google Maps, ejecutando búsquedas por 
+término individual. Esta estrategia funcionó mejor que combinar muchos términos 
+en una sola búsqueda.
 
 Después se normalizaron los resultados:
 
@@ -118,8 +118,7 @@ Esta es una primera versión operativa, no una base cerrada o certificada.
 3. Añadir una columna de estado interno: `revisado`, `prioritario`,
    `descartar`, `contactado`.
 4. Crear una vista ligera para stakeholders no técnicos.
-5. Si la base resulta útil, evaluar un backend propio o actor Apify específico
-   para repetir la captura de forma más controlada.
+5. Si la base resulta útil, evaluar un backend propio específico a fin de repetir la captura de forma más controlada.
 
 ## Entrega
 
