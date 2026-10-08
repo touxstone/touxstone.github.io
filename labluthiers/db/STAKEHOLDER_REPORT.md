@@ -68,8 +68,8 @@ El archivo `music_places_madrid_v0_places.csv` contiene una fila por lugar
   búsqueda encontró cada lugar.
 - `music_places_madrid_v0_search_runs.csv`: resumen técnico de cada búsqueda.
 
-Para una primera entrega a stakeholders, se recomienda abrir primero el HTML y
-adjuntar el CSV principal. Los otros dos archivos son útiles si se quiere
+Para una primera vista del contenido se recomienda abrir primero e.g. el HTML que
+adjunta el CSV principal. Los otros dos archivos son útiles si se quiere
 auditar el proceso o analizar la calidad de cada término de búsqueda.
 
 ## Lectura práctica
