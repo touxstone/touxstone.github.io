@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yamaha Flute Trainer - Experto</title>
+<style>
+:root{color-scheme:dark;--bg:#10151d;--card:#18212d;--line:#344257;--ink:#edf3fb;--muted:#aab7c8;--good:#62d6ad;--bad:#ff7b7b;--warn:#ffd06a}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(135deg,#10151d,#172231);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}main{width:min(950px,calc(100% - 28px));margin:28px auto}h1{margin:0 0 4px;font-size:clamp(1.55rem,4vw,2.25rem)}.subtitle,.hint{color:var(--muted)}.panel{margin-top:16px;padding:20px;background:rgba(24,33,45,.96);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 44px rgba(0,0,0,.22)}.top{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}.stats,.buttons{display:flex;gap:10px;flex-wrap:wrap}.badge{padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.9rem}.question{margin:21px 0 15px;font-size:1.2rem;font-weight:700}input{width:100%;padding:13px 14px;border:1px solid #52627a;border-radius:10px;background:#0f1722;color:var(--ink);font-size:1rem}input:focus{outline:3px solid rgba(98,214,173,.25);border-color:var(--good)}button{padding:11px 15px;border:0;border-radius:10px;background:#2b394d;color:var(--ink);font-weight:700;cursor:pointer}button:hover{filter:brightness(1.13)}button.primary{background:var(--good);color:#092117}button.danger{background:#59323a}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.option{text-align:left;min-height:54px}.option.correct{background:#205e49;outline:2px solid var(--good)}.option.wrong{background:#713941;outline:2px solid var(--bad)}.hidden{display:none}.feedback{min-height:27px;margin-top:14px;font-weight:700}.ok{color:var(--good)}.no{color:var(--bad)}.answer{color:var(--warn)}details{color:var(--muted)}summary{cursor:pointer;color:var(--ink);font-weight:700}.doc-footnote{margin:2rem 0 0;padding-top:1rem;border-top:1px solid rgba(237,243,251,.18)}.footer-sticker{width:min(240px,52vw);max-width:100%;height:auto;display:block;margin-left:auto;opacity:.86}@media(max-width:540px){main{margin:18px auto}.panel{padding:16px}.options{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<h1>Yamaha Flute Trainer - Experto</h1>
+<p class="subtitle">Series oficiales 200, 300 y 400: modelos cercanos, Split-E, sistema de Sol, llaves y sufijos documentados.</p>
+<section class="panel"><div class="top"><strong id="modeLabel"></strong><div class="stats"><span class="badge" id="progress"></span><span class="badge" id="score"></span><span class="badge" id="streak"></span></div></div><div class="question" id="question"></div><input id="answer" autocomplete="off" spellcheck="false" placeholder="Escribe la respuesta; p. ej., YFL-372"><div id="options" class="options hidden"></div><div class="buttons"><button class="primary" id="check">Comprobar</button><button id="show">Mostrar respuesta</button><button id="next">Siguiente</button></div><div class="feedback" id="feedback" aria-live="polite"></div></section>
+<section class="panel"><strong>Controles</strong><div class="buttons"><button id="shuffle">Barajar y reiniciar</button><button id="switch">Cambiar a modo inverso</button><button id="testMode">Activar modo solo test</button><button class="danger" id="reset">Borrar progreso guardado</button></div><p class="hint">En modo escribir: <code>Enter</code> comprueba/pasa; <code>Espacio</code> muestra la respuesta.</p></section>
+<details class="panel"><summary>Referencia saneada</summary><ul><li>Datos cargados desde <code>ymh_code_trainer/yamaha_yfl_data.js</code>.</li><li>Incluye los 16 modelos oficiales saneados: series 200, 300 y 400.</li><li>YFL-212, YFL-272, YFL-312, YFL-372, YFL-412 y YFL-472 tienen Split-E.</li><li>YFL-222HD es la version de alta durabilidad documentada.</li><li>Sufijos en esta base: H, GL, SL, U y HD.</li></ul></details>
+<footer class="doc-footnote"><img class="footer-sticker" src="img/taller_logo_footer_sticker-sm.png" alt="Lab material luthiers - txellenne@gmail.com" loading="lazy" decoding="async"></footer>
+</main>
+<script src="ymh_code_trainer/yamaha_yfl_data.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const normalize=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim().replace(/split e|splite/g,'splite').replace(/g en linea|in line|inline/g,'inline').replace(/llaves cerradas|covered keys|covered/g,'covered').replace(/llaves abiertas|ring keys|ring/g,'ring').replace(/pie de si|pata de si|b foot|bfoot/g,'bfoot').replace(/placa labial|placa de embocadura|lip plate/g,'lipplate');
+const codeNorm=s=>s.toLowerCase().replace(/[^a-z0-9]/g,'');
+const shuffle=a=>[...a].sort(()=>Math.random()-.5);
+const codeSet=new Set(cards.map(card=>codeNorm(card.c)));
+function directCards(){return cards.map(card=>[`¿Qué modelo corresponde a: ${card.d}`,card.c]);}
+function inverseCards(){return cards.map(card=>[`Describe las características principales de ${card.c}.`,card.d]);}
+function suffixCards(){return suffix.map(([tag,meaning])=>[`¿Qué significa el sufijo ${tag} en esta base Yamaha YFL?`,meaning]);}
+function splitCards(){
+  const pairs=[['YFL-212','YFL-222'],['YFL-272','YFL-262'],['YFL-312','YFL-322'],['YFL-372','YFL-362'],['YFL-412','YFL-422'],['YFL-472','YFL-462']];
+  return pairs.flatMap(([withSplit,withoutSplit])=>[
+    [`¿Cuál de ${withSplit} y ${withoutSplit} tiene Split-E?`,withSplit],
+    [`¿Cuál de ${withSplit} y ${withoutSplit} no tiene Split-E?`,withoutSplit]
+  ]);
+}
+const direct=[...directCards(),...suffixCards(),...splitCards()];
+const inverse=inverseCards();
+let mode=localStorage.getItem('yamahaExpertMode')||'direct',testOnly=localStorage.getItem('yamahaExpertTestOnly')==='true',deck=[],index=0,correct=0,streak=0,checked=false;
+function optionPool(expected){const source=mode==='direct'?[...direct.map(x=>x[1]),...inverse.map(x=>x[1])]:inverse.map(x=>x[1]);return shuffle([expected,...shuffle([...new Set(source)].filter(x=>x!==expected)).slice(0,3)]);}
+function renderOptions(){const box=$('options');box.innerHTML='';optionPool(deck[index][1]).forEach(option=>{const b=document.createElement('button');b.className='option';b.textContent=option;b.onclick=()=>choose(b,option);box.appendChild(b);});}
+function update(){const current=deck[index];$('question').textContent=current[0];$('progress').textContent=`${index+1} / ${deck.length}`;$('score').textContent=`Aciertos: ${correct}`;$('streak').textContent=`Racha: ${streak}`;$('modeLabel').textContent=testOnly?'Modo: solo test (toca una opción)':mode==='direct'?'Modo: escribir, rasgos/sufijo -> código/concepto':'Modo: escribir, código -> rasgos';$('answer').value='';$('feedback').textContent='';$('feedback').className='feedback';checked=false;$('answer').classList.toggle('hidden',testOnly);$('options').classList.toggle('hidden',!testOnly);$('check').classList.toggle('hidden',testOnly);$('show').classList.toggle('hidden',testOnly);if(testOnly)renderOptions();else $('answer').focus();}
+function accept(user,expected){const u=normalize(user),e=normalize(expected);if(!u)return false;if(codeSet.has(codeNorm(expected)))return codeNorm(user)===codeNorm(expected);const terms=e.split(' ').filter(x=>x.length>2);return terms.filter(t=>u.includes(t)).length>=Math.max(1,Math.ceil(terms.length*.65));}
+function save(){localStorage.setItem('yamahaExpertTrainer',JSON.stringify({mode,testOnly,deck,index,correct,streak}));}
+function mark(ok){checked=true;if(ok){correct++;streak++;$('feedback').textContent='Correcto.';$('feedback').className='feedback ok';}else{streak=0;$('feedback').innerHTML=`Aún no. Respuesta esperada: <span class="answer">${deck[index][1]}</span>`;$('feedback').className='feedback no';}$('score').textContent=`Aciertos: ${correct}`;$('streak').textContent=`Racha: ${streak}`;save();}
+function check(){if(checked)return next();mark(accept($('answer').value,deck[index][1]));}
+function choose(button,option){if(checked)return;const ok=option===deck[index][1];[...$('options').children].forEach(b=>{b.disabled=true;if(b.textContent===deck[index][1])b.classList.add('correct');});if(!ok)button.classList.add('wrong');mark(ok);}
+function next(){index=(index+1)%deck.length;if(index===0)deck=shuffle(deck);update();save();}
+function show(){checked=true;$('feedback').innerHTML=`Respuesta: <span class="answer">${deck[index][1]}</span>`;}
+function start(reset=false){deck=shuffle(mode==='direct'?direct:inverse);index=correct=streak=0;if(!reset){const old=JSON.parse(localStorage.getItem('yamahaExpertTrainer')||'null');if(old&&old.mode===mode&&old.testOnly===testOnly&&Array.isArray(old.deck)&&old.deck.length){deck=old.deck;index=old.index%deck.length;correct=old.correct||0;streak=old.streak||0;}}update();save();}
+$('check').onclick=check;$('next').onclick=next;$('show').onclick=show;$('shuffle').onclick=()=>start(true);$('switch').onclick=()=>{mode=mode==='direct'?'inverse':'direct';localStorage.setItem('yamahaExpertMode',mode);start(true);};$('testMode').onclick=()=>{testOnly=!testOnly;localStorage.setItem('yamahaExpertTestOnly',testOnly);$('testMode').textContent=testOnly?'Volver a modo escribir':'Activar modo solo test';start(true);};$('reset').onclick=()=>{['yamahaExpertTrainer','yamahaExpertMode','yamahaExpertTestOnly'].forEach(k=>localStorage.removeItem(k));mode='direct';testOnly=false;$('testMode').textContent='Activar modo solo test';start(true);};$('answer').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();checked?next():check();}if(e.key===' '&&!$('answer').value){e.preventDefault();show();}});$('testMode').textContent=testOnly?'Volver a modo escribir':'Activar modo solo test';start();
+</script>
+</body></html>
