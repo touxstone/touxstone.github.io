@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto de Mudanza Rápido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Envío Rápido Logo" class="logo">
+        </div>
+        <div class="contact-box">
+            <h3>Contacto Directo</h3>
+            <p class="phone-number">📞 91 123 45 67</p>
+            <p>📧 info@enviorapido.es</p>
+            <p>🕒 Horario: L-V 9:00 - 18:00</p>
+        </div>
+    </header>
+
+    <main>
+        <h1>Borrador de Presupuesto Rápido</h1>
+        <p class="subtitle">Obtenga una estimación rápida y transparente para su mudanza o envío.</p>
+
+        <form id="quote-form">
+            <fieldset>
+                <legend>1. Datos del Servicio</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="origin">Origen (Madrid)</label>
+                        <input type="text" id="origin" name="origin" placeholder="Dirección o CP en Madrid" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destino (España)</label>
+                        <input type="text" id="destination" name="destination" placeholder="Dirección o CP en España" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="distance">Distancia (km)</label>
+                        <input type="text" id="distance" name="distance" readonly placeholder="Calculando...">
+                    </div>
+                     <div class="form-group">
+                        <label for="service-date">Fecha Estimada</label>
+                        <input type="date" id="service-date" name="service-date" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. ¿Qué desea transportar?</legend>
+                <p class="field-instructions">Puede combinar ambas opciones si lo necesita.</p>
+
+                <div class="transport-option" id="package-section">
+                    <h2>Opción A: Presupuesto por Bulto</h2>
+                    <div id="package-list">
+                        <!-- Los bultos se añadirán aquí dinámicamente -->
+                    </div>
+                    <button type="button" id="add-package-btn" class="add-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+                        Añadir Bulto
+                    </button>
+                </div>
+
+                <div class="transport-option" id="items-section">
+                    <h2>Opción B: Presupuesto por Ítem</h2>
+                    <div class="item-columns">
+                        <div class="item-category">
+                            <h3>Enseres de Oficina</h3>
+                            <ul class="item-list" id="office-items">
+                                <!-- Se generará con JS -->
+                            </ul>
+                        </div>
+                        <div class="item-category">
+                            <h3>Enseres de Casa</h3>
+                            <ul class="item-list" id="home-items">
+                                 <!-- Se generará con JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <div class="price-summary-container">
+                <div id="price-summary">
+                    <h2>Borrador de Presupuesto / Precio Orientativo</h2>
+                    <p id="estimated-price">€0.00</p>
+                </div>
+                <button type="submit" class="submit-btn">Solicitar Presupuesto Final</button>
+            </div>
+             <p class="disclaimer">
+                <strong>Importante:</strong> Este es un precio orientativo basado en los datos proporcionados. El presupuesto final se confirmará tras una evaluación detallada por nuestro equipo. Nos pondremos en contacto con usted para finalizar los detalles.
+            </p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Envío Rápido. Todos los derechos reservados.</p>
+        <p><a href="#" id="view-quotes-link">Acceso Empleados</a></p>
+    </footer>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="quotes-modal">
+            <h2>Presupuestos Guardados</h2>
+            <p class="modal-info">Para esta demostración, los presupuestos se guardan en el almacenamiento local de su navegador. En una aplicación real, se enviarían a una base de datos segura.</p>
+            <div id="quotes-list">No hay presupuestos guardados.</div>
+            <button id="close-modal-btn">Cerrar</button>
+        </div>
+    </div>
+</body>
+</html>

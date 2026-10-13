@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MV Express ofrece transportes, mudanzas nacionales, portes, embalaje, montaje y vaciado de pisos con presupuesto rápido por WhatsApp.">
+    <title>MV Express | Mudanzas, portes y transportes nacionales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+      :root {
+        --primary-color: #1d4ed8;
+        --accent-color: #f59e0b;
+        --ink: #172033;
+        --muted: #64748b;
+        --surface: #ffffff;
+        --whatsapp: #25d366;
+      }
+
+      body {
+        background-color: #f4f7fb;
+        color: var(--ink);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .hero { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; padding: 60px 0; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+
+      .hero-kicker {
+        color: #fde68a;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero .lead {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .biz-card {
+        background: var(--surface);
+        border: 0;
+        border-radius: 8px;
+        margin-top: -64px;
+      }
+
+      .rating-badge {
+        align-items: center;
+        background: var(--accent-color);
+        border-radius: 999px;
+        color: #1f2937;
+        display: inline-flex;
+        font-weight: 800;
+        gap: 0.35rem;
+        padding: 0.42rem 0.9rem;
+      }
+
+      .trust-chip {
+        align-items: center;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        color: #1e40af;
+        display: inline-flex;
+        font-size: 0.9rem;
+        font-weight: 700;
+        gap: 0.4rem;
+        padding: 0.42rem 0.8rem;
+      }
+
+      .service-list li {
+        align-items: flex-start;
+        display: flex;
+        gap: 0.65rem;
+      }
+
+      .service-list i {
+        margin-top: 0.15rem;
+      }
+
+      .quote-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      .quote-box ul {
+        margin-bottom: 0;
+      }
+
+      .btn-whatsapp {
+        background-color: var(--whatsapp);
+        border: none;
+        color: #092d18;
+        font-weight: 800;
+      }
+
+      .btn-whatsapp:hover,
+      .btn-whatsapp:focus {
+        background-color: #20bf5b;
+        color: #062312;
+      }
+
+      .map-container {
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+        height: 320px;
+        overflow: hidden;
+      }
+
+      iframe {
+        border: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .map-link {
+        color: var(--muted);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .map-link:hover {
+        color: var(--primary-color);
+      }
+
+      @media (max-width: 767.98px) {
+        .hero {
+          padding: 48px 0 88px;
+          text-align: left;
+        }
+
+        .biz-card {
+          margin-top: -48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container text-center text-md-start">
+        <p class="hero-kicker mb-2">Mudanzas, portes y transporte nacional</p>
+        <h1 class="display-4 fw-bold mb-3">MV Express</h1>
+        <p class="lead opacity-75 mb-0">Traslados puerta a puerta con embalaje, carga, montaje y vaciado de pisos. Presupuesto rápido y condiciones claras antes de mover nada.</p>
+      </div>
+    </header>
+
+    <main class="container mb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <section class="card biz-card shadow-lg p-4 p-md-5" aria-label="Solicitud de presupuesto MV Express">
+            <div class="row g-4 g-lg-5">
+              <div class="col-md-7">
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <span class="rating-badge">
+                    <i class="bi bi-star-fill" aria-hidden="true"></i> 4.5 / 5
+                  </span>
+                  <span class="text-muted text-uppercase small fw-bold">Puntuación en Google Maps</span>
+                </div>
+
+                <h2 class="h3 fw-bold mb-3">Mudanzas nacionales rápidas, seguras y con presupuesto negociable</h2>
+                <p class="text-secondary">En <strong>MV Express</strong> sabemos que el precio importa. Revisamos tu caso, ajustamos la ruta y te proponemos una opción competitiva, rápida y segura.</p>
+                <p class="text-secondary">Si ya tienes otra cotización, envíala: la evaluamos contigo para igualar o mejorar condiciones cuando sea posible.</p>
+
+                <div class="quote-box my-4">
+                  <p class="fw-bold mb-2">Para cotizar en minutos, envía estos datos:</p>
+                  <ul class="mb-0">
+                    <li>Origen y destino</li>
+                    <li>Fecha aproximada</li>
+                    <li>Cantidad de muebles, cajas o mercancía</li>
+                    <li>Servicios extra: embalaje, montaje o vaciado</li>
+                  </ul>
+                </div>
+
+                <ul class="list-unstyled service-list mt-4">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i><span>Transporte puerta a puerta para hogares, negocios y mercancías.</span></li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i><span>Opciones claras, competitivas y adaptadas a tu presupuesto.</span></li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i><span><strong>Garantía y seguridad</strong> durante el embalaje, traslado y descarga.</span></li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i><span>Montaje, desmontaje, guardamuebles y vaciado de pisos.</span></li>
+                </ul>
+
+                <div class="d-flex flex-wrap gap-2 mt-4 mb-4">
+                  <span class="trust-chip"><i class="bi bi-shield-check" aria-hidden="true"></i> Servicio garantizado</span>
+                  <span class="trust-chip"><i class="bi bi-clock-history" aria-hidden="true"></i> Respuesta rápida</span>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                  <a href="https://wa.me/447902756110?text=Hola%20MV%20Express.%20Quiero%20un%20presupuesto%20para%20un%20transporte.%20Origen%3A%20%20Destino%3A%20%20Fecha%3A%20%20Muebles%2Fcajas%3A%20" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-whatsapp me-2" aria-hidden="true"></i> Pedir presupuesto por WhatsApp
+                  </a>
+                  <a href="mailto:mvexpress.informes@gmail.com?subject=Solicitud%20de%20presupuesto%20MV%20Express" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-envelope me-2" aria-hidden="true"></i> mvexpress.informes@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="map-container">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6111.797065097997!2d-3.8003770000000006!3d40.01071400000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41f937438a5097%3A0xd7186d26df4d07cc!2sC.%20Bargas%2C%202%2C%2045240%20Alameda%20de%20la%20Sagra%2C%20Toledo%2C%20Spain!5e0!3m2!1sen!2sus!4v1791887421223!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Ubicación de MV Express en Google Maps"></iframe>
+                </div>
+                <p class="small text-center mt-3 mb-0">
+                  <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=C.%20Bargas%2C%202%2C%2045240%20Alameda%20de%20la%20Sagra%2C%20Toledo%2C%20Spain" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-geo-alt-fill me-1" aria-hidden="true"></i> Abrir ubicación en Google Maps
+                  </a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center text-muted py-4">
+      <small>&copy; 2026
+        <a href="https://script.google.com/macros/s/AKfycbycS9Yiyrd2IWNjHGEXJ5MSqpf_s1qVVZeHNHSV61MUUBy7Ddgx94WWpeiHNZ7VsMedFw/exec" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; font-weight:bold;">Tu Agencia de Marketing Digital</a>
+      </small>
+    </footer>
+  </body>
+</html>
