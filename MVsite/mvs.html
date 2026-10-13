@@ -103,6 +103,28 @@
         color: #062312;
       }
 
+      .contact-actions {
+        max-width: 100%;
+      }
+
+      .contact-actions .btn {
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        max-width: 100%;
+        min-width: 0;
+        white-space: normal;
+        word-break: break-word;
+      }
+
+      .contact-actions .btn i {
+        flex: 0 0 auto;
+      }
+
+      .email-short {
+        display: none;
+      }
+
       .map-container {
         border-radius: 8px;
         box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
@@ -134,6 +156,21 @@
 
         .biz-card {
           margin-top: -48px;
+        }
+
+        .contact-actions .btn {
+          font-size: 1rem;
+          line-height: 1.25;
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+        }
+
+        .email-full {
+          display: none;
+        }
+
+        .email-short {
+          display: inline;
         }
       }
     </style>
@@ -186,12 +223,14 @@
                   <span class="trust-chip"><i class="bi bi-clock-history" aria-hidden="true"></i> Respuesta rápida</span>
                 </div>
 
-                <div class="d-grid gap-2 mt-4">
+                <div class="d-grid gap-2 mt-4 contact-actions">
                   <a href="https://wa.me/447902756110?text=Hola%20MV%20Express.%20Quiero%20un%20presupuesto%20para%20un%20transporte.%20Origen%3A%20%20Destino%3A%20%20Fecha%3A%20%20Muebles%2Fcajas%3A%20" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-whatsapp me-2" aria-hidden="true"></i> Pedir presupuesto por WhatsApp
                   </a>
                   <a href="mailto:mvexpress.informes@gmail.com?subject=Solicitud%20de%20presupuesto%20MV%20Express" class="btn btn-outline-primary btn-lg">
-                    <i class="bi bi-envelope me-2" aria-hidden="true"></i> mvexpress.informes@gmail.com
+                    <i class="bi bi-envelope me-2" aria-hidden="true"></i>
+                    <span class="email-full">mvexpress.informes@gmail.com</span>
+                    <span class="email-short">Enviar email</span>
                   </a>
                 </div>
               </div>
