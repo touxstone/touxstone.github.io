@@ -49,7 +49,7 @@ participaciones de categoría, no una partición estricta:
 
 ## Qué incluye el CSV principal
 
-El archivo `music_places_madrid_v0_places.csv` contiene una fila por lugar
+El archivo `music_places_tabla_de_sitios.csv` contiene una fila por lugar
 único. Los campos principales son:
 
 - identificación: `place_id`, `name`;
