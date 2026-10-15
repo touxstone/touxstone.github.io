@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Dinámicas - Pool de Preguntas C2</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f4f6f9;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+            --text-color: #333;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .import-panel {
+            margin-top: 18px;
+            color: #626b75;
+            font-size: 0.85rem;
+        }
+        .import-panel summary {
+            width: fit-content;
+            margin-left: auto;
+            cursor: pointer;
+            color: #536579;
+            text-align: right;
+        }
+        .import-panel summary:hover {
+            color: var(--primary-color);
+        }
+        .import-content {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e5e8eb;
+        }
+        .import-content label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .import-content input {
+            max-width: 100%;
+        }
+        .format-example {
+            overflow-x: auto;
+            padding: 10px;
+            background: #f5f7f8;
+            color: #3e4852;
+            font-size: 0.78rem;
+        }
+        #import-status {
+            min-height: 1.2em;
+            margin-bottom: 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+            gap: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            background: var(--secondary-color);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .stats span {
+            text-align: center;
+        }
+        .card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .question-text {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .topic-label {
+            margin-bottom: 8px;
+            color: #66717d;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        .explanation {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e5e9;
+            color: #46515c;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button.option-btn {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            text-align: left;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        button.option-btn:hover:not(:disabled) {
+            background: #e9ecef;
+            border-color: var(--primary-color);
+        }
+        button.option-btn.correct {
+            background-color: var(--success-color) !important;
+            color: white;
+            border-color: var(--success-color);
+        }
+        button.option-btn.incorrect {
+            background-color: var(--error-color) !important;
+            color: white;
+            border-color: var(--error-color);
+        }
+        .controls {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .navigation-controls,
+        .jump-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .navigation-controls {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .jump-controls label {
+            color: #536579;
+            font-size: 0.9rem;
+        }
+        .jump-controls input {
+            width: 76px;
+            padding: 9px 8px;
+            border: 1px solid #b9c1c9;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        @media (max-width: 520px) {
+            .navigation-controls {
+                justify-content: center;
+            }
+            .jump-controls {
+                order: -1;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        .btn-action {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-action:hover {
+            opacity: 0.9;
+        }
+        .hidden {
+            display: none;
+        }
+        #results-screen {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Flashcards Dinámicas - Pruebas C2</h1>
+<p style="background-color: #FFDA03; color: #3A3D36; font-weight: bold">
+ by RS Montalvo
+</p
+<!-- Pantalla de Preguntas -->
+    <div id="quiz-screen">
+        <div class="stats">
+            <span id="progress-indicator">Pregunta 0 de 0</span>
+            <span style="color: var(--success-color);">Aciertos: <span id="score-correct">0</span></span>
+            <span style="color: var(--error-color);">Fallos: <span id="score-incorrect">0</span></span>
+            <span id="score-pending">Pendientes: 0</span>
+            <span id="score-revealed">Mostradas: 0</span>
+        </div>
+
+        <div class="card">
+            <div id="topic-label" class="topic-label"></div>
+            <div id="question-container" class="question-text">Selecciona un archivo JSON o usa el pool predeterminado...</div>
+            <div id="options-container" class="options"></div>
+            <div id="explanation-container" class="explanation hidden"></div>
+        </div>
+
+        <div class="controls">
+            <span id="feedback-msg" role="status" aria-live="polite" style="font-weight: bold;"></span>
+            <button id="show-answer-btn" class="btn-action" onclick="revealAnswer()">Mostrar respuesta</button>
+        </div>
+        <div class="navigation-controls">
+            <button id="previous-btn" class="btn-action" onclick="previousQuestion()">Anterior</button>
+            <div class="jump-controls">
+                <label for="question-jump">Ir a tarjeta</label>
+                <input id="question-jump" type="number" min="1" value="1" aria-label="Número de tarjeta">
+                <button class="btn-action" onclick="jumpToQuestion()">Ir</button>
+            </div>
+            <button id="next-btn" class="btn-action" onclick="nextQuestion()">Siguiente</button>
+        </div>
+    </div>
+
+    <details class="import-panel">
+        <summary>Añadir preguntas desde un archivo JSON</summary>
+        <div class="import-content">
+            <label for="json-file">Selecciona un archivo .json. Las preguntas se añadirán al pool actual.</label>
+            <input type="file" id="json-file" accept=".json,application/json" onchange="loadCustomJSON(event)">
+            <p>El archivo debe ser un array. <code>answer</code> indica la posición correcta empezando por cero (A = 0).</p>
+            <pre class="format-example">[{"id":2001,"examen":"Nombre del examen","question":"Enunciado","options":["A) Opción","B) Opción"],"answer":0}]</pre>
+            <p id="import-status" role="status" aria-live="polite"></p>
+        </div>
+    </details>
+
+    <!-- Pantalla de Resultados Finales -->
+    <div id="results-screen" class="hidden">
+        <h2>¡Sesión de Repaso Finalizada!</h2>
+        <p><strong>Total de Preguntas:</strong> <span id="final-total"></span></p>
+        <p><strong>Respondidas:</strong> <span id="final-answered"></span></p>
+        <p><strong>Aciertos:</strong> <span id="final-correct"></span></p>
+        <p><strong>Fallos:</strong> <span id="final-incorrect"></span></p>
+        <p><strong>Respuestas mostradas:</strong> <span id="final-revealed"></span></p>
+        <p><strong>Pendientes:</strong> <span id="final-pending"></span></p>
+        <p><strong>Porcentaje de Acierto:</strong> <span id="final-percentage"></span>%</p>
+        <button class="btn-action" onclick="restartQuiz()">Reiniciar Test</button>
+    </div>
+</div>
+
+<script>
+    let questions = [];
+    let currentIndex = 0;
+    let responses = [];
+
+    // Cargar JSON local predeterminado si existe
+    window.onload = function() {
+        fetch('preguntas.json')
+            .then(response => {
+                if (!response.ok) throw new Error("No se halló preguntas.json local.");
+                return response.json();
+            })
+            .then(data => {
+                questions = data;
+                resetResponses();
+                restartQuiz();
+            })
+            .catch(() => {
+                document.getElementById("question-container").innerText = "No se pudo cargar preguntas.json. Puedes añadir un archivo JSON desde las opciones de carga.";
+            });
+    };
+
+    function isValidQuestionPool(data) {
+        return Array.isArray(data) && data.length > 0 && data.every(question =>
+            question &&
+            Number.isInteger(question.id) &&
+            typeof question.examen === "string" &&
+            typeof question.question === "string" &&
+            (question.topic === undefined || typeof question.topic === "string") &&
+            (question.explanation === undefined || typeof question.explanation === "string") &&
+            Array.isArray(question.options) &&
+            question.options.length > 0 &&
+            question.options.every(option => typeof option === "string") &&
+            Number.isInteger(question.answer) &&
+            question.answer >= 0 &&
+            question.answer < question.options.length
+        );
+    }
+
+    function loadCustomJSON(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const input = event.target;
+        const status = document.getElementById("import-status");
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const importedQuestions = JSON.parse(e.target.result);
+                if (!isValidQuestionPool(importedQuestions)) {
+                    throw new Error("El archivo no tiene el formato esperado.");
+                }
+                const firstImportedIndex = questions.length;
+                questions = questions.concat(importedQuestions);
+                responses = responses.concat(importedQuestions.map(() => ({ status: "pending", selectedIndex: null })));
+                if (document.getElementById("results-screen").classList.contains("hidden") === false) {
+                    currentIndex = firstImportedIndex;
+                    document.getElementById("results-screen").classList.add("hidden");
+                    document.getElementById("quiz-screen").classList.remove("hidden");
+                }
+                loadQuestion();
+                status.innerText = `Se añadieron ${importedQuestions.length} preguntas. Total: ${questions.length}.`;
+                status.style.color = "var(--success-color)";
+            } catch (err) {
+                status.innerText = "No se pudo importar: revisa que sea un array JSON con los campos del ejemplo y respuestas válidas.";
+                status.style.color = "var(--error-color)";
+            } finally {
+                input.value = "";
+            }
+        };
+        reader.onerror = function() {
+            status.innerText = "No se pudo leer el archivo seleccionado.";
+            status.style.color = "var(--error-color)";
+            input.value = "";
+        };
+        reader.readAsText(file);
+    }
+
+    function resetResponses() {
+        responses = questions.map(() => ({ status: "pending", selectedIndex: null }));
+    }
+
+    function updateStats() {
+        const counts = responses.reduce((total, response) => {
+            total[response.status]++;
+            return total;
+        }, { correct: 0, incorrect: 0, revealed: 0, pending: 0 });
+
+        document.getElementById("score-correct").innerText = counts.correct;
+        document.getElementById("score-incorrect").innerText = counts.incorrect;
+        document.getElementById("score-pending").innerText = `Pendientes: ${counts.pending}`;
+        document.getElementById("score-revealed").innerText = `Mostradas: ${counts.revealed}`;
+        return counts;
+    }
+
+    function loadQuestion() {
+        if (questions.length === 0) return;
+        const question = questions[currentIndex];
+        const response = responses[currentIndex];
+        document.getElementById("progress-indicator").innerText = `Pregunta ${currentIndex + 1} de ${questions.length}`;
+        document.getElementById("question-container").innerText = question.question;
+        const topicLabel = document.getElementById("topic-label");
+        topicLabel.innerText = question.topic || "";
+        topicLabel.classList.toggle("hidden", !question.topic);
+        const explanationContainer = document.getElementById("explanation-container");
+        explanationContainer.innerText = "";
+        explanationContainer.classList.add("hidden");
+
+        const optionsContainer = document.getElementById("options-container");
+        optionsContainer.innerHTML = "";
+
+        question.options.forEach((option, index) => {
+            const optionButton = document.createElement("button");
+            optionButton.className = "option-btn";
+            optionButton.innerText = option;
+            optionButton.onclick = () => selectOption(index);
+            if (response.status !== "pending") {
+                optionButton.disabled = true;
+                if (index === question.answer) optionButton.classList.add("correct");
+                if (index === response.selectedIndex && response.status === "incorrect") {
+                    optionButton.classList.add("incorrect");
+                }
+            }
+            optionsContainer.appendChild(optionButton);
+        });
+
+        const feedbackMessage = document.getElementById("feedback-msg");
+        if (response.status === "correct") {
+            feedbackMessage.innerText = "¡Correcto!";
+            feedbackMessage.style.color = "var(--success-color)";
+        } else if (response.status === "incorrect") {
+            feedbackMessage.innerText = "Incorrecto.";
+            feedbackMessage.style.color = "var(--error-color)";
+        } else if (response.status === "revealed") {
+            feedbackMessage.innerText = "Respuesta mostrada; no cuenta como acierto ni como fallo.";
+            feedbackMessage.style.color = "var(--text-color)";
+        } else {
+            feedbackMessage.innerText = "";
+        }
+
+        if (response.status !== "pending" && question.explanation) {
+            explanationContainer.innerText = question.explanation;
+            explanationContainer.classList.remove("hidden");
+        }
+
+        document.getElementById("previous-btn").disabled = currentIndex === 0;
+        document.getElementById("question-jump").max = questions.length;
+        document.getElementById("question-jump").value = currentIndex + 1;
+        document.getElementById("next-btn").innerText = currentIndex === questions.length - 1 ? "Finalizar" : "Siguiente";
+        document.getElementById("show-answer-btn").disabled = response.status !== "pending";
+        updateStats();
+    }
+
+    function selectOption(selectedIndex) {
+        if (responses[currentIndex].status !== "pending") return;
+        responses[currentIndex] = {
+            status: selectedIndex === questions[currentIndex].answer ? "correct" : "incorrect",
+            selectedIndex
+        };
+        loadQuestion();
+    }
+
+    function revealAnswer() {
+        if (responses[currentIndex].status !== "pending") return;
+        responses[currentIndex] = { status: "revealed", selectedIndex: null };
+        loadQuestion();
+    }
+
+    function previousQuestion() {
+        if (currentIndex === 0) return;
+        currentIndex--;
+        loadQuestion();
+    }
+
+    function jumpToQuestion() {
+        const requestedIndex = Number(document.getElementById("question-jump").value);
+        if (!Number.isInteger(requestedIndex) || requestedIndex < 1 || requestedIndex > questions.length) {
+            document.getElementById("feedback-msg").innerText = `Introduce un número entre 1 y ${questions.length}.`;
+            return;
+        }
+        currentIndex = requestedIndex - 1;
+        loadQuestion();
+    }
+
+    function nextQuestion() {
+        if (currentIndex === questions.length - 1) {
+            showResults();
+            return;
+        }
+        currentIndex++;
+        loadQuestion();
+    }
+
+    function showResults() {
+        const counts = updateStats();
+        document.getElementById("quiz-screen").classList.add("hidden");
+        document.getElementById("results-screen").classList.remove("hidden");
+        
+        document.getElementById("final-total").innerText = questions.length;
+        document.getElementById("final-answered").innerText = counts.correct + counts.incorrect;
+        document.getElementById("final-correct").innerText = counts.correct;
+        document.getElementById("final-incorrect").innerText = counts.incorrect;
+        document.getElementById("final-revealed").innerText = counts.revealed;
+        document.getElementById("final-pending").innerText = counts.pending;
+        
+        const answeredCount = counts.correct + counts.incorrect;
+        const percentage = answeredCount === 0 ? 0 : Math.round((counts.correct / answeredCount) * 100);
+        document.getElementById("final-percentage").innerText = isNaN(percentage) ? 0 : percentage;
+    }
+
+    function restartQuiz() {
+        currentIndex = 0;
+        resetResponses();
+        document.getElementById("results-screen").classList.add("hidden");
+        document.getElementById("quiz-screen").classList.remove("hidden");
+        loadQuestion();
+    }
+</script>
+
+</body>
+</html>

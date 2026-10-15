@@ -1,0 +1,1701 @@
+[
+  {
+    "id": 1,
+    "examen": "File 1 / C2",
+    "question": "En la versión de escritorio de Microsoft Access, ¿qué se entiende por Importar datos?",
+    "options": [
+      "A) En Access ese término no tiene significado alguno.",
+      "B) Es la opción que permite copiar datos de una fuente externa e insertarlos en Access.",
+      "C) Es la opción que permite guardar los datos de Access en formato texto, Excel, etc.",
+      "D) Es un proceso exclusivo de exportación."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 38,
+    "examen": "File 6 / C2",
+    "question": "38.- ¿Cómo se denomina a la funcionalidad de Excel 2016 que muestra flechas que apuntan a las celdas afectadas por el valor de la celda seleccionada?",
+    "options": [
+      "A) Rastrear dependientes.",
+      "B) Rastrear celdas perdidas.",
+      "C) Quitar flechas."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 39,
+    "examen": "File 6 / C2",
+    "question": "39.- Sobre los métodos abreviados de teclado de Word 2016, ¿cuál de las siguientes afirmaciones es falsa?",
+    "options": [
+      "A) Presionando Ctrl + Alt se muestran los métodos abreviados de la cinta de opciones.",
+      "B) Word 2016 permite personalizar métodos abreviados de teclado.",
+      "C) Es posible asignar atajos de teclado personalizados a macros."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1001,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "1.- Son interesados en el procedimiento administrativo respecto al artículo 4 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:",
+    "options": [
+      "A) Quienes lo promuevan como titulares de derechos o intereses legítimos individuales o colectivos.",
+      "B) Los que, sin haber iniciado el procedimiento, tengan intereses que puedan resultar afectados por la decisión que en el mismo se adopte.",
+      "C) Aquellos cuyos intereses colectivos, puedan resultar afectados por la resolución y se personen en el procedimiento cuando ya haya recaído resolución definitiva."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1002,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "2.- En qué supuesto hay que acreditar la representación de un interesado en el procedimiento administrativo, según artículo 5 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:",
+    "options": [
+      "A) Para actos y gestiones de mero trámite.",
+      "B) Para formular solicitudes, presentar declaraciones responsables o comunicaciones, interponer recursos, desistir de acciones y renunciar a derechos en nombre de otra persona.",
+      "C) Para formular solicitudes, presentar declaraciones responsables o comunicaciones, interponer recursos, denegar de acciones y renunciar a derechos en nombre de uno mismo."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1003,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "3.- Los efectos de los actos administrativos según artículo 39 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:",
+    "options": [
+      "A) Los actos de las Administraciones Públicas sujetos al Derecho privado se presumirán válidos y producirán efectos desde el día siguiente a la fecha en que se dicten.",
+      "B) La eficacia quedará demorada cuando así lo exija el contenido del acto o esté supeditada a su notificación, publicación o aprobación superior.",
+      "C) Siempre podrá otorgarse eficacia retroactiva a los actos cuando se dicten en sustitución de actos anulados."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1004,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "4.- Según artículo 113 la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, contra los actos firmes en vía administrativa, sólo procederá el siguiente recurso:",
+    "options": [
+      "A) Recurso extraordinario de revisión.",
+      "B) Recurso de alzada.",
+      "C) Recurso potestativo de reposición."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1005,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "5.- Respecto al cómputo de plazos del artículo 30 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:",
+    "options": [
+      "A) Salvo que reglamentariamente se disponga otro cómputo, cuando los plazos se señalen por horas, se entiende que éstas son hábiles.",
+      "B) Son hábiles todas las horas del día que formen parte de un día hábil.",
+      "C) Los plazos expresados por horas se contarán de hora en hora y de minuto en minuto desde la hora y minuto en que tenga lugar la emisión del acto de que se trate y no podrán tener una duración superior a veinticuatro horas."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1006,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "6.- ¿En qué artículo de la Ley 19/2013 de transparencia, acceso a la información pública y buen gobierno, se recogen los límites al derecho de acceso a la información pública?",
+    "options": [
+      "A) Artículo 11.",
+      "B) Artículo 12.",
+      "C) Artículo 14."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1007,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "7.- ¿Qué órgano es el competente para el control del cumplimiento por parte de la Administración General del Estado de las obligaciones contenidas en el capítulo II de la Ley 19/2013 de transparencia, acceso a la información pública y buen gobierno?",
+    "options": [
+      "A) El Consejo de Transparencia y Buen Gobierno.",
+      "B) La Comisión de Transparencia y Buen Gobierno.",
+      "C) Ambas respuestas son correctas."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1008,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "8.- Según el artículo 33.2 de la Ley 19/2013 de transparencia, acceso a la información y buen gobierno, el Consejo de Transparencia y Buen Gobierno tiene personalidad jurídica:",
+    "options": [
+      "A) Única y plena capacidad de obrar.",
+      "B) Limitada y plena capacidad de obrar.",
+      "C) Propia y plena capacidad de obrar."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1009,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "9.- ¿Cómo se denomina el Registro que tiene por finalidad la inscripción de quienes lleven a cabo cualquier actividad distinta de la contemplada en el art. 67 de la Ley 10/2019, con objeto de influir directa o indirectamente en la elaboración de normas jurídicas y disposiciones generales y en la elaboración y aplicación de las políticas públicas?",
+    "options": [
+      "A) Registro de Buen Gobierno.",
+      "B) Registro de Intermediación en las políticas públicas.",
+      "C) Registro de Transparencia."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1010,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "10.- Conforme a lo dispuesto en el artículo 17 de la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información y buen gobierno, la solicitud de acceso a la información pública:",
+    "options": [
+      "A) Ha de estar motivada en todo caso.",
+      "B) No precisa constancia de la identidad del solicitante.",
+      "C) El solicitante podrá exponer los motivos por los que solicita la información, en cuyo caso se tendrá en cuenta cuando se dicte resolución."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1011,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "11.- Según el artículo 4 de la Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres, la igualdad de trato y de oportunidades entre mujeres y hombres es un principio:",
+    "options": [
+      "A) Legislativo y requerirá siempre elaborar leyes que serán aprobadas en la institución que corresponda.",
+      "B) Informador del ordenamiento jurídico y, como tal, se integrará y observará en la interpretación y aplicación de las normas jurídicas.",
+      "C) Básico que está recogido en el decálogo de los derechos de los trabajadores."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1012,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "12.- De acuerdo con la Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres, sin perjuicio de lo establecido en el Código Penal, a los efectos de esta Ley constituye acoso sexual:",
+    "options": [
+      "A) Cualquier comportamiento sexual o no, que produzca el efecto de atentar contra la dignidad de una persona.",
+      "B) Cualquier comportamiento, verbal o físico, de naturaleza sexual que tenga el propósito o produzca el efecto de atentar contra la dignidad de una persona, en particular cuando se crea un entorno intimidatorio, degradante u ofensivo.",
+      "C) La diferencia de trato basada en el género, u orientación sexual que tenga el propósito de intimidar a una persona."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1013,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "13.- El objeto de la Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres, en su artículo 1, nos indica que:",
+    "options": [
+      "A) Esta Ley tiene por objeto hacer efectivo el derecho de igualdad y de oportunidades de las mujeres.",
+      "B) La Ley establece los principios de actuaciones de los Poderes Públicos y prevé medidas no discriminatorias en los sectores privados.",
+      "C) Las mujeres y los hombres son iguales en dignidad humana, e iguales en derechos y deberes."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1014,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "14.- La Ley Orgánica 1/2004, de 28 de diciembre, en su artículo 19, establece que las mujeres víctimas de violencia de género tienen derecho a servicios sociales de atención, de emergencia, de apoyo y acogida y de recuperación integral. La organización de estos servicios por parte de las comunidades autónomas y las Corporaciones Locales responderá a los principios:",
+    "options": [
+      "A) De acceso integral a la información sobre sus derechos y deberes.",
+      "B) De medidas efectivas contempladas en las leyes relativas a su protección y seguridad.",
+      "C) De atención permanente, actuación urgente, especialización de prestaciones y multidisciplinariedad profesional."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1015,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "15.- Según el artículo 21 de la Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI, las Administraciones Educativas, en el ámbito de sus competencias:",
+    "options": [
+      "A) Colaborarán con los centros educativos en las acciones dirigidas a fomentar el respeto a la diversidad sexual, de género y familiar de las personas LGTBI.",
+      "B) Impulsarán la adopción de planes de coeducación y diversidad que contemplen, entre otras, acciones relacionadas con la formación del profesorado en atención al respeto a la diversidad sexual, de género y familiar de las personas LGTBI.",
+      "C) Las respuestas A y B son correctas."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1016,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "16.- La representación de las personas interesadas según dispone el artículo 32 del Real Decreto 203/2021, de 30 de marzo, por el que se aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos, puede acreditarse mediante cualquier medio válido en Derecho que deje constancia fidedigna de su existencia, entre otros (señale la opción incorrecta):",
+    "options": [
+      "A) Mediante acreditación de su inscripción en el registro electrónico de apoderamientos en la Administración Pública competente o en sus registros particulares de apoderamientos.",
+      "B) Mediante un certificado electrónico no cualificado de representante.",
+      "C) Mediante apoderamiento apud acta efectuado por comparecencia personal en las oficinas de asistencia en materia de registros o comparecencia electrónica en la correspondiente sede electrónica o sede electrónica asociada."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1017,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "17.- Según el artículo 1 del Decreto 21/2002, de 24 de enero, por el que se regula la atención al ciudadano de la Comunidad de Madrid, señale cuál de las siguientes se regula por su normativa propia o específica:",
+    "options": [
+      "A) La prestación de servicios.",
+      "B) La gestión de procedimientos.",
+      "C) A y B son correctas."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1018,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "18.- Según el artículo 33 del Real Decreto 203/2021, de 30 de marzo, por el que se aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos, el Registro Electrónico de Apoderamientos y los registros particulares deberán ser:",
+    "options": [
+      "A) Interoperables y tienen carácter público.",
+      "B) Interoperables y no tienen carácter público.",
+      "C) A y B son incorrectas."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1019,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "19.- Según el artículo 34.4 del Decreto 21/2002, de 24 de enero, por el que se regula la Atención al Ciudadano de la Comunidad de Madrid, la Oficina de Atención al Ciudadano emitirá un informe estadístico referente al conjunto de su actividad:",
+    "options": [
+      "A) Anualmente.",
+      "B) Cada 6 meses.",
+      "C) Al menos trimestralmente."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1020,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "20.- Según el artículo 35.3 del Decreto 21/2002, de 24 de enero, por el que se regula la Atención al Ciudadano de la Comunidad de Madrid, ¿a quién corresponde la coordinación de todos los Puntos de Información y Atención al Ciudadano?",
+    "options": [
+      "A) A la Oficina de Atención al Ciudadano.",
+      "B) A la Secretaría General Técnica.",
+      "C) A la Oficina de Atención especializada."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1021,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "21.- De acuerdo con el artículo 27 de la Ley 39/2015, las copias auténticas tendrán la misma validez y eficacia que los documentos originales y deberán:",
+    "options": [
+      "A) Incluir los metadatos que acrediten su condición de copia y que se visualicen al consultar el documento, en todo caso.",
+      "B) Incluir los metadatos que acrediten su condición de copia y que se visualicen al consultar el documento, cuando se trate de copias electrónicas.",
+      "C) Contener un código generado electrónicamente u otro sistema de verificación, que permitirá contrastar la autenticidad de la copia que en ningún caso será en soporte papel."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1022,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "22.- Integran la actividad de registro, según establece la Ley 21/2002, de 24 de enero, por la que se regula la atención al ciudadano de la Comunidad de Madrid:",
+    "options": [
+      "A) La recepción de solicitudes, escritos y comunicaciones presentadas por los ciudadanos, así como de los documentos que las acompañen, dirigidos a las Administraciones Públicas.",
+      "B) La recepción y custodia de los documentos originales que aporten los interesados y deban obrar en el procedimiento.",
+      "C) La publicación y comunicación a terceros de las solicitudes, escritos y comunicaciones presentadas."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1023,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "23.- Dispone el artículo 8 de la Ley 6/2023, de 30 de marzo, de Archivos y Documentos de la Comunidad de Madrid que los archivos públicos se podrán organizar, en función de las necesidades de las entidades públicas a las que pertenezcan y de su potestad de autoorganización y según la utilización de los documentos que custodien y gestionen, en:",
+    "options": [
+      "A) Archivos centrales, archivos intermedios y archivos históricos.",
+      "B) Archivos de tramitación, archivos de presentación y archivos de compulsa.",
+      "C) Archivos de gestión, archivos centrales, archivos intermedios y archivos históricos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1024,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "24.- De acuerdo con el artículo 40 de la Ley 6/2023, de 30 de marzo, de Archivos y Documentos de la Comunidad de Madrid, los archivos públicos no tienen encomendadas en el campo de la gestión administrativa la custodia de los documentos para:",
+    "options": [
+      "A) Dejar constancia de las actuaciones y actividades de las instituciones.",
+      "B) Testimoniar los derechos y deberes de las instituciones y de los ciudadanos.",
+      "C) Resolver y adoptar las medidas necesarias para la simplificación y racionalización de los procedimientos administrativos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1025,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "25.- De acuerdo con el artículo 14.2 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, están obligados a relacionarse a través de medios electrónicos con las Administraciones Públicas los siguientes sujetos:",
+    "options": [
+      "A) Los empleados de las Administraciones Públicas para cualquier trámite.",
+      "B) Quienes ejerzan una actividad profesional para la que se requiera colegiación obligatoria, para los trámites y actuaciones que realicen con las Administraciones Públicas en ejercicio de dicha actividad profesional.",
+      "C) Quienes representen a un interesado que no esté obligado a relacionarse electrónicamente con la Administración."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1026,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "26.- Se dispone de una lista de contactos a los que se desea enviar un documento personalizado, ¿se puede hacer en Word 2016?",
+    "options": [
+      "A) No, la creación de documentos personalizados solo se puede realizar en Access.",
+      "B) Sí, pero únicamente si la lista de contactos la tenemos en formato Excel.",
+      "C) Sí, utilizando una combinación de correspondencia."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1027,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "27.- En Word 2016, ¿qué supone agregar una firma digital al documento?",
+    "options": [
+      "A) Garantizar la integridad del documento.",
+      "B) Controlar los tipos de cambios que otros usuarios pueden hacer al documento.",
+      "C) Proteger el documento mediante una contraseña."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1028,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "28.- En Access 2016, ¿qué diferencia hay entre base de datos y tablas?",
+    "options": [
+      "A) Ninguna, son dos formas de nombrar al mismo concepto.",
+      "B) Una base de datos es una herramienta para recopilar y organizar información que contiene una o más tablas para estructurarla.",
+      "C) Las tablas no existen en Access, las tablas se utilizan en Excel."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1029,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "29.- En Excel 2016, ¿se pueden crear estilos de celda personalizados?",
+    "options": [
+      "A) No.",
+      "B) Sí.",
+      "C) Solo como resultado de un formato condicional."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1030,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "30.- ¿Para qué sirven los filtros en Excel 2016?",
+    "options": [
+      "A) Para nada.",
+      "B) Permiten mostrar las filas que cumplan los criterios especificados por el usuario, siendo una manera rápida y fácil de buscar información en la hoja de cálculo.",
+      "C) Permiten cambiar el formato de las celdas, como los bordes o el relleno, en función de su contenido."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1031,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "31.- En Word 2016, una lista de palabras y el número de página donde se encuentra cada palabra es:",
+    "options": [
+      "A) Un índice.",
+      "B) Una tabla de contenido.",
+      "C) Una tabla de contexto."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1032,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "32.- En Access 2016, ¿qué es una máscara de entrada?",
+    "options": [
+      "A) En Access no existen las máscaras de entrada.",
+      "B) Es un comando que muestra los formatos disponibles para cada tipo de datos.",
+      "C) Es una cadena de caracteres que define el formato de los valores de entrada válidos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1033,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "33.- En Excel 2016, la función ESPACIOS, ¿qué resultado ofrece?",
+    "options": [
+      "A) Quita todos los espacios del texto excepto los espacios individuales entre palabras.",
+      "B) Añade tantos espacios como se le indique en su argumento.",
+      "C) Cuenta el número de espacios del texto."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1034,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "34.- En la validación de datos de Excel 2016, ¿para qué se utiliza el mensaje de entrada?",
+    "options": [
+      "A) Es un texto que se muestra al introducir datos no válidos en la celda donde esté definida la validación de datos.",
+      "B) Es un texto que se muestra al seleccionar la celda donde esté definida la validación de datos.",
+      "C) Es un texto que se muestra al abrir la hoja del libro donde esté definida la validación de datos."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1035,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "35.- En Access 2016, ¿se puede utilizar un campo Autonumeración para hacer recuento de los registros de una tabla?",
+    "options": [
+      "A) No, la Autonumeración no reutiliza valores, por lo que los registros eliminados generan blancos en los recuentos.",
+      "B) Sí, la Autonumeración no reutiliza valores, por lo que el último valor asignado equivale a un recuento.",
+      "C) Access no tiene la posibilidad de utilizar campos Autonumeración."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1036,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "36.- ¿Qué utilidad tiene el comando Vincular al anterior en un salto de sección?",
+    "options": [
+      "A) Crea un hipervínculo que mueve el cursor al comienzo de la sección anterior a la actual.",
+      "B) Equivale a un salto de página sin crear una nueva sección.",
+      "C) Activando o desactivando esta característica se puede crear un encabezado o pie de página igual o diferente para la sección actual con respecto a la anterior."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1037,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "37.- En Access 2016, la extensión .accdt, ¿a qué tipo de archivo se refiere?",
+    "options": [
+      "A) A una base de datos Access 2000 o anterior.",
+      "B) A una base de datos firmada digitalmente.",
+      "C) A una plantilla de base de datos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1038,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "38.- ¿Cómo se denomina a la funcionalidad de Excel 2016 que muestra flechas que apuntan a las celdas afectadas por el valor de la celda seleccionada?",
+    "options": [
+      "A) Rastrear dependientes.",
+      "B) Rastrear celdas perdidas.",
+      "C) Quitar flechas."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1039,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "39.- Sobre los métodos abreviados de teclado de Word 2016, ¿cuál de las siguientes afirmaciones es falsa?",
+    "options": [
+      "A) Presionando Ctrl + Alt se muestran los métodos abreviados de la cinta de opciones.",
+      "B) Word 2016 permite personalizar métodos abreviados de teclado.",
+      "C) La combinación de teclas Ctrl + Av Pág mueve el cursor a la parte superior de la página siguiente."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1040,
+    "examen": "File 1 / C2 - Promoción interna",
+    "question": "40.- El tamaño de un campo en Access 2016 es:",
+    "options": [
+      "A) Lo que pesa el fichero de la base de datos.",
+      "B) Una propiedad del campo.",
+      "C) La dimensión de la tabla a la que pertenece el campo."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1041,
+    "examen": "File 1 / C2 - Promoción interna - Reserva",
+    "question": "41.- Según el artículo 40 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, serán notificados las resoluciones y actos administrativos en el plazo de:",
+    "options": [
+      "A) Dentro del plazo de quince días a partir de la fecha en que el acto haya sido dictado.",
+      "B) Dentro del plazo de diez días a partir del día siguiente a la fecha en que el acto haya sido dictado.",
+      "C) Dentro del plazo de diez días a partir de la fecha en que el acto haya sido dictado."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1042,
+    "examen": "File 1 / C2 - Promoción interna - Reserva",
+    "question": "42.- Contra la resolución desestimatoria, total o parcial, de la solicitud de acceso a la información dictada por los sujetos comprendidos en el ámbito de aplicación de esta Ley, podrá interponerse:",
+    "options": [
+      "A) Reclamación ante el Consejo de Transparencia y Participación, con carácter potestativo y previo a su impugnación en vía contencioso-administrativa.",
+      "B) Recurso potestativo de reposición ante el Consejo de Transparencia y Participación.",
+      "C) Nada, pues se trata de una resolución que agota la vía administrativa y por tanto no es recurrible."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 1043,
+    "examen": "File 1 / C2 - Promoción interna - Reserva",
+    "question": "43.- Las empresas deberán contar, en el plazo de doce meses a partir de la entrada en vigor de la Ley 4/2023, de 28 de febrero, con un conjunto planificado de medidas y recursos para alcanzar la igualdad real y efectiva de las personas LGTBI, que incluya un protocolo de actuación para la atención del acoso o la violencia contra las personas LGTBI. Estas medidas serán pactadas a través de la negociación colectiva y acordadas con la representación legal de las personas trabajadoras. Están obligadas a cumplir este requisito:",
+    "options": [
+      "A) Las empresas de más de cien personas trabajadoras.",
+      "B) Las empresas de más de cincuenta personas trabajadoras.",
+      "C) Las empresas con alguna persona trabajadora perteneciente al colectivo LGTBI."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 1044,
+    "examen": "File 1 / C2 - Promoción interna - Reserva",
+    "question": "44.- Según el artículo 3.2 del Real Decreto 203/2021, de 30 de marzo, por el que se aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos, las personas físicas no obligadas a relacionarse por medios electrónicos con la Administración Pública podrán ejercitar ese derecho siempre y cuando (señale la incorrecta):",
+    "options": [
+      "A) Al inicio del procedimiento y, a tal efecto, lo comunicarán al órgano competente para la tramitación del mismo de forma que éste pueda tener constancia de dicha decisión.",
+      "B) La voluntad de relacionarse electrónicamente o, en su caso, de dejar de hacerlo cuando ya se había optado anteriormente por ello, podrá realizarse en una fase posterior del procedimiento, si bien deberá comunicarse al órgano competente para la tramitación de forma que quede constancia de dicha decisión.",
+      "C) Al inicio del procedimiento o en una fase posterior del procedimiento. En ambos casos los efectos se producirán a partir del tercer día hábil siguiente a aquel en que el órgano competente para tramitar el procedimiento haya tenido constancia de la misma."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 1045,
+    "examen": "File 1 / C2 - Promoción interna - Reserva",
+    "question": "45.- Los archivos públicos NO tienen encomendadas en el campo de la gestión administrativa la custodia de los documentos para:",
+    "options": [
+      "A) Dejar constancia de las actuaciones y actividades de las instituciones.",
+      "B) Testimoniar los derechos y deberes de las instituciones y de los ciudadanos.",
+      "C) Resolver y adoptar las medidas necesarias para la simplificación y racionalización de los procedimientos administrativos."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 2001,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Windows 10",
+    "question": "1.- En Windows 10, ¿qué combinación de teclas abre el Explorador de archivos?",
+    "options": ["A) Alt+Tab", "B) Alt+E", "C) Windows+E", "D) Ctrl+E"],
+    "answer": 2,
+    "explanation": "Windows+E es el atajo directo para abrir el Explorador de archivos."
+  },
+  {
+    "id": 2002,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Windows 10",
+    "question": "2.- En Windows 10, ¿hay alguna manera de ver en tiempo real los procesos activos?",
+    "options": ["A) No, Windows 10 solo permite generar informes de los procesos una vez que han terminado de ejecutarse.", "B) Sí, desde el Administrador tareas.", "C) Sí, con el comando taskserviceswin.msc.", "D) No, Windows 10 no tiene la posibilidad de ver los procesos activos."],
+    "answer": 1,
+    "explanation": "El Administrador de tareas permite consultar los procesos que están ejecutándose."
+  },
+  {
+    "id": 2003,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Windows 10",
+    "question": "3.- En Windows 10, ¿cuál de los siguientes métodos permite ver el espacio libre de una unidad de disco?",
+    "options": ["A) Desde el Explorador de archivos, colocando el ratón sobre un archivo que cuelgue de la unidad y con el botón derecho hacer clic en Propiedades.", "B) Desde el Explorador de archivos, colocando el ratón sobre una carpeta que cuelgue de la unidad y con el botón derecho hacer clic en Propiedades.", "C) En el desplegable Este equipo, colocando el ratón sobre la unidad y con el botón derecho hacer clic en Propiedades.", "D) Windows 10 no permite ver el espacio libre de una unidad en concreto. Muestra la suma del espacio libre de todas las unidades existentes en el sistema."],
+    "answer": 2,
+    "explanation": "Las propiedades de la unidad muestran su capacidad, el espacio utilizado y el espacio libre."
+  },
+  {
+    "id": 2004,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Windows 10",
+    "question": "4.- En el Explorador de archivos de Windows 10, en la vista del contenido de una carpeta, ¿dónde se puede ver la ruta completa a la citada carpeta?",
+    "options": ["A) En la barra de direcciones.", "B) En el panel de vista previa.", "C) En la cinta de opciones.", "D) En la barra de estado."],
+    "answer": 0,
+    "explanation": "La barra de direcciones muestra la ubicación de la carpeta abierta."
+  },
+  {
+    "id": 2005,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Windows 10",
+    "question": "5.- En Windows 10, de aquellos archivos que lo permitan y aunque sea de forma parcial, ¿se puede ver su contenido sin abrirlo?",
+    "options": ["A) Sí, desde el Panel de vista previa.", "B) Sí, pero únicamente se puede hacer con archivos de imagen jpg y png.", "C) Sí, desde Propiedades del archivo.", "D) No, Windows 10 no tiene una funcionalidad parecida a esa."],
+    "answer": 0,
+    "explanation": "El panel de vista previa permite examinar archivos compatibles sin abrirlos en su aplicación."
+  },
+  {
+    "id": 2006,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Word 365",
+    "question": "6.- En la versión de escritorio de Word 365, ¿qué función permite localizar palabras dentro de un documento abierto?",
+    "options": ["A) Imprimir.", "B) Formato.", "C) Disposición.", "D) Buscar."],
+    "answer": 3,
+    "explanation": "Buscar localiza texto dentro del documento."
+  },
+  {
+    "id": 2007,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Word 365",
+    "question": "7.- En la versión de escritorio de Word 365, ¿qué es el interlineado?",
+    "options": ["A) Es el color del texto.", "B) Es el espacio vertical entre las líneas de un párrafo.", "C) Es el encabezado del documento.", "D) El interlineado establece la dimensión del margen superior del documento."],
+    "answer": 1,
+    "explanation": "El interlineado controla la separación vertical entre líneas de un párrafo."
+  },
+  {
+    "id": 2008,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Word 365",
+    "question": "8.- En la versión de escritorio de Word 365, con un documento ya abierto, ¿qué opción permite guardarlo con un nombre distinto al actual?",
+    "options": ["A) Cerrar.", "B) Compartir.", "C) Guardar como.", "D) Guardar."],
+    "answer": 2,
+    "explanation": "Guardar como permite elegir otro nombre y, si se desea, otra ubicación o formato."
+  },
+  {
+    "id": 2009,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Microsoft 365",
+    "question": "9.- Sobre Microsoft 365, ¿cuál de los siguientes programas se utiliza principalmente para crear, editar y dar formato a documentos de texto?",
+    "options": ["A) Excel.", "B) Word.", "C) PowerPoint.", "D) Access."],
+    "answer": 1,
+    "explanation": "Word es el procesador de textos de Microsoft 365."
+  },
+  {
+    "id": 2010,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Word 365",
+    "question": "10.- En la versión de escritorio de Word 365, ¿qué se entiende por una sangría izquierda?",
+    "options": ["A) Es el desplazamiento del párrafo hacia la derecha respecto al margen izquierdo.", "B) Es un tipo de subrayado especial.", "C) Es un estilo de título.", "D) Es un efecto de fuente de texto."],
+    "answer": 0,
+    "explanation": "La sangría izquierda aumenta la distancia entre el párrafo y el margen izquierdo."
+  },
+  {
+    "id": 2011,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Excel 365",
+    "question": "11.- En la versión de escritorio de Excel 365, ¿qué símbolo se utiliza para iniciar una fórmula?",
+    "options": ["A) = (igual).", "B) # (almohadilla).", "C) @ (arroba).", "D) $ (dólar)."],
+    "answer": 0,
+    "explanation": "Las fórmulas de Excel comienzan con el signo igual."
+  },
+  {
+    "id": 2012,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Excel 365",
+    "question": "12.- En la versión de escritorio de Excel 365, ¿cómo se denomina al conjunto de hojas almacenadas en un archivo Excel?",
+    "options": ["A) Celdas.", "B) Libro.", "C) Filas.", "D) Tabla."],
+    "answer": 1,
+    "explanation": "El archivo de Excel es un libro y puede contener una o más hojas."
+  },
+  {
+    "id": 2013,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Excel 365",
+    "question": "13.- En la versión de escritorio de Excel 365, de las siguientes opciones, ¿dónde se visualiza el contenido de la celda activa?",
+    "options": ["A) En la Barra de herramientas.", "B) En el desplegable de Estilos.", "C) En el Cuadro de nombres.", "D) En la Barra de fórmulas."],
+    "answer": 3,
+    "explanation": "La barra de fórmulas muestra el contenido o la fórmula de la celda seleccionada."
+  },
+  {
+    "id": 2014,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Excel 365",
+    "question": "14.- En la versión de escritorio de Excel 365, ¿cuántas hojas puede contener un libro de Excel?",
+    "options": ["A) 1.", "B) 255.", "C) Sin límite definido, salvo lo que dicte la memoria del sistema donde se ejecuta el Excel.", "D) 16."],
+    "answer": 2,
+    "explanation": "El número de hojas no está fijado en 255; está limitado principalmente por los recursos disponibles."
+  },
+  {
+    "id": 2015,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Excel 365",
+    "question": "15.- En la versión de escritorio de Excel 365, ¿qué misión tiene una tabla dinámica?",
+    "options": ["A) Una tabla dinámica convierte automáticamente los datos en gráficos actualizados en tiempo real.", "B) Una tabla dinámica permite resumir, analizar y reorganizar grandes conjuntos de datos de manera interactiva.", "C) Una tabla dinámica es una tabla que edita y reescribe los datos del origen para mantenerlos siempre ordenados.", "D) Una tabla dinámica solo puede mostrar datos tal cual están, sin permitir agrupar, filtrar ni cambiar campos."],
+    "answer": 1,
+    "explanation": "Una tabla dinámica resume y reorganiza datos para facilitar su análisis sin alterar el origen."
+  },
+  {
+    "id": 2016,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Access 365",
+    "question": "16.- En la versión de escritorio de Access 365, ¿qué se entiende por importar datos?",
+    "options": ["A) En Access ese término no tiene significado alguno.", "B) Es la opción que permite guardar los datos de Access en formato texto, Excel, etc.", "C) Hace referencia a un tipo de datos de cierta importancia que deben ser protegidos contra escritura.", "D) Es la opción que permite traer datos externos e incorporarlos a Access."],
+    "answer": 3,
+    "explanation": "Importar incorpora datos de una fuente externa a la base de datos; exportar realiza el proceso de salida."
+  },
+  {
+    "id": 2017,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Access 365",
+    "question": "17.- En la versión de escritorio de Access 365, ¿qué permite hacer una consulta?",
+    "options": ["A) Es un formulario que sirve para introducir datos en las tablas mediante un diseño más visual.", "B) Es un objeto de Access que permite obtener, filtrar, combinar o calcular datos almacenados en una o varias tablas.", "C) Es un objeto que almacena directamente los registros que coinciden con un criterio específico.", "D) Es un tipo de campo para almacenar dígitos y números indistintamente."],
+    "answer": 1,
+    "explanation": "Una consulta trabaja sobre los datos almacenados para seleccionar, combinar o calcular información."
+  },
+  {
+    "id": 2018,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Access 365",
+    "question": "18.- En la versión de escritorio de Access 365, ¿cuál es la vista que permite crear y definir los campos que conforman una tabla?",
+    "options": ["A) Vista Administración.", "B) Vista Hoja edición.", "C) Vista Diseño.", "D) Vista Preimpresión."],
+    "answer": 2,
+    "explanation": "La vista Diseño permite definir los campos y sus propiedades."
+  },
+  {
+    "id": 2019,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Access 365",
+    "question": "19.- En la versión de escritorio de Access 365, ¿qué identifica de forma única e inequívoca a un registro?",
+    "options": ["A) El campo numérico.", "B) El campo de texto.", "C) Un campo de Clave Principal.", "D) Un campo que recordemos y no se nos olvide que existe."],
+    "answer": 2,
+    "explanation": "La clave principal identifica de forma única cada registro de una tabla."
+  },
+  {
+    "id": 2020,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Access 365",
+    "question": "20.- En la versión de escritorio de Access 365, ¿qué es una tabla?",
+    "options": ["A) Es un informe que muestra los datos de forma resumida sin permitir la edición directa.", "B) Es un objeto de la base de datos que permite diseñar consultas y establecer relaciones, pero no almacena datos propios.", "C) Es un objeto de la base de datos que almacena datos en un formato estructurado compuesto por filas y columnas.", "D) El concepto Tabla no existe en Access, es un elemento utilizado en bases de datos estructuradas."],
+    "answer": 2,
+    "explanation": "Las tablas almacenan datos organizados en registros (filas) y campos (columnas)."
+  },
+  {
+    "id": 2021,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Outlook 365",
+    "question": "21.- En la versión de escritorio de Outlook 365, y considerando únicamente las acciones propias del módulo Calendario sin abandonar dicho módulo, ¿cuál de las siguientes acciones NO puede realizarse?",
+    "options": ["A) Gestionar contactos o crear listas de distribución.", "B) Crear citas o reuniones.", "C) Enviar invitaciones y gestionar respuestas.", "D) Eliminar citas o reuniones."],
+    "answer": 0,
+    "explanation": "La gestión de contactos y listas corresponde al módulo de Personas, no al Calendario."
+  },
+  {
+    "id": 2022,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Outlook 365",
+    "question": "22.- En la versión de escritorio de Outlook 365, ¿qué es una regla?",
+    "options": ["A) En Outlook no existen las reglas.", "B) Es un programa externo que se instala en Outlook para automatizar el envío de mensajes.", "C) Es un formato de mensaje predefinido que Outlook aplica automáticamente a los correos nuevos.", "D) Es una acción automática configurada por el usuario que permite procesar correos entrantes o salientes según condiciones establecidas."],
+    "answer": 3,
+    "explanation": "Las reglas automatizan acciones sobre mensajes entrantes o salientes cuando se cumplen condiciones."
+  },
+  {
+    "id": 2023,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Outlook 365",
+    "question": "23.- En la versión de escritorio de Outlook 365, ¿en qué campo se pueden incluir direcciones a las que enviar una copia visible del correo electrónico?",
+    "options": ["A) Asunto.", "B) Para.", "C) CC.", "D) CCO."],
+    "answer": 2,
+    "explanation": "CC envía una copia visible para los demás destinatarios; CCO oculta las direcciones incluidas."
+  },
+  {
+    "id": 2025,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Outlook 365",
+    "question": "25.- En la versión de escritorio de Outlook 365, ¿en qué campo se escribe el destinatario o destinatarios principales?",
+    "options": ["A) Para.", "B) CC.", "C) CCO.", "D) Outlook solo permite un destinatario principal, no admite destinatarios."],
+    "answer": 0,
+    "explanation": "El campo Para contiene los destinatarios principales del mensaje."
+  },
+  {
+    "id": 2026,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "SharePoint",
+    "question": "26.- ¿Cómo se llama a la plataforma de Microsoft que permite organizar, compartir y colaborar con información y documentos de forma segura dentro de una organización?",
+    "options": ["A) SharePoint.", "B) Visual Studio.", "C) PowerPoint.", "D) Publisher."],
+    "answer": 0,
+    "explanation": "SharePoint permite administrar y compartir contenido y documentos de una organización."
+  },
+  {
+    "id": 2027,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Microsoft Teams",
+    "question": "27.- ¿Qué es un equipo en Microsoft Teams?",
+    "options": ["A) Es una carpeta de archivos compartidos que no admite conversaciones ni reuniones.", "B) Es un conjunto de personas, contenido y herramientas que se organizan para colaborar de forma conjunta.", "C) Es una lista de contactos que permite enviar mensajes masivos sin necesidad de crear canales.", "D) Es un chat grupal temporal que se elimina automáticamente cuando finaliza una conversación para facilitar la colaboración entre contactos."],
+    "answer": 1,
+    "explanation": "Un equipo reúne personas y recursos de colaboración, normalmente organizados mediante canales."
+  },
+  {
+    "id": 2028,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "SharePoint y OneDrive",
+    "question": "28.- En relación con los archivos almacenados en SharePoint, ¿qué permite la sincronización de archivos mediante OneDrive?",
+    "options": ["A) OneDrive no permite la sincronización de archivos.", "B) Permite trabajar con los archivos únicamente desde el navegador web.", "C) Impide que los archivos se modifiquen cuando no hay conexión a Internet.", "D) Permite acceder y trabajar con los archivos desde el equipo local, sincronizando automáticamente los cambios con SharePoint."],
+    "answer": 3,
+    "explanation": "OneDrive sincroniza bibliotecas para trabajar desde el equipo y reflejar los cambios en SharePoint."
+  },
+  {
+    "id": 2029,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Microsoft Teams",
+    "question": "29.- De las siguientes afirmaciones sobre reuniones en Microsoft Teams, ¿cuál de ellas es falsa?",
+    "options": ["A) Las reuniones de Teams permiten audio, vídeo y uso compartido de pantalla.", "B) Es posible programar reuniones de Teams o iniciarlas de forma inmediata mediante Reunirse ahora.", "C) Las reuniones de Teams solo pueden celebrarse si todos los participantes pertenecen a la misma organización.", "D) Las reuniones de Teams pueden grabarse para su posterior visualización, incluyendo audio y vídeo."],
+    "answer": 2,
+    "explanation": "Una reunión puede incluir participantes externos; no es necesario que todos pertenezcan a la misma organización."
+  },
+  {
+    "id": 2030,
+    "examen": "File 3 / C2 - Turno Libre",
+    "topic": "Microsoft Teams",
+    "question": "30.- En una reunión de Microsoft Teams, ¿qué rol es el que tiene el mayor nivel de control sobre la reunión, incluida la configuración y la gestión de los participantes?",
+    "options": ["A) Organizador.", "B) Invitado.", "C) Asistente.", "D) Presentador."],
+    "answer": 0,
+    "explanation": "El organizador configura la reunión y administra sus opciones y participantes."
+  },
+  {
+    "id": 2031,
+    "examen": "File 3 / C2 - Turno Libre - Reserva",
+    "topic": "Windows 10",
+    "question": "31.- En Windows 10, disponiendo de privilegios suficientes, ¿qué comando directo abre el Administrador de discos del sistema?",
+    "options": ["A) taskschd.msc", "B) services.msc", "C) devmgmt.msc", "D) diskmgmt.msc"],
+    "answer": 3,
+    "explanation": "diskmgmt.msc abre Administración de discos; los otros comandos abren el Programador de tareas, Servicios y Administrador de dispositivos."
+  },
+  {
+    "id": 3001,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Vocabulario",
+    "question": "1.- «Sorprendente por insólito, escandaloso o vituperable» es:",
+    "options": ["A) indómito", "B) veraz", "C) pulcro", "D) inaudito"],
+    "answer": 3,
+    "explanation": "Inaudito significa extraordinario o tan insólito que causa sorpresa."
+  },
+  {
+    "id": 3002,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Vocabulario",
+    "question": "2.- Indique la opción que contiene un sinónimo para cada palabra: insulso / dársena / deponer / tedio / perfidia.",
+    "options": ["A) insípido / cazuela / desentonar / aburrimiento / hambre", "B) saludable / fondeadero / dejar / talento / fidelidad", "C) insípido / fondeadero / dejar / aburrimiento / traición", "D) salobreño / cazuela / mantener / talento / traición"],
+    "answer": 2,
+    "explanation": "Insulso es insípido; dársena, fondeadero; deponer, dejar; tedio, aburrimiento; perfidia, traición."
+  },
+  {
+    "id": 3003,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Analogías verbales",
+    "question": "3.- Preceder es a suceder como omitir es a ______:",
+    "options": ["A) mencionar", "B) corregir", "C) mentir", "D) callar"],
+    "answer": 0,
+    "explanation": "Suceder es lo contrario de preceder; mencionar es lo contrario de omitir."
+  },
+  {
+    "id": 3004,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Vocabulario",
+    "question": "4.- «Nuevo e inexperto en cualquier arte u oficio» es:",
+    "options": ["A) nodal", "B) inveterado", "C) votivo", "D) bisoño"],
+    "answer": 3,
+    "explanation": "Bisoño describe a quien es nuevo o inexperto en una actividad."
+  },
+  {
+    "id": 3005,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Vocabulario",
+    "question": "5.- Indique la opción que contiene un sinónimo para cada palabra: conminar / lampiño / animosidad / execrar / diferir.",
+    "options": ["A) titubear / ponderado / mimo / exagerar / aplazar", "B) amenazar / imberbe / hostilidad / condenar / aplazar", "C) titubear / limpio / hostilidad / curar / conferir", "D) amenazar / imberbe / amistad / exagerar / conferir"],
+    "answer": 1,
+    "explanation": "Conminar es amenazar; lampiño, imberbe; animosidad, hostilidad; execrar, condenar; diferir, aplazar."
+  },
+  {
+    "id": 3006,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Analogías verbales",
+    "question": "6.- Alevosía es a lealtad como fragosidad es a ______:",
+    "options": ["A) aspereza", "B) lozanía", "C) lisura", "D) perspicacia"],
+    "answer": 2,
+    "explanation": "Alevosía se opone a lealtad; fragosidad (terreno áspero o escabroso) se opone a lisura."
+  },
+  {
+    "id": 3007,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Ortografía",
+    "question": "7.- Indique cuántas palabras contienen algún error ortográfico: mensajes, incluyendo, hipoalergénico, centeyas, lloviznar, bioquímica, excéntrica, huésped, callegear, hezpéride.",
+    "options": ["A) 3", "B) 1", "C) 2", "D) 4"],
+    "answer": 0,
+    "explanation": "La plantilla cuenta tres formas incorrectas en el grupo. Conviene revisar especialmente centeyas, callegear y hezpéride."
+  },
+  {
+    "id": 3008,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Ortografía",
+    "question": "8.- Indique cuántas palabras contienen algún error ortográfico: ayacente, cortigero, xilófono, parihuela, errabundo, ipotonía, animadversión, exausta, fuyeresco, canjear.",
+    "options": ["A) 6", "B) 5", "C) 4", "D) 7"],
+    "answer": 1,
+    "explanation": "La respuesta oficial cuenta cinco palabras con errores ortográficos en el grupo."
+  },
+  {
+    "id": 3009,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Acentuación",
+    "question": "9.- Indique cuántas palabras contienen un error de tilde: plán, afónico, docil, irlandés, foraneo, flan, naufrágio, exclamación, piramides, tríceps.",
+    "options": ["A) 4", "B) 6", "C) 3", "D) 5"],
+    "answer": 3,
+    "explanation": "La plantilla cuenta cinco errores de acentuación en la lista."
+  },
+  {
+    "id": 3010,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Acentuación",
+    "question": "10.- Indique cuántas palabras contienen un error de tilde: tíovivo, acuario, sinfin, lingüistica, intrínsecamente, cirugia, acuático, ataúd, portarretráto, débilmente.",
+    "options": ["A) 3", "B) 4", "C) 5", "D) 2"],
+    "answer": 2,
+    "explanation": "La plantilla cuenta cinco errores de acentuación en la lista."
+  },
+  {
+    "id": 3011,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Cálculo numérico",
+    "question": "11.- Sume los resultados de las dos series: 1,97 − 0,32 − 0,58 + 0,74; 3,24 − 1,56 + 0,29 − 0,08.",
+    "options": ["A) 3,71", "B) 3,72", "C) 3,73", "D) 3,70"],
+    "answer": 3,
+    "explanation": "La primera serie da 1,81 y la segunda 1,89; la suma es 3,70."
+  },
+  {
+    "id": 3012,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Cálculo numérico",
+    "question": "12.- Sume los tres resultados, aplicando la prioridad de operaciones: 42 − 6 × 7 : 6 + 29 − 5 − 3; 20 : 4 + 20 : 5 × 2 − 2 + 3; 63 : 7 − 7 + 3 × 3 − 7 + 5.",
+    "options": ["A) 78", "B) 80", "C) 79", "D) 81"],
+    "answer": 2,
+    "explanation": "Los resultados son 56, 14 y 9; suman 79. Multiplicaciones y divisiones se resuelven antes que sumas y restas."
+  },
+  {
+    "id": 3013,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Cálculo numérico",
+    "question": "13.- ¿Qué operación sustituye a ? para que la suma de los resultados sea 24? 20 − 4 + 12 ? 10; 3 × 4 − 3 − 3.",
+    "options": ["A) resta", "B) suma", "C) división", "D) multiplicación"],
+    "answer": 0,
+    "explanation": "La segunda serie vale 6, por lo que la primera debe valer 18. Sustituyendo ? por resta se obtiene 20 − 4 + 12 − 10 = 18."
+  },
+  {
+    "id": 3014,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Cálculo numérico",
+    "question": "14.- ¿Qué operación sustituye a ? para que la suma de los resultados sea 70? 120 ? 8 − 12 : 6; 5 × 8 + 23 − 6.",
+    "options": ["A) suma", "B) división", "C) resta", "D) multiplicación"],
+    "answer": 1,
+    "explanation": "La segunda serie vale 57; la primera debe valer 13. Con división: 120 : 8 − 12 : 6 = 15 − 2 = 13."
+  },
+  {
+    "id": 3015,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Porcentajes y presupuestos",
+    "question": "15.- Empresa 1: artículo A, 7 unidades a 20,10 € cada una; artículo B, 5 unidades por 21,25 € en total; artículo C, 9 unidades por 29,52 € en total. Empresa 2: A con 10% de descuento, B con incremento del 20,5% y C con incremento del 30% sobre el coste de la empresa 1. ¿Qué empresa es más cara y cuál es la diferencia?",
+    "options": ["A) La empresa A; 0,85 euros más cara.", "B) La empresa B; un 40,5% más cara.", "C) La empresa B; 87,41 euros más cara.", "D) La empresa B; 13,33 euros más cara."],
+    "answer": 0,
+    "explanation": "La plantilla oficial marca A. Atención: al recalcular con los importes transcritos, la diferencia parece redondear a 0,86 €, no 0,85 €; puede haber un redondeo o errata en el enunciado/opción original."
+  },
+  {
+    "id": 3016,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Fracciones",
+    "question": "16.- ¿Cuál es el valor de 1/4 de los 3/8 de 4.380?",
+    "options": ["A) 160,00", "B) 410,625", "C) 1.642,50", "D) 3.285,00"],
+    "answer": 1,
+    "explanation": "Multiplica 4.380 × 3/8 × 1/4 = 410,625."
+  },
+  {
+    "id": 3017,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Problemas aritméticos",
+    "question": "17.- Hay que guardar 500 expedientes en 5 cajas. En 3 cajas se han metido 128 expedientes en cada una. Si los restantes se distribuyen por igual en las 2 cajas restantes, ¿cuántos van en cada caja?",
+    "options": ["A) 58", "B) 116", "C) 186", "D) 192"],
+    "answer": 0,
+    "explanation": "Quedan 500 − (3 × 128) = 116 expedientes. Repartidos entre 2 cajas: 116 : 2 = 58."
+  },
+  {
+    "id": 3018,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Problemas aritméticos",
+    "question": "18.- La carga máxima del suelo es 13.950 kg. Hay 2 estanterías tipo A, cada una con 5 baldas de 975 kg, y 4 tipo B, cada una con 4 baldas de 510 kg. ¿Qué consideración permite no superar el límite?",
+    "options": ["A) Cargar cada balda con un 20% menos de lo que admite.", "B) Dejar libre una estantería completa del tipo B.", "C) Dejar libre una balda de cada estantería.", "D) Llenar todas las baldas, porque no se alcanza la carga máxima."],
+    "answer": 2,
+    "explanation": "La carga total sería 17.910 kg. Dejando una balda libre en cada una de las 6 estanterías se restan 2 × 975 + 4 × 510 = 3.990 kg, y quedan 13.920 kg."
+  },
+  {
+    "id": 3019,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Problemas de tiempo",
+    "question": "19.- Digitalizar cada expediente A4 lleva 5 minutos y cada expediente con hojas A4 y A3 lleva 14 minutos. Hay que digitalizar 82 del primer tipo y 95 del segundo. ¿Qué distribución de jornadas satisface el tiempo total?",
+    "options": ["A) 6 días de 4 horas y 1 día de 5 horas y 10 minutos.", "B) 7 días de 4 horas y 13 minutos diarios.", "C) 4 días de 7 horas y 3 días de 1 hora.", "D) 5 días de 3 horas y media y 2 días de 5 horas y 45 minutos."],
+    "answer": 3,
+    "explanation": "El trabajo requiere 82 × 5 + 95 × 14 = 1.740 minutos, es decir, 29 horas. La opción D suma exactamente 29 horas."
+  },
+  {
+    "id": 3020,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Unidades de medida",
+    "question": "20.- La distancia de 13 km 140 hm 2 m 30 cm es equivalente a:",
+    "options": ["A) 13 km 1402 m 30 cm", "B) 270,023 hm", "C) 27 km 2,03 m", "D) 27002,30 cm"],
+    "answer": 1,
+    "explanation": "13 km + 140 hm + 2 m + 30 cm = 27.002,3 m = 270,023 hm."
+  },
+  {
+    "id": 3021,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Atención y recuento visual",
+    "question": "21.- En el cuadro-base, cuente las letras v y m, sin contar la v situada inmediatamente antes de una e ni la m situada inmediatamente después de una v. Cuadro: grpsgwvmrgpsgznevrgxmpxrgtpwvmsngprvtrgw / evrgwxgztsvexprgwsngrmvnztpmtgrovexspzrg.",
+    "options": ["A) 9", "B) 10", "C) 12", "D) 11"],
+    "answer": 0,
+    "explanation": "Aplicando ambas exclusiones al cuadro-base quedan 9 letras contabilizables."
+  },
+  {
+    "id": 3022,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Atención y recuento visual",
+    "question": "22.- En el cuadro-base, cuente las letras g y z, sin contar la g situada inmediatamente después de una r ni la z situada inmediatamente antes de una n. Cuadro: grpsgwvmrgpsgznevrgxmpxrgtpwvmsngprvtrgw / evrgwxgztsvexprgwsngrmvnztpmtgrovexspzrg.",
+    "options": ["A) 13", "B) 11", "C) 10", "D) 12"],
+    "answer": 2,
+    "explanation": "Tras excluir las g precedidas por r y las z seguidas por n, quedan 10 letras."
+  },
+  {
+    "id": 3023,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Atención y recuento visual",
+    "question": "23.- En el cuadro-base, cuente los números 2, 9 y 3, sin contar el 3 situado inmediatamente antes de una G. Cuadro: 6ZT3DEM3G89TE2M9ZD3E6MDE6298Z3M6E83G89D3 / M9ED3ZD9ZE96G362M98DM3G2T6Z3D9D38Z9E2E36.",
+    "options": ["A) 26", "B) 27", "C) 25", "D) 24"],
+    "answer": 3,
+    "explanation": "Al contar 2, 9 y 3 y excluir el 3 inmediatamente anterior a G, el total es 24."
+  },
+  {
+    "id": 3024,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Atención y recuento visual",
+    "question": "24.- En el cuadro-base, cuente las letras M, D y T, sin contar la M situada inmediatamente después de una D. Cuadro: 6ZT3DEM3G89TE2M9ZD3E6MDE6298Z3M6E83G89D3 / M9ED3ZD9ZE96G362M98DM3G2T6Z3D9D38Z9E2E36.",
+    "options": ["A) 16", "B) 18", "C) 19", "D) 17"],
+    "answer": 1,
+    "explanation": "Al contar M, D y T y excluir la M inmediatamente posterior a D, el total es 18."
+  },
+  {
+    "id": 3025,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Atención al detalle",
+    "question": "25.- Compare los tres pares de tablas; cada secuencia entre barras representa una fila. Par 1: 4g|77|Xt|fvg|H8p|5m|8aA / jkts|Xx|xpw|297|jnvx|dkp|7gQs / AuA|T27|GhG|eabd|52|3E3|qpdb; frente a 4g|77|Xt|fvg|H8p|5m|8aA / jkts|Xx|xpw|297|jnvx|dkp|7gQs / AuA|T27|GhG|eadb|52|3E3|qpdb. Par 2: 624|Hn2|ggg|jjp|bdv|72a0|Nm / Bzs1|hñq|5Vv|966|kñmn|fjE3|96 / Szb|696|969|5e9|Zsb|699|Jk48; frente a 624|Hn2|ggg|jjp|bdv|72a0|Nm / Bzs1|hñq|5Vv|966|kñmn|fj3E|96 / Szb|696|969|5e9|Zsb|699|Jk48. Par 3: T41|ZS|gjfw|5n9|bdd|463|Aa / P2Z2|ddb|7aF3|grtp|kxqd|dbd|9Y / bdb|P2|RZRS|bbd|z62|PZ22|7F; y la misma tabla. ¿Cuántos pares son exactamente iguales?",
+    "options": ["A) ninguno", "B) 1", "C) 2", "D) 3"],
+    "answer": 1,
+    "explanation": "Los pares 1 y 2 tienen una diferencia cada uno (eabd/eadb y fjE3/fj3E); el par 3 es idéntico. Por tanto, hay 1 par igual."
+  },
+  {
+    "id": 3026,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Atención al detalle",
+    "question": "26.- Compare los tres pares de tablas; cada secuencia entre barras representa una fila. Par 1: 452|9f1|bDb|hrfg|73tc|524|91f / hfgr|37ct|73ct|254|hfrg|Z2t6|542 / dBd|f19|425|2Zt6|2Z6t|f91|37tc; la segunda tabla solo cambia f19 por 1f9. Par 2: 37tc|bDb|hgrf|dBd|hfrg|Z2t6|hrfg / 452|91f|524|hgfr|Z26t|9f1|542 / hfgr|425|2Zt6|f19|37ct|254|hrgf; la segunda solo cambia hgfr por hgrf. Par 3: Z2t6|9f1|bDb|245|73tc|hgrf|542 / 452|hfrg|37ct|2Zt6|hfgr|425|19f / hgfr|73ct|524|hrfg|dBd|Z26t|1f9; la segunda solo cambia 542 por 524 en la primera fila. ¿Cuántos pares son exactamente iguales?",
+    "options": ["A) 2", "B) 3", "C) 1", "D) ninguno"],
+    "answer": 3,
+    "explanation": "Cada uno de los tres pares contiene una diferencia en una celda, por lo que ninguno es exactamente igual."
+  },
+  {
+    "id": 3027,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Razonamiento con reglas",
+    "question": "27.- LISTA-BASE: 1 Partin Gonzo, F; 2 Partain Gonzabay, G; 3 Partis González, R; 4 Partel Gonzini, P; 5 Partida Gonzalbez, H; 6 Partala Gonzalo, M; 7 Partos Gonzalbo, B. Criterio X: sustituir el primer apellido de la persona indicada por el segundo apellido de la última persona. ¿Cómo queda la lista al aplicar X a la persona 4?",
+    "options": ["A) Partin Gonzo, F; Partain Gonzabay, G; Partis González, R; Gonzalbo Gonzini, P; Partida Gonzalbez, H; Partala Gonzalo, M; Partos Gonzalbo, B", "B) Partin Gonzo, F; Partain Gonzabay, G; Partis González, R; Gonzalbo Gonzini, P; Partida Gonzalbez, H; Partala Gonzalo, M; Partos Partel, B", "C) Partin Gonzo, F; Partain Gonzabay, G; Gonzalbo González, R; Partel Gonzini, P; Partida Gonzalbez, H; Partala Gonzalo, M; Partos Gonzalbo, B", "D) Partin Gonzo, F; Partain Gonzabay, G; Partis González, R; Partel Partos, P; Partida Gonzalbez, H; Partala Gonzalo, M; Partos Gonzalbo, B"],
+    "answer": 0,
+    "explanation": "La última persona tiene como segundo apellido Gonzalbo; se sustituye con él el primer apellido de la persona 4: Gonzalbo Gonzini."
+  },
+  {
+    "id": 3028,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Orden alfabético",
+    "question": "28.- Ordene alfabéticamente por el primer apellido la LISTA-BASE: Partin Gonzo, F; Partain Gonzabay, G; Partis González, R; Partel Gonzini, P; Partida Gonzalbez, H; Partala Gonzalo, M; Partos Gonzalbo, B.",
+    "options": ["A) Partain; Partida; Partala; Partel; Partin; Partis; Partos", "B) Partain; Partala; Partel; Partin; Partida; Partis; Partos", "C) Partain; Partala; Partel; Partida; Partin; Partis; Partos", "D) Partala; Partain; Partel; Partida; Partin; Partis; Partos"],
+    "answer": 2,
+    "explanation": "El orden alfabético correcto es Partain, Partala, Partel, Partida, Partin, Partis y Partos."
+  },
+  {
+    "id": 3029,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Razonamiento con reglas",
+    "question": "29.- LISTA-BASE: 1 Partin Gonzo, F; 2 Partain Gonzabay, G; 3 Partis González, R; 4 Partel Gonzini, P; 5 Partida Gonzalbez, H; 6 Partala Gonzalo, M; 7 Partos Gonzalbo, B. Criterios: V sustituye el segundo apellido por el primer apellido de la persona siguiente; W intercambia los apellidos; X sustituye el primer apellido por el segundo de la última persona; Y sustituye el primer apellido por el de la persona anterior; Z sustituye el segundo apellido por el primer apellido de la primera persona. Aplique Z a la persona 3, Y a la 6 y W a la 2. ¿Qué lista resulta?",
+    "options": ["A) Partin Gonzo, F; Gonzabay Partain, G; Partis Partin, R; Partel Gonzini, P; Partida Gonzalbez, H; Partos Gonzalo, M; Partos Gonzalbo, B", "B) Partin Gonzo, F; Gonzabay Partain, G; Partin Partis, R; Partel Gonzini, P; Partida Gonzalbez, H; Partida Gonzalo, M; Partos Gonzalbo, B", "C) Partin Gonzo, F; Gonzo Partain, G; Partis Partin, R; Partel Gonzini, P; Partida Gonzalbez, H; Partida Gonzalo, M; Partos Gonzalbo, B", "D) Partin Gonzo, F; Gonzabay Partain, G; Partis Partin, R; Partel Gonzini, P; Partida Gonzalbez, H; Partida Gonzalo, M; Partos Gonzalbo, B"],
+    "answer": 3,
+    "explanation": "W intercambia los apellidos de la persona 2; Z da Partis Partin a la persona 3; Y cambia el primer apellido de la persona 6 por Partos, el primer apellido de la persona 5."
+  },
+  {
+    "id": 3030,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Razonamiento con reglas",
+    "question": "30.- Aplique a la LISTA-BASE el criterio V a las personas 2 y 4, el criterio X a la persona 6 y el criterio W a la persona 1. Criterios: V sustituye el segundo apellido por el primer apellido de la persona siguiente; W intercambia apellidos; X sustituye el primer apellido por el segundo apellido de la última persona.",
+    "options": ["A) Gonzo Partin, F; Partain Partis, G; Partis González, R; Gonzalbez Gonzini, P; Partida Gonzalbez, H; Gonzalbo Gonzalo, M; Partos Gonzalbo, B", "B) Gonzo Partin, F; Partain Partis, G; Partis González, R; Partel Partida, P; Partida Gonzalbez, H; Gonzalbo Gonzalo, M; Partos Gonzalbo, B", "C) Partin Partin, F; Partain Partis, G; Partis González, R; Partel Partida, P; Partida Gonzalbez, H; Gonzalbo Gonzalo, M; Partos Gonzalbo, B", "D) Gonzo Partin, F; Partain Partis, G; Partis González, R; Partel Partida, P; Partis Gonzalbez, H; Gonzalbo Gonzalo, M; Partos Partala, B"],
+    "answer": 1,
+    "explanation": "W produce Gonzo Partin; V cambia los segundos apellidos de las personas 2 y 4 a Partis y Partida; X cambia el primer apellido de la persona 6 a Gonzalbo."
+  },
+  {
+    "id": 3031,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Constitución Española",
+    "question": "31.- ¿En qué fecha entró en vigor la Constitución Española de 1978?",
+    "options": ["A) El 29 de diciembre de 1978, mismo día de la publicación de su texto oficial en el BOE.", "B) El 6 de diciembre de 1978.", "C) El 27 de diciembre de 1978.", "D) El 31 de octubre de 1978, mismo día de su aprobación por las Cortes."],
+    "answer": 0,
+    "explanation": "Entró en vigor el día de su publicación en el BOE: 29 de diciembre de 1978."
+  },
+  {
+    "id": 3032,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Constitución Española",
+    "question": "32.- Según el artículo 39.1 de la Constitución Española, ¿quién ha de asegurar la protección social, económica y jurídica de la familia?",
+    "options": ["A) El Estado.", "B) Las Administraciones Públicas.", "C) Las Fuerzas y Cuerpos de Seguridad del Estado.", "D) Los poderes públicos."],
+    "answer": 3,
+    "explanation": "El artículo 39.1 encomienda a los poderes públicos asegurar la protección de la familia."
+  },
+  {
+    "id": 3033,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Estatuto de Autonomía de Madrid",
+    "question": "33.- Según el artículo 4 de la Ley Orgánica 3/1983, de Estatuto de Autonomía de la Comunidad de Madrid, ¿qué afirmación es falsa?",
+    "options": ["A) La bandera de la Comunidad de Madrid es roja carmesí, con cinco estrellas en blanco, de cinco puntas, colocadas cuatro y tres en el centro del lienzo.", "B) El escudo de la Comunidad de Madrid se establece por ley de la Asamblea.", "C) La Comunidad de Madrid tiene himno propio, establecido por ley de la Asamblea.", "D) El día 2 de mayo es la fiesta de la Comunidad de Madrid."],
+    "answer": 0,
+    "explanation": "La opción A es internamente contradictoria: habla de cinco estrellas, pero describe una disposición de cuatro más tres. La plantilla la marca como falsa."
+  },
+  {
+    "id": 3034,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Asamblea de Madrid",
+    "question": "34.- ¿Cuál de estas afirmaciones NO es correcta respecto a la elección de la Asamblea de la Comunidad de Madrid?",
+    "options": ["A) Es elegida por cuatro años.", "B) Es elegida atendiendo a criterios de representación proporcional.", "C) La circunscripción electoral es la provincia.", "D) Para distribuir escaños solo se tienen en cuenta las listas que obtengan al menos el 15% de los sufragios válidos."],
+    "answer": 3,
+    "explanation": "El umbral electoral indicado no es el 15%; la normativa establece un 5% de los votos válidos emitidos."
+  },
+  {
+    "id": 3035,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Gobierno de la Comunidad de Madrid",
+    "question": "35.- Según la Ley 1/1983, ¿qué se afirma sobre el cargo de Presidente de la Comunidad de Madrid?",
+    "options": ["A) Es compatible con cualquier otra función o actividad pública.", "B) Es incompatible con cualquier otra función o actividad pública que no derive de aquel, salvo la de Diputado de la Asamblea.", "C) Es compatible con ejercer como Diputado de las Cortes.", "D) Es compatible con toda actividad laboral, profesional o empresarial."],
+    "answer": 1,
+    "explanation": "La incompatibilidad general admite la excepción del cargo de Diputado de la Asamblea de Madrid."
+  },
+  {
+    "id": 3036,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Gobierno de la Comunidad de Madrid",
+    "question": "36.- ¿En qué plazo promulga el Presidente de la Comunidad de Madrid, en nombre del Rey, las leyes de la Asamblea y los decretos legislativos y ordena su publicación?",
+    "options": ["A) En un máximo de quince días desde su promulgación.", "B) En un máximo de diez días desde su aprobación.", "C) En un máximo de diez días desde su promulgación.", "D) En un máximo de quince días desde su aprobación."],
+    "answer": 3,
+    "explanation": "La opción oficial fija un máximo de quince días desde la aprobación."
+  },
+  {
+    "id": 3037,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Fuentes del Derecho",
+    "question": "37.- Según el artículo 1 del Código Civil, ¿cuáles son las fuentes del ordenamiento jurídico?",
+    "options": ["A) La ley, la costumbre y la jurisprudencia.", "B) La ley, los principios generales del derecho y la doctrina científica.", "C) La ley, la costumbre y los valores superiores del ordenamiento.", "D) La ley, la costumbre y los principios generales del derecho."],
+    "answer": 3,
+    "explanation": "El artículo 1 del Código Civil enumera la ley, la costumbre y los principios generales del derecho."
+  },
+  {
+    "id": 3038,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Fuentes del Derecho",
+    "question": "38.- ¿Cómo se titulan las disposiciones del Gobierno que contienen legislación delegada?",
+    "options": ["A) Decreto.", "B) Decreto Legislativo.", "C) Decreto Ley.", "D) Real Decreto."],
+    "answer": 1,
+    "explanation": "La legislación delegada se articula mediante decretos legislativos."
+  },
+  {
+    "id": 3039,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Procedimiento administrativo",
+    "question": "39.- Según el artículo 114 de la Ley 39/2015, ¿cuál de estas resoluciones pone fin a la vía administrativa?",
+    "options": ["A) Las resoluciones de órganos administrativos que tengan superior jerárquico.", "B) Los acuerdos, pactos, convenios o contratos que no tengan la consideración de finalizadores del procedimiento.", "C) Las demás resoluciones de órganos administrativos cuando una disposición reglamentaria así lo establezca.", "D) Las resoluciones de los procedimientos de responsabilidad patrimonial y del procedimiento sancionador, cualquiera que fuese el tipo de relación de que derive."],
+    "answer": 2,
+    "explanation": "El artículo 114 incluye también las demás resoluciones de órganos administrativos cuando una disposición legal o reglamentaria así lo establezca."
+  },
+  {
+    "id": 3040,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Revisión de oficio",
+    "question": "40.- Señale la incorrecta. Conforme al artículo 106 de la Ley 39/2015, el órgano competente puede inadmitir motivadamente solicitudes de revisión de oficio sin dictamen consultivo:",
+    "options": ["A) Cuando no se basen en alguna de las causas de nulidad del artículo 48.1 de la Ley 39/2015.", "B) Cuando carezcan manifiestamente de fundamento.", "C) Cuando se hubieran desestimado en cuanto al fondo otras solicitudes sustancialmente iguales.", "D) Todas son correctas."],
+    "answer": 0,
+    "explanation": "La opción A cita el artículo 48.1, relativo a anulabilidad; las causas de nulidad de pleno derecho están en el artículo 47.1."
+  },
+  {
+    "id": 3041,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Procedimiento administrativo",
+    "question": "41.- Señale la incorrecta. Reglamentariamente pueden establecerse especialidades del procedimiento referidas a:",
+    "options": ["A) Los órganos competentes.", "B) Los plazos propios del procedimiento por razón de la materia.", "C) Las formas de iniciación y terminación.", "D) La notificación, publicación y documentación a recabar."],
+    "answer": 3,
+    "explanation": "La ley menciona órganos, plazos propios, formas de iniciación y terminación, publicación e informes a recabar. No incluye la notificación en esa relación."
+  },
+  {
+    "id": 3042,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Procedimiento administrativo",
+    "question": "42.- Según el artículo 83 de la Ley 39/2015, ¿qué plazo se determina para formular alegaciones en un período de información pública?",
+    "options": ["A) En ningún caso, inferior a quince días.", "B) En ningún caso, superior a veinte días.", "C) En ningún caso, inferior a veinte días.", "D) En ningún caso, superior a quince días."],
+    "answer": 2,
+    "explanation": "El plazo para formular alegaciones no puede ser inferior a veinte días."
+  },
+  {
+    "id": 3043,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Jurisdicción contencioso-administrativa",
+    "question": "43.- Conforme al artículo 21 de la Ley 29/1998, ¿quién se considera parte demandada?",
+    "options": ["A) Quienes resulten afectados por la desestimación de las pretensiones del demandante.", "B) Las aseguradoras de las Administraciones, si así lo estima el tribunal.", "C) Las aseguradoras de las Administraciones, si lo reclama la Administración asegurada.", "D) Las personas o entidades cuyos derechos o intereses legítimos pudieran quedar afectados por la estimación de las pretensiones del demandante."],
+    "answer": 3,
+    "explanation": "Es parte demandada quien podría resultar afectado en sus derechos o intereses legítimos si se estiman las pretensiones."
+  },
+  {
+    "id": 3044,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Jurisdicción contencioso-administrativa",
+    "question": "44.- Según el examen, ¿cuál es el plazo para interponer recurso contencioso-administrativo contra un acto presunto?",
+    "options": ["A) Dos meses.", "B) Tres meses.", "C) Seis meses.", "D) No se pueden dar actos presuntos porque implican indefensión."],
+    "answer": 2,
+    "explanation": "La plantilla oficial de este examen señala seis meses como respuesta."
+  },
+  {
+    "id": 3045,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Transparencia",
+    "question": "45.- Según el artículo 8 de la Ley 19/2013, ¿con qué periodicidad puede publicarse la información relativa a los contratos menores de las Administraciones Públicas?",
+    "options": ["A) Mensualmente.", "B) Con la misma periodicidad que el resto de contratos.", "C) Anualmente.", "D) Trimestralmente."],
+    "answer": 3,
+    "explanation": "La información de los contratos menores puede publicarse trimestralmente."
+  },
+  {
+    "id": 3046,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Transparencia",
+    "question": "46.- Según el artículo 24 de la Ley 19/2013, ¿cuál es el plazo máximo para resolver y notificar una reclamación y qué ocurre si vence?",
+    "options": ["A) Tres meses; se entiende desestimada.", "B) Tres meses; se entiende estimada.", "C) Un mes; se entiende desestimada.", "D) Un mes; se entiende estimada."],
+    "answer": 0,
+    "explanation": "El plazo máximo es de tres meses; transcurrido sin resolución, la reclamación se entiende desestimada."
+  },
+  {
+    "id": 3047,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Contratación pública",
+    "question": "47.- ¿A qué tipo de contrato corresponde adquirir, arrendar financieramente o arrendar, con o sin opción de compra, productos o bienes muebles?",
+    "options": ["A) Contrato de obras.", "B) Contrato de servicios.", "C) Contrato de concesión de servicios.", "D) Contrato de suministros."],
+    "answer": 3,
+    "explanation": "La adquisición o arrendamiento de productos y bienes muebles es objeto de un contrato de suministros."
+  },
+  {
+    "id": 3048,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Contratación pública",
+    "question": "48.- Según la Ley 9/2017, ¿qué puede ser objeto de un contrato de obras?",
+    "options": ["A) La ejecución de una obra, aislada o conjuntamente con la redacción del proyecto.", "B) La realización de alguno de los trabajos enumerados en el anexo I de la Ley.", "C) La realización, por cualquier medio, de una obra que cumpla los requisitos fijados por la entidad contratante, que ejerza influencia decisiva en su tipo o proyecto.", "D) Todas las respuestas anteriores son correctas."],
+    "answer": 3,
+    "explanation": "Las tres descripciones corresponden a supuestos incluidos en el contrato de obras."
+  },
+  {
+    "id": 3049,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Empleo público",
+    "question": "49.- Según el artículo 4 del TREBEP, ¿qué personal no tiene legislación específica propia?",
+    "options": ["A) El personal de las Cortes Generales.", "B) El personal del Centro Nacional de Inteligencia.", "C) El personal de las universidades públicas.", "D) El personal militar de las Fuerzas Armadas."],
+    "answer": 2,
+    "explanation": "El personal de las universidades públicas no aparece entre los colectivos con legislación específica enumerados en el artículo 4 del TREBEP."
+  },
+  {
+    "id": 3050,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Empleo público",
+    "question": "50.- Según el artículo 95 del TREBEP, ¿cuál de las siguientes es una falta muy grave?",
+    "options": ["A) La incorrección con el público, superiores, compañeros o subordinados.", "B) El abuso de autoridad en el ejercicio del cargo.", "C) La tolerancia de los superiores respecto de faltas muy graves o graves de sus subordinados.", "D) La adopción de acuerdos manifiestamente ilegales que causen perjuicio grave a la Administración o a los ciudadanos."],
+    "answer": 3,
+    "explanation": "Adoptar acuerdos manifiestamente ilegales que causen un perjuicio grave está tipificado como falta muy grave."
+  },
+  {
+    "id": 3051,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Seguridad Social",
+    "question": "51.- Según el artículo 147 del Real Decreto Legislativo 8/2015, ¿qué ocurre con las percepciones de vencimiento superior al mensual respecto a las bases de cotización?",
+    "options": ["A) No pueden prorratearse.", "B) Se abonan en el mes siguiente.", "C) Se prorratean a lo largo de los doce meses del año.", "D) Se prorratean a lo largo de los tres meses siguientes."],
+    "answer": 2,
+    "explanation": "Las percepciones de vencimiento superior al mensual se prorratean en las bases de cotización a lo largo de los doce meses."
+  },
+  {
+    "id": 3052,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Seguridad Social",
+    "question": "52.- Según el artículo 44 del texto refundido de la Ley General de la Seguridad Social, ¿qué se establece sobre las percepciones de su acción protectora?",
+    "options": ["A) No pueden ser objeto de compensación o descuento en ningún caso.", "B) No pueden ser objeto de cesión total o parcial en ningún caso.", "C) Están sujetas a tributación en los términos establecidos en las normas de cada impuesto.", "D) No están sujetas a tributación en ningún caso."],
+    "answer": 2,
+    "explanation": "La tributación de estas percepciones se rige por las normas reguladoras de cada impuesto."
+  },
+  {
+    "id": 3053,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Hacienda de la Comunidad de Madrid",
+    "question": "53.- Según el artículo 3 de la Ley 9/1990, ¿conforme a qué principios actúa la Comunidad de Madrid en materia de Hacienda Pública?",
+    "options": ["A) Legalidad, eficacia, control, universalidad y solidaridad interterritorial, además de los preceptos de la ley presupuestaria anual.", "B) Principio del ordenamiento jurídico y ordenación de la política económica y financiera de competencia autonómica.", "C) Legalidad, eficacia, control, universalidad, solidaridad intrarregional y coordinación, de acuerdo con la Constitución y el Estatuto de Autonomía.", "D) Ninguna es correcta."],
+    "answer": 2,
+    "explanation": "La ley recoge los principios enumerados en la opción C, incluida la solidaridad intrarregional y la coordinación."
+  },
+  {
+    "id": 3054,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Hacienda de la Comunidad de Madrid",
+    "question": "54.- Según el artículo 4 de la Ley 9/1990, ¿cómo se clasifican los organismos autónomos de la Comunidad?",
+    "options": ["A) Organismos de empresas y entes públicos, y organismos autónomos administrativos de carácter financiero o análogo.", "B) Organismo Autónomo del Tribunal de Cuentas y órgano de gestión sin personalidad jurídica.", "C) Organismos autónomos del Tribunal de Cuentas y de la Tesorería autonómica.", "D) Organismos autónomos administrativos, sujetos al régimen administrativo y prestadores de servicios públicos, y mercantiles, de carácter comercial, industrial, financiero o análogo."],
+    "answer": 3,
+    "explanation": "La clasificación legal distingue organismos autónomos administrativos y organismos autónomos mercantiles."
+  },
+  {
+    "id": 3055,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Igualdad y derechos LGTBI",
+    "question": "55.- Según el artículo 8 de la Ley 4/2023, ¿qué administraciones cooperarán para integrar la igualdad de trato y la no discriminación por las causas previstas en la Ley?",
+    "options": ["A) Todos los organismos implicados, especialmente el Consejo de Participación de las Personas LGTBI.", "B) Las comunidades autónomas y el Ministerio de Igualdad a través de la Secretaría de Estado correspondiente.", "C) La Administración General del Estado, las comunidades autónomas, las ciudades de Ceuta y Melilla y las entidades locales.", "D) La Administración General del Estado, las comunidades autónomas y las entidades locales."],
+    "answer": 2,
+    "explanation": "La cooperación comprende la Administración General del Estado, comunidades autónomas, Ceuta y Melilla y entidades locales."
+  },
+  {
+    "id": 3056,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Igualdad y derechos LGTBI",
+    "question": "56.- Según el artículo 10 de la Ley 4/2023, ¿quién aprueba la Estrategia estatal para la igualdad de trato y la no discriminación de las personas LGTBI?",
+    "options": ["A) El Consejo de Participación de las Personas LGTBI.", "B) El Consejo de Ministros mediante acuerdo, previo informe favorable de la Conferencia Sectorial de Igualdad.", "C) El Ministerio de Igualdad, las comunidades autónomas, Ceuta y Melilla y las organizaciones sociales en una sesión conjunta.", "D) El Consejo de Ministros, previo informe favorable del Ministerio de Igualdad."],
+    "answer": 1,
+    "explanation": "El Ministerio de Igualdad la elabora y el Consejo de Ministros la aprueba por acuerdo, previo informe favorable de la Conferencia Sectorial de Igualdad."
+  },
+  {
+    "id": 3057,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Administración electrónica",
+    "question": "57.- Conforme al artículo 12 de la Ley 39/2015, ¿quiénes constarán al menos en el registro de funcionarios habilitados para asistir en el uso de medios electrónicos?",
+    "options": ["A) Los funcionarios de la Administración General del Estado.", "B) Los empleados de las comunidades autónomas.", "C) Los funcionarios que presten servicios en las oficinas de asistencia en materia de registros.", "D) Todos los funcionarios de las entidades locales."],
+    "answer": 2,
+    "explanation": "Deben constar al menos los funcionarios que trabajan en oficinas de asistencia en materia de registros."
+  },
+  {
+    "id": 3058,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Atención a la ciudadanía",
+    "question": "58.- Según el artículo 9 del Decreto 21/2002, ¿qué se afirma sobre la información particular?",
+    "options": ["A) Será facilitada por el órgano gestor.", "B) Se facilitará a cualquier ciudadano sin exigir acreditación de legitimación.", "C) Cuando convenga difundirla, se ofrecerá a los grupos sociales o instituciones interesados.", "D) Por sus características, requerirá una respuesta más profunda o consultas complementarias."],
+    "answer": 0,
+    "explanation": "La información particular sobre un procedimiento la facilita el órgano gestor correspondiente."
+  },
+  {
+    "id": 3059,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Documentos electrónicos",
+    "question": "59.- Según la Ley 39/2015, ¿qué requisito NO deben cumplir los documentos electrónicos administrativos para ser válidos?",
+    "options": ["A) Contener información archivada en soporte papel, en un formato determinado susceptible de identificación y tratamiento diferenciado.", "B) Disponer de datos de identificación que permitan individualizarlos, sin perjuicio de incorporarlos a un expediente electrónico.", "C) Incorporar una referencia temporal del momento de emisión.", "D) Incorporar los metadatos mínimos exigidos."],
+    "answer": 0,
+    "explanation": "La información debe estar archivada en soporte electrónico, no en soporte papel, para cumplir esta característica del documento electrónico válido."
+  },
+  {
+    "id": 3060,
+    "examen": "File 4 / C2 - Acceso libre",
+    "topic": "Patrimonio documental",
+    "question": "60.- Según el artículo 57.1.c de la Ley 16/1985, ¿qué se establece sobre documentos con datos personales que puedan afectar a la seguridad, el honor, la intimidad o la propia imagen?",
+    "options": ["A) Nunca podrán consultarse públicamente.", "B) Podrán consultarse si han transcurrido 50 años desde la muerte de los afectados, si se conoce la fecha.", "C) Podrán consultarse si han transcurrido 40 años desde la muerte de los afectados, si se conoce la fecha.", "D) No podrán consultarse públicamente sin consentimiento expreso de los afectados."],
+    "answer": 3,
+    "explanation": "La plantilla marca D. La ley también contempla el acceso cuando transcurren los plazos legales: 25 años desde la muerte si se conoce la fecha, o 50 años desde la fecha del documento si no se conoce."
+  },
+  {
+    "id": 3061,
+    "examen": "File 4 / C2 - Acceso libre - Reserva",
+    "topic": "Asamblea de Madrid",
+    "question": "61.- Señale la respuesta incorrecta respecto a las reuniones de la Asamblea de la Comunidad de Madrid:",
+    "options": ["A) Se reúne en sesiones ordinarias y extraordinarias.", "B) Las sesiones extraordinarias se convocan sobre un orden del día determinado.", "C) Para deliberar y adoptar acuerdos, la Asamblea debe estar reunida reglamentariamente y con asistencia de tres cuartas partes de sus miembros.", "D) Los acuerdos se aprueban por mayoría de los miembros presentes, salvo que se exijan mayorías especiales."],
+    "answer": 2,
+    "explanation": "La regla general de quórum no exige la asistencia de tres cuartas partes de los miembros."
+  },
+  {
+    "id": 3062,
+    "examen": "File 4 / C2 - Acceso libre - Reserva",
+    "topic": "Procedimiento administrativo",
+    "question": "62.- Según el artículo 84 de la Ley 39/2015, ¿cuál de estas causas pone fin al procedimiento?",
+    "options": ["A) La resolución.", "B) La renuncia al derecho en que se funda la solicitud cuando esté prohibida por el ordenamiento jurídico.", "C) La declaración de caducidad.", "D) El desistimiento."],
+    "answer": 1,
+    "explanation": "La renuncia solo pone fin al procedimiento si no está prohibida por el ordenamiento; por eso la opción B, que dice lo contrario, es la incorrecta."
+  },
+  {
+    "id": 3063,
+    "examen": "File 4 / C2 - Acceso libre - Reserva",
+    "topic": "Función pública de la Comunidad de Madrid",
+    "question": "63.- Según el artículo 6 de la Ley 1/1986, señale cuál NO es un órgano superior de la Función Pública:",
+    "options": ["A) El Consejero de Hacienda.", "B) El Consejo de Gobierno.", "C) El Consejo Regional de la Función Pública.", "D) El Consejero de la Presidencia."],
+    "answer": 0,
+    "explanation": "La plantilla identifica al Consejero de Hacienda como la opción incorrecta."
+  },
+  {
+    "id": 3064,
+    "examen": "File 4 / C2 - Acceso libre - Reserva",
+    "topic": "Violencia de género",
+    "question": "64.- Según el artículo 1 de la Ley Orgánica 1/2004, ¿qué afirmaciones sobre su objeto son correctas?",
+    "options": ["A) Establece medidas de protección integral para prevenir, sancionar y erradicar esta violencia y prestar asistencia a las mujeres y a los menores a su cargo que sean víctimas.", "B) Tiene por objeto actuar contra toda violencia o discriminación ejercida sobre mujeres de una misma comunidad.", "C) La violencia de género comprende actos de violencia física y psicológica, incluidas agresiones a la libertad sexual, amenazas, coacciones o privación arbitraria de libertad.", "D) Las respuestas A y C son correctas."],
+    "answer": 3,
+    "explanation": "Las afirmaciones A y C recogen el objeto y el ámbito de la violencia de género descritos en el artículo 1."
+  },
+  {
+    "id": 3065,
+    "examen": "File 4 / C2 - Acceso libre - Reserva",
+    "topic": "Protección de datos",
+    "question": "65.- Conforme al artículo 22 de la Ley Orgánica 3/2018, ¿cuándo deben suprimirse los datos tratados mediante videovigilancia, salvo que deban conservarse como prueba de actos contra personas, bienes o instalaciones?",
+    "options": ["A) En un año desde su captación.", "B) En seis meses desde su captación.", "C) En dos meses desde su captación.", "D) En un mes desde su captación."],
+    "answer": 3,
+    "explanation": "El plazo máximo general de supresión es de un mes desde la captación, salvo la excepción indicada."
+  },
+  {
+    "id": 4001,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Access 2016",
+    "question": "1.- En Access 2016, ¿qué se debe hacer para conservar una base de datos en la lista de Bases de datos recientes?",
+    "options": ["A) La lista solo muestra las últimas bases utilizadas; no se pueden fijar elementos.", "B) Cambiar las propiedades de la base activando Siempre visible.", "C) Activar Fijar en recientes en Complementos de Opciones de Access.", "D) Anclar el documento en la lista de Bases de datos recientes."],
+    "answer": 3,
+    "explanation": "Anclar la base de datos permite mantenerla en la lista de elementos recientes."
+  },
+  {
+    "id": 4002,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Word 2016",
+    "question": "2.- ¿Dispone Word 2016 de ecuaciones matemáticas predeterminadas ya diseñadas para utilizar en un documento?",
+    "options": ["A) No, todas las ecuaciones deben crearse desde el inicio.", "B) Sí, pero hay que instalar un módulo descargado desde la web de Microsoft.", "C) Word 2016 no admite crear ecuaciones matemáticas.", "D) Sí."],
+    "answer": 3,
+    "explanation": "Word incluye ecuaciones integradas que se pueden insertar y editar desde sus herramientas de ecuación."
+  },
+  {
+    "id": 4003,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Access 2016",
+    "question": "3.- ¿Para qué sirve Compactar y reparar una base de datos en Access 2016?",
+    "options": ["A) Para evitar o reparar posibles daños en la base de datos y mejorar el rendimiento.", "B) Para eliminar las tablas que no se hayan utilizado durante mucho tiempo.", "C) Para crear un archivo ZIP de la base de datos.", "D) Para buscar registros duplicados y eliminarlos."],
+    "answer": 0,
+    "explanation": "La compactación recupera espacio y puede mejorar el rendimiento; la reparación intenta corregir daños en la base."
+  },
+  {
+    "id": 4004,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Excel 2016",
+    "question": "4.- ¿En qué consiste la opción Transponer al realizar un Pegado especial en Excel 2016?",
+    "options": ["A) Aplicar una operación aritmética a cada valor antes de pegarlo.", "B) Pegar valores de fórmulas sin las fórmulas.", "C) Ordenar los valores antes de pegarlos.", "D) Cambiar los valores de columnas a filas o de filas a columnas."],
+    "answer": 3,
+    "explanation": "Transponer intercambia la orientación de filas y columnas al pegar."
+  },
+  {
+    "id": 4005,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Word 2016",
+    "question": "5.- ¿Cuál de estas opciones no es una alineación de párrafo aplicable en Word 2016?",
+    "options": ["A) Centrada.", "B) Derecha.", "C) Diferencial.", "D) Justificada."],
+    "answer": 2,
+    "explanation": "Word ofrece alineación izquierda, centrada, derecha y justificada; diferencial no es una alineación de párrafo."
+  },
+  {
+    "id": 4006,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Outlook 2016",
+    "question": "6.- En Outlook 2016, ¿qué disposición debe seleccionarse para agrupar por destinatario los mensajes de una carpeta?",
+    "options": ["A) De.", "B) Para.", "C) Asunto.", "D) Tipo."],
+    "answer": 1,
+    "explanation": "La disposición Para agrupa los mensajes por destinatario."
+  },
+  {
+    "id": 4007,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Internet",
+    "question": "7.- ¿Cómo ha influido Tim Berners-Lee en el mundo de internet?",
+    "options": ["A) Se le conoce como el padre de la World Wide Web.", "B) No ha tenido influencia en internet.", "C) Desarrolló con Steve Jobs el primer ordenador comercializado por Apple.", "D) Fue el ingeniero que envió el primer correo electrónico en 1971."],
+    "answer": 0,
+    "explanation": "Tim Berners-Lee creó la World Wide Web, sistema de documentos enlazados accesibles a través de internet."
+  },
+  {
+    "id": 4008,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Windows 10",
+    "question": "8.- En la cinta de opciones del Explorador de archivos de Windows 10, ¿en qué se organizan los comandos agrupados por tareas?",
+    "options": ["A) Archivos.", "B) Carpetas.", "C) Accesos directos.", "D) Pestañas."],
+    "answer": 3,
+    "explanation": "La cinta de opciones organiza sus comandos en pestañas."
+  },
+  {
+    "id": 4009,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Redes",
+    "question": "9.- ¿Qué es una red P2P?",
+    "options": ["A) Una red sin necesidad de servidor central, donde cada ordenador puede actuar como cliente y como servidor.", "B) Una red basada en un servidor central que atiende a uno o varios clientes.", "C) Una red de cobertura limitada, como una vivienda o una oficina.", "D) Una red que utiliza conversores para transmitir por cableado distinto al estándar."],
+    "answer": 0,
+    "explanation": "En una red entre pares (peer-to-peer), los equipos pueden compartir recursos directamente y asumir funciones de cliente y servidor."
+  },
+  {
+    "id": 4010,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Internet",
+    "question": "10.- En la dirección web soporte.empresaNNXX.es, ¿cuál sería el subdominio?",
+    "options": ["A) soporte", "B) empresaNNXX", "C) es", "D) La dirección no tiene subdominio."],
+    "answer": 0,
+    "explanation": "En esa dirección, soporte es el subdominio de empresaNNXX.es."
+  },
+  {
+    "id": 4011,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Outlook 2016",
+    "question": "11.- ¿Se puede crear más de una firma en Outlook 2016 para personalizar los mensajes?",
+    "options": ["A) Solo se puede crear una firma por cuenta.", "B) Sí, se pueden crear una o más firmas personalizadas.", "C) Como máximo, dos firmas por cuenta.", "D) Outlook no permite crear firmas personalizadas."],
+    "answer": 1,
+    "explanation": "Outlook permite crear varias firmas y elegir cuál utilizar en los mensajes."
+  },
+  {
+    "id": 4012,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Access 2016",
+    "question": "12.- ¿Cuál de los siguientes no es un objeto de una base de datos Access 2016?",
+    "options": ["A) Tablas.", "B) Consultas.", "C) Fórmulas.", "D) Informes."],
+    "answer": 2,
+    "explanation": "Tablas, consultas, formularios e informes son objetos de Access; las fórmulas no son un tipo de objeto de base de datos."
+  },
+  {
+    "id": 4013,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Outlook 2016",
+    "question": "13.- En Outlook 2016, ¿se puede crear una regla para que los mensajes de un contacto aparezcan con una fuente y un estilo distintos en la bandeja de entrada?",
+    "options": ["A) No, Outlook no permite ese tipo de personalización.", "B) Solo mediante un script de Visual Basic.", "C) Mediante una regla de Validación de datos.", "D) Sí, mediante una regla de Formato condicional."],
+    "answer": 3,
+    "explanation": "El formato condicional permite cambiar la apariencia de los mensajes que cumplen criterios definidos."
+  },
+  {
+    "id": 4014,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Excel 2016",
+    "question": "14.- En Excel 2016, ¿en qué grupo y pestaña de la cinta está el comando Imprimir títulos?",
+    "options": ["A) Grupo Encabezados, pestaña Inicio.", "B) Grupo Configurar impresión, pestaña Inicio.", "C) Grupo Configurar página, pestaña Diseño de página.", "D) Grupo Celdas, pestaña Inicio."],
+    "answer": 2,
+    "explanation": "Imprimir títulos se encuentra en Diseño de página, grupo Configurar página."
+  },
+  {
+    "id": 4015,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Identidad digital",
+    "question": "15.- ¿Cómo se llama al conjunto de información que hay en internet sobre una persona?",
+    "options": ["A) Certificado digital.", "B) Identidad digital.", "C) Cookies.", "D) Cómputo forense."],
+    "answer": 1,
+    "explanation": "La identidad digital es el conjunto de información y datos asociados a una persona en entornos digitales."
+  },
+  {
+    "id": 4016,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Word 2016",
+    "question": "16.- En Word 2016, ¿qué se entiende por Elemento rápido?",
+    "options": ["A) Una opción para previsualizar el contenido sin abrir el documento.", "B) Una funcionalidad para insertar rápidamente texto, datos u objetos en un documento.", "C) Una vista que muestra el documento sin formato.", "D) Una función que comprime documentos voluminosos para abrirlos más rápido."],
+    "answer": 1,
+    "explanation": "Los elementos rápidos permiten reutilizar e insertar con rapidez contenido como bloques de texto, campos y propiedades del documento."
+  },
+  {
+    "id": 4017,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Windows 10",
+    "question": "17.- En el Explorador de archivos de Windows 10, ¿qué función realiza Alt + Entrar?",
+    "options": ["A) Ver la carpeta siguiente.", "B) Ver la carpeta anterior.", "C) Abrir una ventana nueva.", "D) Abrir las propiedades del elemento seleccionado."],
+    "answer": 3,
+    "explanation": "Alt + Entrar abre el cuadro de propiedades del archivo o carpeta seleccionado."
+  },
+  {
+    "id": 4018,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Windows 10",
+    "question": "18.- Sobre Acceso rápido en el panel de navegación del Explorador de archivos de Windows 10, indique la afirmación falsa.",
+    "options": ["A) Contiene accesos a las carpetas más usadas.", "B) Por defecto, contiene accesos a Escritorio, Descargas, Documentos e Imágenes.", "C) Solo un usuario con permisos de administrador puede utilizarlo.", "D) Se puede modificar su contenido y añadir carpetas."],
+    "answer": 2,
+    "explanation": "Acceso rápido está disponible para los usuarios; no requiere permisos de administrador."
+  },
+  {
+    "id": 4019,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Excel 2016",
+    "question": "19.- ¿Se puede guardar un libro de Excel 2016 como plantilla para crear otros libros basados en él?",
+    "options": ["A) No, Excel no permite utilizar plantillas.", "B) Excel 2016 no permite crear plantillas, aunque otras versiones sí.", "C) Sí, pero solo si el libro se exporta a XML.", "D) Sí, guardándolo como plantilla de Excel (.xltx)."],
+    "answer": 3,
+    "explanation": "El formato .xltx es el formato de plantilla de Excel."
+  },
+  {
+    "id": 4020,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Outlook 2016",
+    "question": "20.- En Outlook 2016, ¿es posible reenviar un mensaje a una tercera dirección distinta de la del remitente?",
+    "options": ["A) No, solo se puede reenviar al remitente.", "B) Sí, se puede reenviar a una tercera dirección.", "C) Solo si esa dirección va en copia.", "D) Solo si la tercera dirección había respondido al correo original."],
+    "answer": 1,
+    "explanation": "Al reenviar un mensaje se puede indicar cualquier destinatario."
+  },
+  {
+    "id": 4021,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Internet",
+    "question": "21.- ¿Qué es un ISP en internet?",
+    "options": ["A) El protocolo de internet encargado del direccionamiento IP, cuya versión más reciente es IPv6.", "B) La empresa que proporciona acceso a internet, es decir, un proveedor de servicios de internet.", "C) Un estándar de la W3C para aplicar código HTML.", "D) Un sistema de geolocalización."],
+    "answer": 1,
+    "explanation": "ISP significa Internet Service Provider, proveedor de servicios de internet."
+  },
+  {
+    "id": 4022,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Access 2016",
+    "question": "22.- En Access 2016, ¿cuál es la mejor manera de modificar la estructura de una tabla?",
+    "options": ["A) Usando la Vista Diseño.", "B) Usando la Vista Herramientas.", "C) Creando la tabla desde el principio.", "D) Usando una nueva consulta."],
+    "answer": 0,
+    "explanation": "La Vista Diseño permite modificar campos, tipos de datos y propiedades de la tabla."
+  },
+  {
+    "id": 4023,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Word 2016",
+    "question": "23.- En Word 2016, ¿qué es el Inspector de estilo?",
+    "options": ["A) Una función que no existe en Word.", "B) Un comando que realiza una revisión lingüística del documento.", "C) Una utilidad que alerta de estilos de párrafo repetidos.", "D) Una utilidad que muestra el formato aplicado a los caracteres y al párrafo seleccionado o donde está el cursor."],
+    "answer": 3,
+    "explanation": "El Inspector de estilo muestra el formato de carácter y de párrafo aplicado en la posición actual."
+  },
+  {
+    "id": 4024,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Windows 10",
+    "question": "24.- En el Explorador de archivos de Windows 10, ¿qué hace Casillas de elemento, en Vista > Mostrar u ocultar?",
+    "options": ["A) Ese comando no existe.", "B) Facilita seleccionar archivos o carpetas mostrando una casilla de verificación junto a cada elemento.", "C) Asocia a cada archivo un icono de la aplicación con que se abre.", "D) Añade una columna con los permisos del archivo en forma de casillas."],
+    "answer": 1,
+    "explanation": "La opción muestra casillas junto a los elementos para facilitar su selección."
+  },
+  {
+    "id": 4025,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Outlook 2016",
+    "question": "25.- En Outlook 2016, ¿qué supone implementar un filtro agresivo en el nivel de protección del correo no deseado?",
+    "options": ["A) Aumenta el riesgo de mover mensajes no legítimos a la bandeja de entrada.", "B) Aumenta el riesgo de que mensajes legítimos se identifiquen como no deseados y se muevan a esa carpeta.", "C) No se puede modificar el nivel del filtro.", "D) Los mensajes no legítimos se eliminan directamente sin pasar por Correo no deseado."],
+    "answer": 1,
+    "explanation": "Un filtro más agresivo puede detectar más correo basura, pero también aumenta los falsos positivos."
+  },
+  {
+    "id": 4026,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Excel 2016",
+    "question": "26.- En Excel 2016, ¿cómo se pueden eliminar automáticamente filas con valores duplicados?",
+    "options": ["A) Hay que hacerlo manualmente.", "B) Utilizando el comando Quitar duplicados.", "C) Con Buscar y reemplazar y la opción Duplicados.", "D) Con Guardar sin duplicados."],
+    "answer": 1,
+    "explanation": "Quitar duplicados analiza las columnas seleccionadas y elimina las filas repetidas."
+  },
+  {
+    "id": 4027,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Windows 10",
+    "question": "27.- En el Explorador de archivos de Windows 10, ¿qué atajo corta el archivo seleccionado?",
+    "options": ["A) Ctrl + X", "B) Ctrl + W", "C) Ctrl + C", "D) Ctrl + V"],
+    "answer": 0,
+    "explanation": "Ctrl + X corta el elemento; Ctrl + C lo copia y Ctrl + V lo pega."
+  },
+  {
+    "id": 4028,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Access 2016",
+    "question": "28.- En Access 2016, ¿es posible relacionar distintas tablas de una misma base de datos?",
+    "options": ["A) No, las tablas no se relacionan entre sí.", "B) Solo puede haber una tabla por base de datos.", "C) Se pueden utilizar campos de indexación o índices para relacionar unas tablas con otras.", "D) Las tablas se utilizan en Excel, no en Access."],
+    "answer": 2,
+    "explanation": "Access permite relacionar tablas mediante campos comunes y la ventana Relaciones; la plantilla marca C."
+  },
+  {
+    "id": 4029,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Word 2016",
+    "question": "29.- En Word 2016, ¿qué diferencia hay entre recortar una imagen y cambiar su tamaño?",
+    "options": ["A) Ninguna, son equivalentes.", "B) Recortar descarta bordes no deseados; cambiar el tamaño altera las dimensiones de la imagen.", "C) Word 2016 no permite recortar imágenes.", "D) Recortar define cómo se reorganiza el texto alrededor de la imagen."],
+    "answer": 1,
+    "explanation": "Recortar elimina partes visibles de la imagen; cambiar el tamaño escala sus dimensiones."
+  },
+  {
+    "id": 4030,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio",
+    "topic": "Excel 2016",
+    "question": "30.- ¿Qué utilidad tiene el Asistente para convertir texto en columnas de Excel 2016?",
+    "options": ["A) Repartir el contenido de una celda en varias celdas según un separador.", "B) Importar un archivo de texto en diferentes celdas según un separador.", "C) Excel 2016 no dispone de ese asistente.", "D) Unificar el contenido de varias celdas en una sola."],
+    "answer": 0,
+    "explanation": "Texto en columnas divide el contenido de una columna en varias usando delimitadores o posiciones fijas."
+  },
+  {
+    "id": 4031,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio - Reserva",
+    "topic": "Outlook 2016",
+    "question": "31.- ¿Es posible enviar mensajes sin asunto desde Outlook 2016?",
+    "options": ["A) No, Outlook no permite enviar mensajes sin asunto.", "B) Sí.", "C) Solo en otras versiones de Outlook.", "D) Ningún gestor de correo permite hacerlo."],
+    "answer": 1,
+    "explanation": "Outlook permite enviar un mensaje sin asunto, aunque puede mostrar una advertencia antes del envío."
+  },
+  {
+    "id": 4032,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio - Reserva",
+    "topic": "Word 2016",
+    "question": "32.- En Word 2016, ¿cuál de las siguientes no es una opción seleccionable al compartir un documento?",
+    "options": ["A) Publicar en Blog.", "B) Presentar en línea.", "C) Enviar por FTP.", "D) Compartir con otras personas."],
+    "answer": 2,
+    "explanation": "Enviar por FTP no aparece entre las opciones de compartir documentos de Word 2016."
+  },
+  {
+    "id": 4033,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio - Reserva",
+    "topic": "Excel 2016",
+    "question": "33.- ¿Qué utilidad tiene la Ventana Inspección de Excel 2016?",
+    "options": ["A) En Excel 2016 no existe una Ventana Inspección.", "B) Rodea con un círculo las celdas con datos no válidos.", "C) Define un formato condicional para valores por encima o debajo de un rango.", "D) Permite supervisar los valores de determinadas celdas mientras se realizan cambios en la hoja."],
+    "answer": 3,
+    "explanation": "La Ventana Inspección permite vigilar valores y fórmulas de celdas sin tener que navegar hasta ellas."
+  },
+  {
+    "id": 4034,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio - Reserva",
+    "topic": "Redes",
+    "question": "34.- ¿Cuál de estas tecnologías de comunicación no se considera inalámbrica?",
+    "options": ["A) Wi-Fi.", "B) WiMAX.", "C) Bluetooth.", "D) PLC."],
+    "answer": 3,
+    "explanation": "PLC transmite datos a través de la red eléctrica; Wi-Fi, WiMAX y Bluetooth son tecnologías inalámbricas."
+  },
+  {
+    "id": 4035,
+    "examen": "File 5 / C2 - Acceso libre - Segundo ejercicio - Reserva",
+    "topic": "Windows 10",
+    "question": "35.- En la barra de título del Explorador de archivos de Windows 10, ¿cuál de estos elementos podemos encontrar?",
+    "options": ["A) La pestaña Archivo.", "B) La barra de herramientas de acceso rápido.", "C) La cinta de opciones.", "D) Los botones de navegación."],
+    "answer": 1,
+    "explanation": "La barra de herramientas de acceso rápido aparece en la zona de la barra de título del Explorador."
+  }
+]
